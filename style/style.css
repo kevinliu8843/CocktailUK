@@ -1,0 +1,395 @@
+﻿BODY {
+	background-color: #828282;
+	FONT-FAMILY: Arial, Helvetica, sans-serif; 
+	font-size: 9pt; 
+	line-height: 1.5;
+	MARGIN: 0px; 
+	MARGIN-TOP: 5px;
+	COLOR: #444444;
+}
+#search_box {
+    width: 201px;
+    height: 31px;
+    background: url('http://www.cocktail.uk.com/images/template/bg_search_box.gif');
+}
+#SearchField {
+    float: left;
+    padding: 0px;
+    margin: 6px 0px 0px 6px;
+    border-width: 0px;
+    width: 155px; 
+    background: none;
+}
+#search_box #go {
+    float: right;
+    margin: 3px 4px 0 0;
+}
+.nobackground{
+	background-image:url('http://www.cocktail.uk.com/images/pixel.gif');
+	background-color: white;
+}
+H1, H2, H3, H4, H5, H6 {
+	COLOR: #636388;
+	FONT-FAMILY: Arial, Helvetica, sans-serif; 
+}
+H2 {
+	line-height: 1.2;
+	TEXT-ALIGN: left;
+	background-color: #EEEEEE; 
+	padding-top: 5px; 
+	padding-bottom: 5px;
+	padding-left: 5px; 
+	COLOR: #545473; 
+	FONT-SIZE: 16pt;  
+	border-bottom: 1px solid #636388;
+	margin-top: 0px;
+	margin-bottom: 5px;
+} 
+A{
+	text-decoration: underline;
+	color: #201460;
+}
+td {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; 
+	FONT-SIZE: 9pt; 
+	COLOR: #444444; 
+}
+TABLE, TR, TD {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; 
+	FONT-SIZE: 9pt; 
+	LINE-HEIGHT: 1.5; 
+	COLOR: #444444; 
+}
+.largetext{
+	FONT-FAMILY: Arial, Helvetica, sans-serif; 
+	FONT-SIZE: 14px; 
+	COLOR: #444444; 
+}
+.topdiv1
+{
+	width: 100%;
+	text-align: center;
+}
+.topdiv2     
+{
+	padding-bottom: 20px;
+} 
+.topdiv3
+{
+	padding-bottom: 0px;
+} 
+.titletop
+{
+	width: 100%;
+	height: 0px; 
+	overflow: hidden;
+	TEXT-OVERFLOW: ellipsis;
+	position: absolute;
+	z-index: -1;
+}
+.logoarea 
+{
+	background-color: white;
+	border-left: 1px solid #636388;
+	border-right: 1px solid #636388;
+}
+.maincontainer {
+	HEIGHT: auto;
+	MIN-HEIGHT: 1050px;
+	POSITION: relative;
+	TOP: 0px;
+	BACKGROUND-COLOR: white; 
+	BORDER-TOP: #636388 1px solid;
+	BORDER-BOTTOM: #636388 1px solid;
+	border-left: 1px solid #636388;
+	border-right: 1px solid #636388;
+}
+
+.leftnav {
+	MARGIN-TOP: 0px;
+	PADDING-TOP: 0px;
+	PADDING-LEFT: 0px; 
+	LEFT: 0px; 
+	PADDING-BOTTOM: 10px; 
+	WIDTH: 150px; 
+	POSITION: absolute; 
+	TOP: 0px;
+}
+.content {
+	TEXT-ALIGN: left;
+	MARGIN-LEFT: 150px;
+	padding-BOTTOM: 80px;
+	BORDER-LEFT: #636388 1px solid;
+	POSITION: relative;
+	Z-INDEX:999;
+	MIN-HEIGHT: 1050px;
+	width: 538px;
+}
+* html .content { /*\*/ height: 1050px; }
+.header {
+	POSITION: relative;
+	BACKGROUND-COLOR: white;
+} 
+.footer {
+	POSITION: relative;
+	color: white;
+}
+.skyscraper
+{ 
+	z-index: -100;
+	padding-right: 5px;
+	padding-top: 5px;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+} 
+.lycossearch
+{
+	position: absolute;
+	display: block;
+	bottom: 5px;
+	left: 10px;
+}
+.truncatestring 
+{
+	line-height: 1.1;
+	FONT-FAMILY: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	OVERFLOW: hidden;
+	TEXT-OVERFLOW: ellipsis;
+	FONT-SIZE: 8pt; 
+	COLOR: white;
+	TEXT-DECORATION: none;
+	HEIGHT: 15px;
+	WIDTH: 470px;
+	padding-left: 5px;
+}
+.linksin { 
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	font-size: 9pt; 
+	line-height: 12pt;
+	COLOR: #444444;
+	TEXT-DECORATION: none;
+}
+.baselight { 
+	BACKGROUND: url('http://www.cocktail.uk.com/images/template/cocktail_uk_content_header_light.gif') no repeat right 0%;
+	TEXT-DECORATION: none; 
+	background-color: #EBE2F7;
+	FONT-FAMILY: Arial, Helvetica, sans-serif; 
+	BORDER: 1px solid #ebe2f7;
+}
+.baselightred {
+	background-color: #EEEEEE; 
+	text-decoration:none; 
+	font-family:Arial, Helvetica, sans-serif; 
+	border:1px solid #B4AFAC; 
+} 
+A:hover {
+	COLOR: #AA0000;
+}
+.shopoption
+{
+	FONT-SIZE: 12px;
+	FONT-WEIGHT: bold;
+	COLOR: #AA0000; 
+	TEXT-ALIGN: left;
+	height: 22px;
+	width: 310px; 
+}
+.shopoptioncats
+{
+	FONT-SIZE: 12px;
+	FONT-WEIGHT: bold;
+	COLOR: #AA0000; 
+	TEXT-ALIGN: left;
+	height: 22px;
+	width: 210px; 
+}
+.fieldsetshop
+{
+	border:0px solid #800080;
+	padding:2px;
+}
+.shopheadertitle
+{
+	background-image: url('http://www.cocktail.uk.com/images/main_menus/blank.gif');
+	background-repeat: no-repeat;
+	PADDING-TOP: 5px;
+	PADDING-LEFT: 30px; 
+	width: 100%;
+	COLOR: #636388;
+	height: 42px;
+	FONT-SIZE: 12pt;
+}
+.shoplinebgonly
+{
+	background-image: url('http://www.cocktail.uk.com/images/main_menus/lineonly.gif');
+	background-repeat: no-repeat;
+	FONT-SIZE: 10px; COLOR: #003366;
+}
+.shopgrad
+{
+	padding-top: 3px;
+	padding-bottom: 3px;
+	background-image: url('http://www.cocktail.uk.com/images/template/buygrad.gif');
+	background-position: top right;
+	background-repeat: repeat-y;
+	BACKGROUND-COLOR: #FFFFFF;
+	BORDER-TOP: 1px solid: #B4AFAC;
+}
+.contentHeader {
+	FONT-SIZE: 10pt;
+}
+.arrowblock {
+	BACKGROUND-COLOR: #636388;
+	background-image: url('http://www.cocktail.uk.com/images/generic_whitearrow.gif');
+	background-position:   center;
+	background-repeat: no-repeat;
+}
+@media all {
+ ul { margin-top: 0; }
+ ul { margin-left: 5px; }
+ li { margin-left: 1em; }
+}
+.nodisplay
+{
+ display: none;
+}
+.button
+{
+	BACKGROUND-COLOR: #636388;
+	background-image: url('http://www.cocktail.uk.com/images/breadcrumbbg.gif');
+	background-repeat: repeat-x;
+	color: #FFFFFF; 
+	font-weight: bold; 
+	BORDER: 1px solid #636388;
+}
+.tabnav {
+	height: 20px;	
+	margin: 0;	
+	padding-left: 4px;
+}
+.tabnav li {
+	margin: 0; 
+	padding: 0;
+	display: inline;	
+	list-style-type: none;
+}
+.tabnav a:visited {	
+	float: left;
+	background: #E5E5E5;
+	font-size: 12px;	
+	line-height: 18px;	
+	font-weight: bold; 
+	padding: 2px 10px 2px 10px;
+	margin-right: 4px;	
+	border: 1px solid #aaaaaa;	
+	border-bottom-width: 0px;	
+	text-decoration: none;	
+	color: #666666;
+}
+.tabnav a:link {	
+	float: left;
+	background: #E5E5E5;
+	font-size: 12px;	
+	line-height: 18px;	
+	font-weight: bold; 
+	padding: 2px 10px 2px 10px;
+	margin-right: 4px;	
+	border: 1px solid #aaaaaa;	
+	border-bottom-width: 0px;	
+	text-decoration: none;	
+	color: #666666;
+}
+.tabnav a:visited.active {
+	border-bottom-width: 0px;
+	background: #ffffff;	
+	color: #114477;
+}
+.tabnav a:link.active {
+	border-bottom-width: 0px;
+	background: #ffffff;	
+	color: #114477;
+}
+.tabnav a:hover	{
+	background: #ffffff;
+}
+.niceborder
+{
+	border: 1px solid #1F4B94;
+	border-collapse: collapse;
+}
+.niceborder TH
+{
+	background-image: url('http://www.drinkstuff.com/img/newtemplate/bluegradbg.gif');
+	background-repeat: repeat-x;
+	background-position: top left;
+	border: 1px solid #1F4B94;
+	border-collapse: collapse;
+	COLOR: #FFFFFF;
+	HEIGHT: 25px;
+}
+
+.nicebgandborderred
+{
+	border: 1px solid #a32530;
+	border-collapse: collapse;
+	background-color: #feedef;
+}
+
+.nicebgandborderred TH
+{
+	background-image: url('http://www.drinkstuff.com/img/newtemplate/redgradbg.gif');
+	background-repeat: repeat-x;
+	background-position: top left;
+	border: 1px solid #a32530;
+	border-collapse: collapse;
+	COLOR: #FFFFFF;
+	HEIGHT: 25px;
+}
+
+
+.nicebgandborder
+{
+	border: 1px solid #1F4B94;
+	border-collapse: collapse;
+	background-color: #e9eef8;
+}
+.nicebgandborder TH
+{
+	background-image: url('http://www.drinkstuff.com/img/newtemplate/bluegradbg.gif');
+	background-repeat: repeat-x;
+	background-position: top left;
+	border: 1px solid #1F4B94;
+	border-collapse: collapse;
+	COLOR: #FFFFFF;
+	HEIGHT: 25px;
+	background-color: #1F4B94;
+}
+.nicebgandborderrev
+{
+	border: 1px solid #1F4B94;
+	border-collapse: collapse;
+}
+.price{
+	font-size: 140%; 
+	color: #AA0000;
+} 
+#product-versions{
+	margin: 5px;
+	border: 1px solid #9caad6;
+	background-color: #e1e3f2;
+}
+#pv-title{
+	background-color: #636388;
+	color: white;
+	font-size: 140%;
+	padding: 3px 5px; 
+	line-height: 1.2;
+}
+#product-version-container{
+	padding: 5px;
+}
+#product-version{
+	padding-top: 2px;
+	padding-bottom: 2px;
+}

@@ -1,0 +1,263 @@
+﻿<!--#include file="errors.asp" -->
+<%
+
+If NOT Session("admin") Then
+	On Error Resume Next
+End If
+
+Dim strSuperScript, rsGlobal, bhideAds, strHideAds, strImage
+Dim strTitlePrepend, strTitleAppend, iKounter, strKeywords, user, passwd
+Dim intItems, dblValue, blnPopup, blnSkyscraper
+Dim strMetaDescription, strMetaKeywords, strMetaTitle
+
+'Do Ads management here====================================================================================
+blnPopup = False
+blnSkyscraper = True
+If Session("logged") Then
+	'Session var might not be a logical (for some strange reason!)
+	bHideAds = True 
+End If
+bHideAds = False
+
+If InStr(LCase(Request("SCRIPT_NAME")), "google.asp") > 0 Then
+	bHideAds = True
+	blnPopup = False
+ElseIf InStr(LCase(Request("SCRIPT_NAME")), "/forum") > 0 Then
+	blnSkyscraper = False
+End If
+
+If Request("type") = "8" Then
+	blnXXX = True
+End If
+
+Session("dontCheckAffiliate") = True
+
+Call displayPageLocation(strTitle, strTitleOut, strTopTitle, Request.ServerVariables("SCRIPT_NAME") & "?" & Request.QueryString, "color: white; font-weight: bold; text-decoration: none;")
+strToptitle = strTitlePrepend & " " & strToptitle & " " & strTitleAppend
+
+intItems = Max(Session("numberItems")+1,0)
+dblValue = Session("valueItems")
+If strMetaDescription = "" Then
+ strMetaDescription = Replace(strTopTitle," > ",", ")       ' & ", cocktail recipes, cocktail drink recipes, cocktails, recipes, shooters and hints and tips on how to make classic cocktail recipies. make cocktails, free cocktails, drinks, drink"
+End If
+If strMetaKeywords = "" Then
+ strMetaKeywords = "cocktails, cocktail, "&Replace(strTopTitle," > ",", ")        '&", cocktail recipes, shooters,make cocktails, free cocktails, recipe, drink ,recipies,drinks"
+End If 
+If strMetaTitle <> "" Then
+ strTopTitle = strMetaTitle
+End If
+%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+<meta name="verify-v1" content="j1KzW+k9z2ZccTw61qVc0227g3bZhen6ZCqPR541JsQ=">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="../style/style.css" type="text/css" rel="stylesheet">
+<link rel="SHORTCUT ICON" href="/favicon.ico">
+<link rel="P3Pv1" href="/w3c/p3p.xml">
+<meta name="robots" content="ALL">
+<meta name="description" content="<%=strMetaDescription%>">
+<%If strKeywords = "" Then%>
+	<meta name="keywords" content="<%=strMetaKeywords%>">
+<%Else%>
+	<meta name="keywords" content="<%=strKeywords%>">
+<%End If%>
+<meta http-equiv="PICS-Label" content="(PICS-1.1 &quot;http://www.icra.org/ratingsv02.html&quot; l gen true for &quot;http://www.cocktail.uk.com&quot; r (cz 1 lz 1 nz 1 ob 1 vz 1) &quot;http://www.rsac.org/ratingsv01.html&quot; l gen true for &quot;http://www.cocktail.uk.com&quot; r (n 0 s 0 v 0 l 0))">
+<meta name="revisit-after" content="3 day">
+<meta name="distribution" content="GLOBAL">
+<meta name="Googlebot" content="all">
+<meta name="abstract" content="<%=strTitle%>">
+<meta http-equiv="content-language" content="EN">
+<meta name="google-site-verification" content="pncNZRLgGxSNLD_-xHUvcx6z6di9D_pU_Kzo-Ldf1kc" />
+<script language="JavaScript" src="/script/jscript.js"></script>
+<title><%=strTopTitle%></title>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17242925-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body style="text-align:center;">
+
+<div class="topdiv1">
+ <center>
+ <div class="topdiv2">
+  <div class="topdiv3">
+   <table cellpadding="0" cellspacing="0" border="0">
+    <tr>
+     <td>
+     <div class="logoarea">
+      <table id="table3" cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff" border="0">
+       <tr>
+        <td align="left" width="85">
+        <a href="http://www.cocktail.uk.com/">
+        <img border="0" src="../images/cuk_03.jpg" width="85" height="85" alt="Classic cocktails and bar equipment uk"></a></td>
+        <td align="left" style="width: 230px">
+        <a href="http://www.cocktail.uk.com/">
+        <img alt="Classic cocktails and bar equipment uk" src="../images/cuk_07.gif" border="0" width="210" height="32"></a></td>
+        <td align="center">
+		<div id="search_box">
+			<%If 1=0 Then%>
+			    <form id="search_form" method="GET" action="/sitesearch/default.asp" style="margin: 0px; padding: 0px; display: inline;">
+			        <input type="text" name="SearchField" id="SearchField" value="Search" class="swap_value" onfocus="this.value=''; document.getElementById('search_box').style.backgroundImage='url(http://www.cocktail.uk.com/images/template/bg_search_box_over.gif)'" onblur="document.getElementById('search_box').style.backgroundImage='url(http://www.cocktail.uk.com/images/template/bg_search_box.gif)'"><input type="image" src="../images/template/button_search_go.gif" id="go" alt="Search" title="Search">
+			    </form>
+			<%Else%>
+				<form action="http://www.cocktail.uk.com/sitesearch/google.asp" id="search_form" style="margin: 0px; padding: 0px; display: inline; ">
+				    <input type="hidden" name="cx" value="partner-pub-4852715527905431:j32r2u95lwx">
+				    <input type="hidden" name="cof" value="FORID:10">
+				    <input type="hidden" name="ie" value="UTF-8"> 
+				    <input type="text" name="q" id="SearchField" value="Search" class="swap_value" onfocus="this.value=''; document.getElementById('search_box').style.backgroundImage='url(http://www.cocktail.uk.com/images/template/bg_search_box_over.gif)'" onblur="document.getElementById('search_box').style.backgroundImage='url(http://www.cocktail.uk.com/images/template/bg_search_box.gif)'"><input type="image" src="../images/template/button_search_go.gif" id="go" name="sa" alt="Search" title="Search">
+				</form>
+			<%End If%>
+			</div>
+           </td>
+        <td align="right" style="padding-right: 20px; width: 150px;" nowrap>
+            <a href="/shop/basket.asp"><img alt="My Basket" src="../images/template/basket_icon.gif" width="36" height="36" align="right" border="0"><strong><u>My Basket</u></strong><br>
+            <span style="text-decoration: none; white-space: nowrap;"><%=intItems%> Item<%If intItems <> 1 then%>s<%end if%> 
+            &nbsp;&pound;<%=FormatNumber(dblValue,2)%></SPAN></a>
+        </td>
+       </tr>
+      </table>
+     </div>
+     <div class="maincontainer">
+      <div class="content">
+       <div class="header">
+        <div style="margin: auto;">
+         <table border="0" cellpadding="0" style="border-collapse: collapse; text-align: left;" bordercolor="#111111" width="100%" id="AutoNumber14" height="10">
+          <form method="GET" name="search" action="/sitesearch/default.asp" style="padding:0; border:0; margin:0;">
+           <tr>
+            <td width="100%" bgcolor="#747495" height="27" nowrap background="../images/breadcrumbbg.gif">
+            <span class="truncatestring">
+            <%If LCase(Request.ServerVariables("SCRIPT_NAME")) = "/default.asp" Then%> 
+             Cocktail : UK, cocktails, <span lang="en-gb">cocktail</span> recipes and bar equipment from the UK
+            <%Else%>
+             <font color="white"><%=strTitleOut%></font>
+            <%End If%>
+            </span></td>
+           </tr>
+           
+			<%If NOT bHideAds AND NOT blnXXX Then%>
+			
+	           <tr><td bgcolor="black" align="center" style="border-bottom: 1px #636388 solid;">
+	           
+<!-- JS AdJug Publisher Code -->    
+<script language="JavaScript">    
+document.write('<scr'+'ipt language="JavaScript" src="http://hosting.adjug.com/AdJugSearch/PageBuilder.aspx?ivi=V3.0+JS&aid=492&slid=49281&height=60&width=468&HTMLOP=False&ShowIFrame=True&CacheBuster=' + Math.floor(Math.random()*99999999) + '"></scr'+'ipt>');
+</script>    
+<noscript>    
+<iframe width="468" height="60" name="AdSpace49281" src="http://hosting.adjug.com/AdJugSearch/PageBuilder.aspx?ivi=V3.0+JS+NS&aid=492&slid=49281&height=60&width=468&HTMLOP=True" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no">
+</iframe>    
+</noscript>    
+<!-- JS AdJug Publisher Code -->
+
+				</td></tr>
+			<%End If%>
+          </form>
+         </table>
+
+        </div>
+        <!--C-->
+        <!---->
+        <!--/C-->
+        <%
+        If NOT Session("admin") Then
+         Call TrapErrors()
+        End If
+        %>
+       </div>
+       <div class="lycossearch">
+       <CENTER>
+	<%If RandomNumber(1, 100) <= 100 AND NOT bHideAds AND NOT blnXXX AND NOT (InStr(Request.ServerVariables("SCRIPT_NAME"), "adult") > 0 OR (InStr(Request.ServerVariables("SCRIPT_NAME"), "/db/viewAllCocktails.asp") > 0 AND InStr(Request.querystring, "type=8") > 0) ) Then%>
+		<div style="margin-top: 10px; margin-bottom: 5px;">
+		<script type="text/javascript"><!--
+		google_ad_client = "pub-4852715527905431";
+		google_ad_width = 468;
+		google_ad_height = 60;
+		google_ad_format = "468x60_as";
+		google_ad_type = "text_image";
+		google_ad_channel ="";
+		google_color_border = "737387";
+		google_color_bg = "FFFFFF";
+		google_color_link = "0000FF";
+		google_color_text = "000000";
+		google_color_url = "008000";
+		//--></script>
+		<script type="text/javascript"
+		  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+		</div>
+	<%ElseIf NOT bHideAds Then%>
+		<div style="margin-top: 10px; margin-bottom: 5px;">
+		<a href="http://cocktailuk.rydg187.hop.clickbank.net" target="_blank"><img src="/images/Bartender-Audio.gif" border=0></a>
+		</div>
+	<%End If%>
+       </CENTER>
+       </div>
+      </div>
+      <div class="leftnav" id="leftnav" style="position: absolute; left: 0px; top: 0px">
+       <!--#INCLUDE virtual="/includes/lhs_cocktail.asp"-->
+      </div>
+     </div>
+     </td>
+    </tr>
+    </table>
+  </div>
+  <div class="footer" id="footer" align="center">
+
+   <div align="center">
+    
+<iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fcocktailuk&amp;width=700&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=true&amp;height=290" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:625px; height:290px; background-color: white; margin-top: 10px;" allowTransparency="true"></iframe>
+
+     <p class="linksin" align="center" style="color: white; line-height: 150%; padding-top: 10; padding-bottom: 10;">
+
+      <font color="#FFFFFF">&copy;<%=Year(Now())%> </font>
+      <a class="linksin" href="/services/aboutus">
+      <font color="#FFFFFF">&nbsp;About us</font></a><font color="#FFFFFF"> 
+      | </font>
+      <a class="linksin" href="/services/contact.asp">
+      <font color="#FFFFFF">Contact us</font></a><font color="#FFFFFF"> 
+      | </font>
+      <a class="linksin" href="/services/privacy.asp">
+      <font color="#FFFFFF">Privacy policy</font></a><font color="#FFFFFF"> 
+      </font>
+     <span style="margin-right: 10px;" class="linksin">
+      <strong><font color="#FFFFFF">&nbsp;&nbsp;&nbsp;Partners: </font></strong>
+      <a class="linksin" target="_blank" href="http://www.cocktailequipment.com/">
+      <font color="#FFFFFF">Cocktail Equipment</font></a><font color="#FFFFFF"> 
+      | </font>
+      <a class="linksin" target="_blank" href="http://www.drinkstuff.com/products/affiliate.asp?affID=10724">
+      <font color="#FFFFFF">Drinkstuff</font></a><font color="#FFFFFF"> 
+      | </font>
+      <a class="linksin" target="_blank" href="http://www.cateringequipmentshop.com/">
+      <font color="#FFFFFF">CES</font></a><font color="#FFFFFF"> 
+      | </font>
+      <a class="linksin" target="_blank" href="http://www.barmans.co.uk/products/affiliate.asp?affID=10724">
+      <font color="#FFFFFF">Barmans</font></a>
+      </span>
+	
+   </div>
+  </div>
+  <%If blnSkyscraper AND NOT bHideAds AND NOT blnXXX Then%>
+	  <div class="skyscraper">
+
+<!-- Simple IF AdJug Publisher Code -->    
+<iframe width="160" height="600" name="AdSpace49282" src="http://hosting.adjug.com/AdJugSearch/PageBuilder.aspx?ivi=V3.0+IF&aid=492&slid=49282&height=600&width=160&CacheBuster=[time_stamp]&HTMLOP=True" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no">
+</iframe>    
+<!-- Simple IF AdJug Publisher Code -->
+	
+	 </div>
+ <%End If%> </center>
+</div>
+
+</body>
+</html>

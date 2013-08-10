@@ -231,9 +231,9 @@ Function displayRatingPanel
 <form action="/db/member/addrating.asp" method="post" style="text-align: left">
  <input type="hidden" name="ID" value="<%=intID%>">
  <H3>Details:</h3>
- Type : <b><%=Capitalise(aryDrink(7))%></b><br>
- Category : <b><%=Capitalise(aryDrink(8))%></b><br>
- Viewed : <b><%=aryDrink(4)%> times</b><br>
+ Type: <%=Capitalise(aryDrink(7))%><br>
+ Category: <%=Capitalise(aryDrink(8))%><br>
+ Viewed: <%=aryDrink(4)%> times<br>
  <%If aryDrink(10) <> "" Then%>Submitter : <b><%=aryDrink(10)%></b><br>
  <%End If%> Rated: <%call displayRatingGraphOnly( CStr(aryDrink(5)) )%><br>
  <%If Request("rate") = "true" Then%><font color="#FF0000"><i>Rating Added</i></font>

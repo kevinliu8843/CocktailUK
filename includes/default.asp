@@ -107,17 +107,21 @@ End If
     <%If NOT bHideAds Then%>
       <div class="topads">
         <div class="ad1">
-          <script type='text/javascript'><!--
-          /* Place your click tracking link here. DO NOT URLENCODE */
-          var ps_ct0 = '';
-          /* var ps_puburl = ''; */
-          /* Do not modify below */
-          var ps_url = '//eu.projectsunblock.com/system/serve.php?a=10212&c=5784&js=1&cb=' + Math.floor(Math.random() * 99999);
-          document.write('<scr' + 'ipt type="text/javascript" src="' + ps_url + '"></scr' + 'ipt>');
-          //--></script><noscript><img src='//noscript.projectsunblock.com/10212-5784-ns.gif' border='0' width='0' /></noscript><img src='//images.projectsunblock.com/10212-5784-pix.gif' border='0' width='0' />
+          <!-- JS AdJug Publisher Code -->    
+          <script language="JavaScript">    
+          document.write('<scr'+'ipt language="JavaScript" src="http://hosting.adjug.com/AdJugSearch/PageBuilder.aspx?ivi=V3.0+JS&aid=492&slid=49281&height=60&width=468&HTMLOP=False&ShowIFrame=True&CacheBuster=' + Math.floor(Math.random()*99999999) + '"></scr'+'ipt>');
+          </script>    
+          <noscript>    
+          <iframe width="468" height="60" name="AdSpace49281" src="http://hosting.adjug.com/AdJugSearch/PageBuilder.aspx?ivi=V3.0+JS+NS&aid=492&slid=49281&height=60&width=468&HTMLOP=True" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no">
+          </iframe>    
+          </noscript>    
+          <!-- JS AdJug Publisher Code -->
         </div>
         <div class="ad2">
-          
+          <!--START MERCHANT:merchant name Drinkstuff.com from affiliatewindow.com.-->
+          <a href="http://www.awin1.com/cread.php?s=23053&v=8&q=273&r=176043"><img src="http://www.awin1.com/cshow.php?s=23053&v=8&q=273&r=176043" 
+          border="0"></a>
+          <!--END MERCHANT:merchant name Drinkstuff.com from affiliatewindow.com-->
         </div>
       </div>
     <%End If%>

@@ -98,7 +98,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
       <tr>
         <td width="33%" valign="top">
           <h3 id="ingredients">Ingredients:</h3>
-          <div>Serves : <b><%=aryDrink(3)%></div>
+          <div>Serves <%=aryDrink(3)%></div>
           <div><%=aryDrink(2)%></div>
         </td>
         <td width="33%" valign="top">

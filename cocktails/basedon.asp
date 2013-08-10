@@ -84,8 +84,6 @@ If NOT CStr( basedID ) = "5" Then
 	based = capitalise( replaceStuffBack( basedOn ) )
 End If
 
-strTitle = "List of " & based & " based cocktails"
-
 '--------------------------------------------------------
 %>
 <!--#include virtual="/includes/header.asp" -->
@@ -134,7 +132,7 @@ Select Case basedID
 	<%
 	Case "5"
 	%>
-		<h1>Rum - Kill-Devil</h1>
+		<h1>Rum Based Cocktails - Kill-Devil</h1>
 		<TABLE border="0" cellpadding="0" cellspacing="5">
 		  <TR>
 		    <TD valign="top">
@@ -153,7 +151,7 @@ Select Case basedID
 	<%
 	Case "1"
 	%>
-		<h1>Vodka - Zhiznennia Voda</h1>
+		<h1>Vodka Based Cocktails - Zhiznennia Voda</h1>
 		<TABLE border="0" cellpadding="0" cellspacing="5">
 		  <TR>
 		    <TD valign="top">
@@ -173,7 +171,7 @@ Select Case basedID
 	<%
 	Case "4"
 	%>
-		<h2>Whisky - The Hard Stuff</h2>
+		<h2>Whisky Based Cocktails - The Hard Stuff</h2>
 		<TABLE border="0" cellpadding="0" cellspacing="5">
 		  <TR>
 		    <TD valign="top">
@@ -189,6 +187,8 @@ Select Case basedID
 		  </TR>
 		</TABLE>
 	<%
+	Case Else
+		strTitle = "List of " & based & " based cocktails"
 End Select
 
 Call writeCocktailList( strSQLcocktail & strAddType & strOrderBy, rs, cn, strTitle, strHrefType )

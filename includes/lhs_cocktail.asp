@@ -1,6 +1,6 @@
 ﻿<%On Error Resume Next%>
 
-<div class="menu-header"><a href="/db/Cocktails.asp"><img border="0" src="/images/side_menus/Drinks_right.gif" alt="Cocktails and shooter drinks"></a></div>
+<div class="menu-header"><a href="/cocktails/"><img border="0" src="/images/side_menus/Drinks_right.gif" alt="Cocktails and shooter drinks"></a></div>
 
 <div class="item">
 <a class="linksin" title="Cocktail drink recipes" href="/cocktails/">Cocktail recipes</a></div>

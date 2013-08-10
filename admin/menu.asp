@@ -3,7 +3,7 @@
 <!--#include virtual="/includes/admin_functions.asp" -->
 <!--#include virtual="/includes/functions.asp" -->
 <%
-On Error Resume Next
+'On Error Resume Next
 
 Set cn = Server.CreateObject("ADODB.Connection")
 Set rs = Server.CreateObject("ADODB.Recordset")
@@ -17,13 +17,9 @@ rs.open "SELECT COUNT(*) FROM dbo.cocktail",cn
 intRecipes = rs(0)
 rs.close
 
-intNewdrinks = 0
-intCategories = 0
-
 Session("admin") = True
-
-blnSilent = False
-%> <HTML>
+%>
+<HTML>
 
 <HEAD>
 <META http-equiv="Content-Language" content="en-gb">
@@ -36,9 +32,9 @@ a{ text-decoration: none; }
 </HEAD>
 
 <BODY topmargin="5" leftmargin="5" link="#000000" vlink="#000000" alink="#AA0000">
-<SPAN class="linksin">
-	<div style="margin: auto"><%=intUsers%> Users | <%=intRecipes%> Recipes</div>
 
+<div style="margin: auto"><%=intUsers%> Users | <%=intRecipes%> Recipes</div>
+<SPAN class="linksin">
  <%If intNewdrinks>0 Then%>
     <P><font face="Verdana"><font size="1">&nbsp;</font><B><font size="1" color="#612B83">To 
 	Do List</font></B><font size="1"><BR>

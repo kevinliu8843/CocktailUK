@@ -146,31 +146,19 @@ Function GetRecipe(l_rs, l_conn, intID, blnHTML)
 	Dim aryRecipe, i
 	aryRecipe = GetRecipeArray(l_rs, l_conn, intID)
 	If IsArray(aryRecipe) Then
-		If blnHTML Then
-			GetRecipe = GetRecipe & "<UL imagesrc=""/images/home_mod_bullet.gif"">"
-		End If
+		GetRecipe = GetRecipe & "<UL imagesrc=""/images/home_mod_bullet.gif"">"
 		For i=0 To UBound(aryRecipe, 2)
-			If blnHTML Then
-				GetRecipe = GetRecipe & "<LI>"
-			End If
+			GetRecipe = GetRecipe & "<LI>"
 			If aryRecipe(1, i) <> "no measure" Then
 				GetRecipe = GetRecipe & Trim(aryRecipe(1, i)) & "&nbsp;"
 			Else
 				GetRecipe = GetRecipe
 			End If
-			If blnHTML Then
-				GetRecipe = GetRecipe & "<a href=""/db/findCocktailContIng.asp?id=" & aryRecipe(2, i) & """ TITLE=""Cocktails containing " & aryRecipe(3, i) & """>"
-			End If
+			GetRecipe = GetRecipe & "<a href=""/db/findCocktailContIng.asp?id=" & aryRecipe(2, i) & """ TITLE=""Cocktails containing " & aryRecipe(3, i) & """>"
 			GetRecipe = GetRecipe & aryRecipe(3, i)
-			If blnHTML Then
-				GetRecipe = GetRecipe & "</a></LI>"
-			Else
-				GetRecipe = GetRecipe & "<br/>"
-			end If
+			GetRecipe = GetRecipe & "</a></LI>"
 		Next
-		If blnHTML Then
-			GetRecipe = GetRecipe & "</UL>"
-		End If
+		GetRecipe = GetRecipe & "</UL>"
 	End If
 End Function
 

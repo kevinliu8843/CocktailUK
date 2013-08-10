@@ -151,7 +151,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
                   <%Else%>
                     <tr>
                       <td>
-                          <a href="/db/member/userHotList.asp?add=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a><%Else%><a href="/db/member/userHotList.asp?remove=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a>
+                          <a href="/db/member/userHotList.asp?remove=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a>
                       </td>
                       <td width="100%">
                           <a href="/db/member/userHotList.asp?remove=<%=intID%>">Remove from your favourites</a>

@@ -146,7 +146,7 @@ Function GetRecipe(l_rs, l_conn, intID, blnHTML)
 	Dim aryRecipe, i
 	aryRecipe = GetRecipeArray(l_rs, l_conn, intID)
 	If IsArray(aryRecipe) Then
-		GetRecipe = GetRecipe & "<UL imagesrc=""/images/home_mod_bullet.gif"">"
+		GetRecipe = GetRecipe & "<UL>"
 		For i=0 To UBound(aryRecipe, 2)
 			GetRecipe = GetRecipe & "<LI>"
 			If aryRecipe(1, i) <> "no measure" Then

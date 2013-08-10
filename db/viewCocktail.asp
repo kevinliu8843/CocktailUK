@@ -142,9 +142,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
                 <%End If%>
               </td>
               <td width="100%">
-                <%IF NOT blnDuplicated Then%>
-                  <a href="/db/member/userHotList.asp?add=<%=intID%>">Add to your favourites</a>
-                <%Else%>
+                <%IF blnDuplicated Then%>
                   <a href="/db/member/userHotList.asp?remove=<%=intID%>">Remove from your favourites</a>
                 <%End If%>
               </td>

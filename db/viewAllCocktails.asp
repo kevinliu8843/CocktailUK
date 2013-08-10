@@ -27,7 +27,7 @@ If strType <> "" Then
 		strTitle = "All Shooters"
 		strAddType = " WHERE Status=1 And type=(type | 2)"
 	ElseIf strType= "4"  Then
-		strTitle = "All Non-Alcoholic Drinks"
+		strTitle = "All Non-Alcoholic Cocktails"
 		strAddType = " WHERE Status=1 AND type=(type | 4)"
 	ElseIf strType= "8" Then
 		strTitle = "All XXX Rated Drinks"

@@ -29,7 +29,6 @@ _ReSharper*/
 /aspnet_client/
 *.[Pp]ublish.xml
 /cocktail-recipes.txt
-/.htaccess
 Web.Debug.config
 Web.Release.config
 /My Project/

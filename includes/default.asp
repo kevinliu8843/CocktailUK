@@ -16,12 +16,11 @@ bHideAds = False
 
 If InStr(LCase(Request("SCRIPT_NAME")), "google.asp") > 0 Then
 	bHideAds = True
-ElseIf InStr(LCase(Request("SCRIPT_NAME")), "/forum") > 0 Then
-	blnSkyscraper = False
 End If
 
 If Request("type") = "8" Then
 	blnXXX = True
+  bHideAds = True
 End If
 
 Call DisplayPageLocation(strTitle, strTitleOut, strTopTitle, Request.ServerVariables("SCRIPT_NAME") & "?" & Request.QueryString, "color: white; font-weight: bold; text-decoration: none;")
@@ -105,12 +104,20 @@ End If
      </tr>
     </table>
 
-    <%If NOT bHideAds AND NOT blnXXX AND NOT (InStr(Request.ServerVariables("SCRIPT_NAME"), "adult") > 0 OR (InStr(Request.ServerVariables("SCRIPT_NAME"), "/db/viewAllCocktails.asp") > 0 AND InStr(Request.querystring, "type=8") > 0) ) Then%>
+    <%If NOT bHideAds Then%>
       <div class="topads">
         <div class="ad1">
-          <script type='text/javascript'><!--/* Place your click tracking link here. DO NOT URLENCODE */var ps_ct0 = '';/* var ps_puburl = ''; *//* Do not modify below */var ps_url = '//eu.projectsunblock.com/system/serve.php?a=10212&c=5784&js=1&cb=' + Math.floor(Math.random() * 99999);document.write('<scr' + 'ipt type="text/javascript" src="' + ps_url + '"></scr' + 'ipt>');//--></script><noscript><img src='//noscript.projectsunblock.com/10212-5784-ns.gif' border='0' width='0' /></noscript><img src='//images.projectsunblock.com/10212-5784-pix.gif' border='0' width='0' />
+          <script type='text/javascript'><!--
+          /* Place your click tracking link here. DO NOT URLENCODE */
+          var ps_ct0 = '';
+          /* var ps_puburl = ''; */
+          /* Do not modify below */
+          var ps_url = '//eu.projectsunblock.com/system/serve.php?a=10212&c=5784&js=1&cb=' + Math.floor(Math.random() * 99999);
+          document.write('<scr' + 'ipt type="text/javascript" src="' + ps_url + '"></scr' + 'ipt>');
+          //--></script><noscript><img src='//noscript.projectsunblock.com/10212-5784-ns.gif' border='0' width='0' /></noscript><img src='//images.projectsunblock.com/10212-5784-pix.gif' border='0' width='0' />
         </div>
         <div class="ad2">
+          
         </div>
       </div>
     <%End If%>

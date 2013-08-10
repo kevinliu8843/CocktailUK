@@ -37,6 +37,8 @@ rs.Open strSQL, cn
 intNewGames= rs(0)
 rs.Close
 
+Call CreatePrettyURLFiles(cn, rs)
+
 Session("admin") = True
 
 blnSilent = False

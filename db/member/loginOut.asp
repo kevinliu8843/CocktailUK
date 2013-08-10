@@ -218,7 +218,7 @@ more to your members section that this, so go explore!!!</p>
 <area href="selectIngredients.asp" shape="rect" coords="16, 48, 164, 77">
 <area href="userHotList.asp" shape="rect" coords="219, 66, 370, 96">
 <area href="whatCanIMake.asp" shape="rect" coords="40, 104, 238, 133">
-<area href="../random.asp" shape="rect" coords="84, 144, 399, 181">
+<area href="/cocktails/random.asp" shape="rect" coords="84, 144, 399, 181">
 <area href="../randomGenerator.asp" shape="rect" coords="22, 190, 272, 222">
 <area href="submitCocktail.asp" shape="rect" coords="218, 226, 393, 258">
 <area href="editProfile.asp" shape="rect" coords="8, 246, 159, 279">

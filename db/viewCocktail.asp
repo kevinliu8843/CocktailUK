@@ -312,7 +312,7 @@ Function writeSearchForm
  <div align="center">
    <img src="/images/pixel.gif" height="5" width="1"><br>
    <%IF intID > 1 Then%><a href="?ID=<%=intID-1%>"><%End If%>&laquo; Previous<%IF intID >1 Then%></a><%End If%> |
-   <a title="Random drink" href="/db/random.asp">Random</a> |
+   <a title="Random drink" href="/cocktails/random.asp">Random</a> |
    <a title="Next drink" href="/db/viewCocktail.asp?ID=<%=intID+1%>">Next &raquo;</a>
    <a href="/db/viewCocktail.asp?ID=<%=intID+1%>"></a><br>
    <img src="/images/pixel.gif" height="5" width="1"><br>

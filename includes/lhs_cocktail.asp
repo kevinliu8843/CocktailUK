@@ -21,10 +21,10 @@
 <a class="linksin" href="/db/stats/toptenlatest.asp">Latest drinks</a></div>
 
 <div class="item">
-<a href="/db/random.asp" class="linksin">Random drink</a></div>
+<a href="/cocktails/random.asp" class="linksin">Random drink</a></div>
 
 <div class="item">
-<a href="/db/stats/default.asp" class="linksin">Top ten cocktails</a></div>
+<a href="/cocktails/top-ten/" class="linksin">Top ten cocktails</a></div>
 
 
 

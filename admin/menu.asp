@@ -1,23 +1,29 @@
-﻿<%option explicit%>
-<!--#include virtual="/includes/variables.asp" -->
+﻿<!--#include virtual="/includes/variables.asp" -->
 <!--#include virtual="/includes/admin_functions.asp" -->
 <!--#include virtual="/includes/functions.asp" -->
 <%
 'On Error Resume Next
+
+Session("admin") = True
 
 Set cn = Server.CreateObject("ADODB.Connection")
 Set rs = Server.CreateObject("ADODB.Recordset")
 
 cn.Open strDB
 
-rs.open "SELECT COUNT(*) FROM dbo.usr",cn
+rs.open "SELECT COUNT(*) FROM usr",cn
 intUsers = rs(0)
 rs.close
-rs.open "SELECT COUNT(*) FROM dbo.cocktail",cn
+
+rs.open "SELECT COUNT(*) FROM cocktail",cn
 intRecipes = rs(0)
 rs.close
 
-Session("admin") = True
+cn.Close
+Set cn = Nothing
+Set rs = Nothing
+
+intNewdrinks = 0
 %>
 <HTML>
 
@@ -70,8 +76,3 @@ a{ text-decoration: none; }
  <span style="text-decoration: none">Google Adsense</span></A></B><BR>
  	&nbsp;<font color="#AA0000"></font> </font></font></P>
 </HTML>
-<%
-cn.Close
-Set cn = Nothing
-Set rs = Nothing
-%>

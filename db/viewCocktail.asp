@@ -165,9 +165,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
     </td>
   </tr>
   <tr>
-    <td width="100%" colspan="4" style="margin-top: 30px;">
-    <H3>Your Comments:</h3>
-
+    <td width="100%" colspan="3" style="padding-top: 30px;">
       <div id="disqus_thread"></div>
       <script type="text/javascript">
           /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

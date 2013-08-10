@@ -32,7 +32,7 @@ End If
 
 intMaxReviews = Request("reviews")
 If intMaxReviews = "" OR NOT IsNumeric(intMaxReviews) Then
-	intMaxReviews = 3
+	intMaxReviews = 10
 Else
 	intMaxReviews = Int(Min(intMaxReviews, 10000))
 End If
@@ -71,7 +71,7 @@ set cn	= Nothing
 set rs			= Nothing
 
 blnHardwireTitle = True
-strTitle = aryDrink(0) & " " & aryDrink(7) & " recipe. Ingredients and full instructions on how to make it."
+strTitle = aryDrink(0) & " " & aryDrink(7) & " recipe: ingredients and full instructions on how to make it."
 strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingredients & instructions on how to make a " & aryDrink(0) & " " & aryDrink(7) & "."
 %>
 <!--#include virtual="/includes/header.asp" -->
@@ -80,81 +80,45 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
  ul { margin-top: 0; }
  li { margin-left: 1em; }
 </style>
-<h2><%=Capitalise(aryDrink(0) & " " & aryDrink(7)) & " Recipe"%><%If bIsAdmin Then%><a target="_top" class="linksin" href="/admin/default.asp?goto=cocktaileditor/default.asp?ID=<%=intID%>"> 
-Edit</a><%End If%></h2>
+<h2><%=Capitalise(aryDrink(0) & " " & Capitalise(aryDrink(7)) & " Recipe"%>
+  <%If Session("admin") Then%><a target="_top" class="linksin" href="/admin/default.asp?goto=cocktaileditor/default.asp?ID=<%=intID%>">Edit</a><%End If%></h2>
 <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber6">
   <tr>
     <td valign="top">
     <table border="0" cellpadding="3" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber7" height="100%">
       <tr>
-        <td width="50%" valign="top">
-        <div id="directions">
-          <table cellspacing="0" cellpadding="0" width="100%" border="0">
-            <tr>
-              <td class="arrowblock" align="left" width="1%" nowrap>
-              <img height="16" src="/images/pixel.gif" width="16" border="0"></td>
-              <td class="baselightred" width="99%"><b class="contentHeader">&nbsp;INSTRUCTIONS</b></td>
-            </tr>
-          </table>
-          <%=aryDrink(1)%></div>
-&nbsp;</td>
-        <td width="50%" valign="top">
-        <div id="ingredients">
-          <table cellspacing="0" cellpadding="0" width="100%" border="0">
-            <tr>
-              <td class="arrowblock" align="left" width="1%" nowrap>
-              <img height="16" src="/images/pixel.gif" width="16" border="0"></td>
-              <td class="baselightred" width="99%"><b class="contentHeader">&nbsp;INGREDIENTS</b></td>
-            </tr>
-          </table>
-          <%=aryDrink(2)%>
-        </div>
+        <td width="33%" valign="top">
+          <h3 id="directions">How to make</h3>
+          <div><%=aryDrink(1)%></div>
+        </td>
+        <td width="33%" valign="top">
+          <h3 id="ingredients">Ingredients</h3>
+          <div><%=aryDrink(2)%></div>
+        </td>
+        <td width="33%" valign="top">
+          <h3 id="equipment">Equipment</h3>
+          <div>
+            <%If aryDrink(7)="shooter" Then%>
+              <a href="/shop/products/search.asp?search=iceshot"><img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shot_rock.jpg" alt="Shot Rock - Ice shot glasses" width="40" height="40"></a>
+              <a href="/shop/products/search.asp?search=shot float kit">
+              <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shot_float.jpg" alt="Shot Float Kit - Help you to layer shooters easier" width="25" height="40"></a>
+            <%else%>
+              <a href="/shop/products/search.asp?search=glass">
+              <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/glasses.jpg" alt="Glassware" width="28" height="40"></a>
+              <a href="/shop/products/search.asp?search=cocktail shaker">
+              <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shaker.jpg" alt="Professional Cocktail Shaker - used in the industry" width="40" height="40"></a>
+            <%End if%>
+            <a href="/shop/products/search.asp?search=pourer">
+            <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/steel_pourer.jpg" alt="Stainless Steel Pourer - pours ingredients gently onto a drink" width="44" height="40"></a>
+            <a href="/shop/products/search.asp?search=measure">
+            <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/bar_measures.jpg" alt="Professional Bar Measures - measure out the perfect quantity" width="34" height="40"></a><a onmouseover="show_text('Professional Measures')" onmouseout="hide_text()" href="/shop/products/search.asp?search=measures">
+            </a>
+          </div>
         </td>
       </tr>
       <tr>
         <td width="100%" colspan="2">
-        <table cellspacing="0" cellpadding="0" width="100%" border="0">
-          <tr>
-            <td class="arrowblock" align="left" width="1%" nowrap>
-            <img height="16" src="/images/pixel.gif" width="16" border="0"></td>
-            <td class="baselightred" width="99%"><b class="contentHeader">&nbsp;EQUIPMENT 
-            NEEDED TO MAKE THIS <%=UCase(aryDrink(7))%></b></td>
-          </tr>
-        </table>
         <div align="center">
-          <img src="/images/pixel.gif" height="5" width="1"><br>
-          <table border="0" cellpadding="0" style="border-collapse: collapse" width="100%">
-            <tr>
-              <td nowrap><%If aryDrink(7)="shooter" Then%><a href="/shop/products/search.asp?search=iceshot"><img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shot_rock.jpg" alt="Shot Rock - Ice shot glasses" width="40" height="40"></a>
-              <a href="/shop/products/search.asp?search=shot float kit">
-              <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shot_float.jpg" alt="Shot Float Kit - Help you to layer shooters easier" width="25" height="40"></a>
-              <%else%> <a href="/shop/products/search.asp?search=glass">
-              <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/glasses.jpg" alt="Glassware" width="28" height="40"></a>
-              <a href="/shop/products/search.asp?search=cocktail shaker">
-              <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shaker.jpg" alt="Professional Cocktail Shaker - used in the industry" width="40" height="40"></a>
-              <%End if%> <a href="/shop/products/search.asp?search=pourer">
-              <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/steel_pourer.jpg" alt="Stainless Steel Pourer - pours ingredients gently onto a drink" width="44" height="40"></a>
-              <a href="/shop/products/search.asp?search=measure">
-              <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/bar_measures.jpg" alt="Professional Bar Measures - measure out the perfect quantity" width="34" height="40"></a><a onmouseover="show_text('Professional Measures')" onmouseout="hide_text()" href="/shop/products/search.asp?search=measures">
-              </a></td>
-              <td>
-              <div align="right">
-                <table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#111111" id="table2">
-                  <tr>
-                    <td align="right">
-                    <a style="text-decoration: none" class="linksin" href="/shop/basket.asp">
-                    View my basket<br>
-                    <%=intItems%> item<%If intItems <> 1 then%>s<%end if%> <%=FormatNumber(dblValue,2)%></a></td>
-                    <td>
-                    <p align="center"><a href="/shop/basket.asp">
-                    <img src="/images/shop/view_basket_small.gif" border="0" alt="View my basket"></a></p>
-                    </td>
-                  </tr>
-                </table>
-              </div>
-              </td>
-            </tr>
-          </table>
           <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber9">
             <tr>
               <td width="100%">
@@ -199,38 +163,23 @@ Edit</a><%End If%></h2>
         Have your say...</a></b>
         </p>
 
-<script type="text/JavaScript">
-AdJug_AID = 492;
-AdJug_SiteAdSpaceID = 49378;
-AdJug_IFrame = false;
-AdJug_ShowDebug = false;
-AdJug_Height = 250;
-AdJug_Width = 300;
-</script>
-<script type="text/JavaScript" src="http://hosting.adjug.com/JavaScript/AdOffer/IncludeResults.js"></script>
+          <script type="text/JavaScript">
+          AdJug_AID = 492;
+          AdJug_SiteAdSpaceID = 49378;
+          AdJug_IFrame = false;
+          AdJug_ShowDebug = false;
+          AdJug_Height = 250;
+          AdJug_Width = 300;
+          </script>
+          <script type="text/JavaScript" src="http://hosting.adjug.com/JavaScript/AdOffer/IncludeResults.js"></script>
 
         </td>
       </tr>
     </table>
     </td>
     <td width="160" valign="top">
-    <table border="0" cellpadding="3" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber8">
-      <tr>
-        <td width="100%">
-        <table cellspacing="0" cellpadding="0" width="100%" border="0">
-          <tr>
-            <td class="arrowblock" align="left" width="1%" nowrap>
-            <img height="16" src="/images/pixel.gif" width="16" border="0"></td>
-            <td class="baselightred" width="99%"><b class="contentHeader">&nbsp;PICTURE</b></td>
-          </tr>
-        </table>
-        <img src="/images/pixel.gif" height="5"><br>
-        <%=aryDrink(11)%> </td>
-      </tr>
-      <tr>
-        <td width="100%"><%displayRatingPanel%></td>
-      </tr>
-    </table>
+      <div><%=aryDrink(11)%></div>
+      <div><%displayRatingPanel%></div>
     </td>
   </tr>
   <tr>

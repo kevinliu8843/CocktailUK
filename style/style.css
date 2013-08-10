@@ -32,7 +32,7 @@ H1, H2, H3, H4, H5, H6 {
 	COLOR: #636388;
 	FONT-FAMILY: Arial, Helvetica, sans-serif; 
 }
-h2 {
+h1, h2 {
 	line-height: 1.2;
 	TEXT-ALIGN: left;
 	padding-top: 5px; 

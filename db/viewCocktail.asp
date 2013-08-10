@@ -167,21 +167,22 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
       <tr>
         <td width="100%" colspan="3">
         <H3>Your Comments:</h3>
-        <img src="/images/pixel.gif" height="5" width="1"><br>
-        <%If intNumReviews < 0 Then%> No one has commented on the <%=aryDrink(0)& " " & aryDrink(7)%> yet... <%End If%> <%For i=0 TO Min(intNumReviews,intMaxReviews-1)%>
-        <b><%=Capitalise(aryReviews(3,i))%> said:</b><br>
-        <img border="0" src="../images/inset_quotebegin.gif"> <%=Trim(aryReviews(4,i))%>
-        <img border="0" src="../images/inset_quoteend.gif"><br>
-        <%If i<>Min(intNumReviews,intMaxReviews-1) Then%><br>
-        <%End If%> <%Next%> <%If intNumReviews>intMaxReviews Then%> <br>
-        There are more comments,
-        <a href="?reviews=999">read them all...</a>
-        <%End if%>
-        <p align="center"><b>Love or hate this drink?
-        <a href="#" onclick="window.open('review.asp?ID=<%=intID%>','review','width=450, height=450, menubar=0, status=0, resizable=1'); return false">
-        Have your say...</a></b>
-        </p>
+          
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+              /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+              var disqus_shortname = 'cocktailuk'; // required: replace example with your forum shortname
 
+              /* * * DON'T EDIT BELOW THIS LINE * * */
+              (function() {
+                  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+              })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          
           <script type="text/JavaScript">
           AdJug_AID = 492;
           AdJug_SiteAdSpaceID = 49378;

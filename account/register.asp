@@ -175,20 +175,6 @@ function FrontPage_Form1_Validator(theForm)
     theForm.pass.focus();
     return (false);
   }
-
-  if (theForm.pass2.value == "")
-  {
-    alert("Please enter a value for the \"Password (confirmation)\" field.");
-    theForm.pass2.focus();
-    return (false);
-  }
-
-  if (theForm.pass2.value.length < 1)
-  {
-    alert("Please enter at least 1 characters in the \"Password (confirmation)\" field.");
-    theForm.pass2.focus();
-    return (false);
-  }
   return (true);
 }
 //--></script><!--webbot BOT="GeneratedScript" endspan --><FORM action="register.asp" METHOD="POST" target="_top" onsubmit="return FrontPage_Form1_Validator(this)" language="JavaScript" name="FrontPage_Form1">
@@ -197,9 +183,7 @@ function FrontPage_Form1_Validator(theForm)
      <CENTER><%
 	IF NOT strError = "" Then
 		SELECT Case strError
-			Case "email"		Response.Write "<p><FONT color=red><i>Your email appears to be invalid. Please re-enter.</i></font></P>"
 			Case "fields"		Response.Write "<p><FONT color=red><i>Please use ALL fields.</i></font></P>"
-			Case "pass"			Response.Write "<p><FONT color=red><i>Your passwords appear not to match. Please re-enter.</i></font></P>"
 			Case "email"		Response.Write "<p><FONT color=red><i>Sorry. Your email address already has an account. Please <a href=""login.asp"">login here</a>.</i></font></P>"
 			Case Else			Response.Write "<p><FONT color=red><i>Sorry. An unknown error occured whilst processing your application. Please contact the webmaster.</i></font></P>"
 	   End Select
@@ -244,14 +228,6 @@ function FrontPage_Form1_Validator(theForm)
                </TD>
                <TD align="left">
                <P align="center"><INPUT type="password" name="pass" maxlength="50" size="17"></P>
-               </TD>
-             </TR>
-             <TR>
-               <TD align="right">
-               <P>Password (confirm)</P>
-               </TD>
-               <TD align="left">
-               <P align="center">
                </TD>
              </TR>
              <TR>

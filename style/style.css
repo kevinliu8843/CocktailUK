@@ -77,13 +77,16 @@ TABLE, TR, TD {
 {
 	display: block;
 }
+	.header .topads
+	{
+		margin: 0px 0px 10px 15px;
+	}
 	.header .topads .ad1, 
 	.header .topads .ad2
 	{
 		height: 60px;
 		display: inline-block;
-		width: 50%;
-		border-bottom: #636388 1px solid;
+		width: 49.8%;
 	}
 .leftnav {
 	display: inline-block;

@@ -65,7 +65,8 @@ TABLE, TR, TD {
 	width: 1000px;
 	POSITION: relative;
 	BACKGROUND-COLOR: white; 
-	BORDER: #636388 1px solid;
+	border: #636388 1px solid;
+	border-top-width: 0px;
 }
 .header
 {

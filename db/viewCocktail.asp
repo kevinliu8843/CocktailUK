@@ -71,7 +71,7 @@ set cn	= Nothing
 set rs			= Nothing
 
 blnHardwireTitle = True
-strTitle = Capitalise(aryDrink(0)) & " " & aryDrink(7) & " recipe. How to make a " & Capitalise(aryDrink(0)) & "."
+strTitle = Capitalise(aryDrink(0)) & " " & aryDrink(7) & " recipe."
 strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingredients & instructions on how to make a " & aryDrink(0) & " " & aryDrink(7) & "."
 %>
 <!--#include virtual="/includes/header.asp" -->

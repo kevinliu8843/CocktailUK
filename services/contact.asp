@@ -15,16 +15,6 @@ End If
   <H2 align="left">Contact us</H2>
 <FORM action="/mail/mail.asp" method="POST" name=form1 onSubmit="return checkFields()">
 <div align="center">
-  <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
-    <tr>
-      <td width="100%">
-  <P align="justify">Before you send us a question (whilst we'll happily answer it), if you are about to ask a cocktail or mixology related question, you may be better off using our <A href="/forums">forum</A>. 
-  If you are asking a question about a flair course, or our mobile bar service, 
-  please <a href="../flair/contactus.asp">click here</a>.</P>
-      </td>
-    </tr>
-  </table>
-
 <%If Request("fail") <> "" Then%>
 	<p align="center"><b><font color="#FF0000"><%=Request("fail")%></font></b></p>
 <%End If%>

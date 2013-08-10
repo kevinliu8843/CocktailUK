@@ -105,10 +105,6 @@ Sub displayPageLocation(strTitle, strTitleOut, strTopTitle, strUrl, strLinkStyle
 		cArrLinks(1) = "/db/stats"
 		cArrText(1) = "Top Ten..."
 	End If
-	If checkUrl(strUrl, "/forums") Then
-		cArrLinks(1) = "/forums"
-		cArrText(1) = "Cocktail Forum"
-	End If
 	If checkUrl(strUrl, "/game") Then
 		cArrLinks(1) = "/game"
 		cArrText(1) = "Games"
@@ -136,18 +132,6 @@ Sub displayPageLocation(strTitle, strTitleOut, strTopTitle, strUrl, strLinkStyle
 	If checkUrl(strUrl, "/flair") Then
 		cArrLinks(1) = "/flair"
 		cArrText(1) = "Bartending Courses"
-	End If
-	If checkUrl(strUrl, "/flair/courses") Then
-		cArrLinks(2) = "/flair/courses"
-		cArrText(2) = "Flair and Bartending Course"
-	End If
-	If checkUrl(strUrl, "/flaircompetitions") Then
-		cArrLinks(1) = "/flaircompetitions/"
-		cArrText(1) = "Flair Competitions"
-	End If
-	If checkUrl(strUrl, "/mobilebar") Then
-		cArrLinks(1) = "/mobilebar"
-		cArrText(1) = "Mobile Cocktail Bar Service"
 	End If
 	If checkUrl(strUrl, "/services") Then
 		cArrLinks(1) = "/services"

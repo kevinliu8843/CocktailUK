@@ -1,7 +1,6 @@
 <%Option Explicit%>
 <!--#include virtual="/includes/variables.asp" -->
 <!--#include virtual="/includes/functions.asp" -->
-<!--#include virtual="/includes/forum/cforum.inc" -->
 <%
 Dim i, strName, strDirections, intType, cn, objFilter, blnDup, strRW
 

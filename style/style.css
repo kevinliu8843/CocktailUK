@@ -35,13 +35,11 @@ H1, H2, H3, H4, H5, H6 {
 H2 {
 	line-height: 1.2;
 	TEXT-ALIGN: left;
-	background-color: #EEEEEE; 
 	padding-top: 5px; 
 	padding-bottom: 5px;
-	padding-left: 5px; 
+	padding-left: 10px; 
 	COLOR: #545473; 
 	FONT-SIZE: 16pt;  
-	border-bottom: 1px solid #636388;
 	margin-top: 0px;
 	margin-bottom: 5px;
 } 

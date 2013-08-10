@@ -40,14 +40,6 @@ If strSearch <> "" Then
 		<%Set objProd = Nothing%>
   <P></P>
 </FIELDSET>
-<%
-	'Response.write("<BR><CENTER><IFRAME frameborder=""0"" scrolling=""no"" id=""s0"" name=""s0"" align=absmiddle border=0 height=56 width=340 src=""/db/search/ask_jeeves.asp?full=true&searchfor="&Server.URLEncode(Request("Search"))&"""></IFRAME></CENTER>")
-	'If strSearch <> "" Then
-	'	Response.write("<SCRIPT LANGUAGE=""VBScript"" SRC=""/sitesearch/srch.vbs""></SCRIPT>")
-	'	Response.write("<SCRIPT LANGUAGE=""JavaScript"">window.status='Cocktail : UK product search for "&Server.HTMLEncode(strSearch)&"'</SCRIPT>")
-	'	please_encrypt("<IFRAME id=""s1"" name=""s1"" align=absmiddle border=1 height=0 width=0 src=""/db/search/ask_jeeves.asp?searchfor="&Server.URLEncode(strSearch)&"""></IFRAME>")
-	'	please_encrypt("<IFRAME id=""s2"" name=""s2"" align=absmiddle border=1 height=0 width=0 src=""/includes/lycos.asp?searchfor="&Server.URLEncode(strSearch)&"""></IFRAME>")
-	'End If
-%><%Else
+<%Else
 	Response.Redirect("/shop")
 End If%><!--#include virtual="/includes/shop/footer.asp" --><!--#include virtual="/includes/footer.asp" -->

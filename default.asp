@@ -40,7 +40,7 @@ function changeColour(objTable, strColour){
 (10,000+ and growing daily) plus
 the biggest <a href="/shop/">bar equipment</a> shop online. Enjoy.
 
-<div align="center"><a href="/db/search/searchByIngredient.asp">Find a 
+<div align="center"><a href="/cocktails/ingredients.asp">Find a 
 drink</a> | <a href="/cocktails/">Cocktails</a> |
 <a href="/cocktails/?type=2">Shooters</a> |
 <a href="/cocktails/?type=4">Non-alcoholic cocktails</a> | 

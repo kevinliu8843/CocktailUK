@@ -88,7 +88,7 @@ End If
         <img alt="Classic cocktails and bar equipment uk" src="../images/cuk_07.gif" border="0" width="210" height="32"></a></td>
       <td align="center">
     	  <div id="search_box">
-    			<form action="http://www.cocktail.uk.com/sitesearch/google.asp" id="search_form" style="margin: 0px; padding: 0px; display: inline; ">
+    			<form action="/search/" id="search_form" style="margin: 0px; padding: 0px; display: inline; ">
     			    <input type="hidden" name="cx" value="partner-pub-4852715527905431:j32r2u95lwx">
     			    <input type="hidden" name="cof" value="FORID:10">
     			    <input type="hidden" name="ie" value="UTF-8"> 

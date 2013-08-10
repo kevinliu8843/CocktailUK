@@ -154,7 +154,7 @@ Function GetRecipe(l_rs, l_conn, intID, blnHTML)
 			Else
 				GetRecipe = GetRecipe
 			End If
-			GetRecipe = GetRecipe & "<a href='/db/findCocktailContIng.asp?ingredient=" & aryRecipe(2, i) & "' TITLE='Cocktails containing " & aryRecipe(3, i) & "''>"
+			GetRecipe = GetRecipe & "<a href='/cocktails/containing.asp?ingredient=" & aryRecipe(2, i) & "' TITLE='Cocktails containing " & aryRecipe(3, i) & "''>"
 			GetRecipe = GetRecipe & aryRecipe(3, i)
 			GetRecipe = GetRecipe & "</a></LI>"
 		Next

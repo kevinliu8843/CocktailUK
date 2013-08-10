@@ -2,12 +2,11 @@
 <!--#include virtual="/includes/functions.asp" -->
 <!--#include virtual="/includes/variables.asp" -->
 <%
-strTitle = "Search By Ingredient"
+strTitle = "Cocktails By Ingredient"
 Dim cn, i, strIngredientList, objDict, arrIngredients 
 %>
-
 <!--#include virtual="/includes/header.asp" -->
-<H2>Find a drink by ingredient</H2>
+<H2>Find a cocktail by ingredient</H2>
 <%
 set cn = Server.CreateObject("ADODB.Connection")
 set rs = Server.CreateObject("ADODB.RecordSet")

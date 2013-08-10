@@ -89,9 +89,9 @@ Sub displayPageLocation(strTitle, strTitleOut, strTopTitle, strUrl, strLinkStyle
 		cArrLinks(1) = "/cocktails/basedon.asp"
 		cArrText(1) = "Cocktails Based On..."
 	End If
-	If checkUrl(strUrl, "/sitesearch") OR checkUrl(strUrl, "/db/search") OR checkUrl(strUrl, "/findCocktailContIng.asp") Then
-		cArrLinks(1) = "/sitesearch"
-		cArrText(1) = "Site Search"
+	If checkUrl(strUrl, "/search") OR checkUrl(strUrl, "cocktails/containing.asp") Then
+		cArrLinks(1) = "/search"
+		cArrText(1) = "Search"
 	End If
 	If checkUrl(strUrl, "/db/member/submitCocktail.asp") Then
 		cArrLinks(2) = "/db/member/submitcocktail.asp"
@@ -226,44 +226,7 @@ Function hasImageThumb( name )
 End Function 
 
 Sub DrawSearchCocktailArea()
-Exit Sub
-%>
-<TABLE border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; " id="table1" width="100%">
-  <TR>
-    <TD width="100%" height="42" background="/images/main_menus/findadrinklarge.gif">
-    &nbsp;</TD>
-  </TR>
-  <TR>
-    <TD width="100%" background="/images/grad_write_purple.gif">
-<form method="POST" action="/sitesearch/default.asp" name="search2" onSubmit="return checkSearch()">
-<div align="center">
-<P align="center">Find recipes <B> 
-<a href="/db/search/searchByAlphabet.asp">alphabetically</a></B> or by <B> 
-<a href="/db/search/searchByIngredient.asp">ingredient</a></B></P>
-    <center>
-    <table border="0" cellpadding="0" cellspacing="0" id="table2">
-      <tr>
-        <td align="right">
-        <img border="0" src="/images/q_search_left.gif"></td>
-        <td bgcolor="#666699">
-          <input type="text" name="searchField" size="20"></td>
-        <td>
-        <input type="image" border="0" src="/images/quick_search_right.gif" name="I5"></td>
-      </tr>
-      <tr> 
-        <td colspan="3" width="100%">
-          <p align="center">
-          <img border="0" src="/images/quick_search_tip.gif"></p>
-        </td>
-      </tr>
-    </table>
-    </center>
-  </div>
-</form>
-    </TD>
-  </TR>
-</TABLE>
-<%
+	Exit Sub
 End Sub
 
 Private Function SendEmail(strFrom, strTo, strCC, strBcc, strSubjectIn, strBody, blnHTML, strAttachment)

@@ -22,7 +22,7 @@
     </table>
     </td>
   </tr>
-  <form method="GET" action="/sitesearch/default.asp">
+  <form method="GET" action="/search/">
    <tr>
      <td height="20" background="/images/grad_write_purple_small.gif">
      <div align="center">
@@ -45,7 +45,7 @@
            </td>
            <td nowrap align="right">
 			<div id="search_box">
-				<form id="search_form" method="post" action="/sitesearch/default.asp" style="margin: 0px; padding: 0px; display: inline;">
+				<form id="search_form" method="post" action="/search/" style="margin: 0px; padding: 0px; display: inline;">
 					<INPUT type="hidden" name="update" value="1">
 					<INPUT type="hidden" name="pg" value="1">
 					<INPUT type="hidden" name="o" value="10">

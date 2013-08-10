@@ -12,7 +12,7 @@
 <a class="linksin" href="/cocktails/?type=4">Non-alcoholic cocktails</a></div>
 
 <div class="item">
-<a class="linksin" href="/db/search/searchByIngredient.asp">Cocktails by ingredient</a></div>
+<a class="linksin" href="/cocktails/ingredients.asp">Cocktails by ingredient</a></div>
 
 <div class="item">
 <a href="/cocktails/random.asp" class="linksin">Random cocktail</a></div>

@@ -298,27 +298,5 @@ Function sendToFriend
 End Function
 
 Function writeSearchForm
+End Function
 %>
-</form>
-<form action="/sitesearch/default.asp" method="post" name="search2">
- <table cellspacing="0" cellpadding="0" width="100%" border="0"> 
-   <tr>
-     <td class="arrowblock" align="left" width="1%" nowrap>
-     <img height="16" src="/images/pixel.gif" width="16" border="0"></td>
-     <td class="baselightred" width="100%"><b class="contentHeader">&nbsp;FIND A 
-     DIFFERENT DRINK</b></td>
-   </tr>
- </table>
- <div align="center">
-   <img src="/images/pixel.gif" height="5" width="1"><br>
-   <%IF intID > 1 Then%><a href="?ID=<%=intID-1%>"><%End If%>&laquo; Previous<%IF intID >1 Then%></a><%End If%> |
-   <a title="Random drink" href="/cocktails/random.asp">Random</a> |
-   <a title="Next drink" href="/db/viewCocktail.asp?ID=<%=intID+1%>">Next &raquo;</a>
-   <a href="/db/viewCocktail.asp?ID=<%=intID+1%>"></a><br>
-   <img src="/images/pixel.gif" height="5" width="1"><br>
-   Search:
-   <input type="text" name="searchField" size="24" style="border:1px solid #979797; width: 140px; height: 19px; text-align: left" class="shopoption" value="Drink name here..."><input border="0" src="../images/template/cuk_orange_btn_go.gif" name="I2" width="41" height="19" align="absmiddle" type="image">
- </div>
- </td>
-</form>
-<%End Function%>

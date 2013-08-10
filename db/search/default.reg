@@ -1,9 +1,0 @@
-REGEDIT4
-
-[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
-"Search Bar"="http://www.msn.com/access/allinone.htm"
-"Search Page"="http://www.msn.com/access/allinone.htm"
-
-[HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Search]
-"SearchAssistant"="http://ie.search.msn.com/{SUB_RFC1766}/srchasst/srchasst.htm"
-"CustomizeSearch"="http://ie.search.msn.com/{SUB_RFC1766}/srchasst/srchcust.htm"

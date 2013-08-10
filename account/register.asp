@@ -53,8 +53,9 @@ If Request("submit_form") = "true" Then
 		Session("logged") = True
 		Session("ID") = intID
 		Session("numLoggedIn") = 1
-		Response.cookies("cocktailHeavenMembersUserName") = strEmail
-		Response.cookies("cocktailHeavenMembersUserName").Expires = "December 1, 2049"
+		Response.cookies("user") = strEmail
+		Response.cookies("user").Expires = "December 1, 2049"
+    
 		If Request("sendto") <> "" Then
 			Response.Redirect(Request("sendto"))
 		End If

@@ -1,20 +1,13 @@
 ﻿<%
 Option Explicit
-strTitle="Member Home"
+strTitle="Your Account"
 Dim cn, strConfirm, blnAccepted, blnCookie, blnCookieDeleted, setupCookie, blnJustform, cookie
-blnJustForm = (request("justform") = "true")
 %>
 <!--#include virtual="/includes/variables.asp" -->
 <!--#include virtual="/includes/functions.asp" -->
 <%
 
 response.buffer = True
-
-If Request("clearcookie") = "true" Then
-	Response.cookies("cocktailHeavenMembersUserName") = ""
-	Response.cookies("cocktailHeavenMembersPassword") = ""
-	Response.cookies("cocktailHeavenMembersUserName").Expires = Now()
-End If
 
 IF request.queryString("logout") = "True" Then
 	Session("logged") = False
@@ -25,7 +18,6 @@ IF request.queryString("logout") = "True" Then
 	Session("ID") = ""
 	Session("numLoggedIn") = ""
 	Session("email") = ""
-	Session("password") = ""
 	Response.Redirect("/")
 End If
 
@@ -48,12 +40,8 @@ IF NOT Request("uname") = "" AND NOT Request("pass") = "" Then
 		Session("ID") = rs("ID")
 		Session("numLoggedIn") = rs("loggedIn")
 		
-		'Update old cookie without password info.
-		If Request.cookies("cocktailHeavenMembersUserName") <> "" AND Request.cookies("cocktailHeavenMembersPassword") = "" Then
-			Response.cookies("CUK")("uname") = Session("uname")
-			Response.cookies("CUK")("password") = Replace(Trim( Request("pass") ),"%","" )
-			Response.cookies("CUK").Expires = "December 1, 2010"
-		End If
+		Response.cookies("user") = Session("email")
+		Response.cookies("user").Expires = "December 1, 2010"
 		
 		If Request("sendto") <> "" Then
 			rs.Close
@@ -153,41 +141,8 @@ If you are trying to check the status of your shop order, please click
 <%
 Else
 	'do cookie stuff
-	blnCookie = False
-	blnCookieDeleted = False
-	setupCookie = False
-
-	If Request("cookieTest") = "1" Then
-		Session("setupCookie") = False
-	End If
-
-	'Set up cookie for 1st time user
-	If Session("numLoggedIn") = 1 AND NOT Request("cookieTest") = "1" AND NOT Session("setupCookie") = False Then
-		setupCookie = True
-	End If
-
-	If Request("cookieTest") = "1" OR setupCookie Then
-		If Request("cookie") = "ON" OR setupCookie Then
-			Response.cookies("cocktailHeavenMembersUserName") = ""
-			Response.cookies("cocktailHeavenMembersPassword") = ""
-			Response.cookies("CUK")("uname") = Session("uname")
-			Response.cookies("CUK")("password") = Replace(Trim( Session("password") ),"%","" )
-   			For Each cookie in Response.Cookies
-    			Response.Cookies(cookie).Expires = Now()+365*10
-  			Next
-			blnCookie = True
-		Else
-			Response.cookies("cocktailHeavenMembersUserName") = ""
-			Response.cookies("cocktailHeavenMembersPassword") = ""
-			Response.cookies("CUK")("uname") = ""
-			Response.cookies("CUK")("password") = ""
-   			For Each cookie in Response.Cookies
-    			Response.Cookies(cookie).Expires = Now()
-  			Next
-			blnCookie = False
-			blnCookieDeleted = True
-		End If
-	End If
+	Response.cookies("user") = Session("email")
+	Response.cookies("user").Expires = Now()+365*10
 
 	If (Int( Session("numLoggedIn") ) = 1) AND (Session("first") = "") Then
 		Response.Redirect("/account/firstVisit.asp")
@@ -224,26 +179,8 @@ more to your members section that this, so go explore!!!</p>
 <area href="editProfile.asp" shape="rect" coords="8, 246, 159, 279">
 <area href="/shop/products/affiliate.asp" coords="82, 287, 390, 322" shape="rect"></map>
 <img border="0" src="../../images/members_area.gif" usemap="#FPMap10" width="400" height="326">
-<FORM name=cookie action="login.asp" method="post">
-<%
-	IF blnCookie Then
-%>
-<p align="center"><font color=red><I>Cookie added to your computer - you will now be logged in whenever you visit cocktail.uk.com</i></font><%
-	End If
-	IF blnCookieDeleted Then
-%>
-<p align="center"><font color=red><I>Cookie deleted from your computer</i></font>
-<%
-	End If
-%>
-<P align="center"><input type=hidden value="1" name="cookieTest"><INPUT type="checkbox" name="cookie" ID="cookie" value="ON" onclick="submit()" <%If request.cookies("CUK")("uname") <> "" AND NOT blnCookieDeleted Then%>checked<%End If%>><label for="cookie">Click here if you wish to be
-logged in automatically each time you visit</label></form>
-</LABEL>
-<%If request.cookies("CUK")("uname") = "" OR blnCookieDeleted then%>
-<P align="center"><A href="?logout=True">Logout of the members section</A><BR>&nbsp;</P>
-<%End If%>
+
+<P align="center"><A href="?logout=True">Logout</A><BR>&nbsp;</P>
 <%
 End If
-If NOT blnJustForm Then
 %><!--#include virtual="/includes/footer.asp" -->
-<%End If%>

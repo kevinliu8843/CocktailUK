@@ -228,6 +228,7 @@ Function hasImageThumb( name )
 End Function 
 
 Sub DrawSearchCocktailArea()
+Exit Sub
 %>
 <TABLE border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; " id="table1" width="100%">
   <TR>

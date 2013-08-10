@@ -94,12 +94,8 @@ Set cn = Nothing
 		<td valign="top"><b>Include:</b></td>
 		<td valign="top">
   <P align="left">
-	<%If strType <> "8" Then%>
-		<input type="checkbox" name="naughty" value="ON" id="fp4" onclick="order.submit()" <%If Request("naughty")="ON" Then%> CHECKED<%End If%>><label for="fp4">Naughty XXX drinks </label><img border="0" src="../images/s18.gif" width="25" height="25" align="absmiddle">
-		<br>
-	<%End If%>
-		<input type="checkbox" name="userrecipes" value="ON" id="fp5" onclick="order.submit()" <%If Request("userrecipes")="ON" Then%> CHECKED<%End If%>><label for="fp5">User submitted recipes</label></P>
-  		</td>
+	<input type="checkbox" name="userrecipes" value="ON" id="fp5" onclick="order.submit()" <%If Request("userrecipes")="ON" Then%> CHECKED<%End If%>><label for="fp5">User submitted recipes</label></P>
+		</td>
 	</tr>
 	</table>
   </div>

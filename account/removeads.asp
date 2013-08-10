@@ -30,7 +30,7 @@ So you remember us and come back again and again (but only if you like the site!
 AND<BR>
 &nbsp;</LI>
 <LI>
-<P align="left"><B><A href="/account/createaccount.asp">Register (it's free!)</A></B><BR>
+<P align="left"><B><A href="/account/register.asp">Register (it's free!)</A></B><BR>
 So you can keep a record of what your favourite drinks are and what's in your drinks cabinet. And thus removing the adverts for every future visit!</LI>
 </OL>
 <P align="left">And that's it! The adverts will automatically be removed. Simple and free. Enjoy.<P align="center"><IMG border="1" src="../../images/adsremoved.gif" width="400" height="136" alt="Look - no adverts!!!"><BR>

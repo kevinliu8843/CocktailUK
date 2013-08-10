@@ -92,7 +92,7 @@ If blnJustForm Then%>
 	<%If NOT blnJustForm Then%>
 		<H2>Login</H2>
 	<%End If%>
-<FORM method="POST" action="loginOut.asp" name="form1" target="_top">
+<FORM method="POST" action="login.asp" name="form1" target="_top">
 <%IF NOT Request.Querystring("ID") = "" Then%>
 <INPUT TYPE=HIDDEN VALUE=<%=Request.QueryString("ID")%> NAME=ID>
 <%End If%>
@@ -102,7 +102,7 @@ If blnJustForm Then%>
 <%If NOT blnJustForm Then%>
 <%If Request("doublecheck") = "true" Then%>
 <P align="center"><FONT color=red><I>As a part of our updated security, pelase re-enter your password. You won't need to do this again.<BR>
-To cancel your auto-login, please <A href="loginOut.asp?clearcookie=true">click here</A>.</I></FONT></P>
+To cancel your auto-login, please <A href="login.asp?clearcookie=true">click here</A>.</I></FONT></P>
 <INPUT TYPE=HIDDEN VALUE="true" name="dontlogin">
 <%End If%>
 <p align="center">In order to access Cocktail : UK members features, you need to login.<P>
@@ -142,7 +142,7 @@ To cancel your auto-login, please <A href="loginOut.asp?clearcookie=true">click 
     </TR>
   </TABLE>
   </CENTER>
-<p>If you do not have an account, please click <A target="_top" href="/account/createAccount.asp">HERE</A><br>
+<p>If you do not have an account, please click <A target="_top" href="/account/register.asp">HERE</A><br>
 If you are trying to check the status of your shop order, please click
 <a target="_top" href="http://www.drinkstuff.com/member/secure/login.asp">HERE</a></DIV>
 </FORM>
@@ -224,7 +224,7 @@ more to your members section that this, so go explore!!!</p>
 <area href="editProfile.asp" shape="rect" coords="8, 246, 159, 279">
 <area href="/shop/products/affiliate.asp" coords="82, 287, 390, 322" shape="rect"></map>
 <img border="0" src="../../images/members_area.gif" usemap="#FPMap10" width="400" height="326">
-<FORM name=cookie action="loginOut.asp" method="post">
+<FORM name=cookie action="login.asp" method="post">
 <%
 	IF blnCookie Then
 %>

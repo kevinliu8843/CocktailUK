@@ -24,15 +24,15 @@
 
 
 <div class="menu-header">
-<a href="/account/loginOut.asp">
+<a href="/account/login.asp">
 <img border="0" src="/images/side_menus/Members.gif" alt="Members ara"></a></div>
 
 <%If Session("firstName") = "" Then%>
 	<div class="item">
-	<a href="/account/loginOut.asp" class="linksin">Log in...</a> / <a href="/account/createAccount.asp" class="linksin">Register</a></div>
+	<a href="/account/login.asp" class="linksin">Log in...</a> / <a href="/account/register.asp" class="linksin">Register</a></div>
 <%Else%>
 	<div class="item">
-	<a href="/account/loginOut.asp" class="linksin"><%=Session("firstName")%>&#39;s account</a></div>
+	<a href="/account/login.asp" class="linksin"><%=Session("firstName")%>&#39;s account</a></div>
 <%End If%>
 
 <div class="item">

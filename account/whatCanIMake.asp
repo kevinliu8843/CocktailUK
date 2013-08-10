@@ -4,7 +4,7 @@ strTitle="What Can I Make?"
 Dim strIDS, cn
 
 If NOT Session("logged") Then
-	Response.Redirect ("/account/loginOut.asp")
+	Response.Redirect ("/account/login.asp")
 End If
 %>
 <!--#include virtual="/includes/variables.asp" -->

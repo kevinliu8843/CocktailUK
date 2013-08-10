@@ -98,7 +98,7 @@ Sub displayPageLocation(strTitle, strTitleOut, strTopTitle, strUrl, strLinkStyle
 		cArrText(2) = "Submit drink"
 	End If
 	If checkUrl(strUrl, "/account") Then
-		cArrLinks(1) = "/account/loginOut.asp"
+		cArrLinks(1) = "/account/login.asp"
 		cArrText(1) = "Members Area"
 	End If
 	If checkUrl(strUrl, "/db/stats") Then

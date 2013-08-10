@@ -8,7 +8,7 @@ strTitle="My Web Bar"
 Dim cn, strIngredientList, i, strBG1, strBG2, aryIngs
 
 If Not Session("logged") Then
-	Response.Redirect("/account/loginout.asp")
+	Response.Redirect("/account/login.asp")
 End If
 
 'Update bar here...
@@ -26,7 +26,7 @@ If Request("submit_form") = "true" Then
 		Next
 		Session("recipes") = ""
 	End If
-	response.Redirect("/account/loginOut.asp?message=Your%20bar%20has%20been%20updated")
+	response.Redirect("/account/login.asp?message=Your%20bar%20has%20been%20updated")
 End If
 
 strBG1 = "#f0f0f0"

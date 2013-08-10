@@ -22,7 +22,7 @@ strTitle = "Thank You"
 <%Case "details"%>
 	<P>Your details have been sent to you and will arrive shortly.</P>
 	<P>Return to the <A href="/">homepage</A></P>
-	<P>Return to the <A href="/account/loginOut.asp">login screen</A></P>
+	<P>Return to the <A href="/account/login.asp">login screen</A></P>
 <%Case "friend"%>
 	<P>An e-mail recommending cocktail.uk.com&nbsp; has been sent to your friend.</P>
 	<P>Return to the <A href="/">homepage</A></P>

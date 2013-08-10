@@ -67,7 +67,7 @@ If Request("submit_form") = "true" Then
 			Response.Redirect(Request("sendto"))
 		End If
 	
-		response.Redirect("/account/loginOut.asp")
+		response.Redirect("/account/login.asp")
 		Session("first") = ""
 	End If
 
@@ -213,7 +213,7 @@ function FrontPage_Form1_Validator(theForm)
   }
   return (true);
 }
-//--></script><!--webbot BOT="GeneratedScript" endspan --><FORM action="createAccount.asp" METHOD="POST" target="_top" onsubmit="return FrontPage_Form1_Validator(this)" language="JavaScript" name="FrontPage_Form1">
+//--></script><!--webbot BOT="GeneratedScript" endspan --><FORM action="register.asp" METHOD="POST" target="_top" onsubmit="return FrontPage_Form1_Validator(this)" language="JavaScript" name="FrontPage_Form1">
    <%If Request("sendto") <> "" Then%> <INPUT TYPE="HIDDEN" VALUE="<%=Request.ServerVariables("HTTP_REFERER")%>&amp;type=<%=Replace(Request("type"), "'", "")%>" name="sendto"><%End If%>
    <DIV align="center">
      <CENTER><%
@@ -308,7 +308,7 @@ function FrontPage_Form1_Validator(theForm)
          </DIV>
          <P align="center">
     <INPUT type="submit" value="Register &gt; &gt;" name="B1" class="button" ><BR>
-         <A href="loginOut.asp<%If Request("sendto") <> "" Then%>?justform=true&sendto=<%=Request.ServerVariables("HTTP_REFERER")%><%End If%>">Already a member?</A><BR>
+         <A href="login.asp<%If Request("sendto") <> "" Then%>?justform=true&sendto=<%=Request.ServerVariables("HTTP_REFERER")%><%End If%>">Already a member?</A><BR>
 &nbsp;</P>
          </TD>
        </TR>

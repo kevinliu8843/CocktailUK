@@ -156,9 +156,9 @@ document.form1.S1.focus();
 <p>In order for us to continue with the on-line submission of recipes, please either:
 </p>
 <ol>
-	<li><a href="/account/loginOut.asp">Login</a>, so we can identify and recognise 
+	<li><a href="/account/login.asp">Login</a>, so we can identify and recognise 
 	you as the contributor of the recipe</li>
-	<li><a href="/account/createAccount.asp">Create a new account</a></li>
+	<li><a href="/account/register.asp">Create a new account</a></li>
 </ol>
 <p><%
 	End If

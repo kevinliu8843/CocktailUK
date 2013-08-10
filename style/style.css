@@ -126,11 +126,12 @@ TABLE, TR, TD {
 } 
 .breadcrumb 
 {
-	line-height: 1.1;
+	line-height: 40px;
 	OVERFLOW: hidden;
 	TEXT-OVERFLOW: ellipsis;
 	TEXT-DECORATION: none;
-	HEIGHT: 1em;
+	HEIGHT: 40px;
+	padding-left: 10px;
 }
 .linksin { 
 	FONT-FAMILY: Arial, Helvetica, sans-serif;

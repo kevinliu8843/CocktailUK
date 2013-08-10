@@ -13,9 +13,9 @@ Session("first") = "first"
 <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
   <tr>
     <td width="100%">As it is your first time logging in at Cocktail : UK the first thing we would like to say is welcome and we hope you enjoy your stay and that you come back and 
-visit us often.<P> In your members section, you can have a favourites menu of the drinks you <B>love</B>, contribute to our forums and figure out which recipes you can make with the ingredients you already have at home. What could be easier?</P>
+visit us often.<P> In your members section, you can have a favourites menu of the drinks you <B>love</B> and figure out which recipes you can make with the ingredients you already have at home. What could be easier?</P>
 
-<P align="center"><A href="/account/login.asp">Continue to the members section...</A></P>
+<P align="center"><A href="/account/login.asp">Continue to the your account...</A></P>
 
     </td>
   </tr>

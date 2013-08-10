@@ -68,38 +68,39 @@ TABLE, TR, TD {
 .wrapper
 {
 	margin: 0px auto;
-	width: 970px;
+	width: 1000px;
 	POSITION: relative;
 	BACKGROUND-COLOR: white; 
 	BORDER: #636388 1px solid;
 }
 .header
 {
+	display: block;
 }
-
+	.header .topads .ad1, 
+	.header .topads .ad2
+	{
+		height: 60px;
+		display: inline-block;
+		width: 50%;
+		border-bottom: #636388 1px solid;
+	}
 .leftnav {
 	display: inline-block;
 	vertical-align: top;
+	width: 20%; 
 	TEXT-ALIGN: left;
 	PADDING-BOTTOM: 10px; 
-	WIDTH: 150px; 
 }
 .content {
 	display: inline-block;
-	width: 820px;
+	width: 80%;
 	vertical-align: top;
 	TEXT-ALIGN: left;
 	padding-BOTTOM: 80px;
 	BORDER-LEFT: #636388 1px solid;
-	POSITION: relative;
 }
-* html .content { /*\*/ height: 1050px; }
-.header {
-	POSITION: relative;
-	BACKGROUND-COLOR: white;
-} 
 .footer {
-	POSITION: relative;
 	color: white;
 }
 .skyscraper

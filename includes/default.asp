@@ -177,7 +177,7 @@ document.write('<scr'+'ipt language="JavaScript" src="http://hosting.adjug.com/A
        </div>
        <div class="lycossearch">
        <CENTER>
-	<%If RandomNumber(1, 100) <= 100 AND NOT bHideAds AND NOT blnXXX AND NOT (InStr(Request.ServerVariables("SCRIPT_NAME"), "adult") > 0 OR (InStr(Request.ServerVariables("SCRIPT_NAME"), "/db/viewAllCocktails.asp") > 0 AND InStr(Request.querystring, "type=8") > 0) ) Then%>
+	<%If NOT bHideAds AND NOT blnXXX AND NOT (InStr(Request.ServerVariables("SCRIPT_NAME"), "adult") > 0 OR (InStr(Request.ServerVariables("SCRIPT_NAME"), "/db/viewAllCocktails.asp") > 0 AND InStr(Request.querystring, "type=8") > 0) ) Then%>
 		<div style="margin-top: 10px; margin-bottom: 5px;">
 		<script type="text/javascript"><!--
 		google_ad_client = "pub-4852715527905431";

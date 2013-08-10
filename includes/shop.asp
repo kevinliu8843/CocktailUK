@@ -160,51 +160,12 @@ Function UpdateProductTables()
 	On Error Resume Next
 
 	For i=0 to UBound(arySQLTables)
-		intInserted = 0
-		If (Request(arySQLTables(i))="ON" AND Request("selectedtables")="true") OR Request("selectedtables")="" AND arySQLTables(i)<>"" Then
-			Set objXmlHttpCat= Server.CreateObject("MSXML2.ServerXMLHTTP")
-			objXmlHttpCat.open "GET", "http://"&strDrinkstuffServer&"/productfeeds/cuk/"&arySQLTables(i)&".csv" , False, "BARMANS\Lee", "Smetsy#1"
-			objXmlHttpCat.send ""
-			
-			'response.write objXmlHttpCat.ResponseText
-			
-			aryRows = Split(objXmlHttpCat.ResponseText, VbCrLf)
-			intSizeDownload = objXmlHttpCat.GetResponseHeader("Content-Length")
-			'response.write "Updating Products...<BR>"
-			strData = ""
-			For j=0 To UBound(aryRows)
-				If Trim(aryRows(j)) <> "" Then
-					If Len(strData+aryRows(j)) > MAX_LEN Then
-						If Len(strData) > 0 Then
-							cn.execute(strData)
-							If Err.Number = 0 Then
-								intInserted = intInserted + 1
-							Else
-								Err.Clear
-							End If
-						End If
-						strData = Trim(aryRows(j))
-					Else
-						strData = strData & Trim(aryRows(j))
-					End If
-				End If
-			Next
-			If Len(strData) > 0 Then
-				cn.execute(strData)
-				strData = ""
-			End If
-			intTotal = DateDiff("s", dteTemp, Now())
-			fcuk.writeLine("Table """&arySQLTables(i)&""" ("&FormatNumber(intSizeDownload/1024, 1)&"Kb) created ("&intInserted&" rows inserted) in "&Int(intTotal/60) & " mins "& intTotal-Int(intTotal/60)*60 & " secs.")
-			dteTemp = Now()
-		Else
-			fcuk.writeLine("Table """&arySQLTables(i)&""" not requested to be created")
-		End If
+		' Disabled
 	Next
 	fcuk.writeLine("Product retrieval finished: "&Now())
 	intTotal = DateDiff("s", dteStart, Now())
 	fcuk.writeLine("Product retrieval took: "&Int(intTotal/60) & " minutes "& intTotal-Int(intTotal/60)*60 & " seconds.")
 
-	'If Request("selectedtables")<>"true" Then
 		For i=0 To UBound(aryIndexes)
 			cn.execute(aryIndexes(i))
 		Next
@@ -214,7 +175,6 @@ Function UpdateProductTables()
 			fcuk.writeLine("Error generating indexes on data - " & Err.description)
 			Err.Clear
 		End If
-	'End If
 	
 	call updateShopInfo()
 	
@@ -483,7 +443,7 @@ Function GetProductTablesAndUpdate()
 	On Error Resume Next
 	Dim objXmlHttpCat
 	Set objXmlHttpCat= Server.CreateObject("MSXML2.ServerXMLHTTP")
-	objXmlHttpCat.open "GET", "http://"&strDrinkstuffServer&"/productfeeds/cuk/export.asp" , False, "BARMANS\Lee", "Smetsy#1"
+	objXmlHttpCat.open "GET", "http://"&strDrinkstuffServer&"/productfeeds/cuk/export.asp" , False, "Leetracey492", "i9t7GU|4"
 	objXmlHttpCat.send ""
 End Function
 

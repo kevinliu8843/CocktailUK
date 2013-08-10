@@ -468,7 +468,7 @@ Class CProduct
 							        <TABLE border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber3">
 							          <TR>
 							            <TD>
-										<a style="font-weight:700" href="/shop/products/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm">
+										<a style="font-weight:700" href="http://www.awin1.com/awclick.php?gid=73406&mid=8&awinaffid=176043&linkid=101500&clickref=&p=<%=Server.URLEncode("http://www.drinkstuff.com/products/affiliate.asp?affID=987654321&prodID="&aryRows(0,i))%>">
 										<font size="2" color="#636388">More details</font></a><img border="0" src="/images/shop/more.gif" align="middle" hspace="3"></TD>
 							          </TR>
 							        </TABLE>
@@ -505,22 +505,22 @@ Class CProduct
 								          	End If
 							          	End If
 							          End If
-							          rs.open "DS_GETRAWPRODDETAILS @prodverID="&aryRows(6,i), cn, 0, 3
-							          If NOT rs.EOF Then
-							                    intStock = rs("stock")
-							                    dteDueIn = rs("dateduein")
-							                    If rs("stock") <= 0 AND rs("preorder") Then
-							                              blnPreOrder = True
-							                    Else
-							                              blnPreOrder = False
-							                    End If
-							                    If rs("stockstatus") <> PRODUCT_STOCK Then
-							                        intStock = 9999
-							                    End If
-							          Else
+							          'rs.open "DS_GETRAWPRODDETAILS @prodverID="&aryRows(6,i), cn, 0, 3
+							          'If NOT rs.EOF Then
+							          '          intStock = rs("stock")
+							          '          dteDueIn = rs("dateduein")
+							          '          If rs("stock") <= 0 AND rs("preorder") Then
+							          '                    blnPreOrder = True
+							          '          Else
+							          '                    blnPreOrder = False
+							          '          End If
+							          '          If rs("stockstatus") <> PRODUCT_STOCK Then
+							          '              intStock = 9999
+							          '          End If
+							          'Else
 							                    intStock = 9999
-							          End If
-							          rs.close
+							          'End If
+							          'rs.close
 							          If NOT IsNumeric(intStock) Then
 											intStock = 0
 							          End If
@@ -575,13 +575,13 @@ Class CProduct
 							          <%End If%>
 							          <%if blnOutOfStock Then%>
 							               <div style="clear: both; text-align: right"><FONT size="1">
-							          		<A href="http://www.drinkstuff.com/products/affiliate.asp?affID=10724&page=/products/stock_notification.asp?ID=<%=aryRows(0,i)%>">Email me when back in stock</A>
+							          		<A href="http://www.awin1.com/awclick.php?gid=73406&mid=8&awinaffid=176043&linkid=101500&clickref=&p=<%=Server.URLEncode("http://www.drinkstuff.com/products/affiliate.asp?affID=987654321&prodID="&aryRows(0,i))%>">Email me when back in stock</A>
 							          	   </div>
 							          <%End If%>
 							          </TD> 
 							          <TD width="75" valign="top" nowrap>
 									 <p align="right">
-							         <INPUT maxLength="3" size="4" value="1" name="quantity" style="width: 40px;" class="shopoption"><input border="0" src="../../images/template/buy_pink.gif" align="absmiddle" name="I2" type="image" width="28" height="22">&nbsp;
+							         <INPUT maxLength="3" size="4" value="1" name="quantity" style="width: 40px;" class="shopoption"><a href="http://www.awin1.com/awclick.php?gid=73406&mid=8&awinaffid=176043&linkid=101500&clickref=&p=<%=Server.URLEncode("http://www.drinkstuff.com/products/affiliate.asp?affID=987654321&prodID="&aryRows(0,i))%>"><img border="0" src="../../images/template/buy_pink.gif" align="absmiddle" name="I2" width="28" height="22"></a>&nbsp;
 							         <%If NOT blnDoOption Then%>
 									 	<INPUT type="hidden" name="prodverID" value="<%=aryRows(6,i)%>">
 									 <%End If%>
@@ -929,6 +929,9 @@ Class CProduct
 					blnPreorder = True
 				End If
 			Next
+			intMinStock = 1
+			intMaxStock = 100
+			aryRows(11, j) = 100
 			%>
 		      <FORM method="POST" action="/shop/basket.asp" name="addprod" style="clear: both">
 				<div id="product-versions">
@@ -968,7 +971,7 @@ Class CProduct
 							</tr>
 						<%Next%>
 						</table>
-						<div style="text-align: right; margin-top: 5px;"><input name="Image1" type="image" src="../../images/template/addtobasket.gif" alt="Add To Basket" width="221" height="30"></div>
+						<div style="text-align: right; margin-top: 5px;"><a href="http://www.awin1.com/awclick.php?gid=73406&mid=8&awinaffid=176043&linkid=101500&clickref=&p=<%=Server.URLEncode("http://www.drinkstuff.com/products/affiliate.asp?affID=987654321&prodID="&m_intProduct)%>"><img name="Image1" src="../../images/template/addtobasket.gif" alt="Add To Basket" width="221" height="30"></a></div>
 					</div>
 				</div>
 			  </FORM>
@@ -1162,7 +1165,7 @@ Class CProduct
 				won't charge you a delivery fee, and any other items you order that 
 				are in stock will be shipped out separately so you'll get all your items 
 				as soon as possible. If you decide you don't want pre-ordered items any 
-				more, please <a href="http://www.drinkstuff.com/products/affiliate.asp?affID=10724&page=/contactus.asp">contact us</a> ASAP so we can cancel the order.</td>
+				more, please <a href="http://www.awin1.com/awclick.php?gid=73406&mid=8&awinaffid=176043&linkid=101500&clickref=&p=/contactus.asp">contact us</a> ASAP so we can cancel the order.</td>
 			</tr>
 		</table>
 		<br>

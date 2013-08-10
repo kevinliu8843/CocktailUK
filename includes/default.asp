@@ -78,9 +78,9 @@ End If
 
 <div class="wrapper">
   <div class="header">
-    <table id="table3" cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff" border="0">
+    <table id="table3" cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff" border="0" height="100">
      <tr>
-      <td align="left" width="85">
+      <td align="right" width="100" valign="bottom">
       <a href="http://www.cocktail.uk.com/">
       <img border="0" src="../images/cuk_03.jpg" width="85" height="85" alt="Classic cocktails and bar equipment uk"></a></td>
       <td align="left" style="width: 230px">

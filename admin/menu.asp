@@ -18,6 +18,8 @@ On Error Resume Next
 Set cn = Server.CreateObject("ADODB.Connection")
 Set rs = Server.CreateObject("ADODB.Recordset")
 
+cn.Open strDB
+
 intNewdrinks = 0
 intProducts = 0
 intCategories = 0

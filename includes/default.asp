@@ -119,20 +119,7 @@ End If
           <!-- JS AdJug Publisher Code -->
         </div>
         <div class="ad2">
-          <script type="text/javascript"><!--
-          google_ad_client = "pub-4852715527905431";
-          google_ad_width = 468;
-          google_ad_height = 60;
-          google_ad_format = "468x60_as";
-          google_ad_type = "text_image";
-          google_ad_channel ="";
-          google_color_border = "737387";
-          google_color_bg = "FFFFFF";
-          google_color_link = "0000FF";
-          google_color_text = "000000";
-          google_color_url = "008000";
-          //--></script>
-          <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+          <script type='text/javascript'><!--/* Place your click tracking link here. DO NOT URLENCODE */var ps_ct0 = '';/* var ps_puburl = ''; *//* Do not modify below */var ps_url = '//eu.projectsunblock.com/system/serve.php?a=10212&c=5784&js=1&cb=' + Math.floor(Math.random() * 99999);document.write('<scr' + 'ipt type="text/javascript" src="' + ps_url + '"></scr' + 'ipt>');//--></script><noscript><img src='//noscript.projectsunblock.com/10212-5784-ns.gif' border='0' width='0' /></noscript><img src='//images.projectsunblock.com/10212-5784-pix.gif' border='0' width='0' />
         </div>
       </div>
     <%End If%>

@@ -1,1 +1,1 @@
-﻿<%Response.redirect("/cocktails/?type=" & Request("type"))%>
+﻿<%Call Do301Redirect("/cocktails/?type=" & Request("type"))%>

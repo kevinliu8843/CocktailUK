@@ -2,6 +2,12 @@
 <!--#include virtual="/includes/rating.asp" -->
 <!--#include virtual="/includes/shop.asp" -->
 <%
+Sub Do301Redirect(strNewURL)
+    Response.Status = "301 Moved Permanently"
+    Response.AddHeader "Location", strNewURL
+    Response.End
+End Sub
+
 Function MediumDate (str)
     Dim aDay
     Dim aMonth

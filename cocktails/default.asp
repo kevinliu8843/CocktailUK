@@ -35,7 +35,7 @@ If strType <> "" Then
 		blnNaughty = True
 	End If 
 Else
-	strTitle = "All Drinks"
+	strTitle = "All cocktails"
 	strAddType = " WHERE Status=1"
 	strHrefType = ""
 End If

@@ -9,7 +9,7 @@ strTitle = "Top Ten..."
 <head>
 </head>
 
-<H2>Top Ten...</h2>
+<H2>Top Ten Cocktail Recipes</h2>
 
 <dl>
   <dt><a href="voted.asp"><b>Top ten highest voted cocktails</b></a></dt>

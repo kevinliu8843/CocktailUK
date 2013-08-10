@@ -27,7 +27,7 @@ Else
 	fileExists = False
 End If
 %>
-<h2>10 most popular</h2>
+<h2>Top 10 Most Popular Cocktail Recipes</h2>
   <TABLE border="0" cellpadding="0" cellspacing="20" width="100%">
     <%
 iRecordsShown = 1

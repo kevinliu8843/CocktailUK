@@ -14,7 +14,7 @@ cn.Open strDB
 %>
 <!--#include virtual="/includes/header.asp" -->
 
-<H2>Our most popular ingredients</H2>
+<H2>Top cocktail Ingredients</H2>
 <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
   <tr>
     <td width="100%">

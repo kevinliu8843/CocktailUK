@@ -32,7 +32,7 @@ Else
 	fileExists = False
 End If
 %>
-<h2>Voted top 10</h2>
+<h2>Top 10 Best Bocktail Recipes</h2>
   <TABLE border="0" cellpadding="0" cellspacing="20" width="100%">
     
 <%

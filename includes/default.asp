@@ -132,7 +132,7 @@ End If
   </div>
 
   <div class="content">
-    <div background="/images/breadcrumbbg.gif" class="truncatestring">
+    <div class="breadcrumb">
       <%If LCase(Request.ServerVariables("SCRIPT_NAME")) = "/default.asp" Then%> 
        Cocktail : UK, cocktails, <span lang="en-gb">cocktail</span> recipes and bar equipment from the UK
       <%Else%>

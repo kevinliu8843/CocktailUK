@@ -123,18 +123,13 @@ TABLE, TR, TD {
 	right: 5px;
 	top: 10px;
 } 
-.truncatestring 
+.breadcrumb 
 {
 	line-height: 1.1;
-	FONT-FAMILY: Tahoma, Verdana, Arial, Helvetica, sans-serif;
 	OVERFLOW: hidden;
 	TEXT-OVERFLOW: ellipsis;
-	FONT-SIZE: 8pt; 
-	COLOR: white;
 	TEXT-DECORATION: none;
-	HEIGHT: 15px;
-	WIDTH: 470px;
-	padding-left: 5px;
+	HEIGHT: 1em;
 }
 .linksin { 
 	FONT-FAMILY: Arial, Helvetica, sans-serif;

@@ -245,6 +245,7 @@ Private Sub setupCategories(fcuk)
 			strCatOpt = strCatOpt & "<OPTION value=""products/"&Trim(rsc("URL"))&".asp"""
 			strCatOpt = strCatOpt & "<"&"%If InStr(strScriptName,""" & Trim(rsc("URL")) & """) > 0 Then %"&"> SELECTED <"&"%End if%"&">"
 			strCatOpt = strCatOpt & ">"&Trim(rsc("name"))&"</OPTION>" & VbCrLf
+		End If
 		rsc.movenext
 	Wend
 	strCatOpt = strCatOpt & "</SELECT>"

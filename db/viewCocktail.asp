@@ -132,6 +132,34 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
         </td>
       </tr>
       <tr>
+        <td>
+          <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse: collapse" bordercolor="#111111">
+            <%If Session("logged") Then%>
+            <tr>
+              <td><%IF NOT blnDuplicated Then%><a href="/db/member/userHotList.asp?add=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a><%Else%><a href="/db/member/userHotList.asp?remove=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a><%End If%></td>
+              <td width="100%"><%IF NOT blnDuplicated Then%><a href="/db/member/userHotList.asp?add=<%=intID%>">Add 
+              to my favourites</a><%Else%><a href="/db/member/userHotList.asp?remove=<%=intID%>">Remove 
+              from my favourites</a><%End If%></td>
+            </tr>
+            <%End If%>
+            <tr>
+              <td colspan="2"><%If Session("logged") Then 
+                      Response.write strMakeCocktail
+                    Else
+                      %>
+              <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse: collapse" bordercolor="#111111" id="table3">
+                <tr>
+                  <td><a href="/db/member/userHotList.asp?add=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></td>
+                  <td width="100%"><a href="/db/member/userHotList.asp?add=<%=intID%>">Add to my favourites</a></td>
+                </tr>
+              </table>
+              <p><%End If%></p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
         <td width="100%" colspan="3">
         <H3>Your Comments:</h3>
         <img src="/images/pixel.gif" height="5" width="1"><br>
@@ -165,42 +193,6 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
     </td>
     <td width="160" valign="top">
       <div><%=aryDrink(11)%></div>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2">
-    <table cellspacing="0" cellpadding="0" width="100%" border="0">
-      <tr>
-        <td class="arrowblock" align="left" width="1%" nowrap>
-        <img height="16" src="/images/pixel.gif" width="16" border="0"></td>
-        <td class="baselightred" width="99%"><b class="contentHeader">&nbsp;REGISTERED 
-        MEMBERS MENU</b></td>
-      </tr>
-    </table>
-    <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse: collapse" bordercolor="#111111">
-      <%If Session("logged") Then%>
-      <tr>
-        <td><%IF NOT blnDuplicated Then%><a href="/db/member/userHotList.asp?add=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a><%Else%><a href="/db/member/userHotList.asp?remove=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a><%End If%></td>
-        <td width="100%"><%IF NOT blnDuplicated Then%><a href="/db/member/userHotList.asp?add=<%=intID%>">Add 
-        to my favourites</a><%Else%><a href="/db/member/userHotList.asp?remove=<%=intID%>">Remove 
-        from my favourites</a><%End If%></td>
-      </tr>
-      <%End If%>
-      <tr>
-        <td colspan="2"><%If Session("logged") Then 
-								Response.write strMakeCocktail
-							Else
-								%>
-        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse: collapse" bordercolor="#111111" id="table3">
-          <tr>
-            <td><a href="/db/member/userHotList.asp?add=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></td>
-            <td width="100%"><a href="/db/member/userHotList.asp?add=<%=intID%>">Add to my favourites</a></td>
-          </tr>
-        </table>
-        <p><%End If%></p>
-        </td>
-      </tr>
-    </table>
     </td>
   </tr>
 </table>

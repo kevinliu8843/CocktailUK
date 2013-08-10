@@ -209,7 +209,7 @@ function FrontPage_Form1_Validator(theForm)
              </TR>
              <TR>
                <TD align="right">
-               <P>E-Mail address</P>
+               <P>Email address</P>
                </TD>
                <TD align="left">
                <P><INPUT type="text" name="email" size="17" maxlength="100" value="<%=strEmail%>"></P>
@@ -225,7 +225,7 @@ function FrontPage_Form1_Validator(theForm)
              </TR>
              <TR>
                <TD align="right">
-               <P>Subscribe to newsletter? </P>
+               <P>Subscribe to newsletter?</P>
                </TD>
                <TD>
                <P align="left"><INPUT type="checkbox" name="news" value="ON" checked> </P>

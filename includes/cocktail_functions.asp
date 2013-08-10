@@ -234,85 +234,67 @@ Sub writeCocktailList(strSQL, rs, cn, strTitle, strHrefType)
 		' Move to the selected page
 		rs.AbsolutePage = iPageCurrent
 		Set FSO = Server.CreateObject("Scripting.FileSystemObject")
-		If NOT blnWAP Then%>
-			<%If Len(strTitle) >0 AND strTitle <> "" Then%>
-				<h2><%=strTitle%></h2>
-			<%End If%>
-			<TABLE border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse: collapse" bordercolor="#111111">
+		If Len(strTitle) >0 AND strTitle <> "" Then%>
+			<h2><%=strTitle%></h2>
+		<%End If%>
+
+		<TABLE border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse: collapse" bordercolor="#111111">
+		  <TR>
+		    <TD colspan="<%=iWidth%>" align="center">
+		        <P align="center">
+			Page <B><%= iPageCurrent %></B> of <B><%= iPageCount %></B> (<%=rs.recordCount%> recipes)<BR>&nbsp;</P>
+		    </TD>
+		  </TR>
+		  <%For iKnt1=1 To iHeight%>
 			  <TR>
-			    <TD colspan="<%=iWidth%>" align="center">
-			        <P align="center">
-				Page <B><%= iPageCurrent %></B> of <B><%= iPageCount %></B> (<%=rs.recordCount%> recipes)<BR>&nbsp;</P>
+			  <%For iKnt2=1 To iWidth%>
+			    <TD valign="top" width="<%=100/iWidth%>%">
+					<%writeField FSO, rs%>
 			    </TD>
-			  </TR>
-			  <%For iKnt1=1 To iHeight%>
-				  <TR>
-				  <%For iKnt2=1 To iWidth%>
-				    <TD valign="top" width="<%=100/iWidth%>%">
-						<%writeField FSO, rs%>
-				    </TD>
-				  <%Next%>
-				  </TR>
 			  <%Next%>
-			  <TR>
-			    <TD colspan="<%=iWidth%>" align="center">
-		<%Else%>
-			<p><%=strTitle%><br/>Page <%=iPageCurrent%> of <%=iPageCount%></p><p><%For iKnt1=1 To iHeight%><%writeField FSO, rs%><%Next%></p>
-		<%
-		End If
-		Set FSO = Nothing
-		%>
-		
-		<%If NOT blnWAP Then%><br/><%End If%>
-		
-		<p><%If blnWAP Then%>Page:<%Else%>&nbsp;<%End If%><%
-		' Show "previous" and "next" page links which pass the page to view
-		' and any parameters needed to rebuild the query.  You could just as
-		' easily use a form but you'll need to change the lines that read
-		' the info back in at the top of the script.
-		If NOT blnWAP Then
+			  </TR>
+		  <%Next%>
+		  <TR>
+		    <TD colspan="<%=iWidth%>" align="center">
+			<%Set FSO = Nothing%>
+			<div class="pagination">
+			<%
 			If iPageCurrent <> 1 Then
 				%>
-				<a href="<%=Request.ServerVariables("URL")%>?page=<%= iPageCurrent - 1 %><%=strHrefType%>">&laquo; Previous</a>
-			<%Else%>
-				<font color=gray>&laquo; Previous</font>
+				<a class="page gradient" href="<%=Request.ServerVariables("URL")%>?page=<%= iPageCurrent - 1 %><%=strHrefType%>">Prev</a>
 				<%
 			End If
-		End If
-		k=0
-		maxPages = 16
-		If blnWAP Then
-			maxPages = 10
-		End If
-		iStart = Max(1, iPageCurrent-maxPages/2)
-		iFinish = Min(iStart+maxPages-1, iPageCount)
-		If (iFinish-iStart<=maxPages) Then
-			iStart = iFinish - maxPages + 1
-			if iStart<1 then
-				iStart=1
-			end if
-		End If
-		For k = iStart to iFinish step 1
-			if NOT iPageCurrent = k THEN%>
-				<a href="<%=Request.ServerVariables("URL")%>?page=<%=k%><%=Server.HTMLEncode(strHrefType)%>"><%=k%></a>
-			<%Else%>
-				<b><u><%=k%></u></b>
-			<%End If%>
-		<%Next
-		If NOT blnWAP Then
+
+			k=0
+			maxPages = 16
+			iStart = Max(1, iPageCurrent-maxPages/2)
+			iFinish = Min(iStart+maxPages-1, iPageCount)
+
+			If (iFinish-iStart<=maxPages) Then
+				iStart = iFinish - maxPages + 1
+				if iStart<1 then
+					iStart=1
+				end if
+			End If
+
+			For k = iStart to iFinish step 1
+				if iPageCurrent = k THEN%>
+					<a class="page active" href="<%=Request.ServerVariables("URL")%>?page=<%=k%><%=Server.HTMLEncode(strHrefType)%>"><%=k%></a>
+				<%Else%>
+					<a class="page gradient" href="<%=Request.ServerVariables("URL")%>?page=<%=k%><%=Server.HTMLEncode(strHrefType)%>"><%=k%></a>
+				<%End If%>
+			<%
+			Next
+
 			If iPageCurrent < iPageCount Then
 				%>
-				<a href="<%=Request.ServerVariables("URL")%>?page=<%= iPageCurrent + 1 %><%=strHrefType%>">Next &raquo;</a>
-			<%ELSE%>
-				<font color=gray>Next &raquo;</font>
+				<a class="page gradient" href="<%=Request.ServerVariables("URL")%>?page=<%= iPageCurrent + 1 %><%=strHrefType%>">Next</a>
 				<%
 			End If
-		End If
-		%></p>
-		<%If NOT blnWAP Then%>
-					</TD>
-				</TR>
-			</TABLE>
+			%></div>
+			</TD>
+			</TR>
+		</TABLE>
 		<%
 		End If
 	Else

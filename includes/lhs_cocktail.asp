@@ -15,13 +15,7 @@
 <a class="linksin" href="/db/search/searchByIngredient.asp">Cocktails by ingredient</a></div>
 
 <div class="item">
-<a class="linksin" href="/db/viewCocktail.asp?ID=<%=getCOWID(dayNumber())%>">Drink of the day</a></div>
-
-<div class="item">
-<a class="linksin" href="/db/stats/toptenlatest.asp">Latest drinks</a></div>
-
-<div class="item">
-<a href="/cocktails/random.asp" class="linksin">Random drink</a></div>
+<a href="/cocktails/random.asp" class="linksin">Random cocktail</a></div>
 
 <div class="item">
 <a href="/cocktails/top-ten/" class="linksin">Top ten cocktails</a></div>

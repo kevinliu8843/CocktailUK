@@ -111,7 +111,7 @@ TABLE, TR, TD {
 	text-align: left;
 }
 .content .padded {
-	padding: 0px 10px 10px 80px;
+	padding: 0px 10px 80px 10px;
 }
 .footer {
 	color: white;

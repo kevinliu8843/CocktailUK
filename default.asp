@@ -59,28 +59,28 @@ drink</a> | <a href="/cocktails/">Cocktails</a> |
       </TD>
   </TR>
   <TR>
-    <TD valign="top" align="left"><A href="/cocktails/basedon.asp?baseID=1"><B>Vodka based cocktails<BR>
+    <TD valign="top" align="left"><A href="/cocktails/basedon.asp?basedID=1"><B>Vodka based cocktails<BR>
       </B></A>Shows a list of cocktails based on vodka.</TD>
     <TD valign="top" align="left">&nbsp;</TD>
     <TD valign="top" align="left">
-      <P align="left"><A href="/cocktails/basedon.asp?baseID=3"><B>Gin based cocktails<BR>
+      <P align="left"><A href="/cocktails/basedon.asp?basedID=3"><B>Gin based cocktails<BR>
       </B></A>Shows a list of cocktails based on gin.</TD>
   </TR>
   <TR>
     <TD valign="top" align="left">
-      <P align="left"><A href="/cocktails/basedon.asp?baseID=2"><B>Brandy based cocktails<BR>
+      <P align="left"><A href="/cocktails/basedon.asp?basedID=2"><B>Brandy based cocktails<BR>
       </B></A>Shows a list of cocktails based on brandy.</TD>
     <TD valign="top" align="left">&nbsp;</TD>
-    <TD valign="top" align="left"><A href="/cocktails/basedon.asp?baseID=5"><B>Rum based cocktails<BR>
+    <TD valign="top" align="left"><A href="/cocktails/basedon.asp?basedID=5"><B>Rum based cocktails<BR>
       </B></A>Shows a list of cocktails based on rum.</TD>
   </TR>
   <TR>
     <TD valign="top" align="left">
-      <P align="left"><A href="/cocktails/basedon.asp?baseID=4"><B>Whisky based cocktails<BR>
+      <P align="left"><A href="/cocktails/basedon.asp?basedID=4"><B>Whisky based cocktails<BR>
       </B></A>Shows a list of cocktails based on whisky.</TD>
     <TD valign="top" align="left">&nbsp;</TD>
     <TD valign="top" align="left">
-      <P align="left"><A href="/cocktails/basedon.asp?baseID=8"><B>Tequila based cocktails<BR>
+      <P align="left"><A href="/cocktails/basedon.asp?basedID=8"><B>Tequila based cocktails<BR>
       </B></A>Shows a list of cocktails based on tequila.</TD>
   </TR>
 </TABLE>

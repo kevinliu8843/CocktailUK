@@ -60,7 +60,6 @@ a{ text-decoration: none; }
  <span style="text-decoration: none">Add Drink Recipes</span></A></B><BR>
  &nbsp;<font color="#AA0000"></font> <B><A class="linksin" href="createHeaderAndFooter.asp">
  <span style="text-decoration: none">Create Header and Footer</span></A></B><BR>
- &nbsp;<font color="#AA0000"></font></P>
  &nbsp;<font color="#AA0000"></font> <B><A class="linksin" href="/admin/sitemap.asp">
  <span style="text-decoration: none">Rebuild recipes/categories</span></A></B><BR>
  &nbsp;<font color="#AA0000"></font></P>

@@ -1,4 +1,4 @@
-﻿<div class="menu-header"><a href="/db/Cocktails.asp"><img border="0" src="/images/side_menus/Drinks_right.gif" alt="Cocktails and shooter drinks" width="150" height="42"></a></div>
+﻿<div class="menu-header"><a href="/db/Cocktails.asp"><img border="0" src="/images/side_menus/Drinks_right.gif" alt="Cocktails and shooter drinks"></a></div>
 
 <div class="item">
 <a class="linksin" title="Cocktail drink recipes" href="/db/viewAllCocktails.asp?type=1">
@@ -28,7 +28,7 @@ Drink of the day</a></div>
 
 <div class="menu-header">
 <a href="/shop/products/cocktail-equipment.asp">
-<img border="0" src="/images/side_menus/Offer.gif" width="150" height="42" alt="Bar cocktail equipment and accessories"></a></div>
+<img border="0" src="/images/side_menus/Offer.gif" alt="Bar cocktail equipment and accessories"></a></div>
 
 <div class="item">
 <a href="/shop/basket.asp" class="linksin" style="text-decoration: underline;"><strong>View my basket</strong></a></div>
@@ -44,7 +44,7 @@ Drink of the day</a></div>
 
 <div class="menu-header">
 <a href="/db/member/loginOut.asp">
-<img border="0" src="/images/side_menus/Members.gif" width="150" height="42" alt="Members ara"></a></div>
+<img border="0" src="/images/side_menus/Members.gif" alt="Members ara"></a></div>
 
 <div class="item">
 <a href="/db/member/loginOut.asp" class="linksin"><%If Session("firstName") <> "" Then%><%=Session("firstName")%>&#39;s 

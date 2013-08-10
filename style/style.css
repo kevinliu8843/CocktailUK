@@ -99,7 +99,10 @@ TABLE, TR, TD {
 }
 	.leftnav .item {
 		display: block;
-		padding: 3px 2px; 
+		padding: 4px 13px;
+	}
+	.leftnav .menu-header img {
+		width: 100%;
 	}
 .content {
 	display: inline-block;

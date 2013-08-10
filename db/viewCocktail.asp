@@ -207,11 +207,6 @@ Edit</a><%End If%></h2>
         Have your say...</a></b>
         </p>
 
-<!--
-<script type="text/javascript">amazon_ad_tag = "cocktailheaven"; amazon_ad_width = "300"; amazon_ad_height = "250"; amazon_ad_categories = "aebhcp";</script>
-<script type="text/javascript" src="http://www.assoc-amazon.co.uk/s/ads.js"></script>
-//-->
-
 <script type="text/JavaScript">
 AdJug_AID = 492;
 AdJug_SiteAdSpaceID = 49378;

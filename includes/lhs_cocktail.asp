@@ -22,21 +22,8 @@ Drink of the day</a></div>
 <div class="item">
 <a href="/db/stats/default.asp" class="linksin">Top ten cocktails</a></div>
 
-<div class="menu-header">
-<a href="/shop/products/cocktail-equipment.asp">
-<img border="0" src="/images/side_menus/Offer.gif" alt="Bar cocktail equipment and accessories"></a></div>
 
-<div class="item">
-<a href="/shop/basket.asp" class="linksin" style="text-decoration: underline;"><strong>View my basket</strong></a></div>
-<!--#include virtual="/includes/shop/categoriesleft.asp" -->
-<hr style="margin-top: 3px;">
 
-<div class="item">
-<a class="linksin" href="/shop/delivery.asp">Delivery prices</a></div>
-
-<div class="item">
-<a href="/shop/customerservices.asp" class="linksin">Customer services</a></div>
-<img alt="Payment methods" src="/images/template/cards.gif" width="149" height="73">
 
 <div class="menu-header">
 <a href="/db/member/loginOut.asp">
@@ -60,3 +47,22 @@ members area<%else%>Log in<%End If%></a></div>
 	<div class="item">
 	<a href="/db/member/whatCanIMake.asp" class="linksin">What can I make?</a></div>
 <%End If%>
+
+
+
+
+<div class="menu-header">
+<a href="/shop/products/cocktail-equipment.asp">
+<img border="0" src="/images/side_menus/Offer.gif" alt="Bar cocktail equipment and accessories"></a></div>
+
+<div class="item">
+<a href="/shop/basket.asp" class="linksin" style="text-decoration: underline;"><strong>View my basket</strong></a></div>
+<!--#include virtual="/includes/shop/categoriesleft.asp" -->
+<hr style="margin-top: 3px;">
+
+<div class="item">
+<a class="linksin" href="/shop/delivery.asp">Delivery prices</a></div>
+
+<div class="item">
+<a href="/shop/customerservices.asp" class="linksin">Customer services</a></div>
+<img alt="Payment methods" src="/images/template/cards.gif" width="149" height="73">

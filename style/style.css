@@ -95,6 +95,12 @@ TABLE, TR, TD {
 		display: block;
 		padding: 4px 13px;
 	}
+	.leftnav .menu-header {
+		padding-top: 2em;
+	}
+	.leftnav .menu-header:first-child {
+		padding-top: 0em;
+	}
 	.leftnav .menu-header img {
 		width: 100%;
 	}

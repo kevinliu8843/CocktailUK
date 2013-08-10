@@ -1,7 +1,7 @@
 ﻿BODY {
 	background-color: #828282;
 	FONT-FAMILY: Arial, Helvetica, sans-serif; 
-	font-size: 9pt; 
+	font-size: 11pt; 
 	line-height: 1.5;
 	MARGIN: 0px; 
 	COLOR: #444444;
@@ -50,7 +50,7 @@ A{
 }
 TABLE, TR, TD {
 	FONT-FAMILY: Arial, Helvetica, sans-serif; 
-	FONT-SIZE: 9pt; 
+	FONT-SIZE: 11pt; 
 	LINE-HEIGHT: 1.5; 
 	COLOR: #444444; 
 }

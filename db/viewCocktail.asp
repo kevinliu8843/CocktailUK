@@ -75,30 +75,33 @@ strTitle = Capitalise(aryDrink(0)) & " " & aryDrink(7) & " recipe. How to make a
 strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingredients & instructions on how to make a " & aryDrink(0) & " " & aryDrink(7) & "."
 %>
 <!--#include virtual="/includes/header.asp" -->
+
 <style type="text/css">
  ul { margin-left: 5px; padding-left: 0px; }
  ul { margin-top: 0; }
  li { margin-left: 1em; }
 </style>
+
 <h2><%=Capitalise(aryDrink(0)) & " " & Capitalise(aryDrink(7)) & " Recipe"%>
 <%If Session("admin") Then%>
   <a target="_top" class="linksin" href="/admin/default.asp?goto=cocktaileditor/default.asp?ID=<%=intID%>">Edit</a>
-<%End If%></h2>
+<%End If%>
+</h2>
+
 <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber6">
   <tr>
     <td valign="top">
+    <div><b>How to make a <%=LCase(aryDrink(0))%></b>: <%=aryDrink(1)%></div>
+
     <table border="0" cellpadding="3" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber7" height="100%">
       <tr>
         <td width="33%" valign="top">
-          <h3 id="directions">How to make</h3>
-          <div><%=aryDrink(1)%></div>
-        </td>
-        <td width="33%" valign="top">
-          <h3 id="ingredients">Ingredients</h3>
+          <h3 id="ingredients">Ingredients:</h3>
+          <div>Serves : <b><%=aryDrink(3)%></div>
           <div><%=aryDrink(2)%></div>
         </td>
         <td width="33%" valign="top">
-          <h3 id="equipment">Equipment</h3>
+          <h3 id="equipment">You'll also need:</h3>
           <div>
             <%If aryDrink(7)="shooter" Then%>
               <a href="/shop/products/search.asp?search=iceshot"><img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shot_rock.jpg" alt="Shot Rock - Ice shot glasses" width="40" height="40"></a>
@@ -117,27 +120,8 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
             </a>
           </div>
         </td>
-      </tr>
-      <tr>
-        <td width="100%" colspan="2">
-        <div align="center">
-          <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber9">
-            <tr>
-              <td width="100%">
-              <p align="center">
-              <img src="/images/pixel.gif" height="5" width="1"><br>
-              <a href="/shop/">As a leading bar equipment supplier in the UK, we 
-              can deliver to you next working day! <b>Come shopping</b></a><br>
-              <img src="/images/pixel.gif" height="20" width="1"><br>
-              <img src="/images/pixel.gif" height="5" width="1"></p>
-              </td>
-            </tr>
-          </table>
-        </div>
+        <td width="33%" valign="top">
         </td>
-      </tr>
-      <tr>
-        <td width="100%" colspan="2"><%call writeSearchForm%></td>
       </tr>
       <tr>
         <td width="100%" colspan="2">
@@ -158,7 +142,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
         <%If i<>Min(intNumReviews,intMaxReviews-1) Then%><br>
         <%End If%> <%Next%> <%If intNumReviews>intMaxReviews Then%> <br>
         There are more comments,
-        <a href="viewCocktail.asp?ID=<%=intID%>&reviews=999">read them all...</a>
+        <a href="?ID=<%=intID%>&reviews=999">read them all...</a>
         <%End if%>
         <p align="center"><b>Love or hate this drink?
         <a href="#" onclick="window.open('review.asp?ID=<%=intID%>','review','width=450, height=450, menubar=0, status=0, resizable=1'); return false">
@@ -267,7 +251,6 @@ Function displayRatingPanel
      <td class="baselightred" width="99%"><b class="contentHeader">&nbsp;DETAILS</b></td>
    </tr>
  </table>
- Serves : <b><%=aryDrink(3)%></b><br>
  Type : <b><%=Capitalise(aryDrink(7))%></b><br>
  Category : <b><%=Capitalise(aryDrink(8))%></b><br>
  Viewed : <b><%=aryDrink(4)%> times</b><br>

@@ -58,7 +58,7 @@ A{
 	color: #201460;
 }
 A.disabled{
-	color: #666666;
+	color: #999999;
 	text-decoration: none;
 	cursor: not-allowed;
 }

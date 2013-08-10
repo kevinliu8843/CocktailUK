@@ -187,7 +187,7 @@ Function canIMakeIt(cn, rs, cocktailID, memID, strReturn)
 	bCanBeMade = rs.EOF
 	If bCanBeMade Then
 		canIMakeIt = True 
-		strReturn = "<TABLE cellpadding=2 border=0 width=""100%""><TR><TD width=""35""><IMG src=""/images/ok.gif""></TD><TD>You have the necessary ingredients in your <A HREF=""/db/member/selectIngredients.asp"">web-bar</A> required to make this</TD></TR></TABLE>"
+		strReturn = "<div>You have all the ingredients you need in <A HREF=""/db/member/selectIngredients.asp"">your bar</A> to make this</div>"
 	Else
 		Do While Not rs.EOF
 			If strExtra <> "" Then strExtra = strExtra & ", "
@@ -195,7 +195,7 @@ Function canIMakeIt(cn, rs, cocktailID, memID, strReturn)
 			rs.MoveNext
 		Loop
 		canIMakeIt = False
-		strReturn = "<TABLE cellpadding=2 border=0 width=""100%""><TR><TD width=""35""><IMG src=""/images/warning.gif""></TD><TD>You require <B>more</B> ingredients to make this drink : " & strExtra & "</TD></TR></TABLE>"
+		strReturn = "<TABLE cellpadding=2 border=0 width=""100%""><TR><TD width=""35""><IMG src=""/images/warning.gif""></TD><TD>You need <B>more</B> ingredients to make this drink : " & strExtra & "</TD></TR></TABLE>"
 	End If
 	rs.close
 End Function

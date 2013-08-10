@@ -32,34 +32,21 @@ function changeColour(objTable, strColour){
 }
 </script>
 
-<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber14">
-  <tr>
-    <td width="100%" colspan="2" bgcolor="#FFFFFF">
-    <table border="0" cellpadding="0" style="border-collapse: collapse; border-bottom: 1px solid #636388;" width="100%">
-		<tr>
-			<td width="180" valign="top"><a href="/db/cocktails.asp">
-			<img border="0" src="images/homepage/martini.jpg" width="180" height="240" longdesc="View all our drink recipes"></a></td>
-			<td valign="top">
-			<p align="center">
-			<img border="0" src="images/welcomeTo.gif" width="120" height="28"><br>
-			<img border="0" src="images/cuk_07.gif" width="210" height="32"></p>
-			<p align="left">Online for over 10 years, Cocktail : UK has the most comprehensive
-			<a href="/db/cocktails.asp">cocktail recipes</a> &amp; <a href="/db/viewAllCocktails.asp?type=2">shooter recipes</a> database 
-			(10,000+ and growing daily) plus
-			the biggest
-			<a href="/shop/">bar equipment</a> shop online. Enjoy.
+<p align="center">
+<img border="0" src="images/welcomeTo.gif" width="120" height="28"><br>
+<img border="0" src="images/cuk_07.gif" width="210" height="32"></p>
+<p align="left">Online for over 10 years, Cocktail : UK has the most comprehensive
+<a href="/db/cocktails.asp">cocktail recipes</a> &amp; <a href="/db/viewAllCocktails.asp?type=2">shooter recipes</a> database 
+(10,000+ and growing daily) plus
+the biggest
+<a href="/shop/">bar equipment</a> shop online. Enjoy.
 
-      <div align="center"><a href="/db/search/searchByIngredient.asp">Find a 
-			drink</a> | <a href="db/viewAllCocktails.asp?type=1">Cocktails</a> |
-			<a href="db/viewAllCocktails.asp?type=2">Shooters</a> |
-			<a href="db/viewAllCocktails.asp?type=4">Non-alcoholic cocktails</a> | 
-			<a href="shop/products/cocktail-equipment.asp">Bar equipment</a></div>
-			</td>s
-		</tr>
-	</table>
-    </td>
-  </tr>
-</table>
+<div align="center"><a href="/db/search/searchByIngredient.asp">Find a 
+drink</a> | <a href="db/viewAllCocktails.asp?type=1">Cocktails</a> |
+<a href="db/viewAllCocktails.asp?type=2">Shooters</a> |
+<a href="db/viewAllCocktails.asp?type=4">Non-alcoholic cocktails</a> | 
+<a href="shop/products/cocktail-equipment.asp">Bar equipment</a></div>
+
 <H2>Browse Our Cocktail Recipes</H2>
 <table border="0" cellpadding="5" style="border-collapse: collapse" width="100%" id="table1">
   <tr>

@@ -249,7 +249,7 @@ function FrontPage_Form1_Validator(theForm)
                <P>Last name</P>
                </TD>
                <TD align="left">
-               <P>
+               <P align="left"><INPUT type="text" name="lname" size="17" maxlength="50" value="<%=strLastName%>"></P>
                </TD>
              </TR>
              <TR>

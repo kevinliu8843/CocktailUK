@@ -12,8 +12,10 @@
 <a class="linksin" href="/db/viewAllCocktails.asp?type=4">Non-alcoholic cocktails</a></div>
 
 <div class="item">
-<a class="linksin" href="/db/viewCocktail.asp?ID=<%=getCOWID(dayNumber())%>">
-Drink of the day</a></div>
+<a class="linksin" href="/db/search/searchByIngredient.asp">Cocktails by ingredient</a></div>
+
+<div class="item">
+<a class="linksin" href="/db/viewCocktail.asp?ID=<%=getCOWID(dayNumber())%>">Drink of the day</a></div>
 
 <div class="item">
 <a class="linksin" href="/db/stats/toptenlatest.asp">Latest drinks</a></div>

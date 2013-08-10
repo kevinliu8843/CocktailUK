@@ -92,7 +92,7 @@ Select Case basedID
 	Case "2"
 	%>
 		<h1>Brandy Based Cocktails - Eau-de-Vie-de-Vin</h1>
-		<P>Brandy is a warm spirit
+		<P style="padding-bottom: 20px;">Brandy is a warm spirit
 		distilled from wine and is produced in many forms from around the world.
 		The best known are the Cognacs and Armagnacs of France. However, good
 		brandy is also produced by many other countries around the world. Top-quality brandies are
@@ -102,12 +102,12 @@ Select Case basedID
 		against the guards and soldiers. The barrel was found years later but half
 		of the liquor had evaporated leaving a rich smooth nectar. Brandy is an extremely
 		versatile drink that mixes well with a wide range of other flavours, as the
-		following recipes demonstrates.
+		following recipes demonstrates.</p>
 	<%
 	Case "3"
 	%>
 		<h1>Gin Based Cocktails - Mother's Ruin</h1>
-		<P>Gin is a very common used
+		<P style="padding-bottom: 20px;">Gin is a very common used
 		base for cocktails, including the famous martini. The original gin was
 		concocted illegally in bathtubs and bore little resemblance to the gin
 		we know today. It was probably this poor flavour that gave cocktails their
@@ -115,12 +115,12 @@ Select Case basedID
 		rectified spirit distilled from any grain, potato or beet and flavoured
 		with juniper&quot;. Clearly with this definition there are alot of
 		variations of &quot;gin&quot; around. And each manufacturer keeps their
-		recipe closely guarded.
+		recipe closely guarded.</p>
 	<%
 	Case "5"
 	%>
 		<h1>Rum Based Cocktails - Kill-Devil</h1>
-		<P>Rum is a rich and fragrant
+		<P style="padding-bottom: 20px;">Rum is a rich and fragrant
 		spirit, distilled from molasses in a pot still or a patent still. The drink
 		is associated with the tropics because most sugar cane is grown there
 		(this is where molasses come from). Rum is clear when is comes from the
@@ -129,12 +129,12 @@ Select Case basedID
 		have discovered that the rich taste combines perfectly with fruit
 		juice to give a tropical flavour to cocktails. There
 		are hundreds of rum-based cocktails available to mixologists, however
-		here are a select few.
+		here are a select few.</p>
 	<%
 	Case "1"
 	%>
 		<h1>Vodka Based Cocktails - Zhiznennia Voda</h1>
-		<P>The word &quot;vodka&quot;
+		<P style="padding-bottom: 20px;">The word &quot;vodka&quot;
 		comes from the Russian &quot;Zhiznennia voda&quot;, which means &quot;water
 		of life&quot;. &quot;Vodka&quot; means &quot;little water&quot;.Vodka
 		can be distilled from any number of sources including potatoes and sugar
@@ -142,12 +142,12 @@ Select Case basedID
 		impurities, and the resultant liquor is then the perfect base for a
 		cocktail. It adds the kick of alcohol but without the taste. This is one
 		of the great things about vodka: it is almost odourless. So it cannot be
-		detected on your breath. Vodka is the ideal drink for beginners to use in experiments.
+		detected on your breath. Vodka is the ideal drink for beginners to use in experiments.</p>
 	<%
 	Case "4"
 	%>
 		<h2>Whisky Based Cocktails - The Hard Stuff</h2>
-		<P>Whisky (or whiskey -
+		<P style="padding-bottom: 20px;">Whisky (or whiskey -
 		depending on its origin) is made in many parts of the world. Whisky
 		(without the &quot;e&quot;) is produced in Scotland. This is usually
 		referred to as Scotch. All other whiskies are spelled with an

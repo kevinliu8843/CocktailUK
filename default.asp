@@ -61,60 +61,50 @@ function changeColour(objTable, strColour){
     </td>
   </tr>
 </table>
-<table border="0" cellpadding="0" style="border-collapse: collapse">
+<H2>Cocktails</H2>
+<table border="0" cellpadding="5" style="border-collapse: collapse" width="100%" id="table1">
   <tr>
-    <td valign="top" width="100%">
-<table border="0" cellpadding="0" style="border-collapse: collapse" id="table8">
-  <tr>
-    <td valign="top" width="50%" background="images/grad_write_purple.gif">
-    <table border="0" cellpadding="0" style="border-collapse: collapse; border-bottom:1px solid #636388; " bordercolor="#993399" id="table9" height="165" width="0">
-      <tr>
-        <td height="10"><a href="/sitesearch/">
-        <img border="0" src="images/main_menus/findthatdrink.gif" width="239" height="42"></a></td>
-      </tr>
-      <tr>
-        <td background="images/grad_write_purple.gif">
-        <table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="table10" height="100%" cellpadding="2">
-          <tr>
-            <td width="100%">
-            <p align="center">Ever had a wonderful cocktail and you just have no 
-			idea how it was made? Then why not search for it and find out!...</p>
-            <form method="POST" action="/sitesearch/default.asp" name="search2" onSubmit="return checkSearch()">
-             <p align="center">
-             <input type="text" name="searchField" size="24" style="border:1px solid #979797; width: 134; height: 19; text-align: left" class="shopoption"><input border="0" src="images/template/cuk_orange_btn_go.gif" name="I2" align="absmiddle" type="image"></p>
-            </form>
-            </td>
-          </tr>
-        </table>
-        </td>
-      </tr>
-    </table>
-    </td>
-    <td valign="top" width="50%">
-    <table border="0" cellpadding="0" style="border-collapse: collapse; border-bottom:1px solid #636388;" id="table11" height="165" width="0">
-      <tr>
-        <td height="10" background="images/main_menus/youringredients.gif"><a href="/db/member/selectIngredients.asp">
-        <img border="0" src="images/pixel.gif" width="237" height="42"></a></td>
-      </tr>
-      <tr>
-        <td background="images/grad_write_purple.gif" valign="top">
-        <table border="0" cellspacing="0" style="border-collapse: collapse" width="100%" id="table12" height="100%" cellpadding="2">
-          <tr>
-            <td width="100%" valign="top">
-            <p align="center">Do you have some ingredients that you want to make 
-			cocktails out of? Then tell us your ingredients and let us tell you 
-			what drink recipes you can make!</p>
-            <p align="center"><b><a href="/db/member/selectIngredients.asp">
-			Enter your ingredients here...</a></b></p>
-            </td>
-          </tr>
-        </table>
-        </td>
-      </tr>
-    </table>
-    </td>
-  </tr>
-</table>
+    <td><img border="0" src="../images/redmartini.jpg" width="125" height="244"></td>
+    <td>
+<TABLE border="0" cellpadding="5" cellspacing="0" id="table2">
+  <TR>
+    <TD valign="top" align="left" colspan="3">
+      <P align="left"><A href="/db/viewAllCocktails.asp?type=1"><B>View
+      all cocktails<BR>
+      </B></A>Shows a list of all cocktails.
+      </TD>
+  </TR>
+  <TR>
+    <TD valign="top" align="left"><A href="/based_cocktails/vodka.asp"><B>Vodka
+      based<BR>
+      </B></A>Shows a list of cocktails based on vodka.</TD>
+    <TD valign="top" align="left">&nbsp;</TD>
+    <TD valign="top" align="left">
+      <P align="left"><A href="/based_cocktails/gin.asp"><B>Gin based<BR>
+      </B></A>Shows a list of cocktails based on gin.</TD>
+  </TR>
+  <TR>
+    <TD valign="top" align="left">
+      <P align="left"><A href="/based_cocktails/brandy.asp"><B>Brandy
+      based<BR>
+      </B></A>Shows a list of cocktails based on brandy.</TD>
+    <TD valign="top" align="left">&nbsp;</TD>
+    <TD valign="top" align="left"><A href="/based_cocktails/rum.asp"><B>Rum
+      based<BR>
+      </B></A>Shows a list of cocktails based on rum.</TD>
+  </TR>
+  <TR>
+    <TD valign="top" align="left">
+      <P align="left"><A href="/based_cocktails/whisky.asp"><B>Whisky
+      based<BR>
+      </B></A>Shows a list of cocktails based on whisky.</TD>
+    <TD valign="top" align="left">&nbsp;</TD>
+    <TD valign="top" align="left">
+      <P align="left"><A href="/based_cocktails/tequila.asp"><B>Tequila
+      based<BR>
+      </B></A>Shows a list of cocktails based on tequila.</TD>
+  </TR>
+</TABLE>
     </td>
   </tr>
 </table>

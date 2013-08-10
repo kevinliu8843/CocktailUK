@@ -1,8 +1,7 @@
 ﻿<div class="menu-header"><a href="/db/Cocktails.asp"><img border="0" src="/images/side_menus/Drinks_right.gif" alt="Cocktails and shooter drinks"></a></div>
 
 <div class="item">
-<a class="linksin" title="Cocktail drink recipes" href="/db/viewAllCocktails.asp?type=1">
-Cocktail recipes</a></div>
+<a class="linksin" title="Cocktail drink recipes" href="/db/viewAllCocktails.asp?type=1">Cocktail recipes</a></div>
 
 <div class="item">
 <a class="linksin" href="/db/viewAllCocktails.asp?type=2">Shots</a></div>
@@ -21,10 +20,7 @@ Drink of the day</a></div>
 <a href="/db/random.asp" class="linksin">Random drink</a></div>
 
 <div class="item">
-<a href="/db/member/submitCocktail.asp" class="linksin">Submit a drink</a></div>
-
-<div class="item">
-<a href="/db/stats/default.asp" class="linksin">Top ten</a></div>
+<a href="/db/stats/default.asp" class="linksin">Top ten cocktails</a></div>
 
 <div class="menu-header">
 <a href="/shop/products/cocktail-equipment.asp">
@@ -49,7 +45,6 @@ Drink of the day</a></div>
 <div class="item">
 <a href="/db/member/loginOut.asp" class="linksin"><%If Session("firstName") <> "" Then%><%=Session("firstName")%>&#39;s 
 members area<%else%>Log in<%End If%></a></div>
-
 
 <%If Session("firstName") = "" Then%>
 	<div class="item">

@@ -4,7 +4,6 @@
 	font-size: 9pt; 
 	line-height: 1.5;
 	MARGIN: 0px; 
-	MARGIN-TOP: 5px;
 	COLOR: #444444;
 }
 #search_box {
@@ -48,11 +47,6 @@ H2 {
 A{
 	text-decoration: underline;
 	color: #201460;
-}
-td {
-	FONT-FAMILY: Arial, Helvetica, sans-serif; 
-	FONT-SIZE: 9pt; 
-	COLOR: #444444; 
 }
 TABLE, TR, TD {
 	FONT-FAMILY: Arial, Helvetica, sans-serif; 
@@ -117,11 +111,9 @@ TABLE, TR, TD {
 .skyscraper
 { 
 	z-index: -100;
-	padding-right: 5px;
-	padding-top: 5px;
-	position: absolute;
+	position: fixed;
 	right: 5px;
-	top: 5px;
+	top: 10px;
 } 
 .lycossearch
 {

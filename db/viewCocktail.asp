@@ -127,6 +127,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
         </td>
         <td width="33%" valign="top">
           <div style="padding-right: 15px;">
+            <%displayRatingPanel%>
           </div>
         </td>
       </tr>
@@ -172,7 +173,6 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
     </td>
     <td width="160" valign="top">
       <div><%=aryDrink(11)%></div>
-      <div><%displayRatingPanel%></div>
     </td>
   </tr>
   <tr>
@@ -206,27 +206,6 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
           </tr>
         </table>
         <p><%End If%></p>
-        </td>
-      </tr>
-    </table>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2">
-    <table border="0" cellpadding="0" style="border-collapse: collapse" id="table1">
-      <tr>
-        <td width="174" valign="top"><a href="/shop/">
-        <img border="0" src="../images/homepage/shophomepage_01.jpg" width="174" height="52"></a></td>
-        <td valign="top" height="40" style="background:url(../images/homepage/shophomepage_02.gif) top left no-repeat;"><a href="/shop/">
-        <img border="0" src="../images/pixel.gif" width="302" height="42"></a></td>
-      </tr>
-      <tr>
-        <td width="174" valign="top"><a href="/shop/">
-        <img border="0" src="../images/homepage/shophomepage_03.jpg" alt="Bar accessory shop" width="174" height="122"></a></td>
-        <td valign="top">We are the UK&#39;s premier online bar equipment supplier. 
-        Ideal for home bar enthusiasts and cocktail connoisseurs alike. We&#39;ve taken 
-        over 100,000 orders since 1999 online.<p align="center">
-        <!--#include virtual="/includes/shop/categoriesoption.asp" --></p>
         </td>
       </tr>
     </table>

@@ -92,7 +92,7 @@ End If
     			    <input type="hidden" name="cx" value="partner-pub-4852715527905431:j32r2u95lwx">
     			    <input type="hidden" name="cof" value="FORID:10">
     			    <input type="hidden" name="ie" value="UTF-8"> 
-    			    <input type="text" name="q" id="SearchField" value="Search" class="swap_value" onfocus="this.value=''; document.getElementById('search_box').style.backgroundImage='url(http://www.cocktail.uk.com/images/template/bg_search_box_over.gif)'" onblur="document.getElementById('search_box').style.backgroundImage='url(http://www.cocktail.uk.com/images/template/bg_search_box.gif)'"><input type="image" src="../images/template/button_search_go.gif" id="go" name="sa" alt="Search" title="Search">
+    			    <input type="text" name="q" id="SearchField" placeholder="Search for cocktails" class="swap_value"><input type="image" src="../images/template/button_search_go.gif" id="go" name="sa" alt="Search" title="Search">
     			</form>
     		</div>
       </td>

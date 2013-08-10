@@ -217,8 +217,7 @@ Private Sub setupCategories(fcuk)
 	Set fso = Server.CreateObject("Scripting.FileSystemObject")
 	While NOT rsc.EOF 
 		If rsc("parentID") = 0 then
-			strCat		= strCat 	& "<img border=""0"" src=""/images/pixel.gif"" width=""4"" height=""4""><br><A href=""/shop/products/"&Trim(rsc("URL"))&".asp"" title="""&rsc("alt")&""" class=""linksin"">"&Trim(rsc("name"))&"</A>&nbsp;<IMG border=""0"" src=""/images/side_menus/smallarrowright.gif"" width=""8"" height=""8"">&nbsp;</FONT><BR>" & VbCrLf
-			strCatLeft	= strCatLeft 	& "<img border=""0"" src=""/images/pixel.gif"" width=""4"" height=""4""><br>&nbsp;<IMG border=""0"" src=""/images/side_menus/smallarrow.gif"" width=""8"" height=""8"">&nbsp;<A href=""/shop/products/"&Trim(rsc("URL"))&".asp"" title="""&rsc("alt")&""" class=""linksin"">"&Left(Trim(Capitalise(LCase(rsc("name")))), 20)&"</A></FONT><br>" & VbCrLf
+			strCatLeft	= strCatLeft 	& "<div class=""item""><A href=""/shop/products/"&Trim(rsc("URL"))&".asp"" title="""&rsc("alt")&""" class=""linksin"">"&Left(Trim(Capitalise(LCase(rsc("name")))), 20)&"</A></div>" & VbCrLf
 		End If
 		
 		Set f = fso.OpenTextFile(Server.MapPath("/includes/shop/template.asp"), 1, True)
@@ -246,28 +245,18 @@ Private Sub setupCategories(fcuk)
 			strCatOpt = strCatOpt & "<OPTION value=""products/"&Trim(rsc("URL"))&".asp"""
 			strCatOpt = strCatOpt & "<"&"%If InStr(strScriptName,""" & Trim(rsc("URL")) & """) > 0 Then %"&"> SELECTED <"&"%End if%"&">"
 			strCatOpt = strCatOpt & ">"&Trim(rsc("name"))&"</OPTION>" & VbCrLf
-			
-			strCatWap = strCatWap & "<a href=""/wap/shop/category.asp?ID="&rsc("ID")&""">"&Replace(Trim(rsc("name")), "&", "&amp;")&"</a><br/>"
-		End If
 		rsc.movenext
 	Wend
 	strCatOpt = strCatOpt & "</SELECT>"
 	rsc.close
 	
-	Set f = fso.CreateTextFile(Server.MapPath("/includes/shop/categories.asp"),True)
-	f.writeLine(strCat)
-	f.close
-	Set f = nothing
 	Set f = fso.CreateTextFile(Server.MapPath("/includes/shop/categoriesleft.asp"),True)
 	f.writeLine(strCatLeft)
 	f.close
 	Set f = nothing
+
 	Set f = fso.CreateTextFile(Server.MapPath("/includes/shop/categoriesoption.asp"),True)
 	f.writeLine(strCatOpt)
-	f.close
-	Set f = nothing
-	Set f = fso.CreateTextFile(Server.MapPath("/wap/includes/categorieswap.asp"),True)
-	f.writeLine(strCatWap)
 	f.close
 	Set f = nothing
 

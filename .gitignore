@@ -36,5 +36,6 @@ Web.Release.config
 /Cocktail UK Old.vbproj
 /includes/header.asp
 /includes/footer.asp
+/includes/shop/categories*
 /shop/products/*
 /products.txt

@@ -7,16 +7,17 @@
 	COLOR: #444444;
 }
 #search_box {
-    width: 201px;
+    width: 350px;
     height: 31px;
-    background: url('http://www.cocktail.uk.com/images/template/bg_search_box.gif');
+    border: 1px solid #636388;
+    border-radius: 8px;
 }
 #SearchField {
     float: left;
     padding: 0px;
     margin: 6px 0px 0px 6px;
     border-width: 0px;
-    width: 155px; 
+    width: 300px; 
     background: none;
 }
 #search_box #go {

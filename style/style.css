@@ -32,7 +32,7 @@ H1, H2, H3, H4, H5, H6 {
 	COLOR: #636388;
 	FONT-FAMILY: Arial, Helvetica, sans-serif; 
 }
-H2 {
+h2 {
 	line-height: 1.2;
 	TEXT-ALIGN: left;
 	padding-top: 5px; 
@@ -41,6 +41,14 @@ H2 {
 	FONT-SIZE: 30pt;  
 	margin-top: 0px;
 	margin-bottom: 5px;
+	font-weight: normal;
+} 
+h3 {
+	line-height: 1.2;
+	padding-top: 5px; 
+	padding-bottom: 5px;
+	COLOR: #545473; 
+	FONT-SIZE: 20pt;  
 	font-weight: normal;
 } 
 A{

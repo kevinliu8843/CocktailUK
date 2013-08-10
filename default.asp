@@ -47,14 +47,14 @@ function changeColour(objTable, strColour){
 			<a href="/db/cocktails.asp">cocktail recipes</a> &amp; <a href="/db/viewAllCocktails.asp?type=2">shooter recipes</a> database 
 			(10,000+ and growing daily) plus
 			the biggest
-			<a href="/shop/">bar equipment</a> shop online. Enjoy.<p align="center">
-&nbsp;<div align="center"><a href="/sitesearch/">Find a 
+			<a href="/shop/">bar equipment</a> shop online. Enjoy.
+
+      <div align="center"><a href="/db/search/searchByIngredient.asp">Find a 
 			drink</a> | <a href="db/viewAllCocktails.asp?type=1">Cocktails</a> |
 			<a href="db/viewAllCocktails.asp?type=2">Shooters</a> |
-			<a href="db/viewAllCocktails.asp?type=4">Non-alcoholic</a> <br>
-			<a href="shop/products/cocktail-equipment.asp">Bar equipment</a> |
-				<a href="/db/member/submitCocktail.asp">Submit a recipe</a></div>
-			</td>
+			<a href="db/viewAllCocktails.asp?type=4">Non-alcoholic cocktails</a> | 
+			<a href="shop/products/cocktail-equipment.asp">Bar equipment</a></div>
+			</td>s
 		</tr>
 	</table>
     </td>

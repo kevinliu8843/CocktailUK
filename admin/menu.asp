@@ -1,18 +1,8 @@
 ﻿<%option explicit%>
 <!--#include virtual="/includes/variables.asp" -->
 <!--#include virtual="/includes/admin_functions.asp" -->
-<!--#include virtual="/includes/functions.asp" --><%
-'On Error Resume Next
-Dim dArrSales(10), iArrVolume(10), dArrProfits(10)
-Dim dArrDSSales(10), iArrDSVolume(10), dArrDSProfits(10)
-Dim dArrBARSales(10), iArrBARVolume(10), dArrBARProfits(10)
-Dim dArrBARAffSales(10), iArrBARAffVolume(10), dArrBARAffProfits(10)
-Dim dArrCEAffSales(10), iArrCEAffVolume(10), dArrCEAffProfits(10)
-Dim intNewdrinks, intVisits, cn, intForumsReindex, intCocktailsReindex
-Dim dteLastUpdated, intNewReviews, intNewGames, intShopReindex, intLinks, int404
-Dim strWhen, dblDBsize, intProducts, intCategories, blnShowPC, dblDBSizeNew
-Dim blnSilent
-
+<!--#include virtual="/includes/functions.asp" -->
+<%
 On Error Resume Next
 
 Set cn = Server.CreateObject("ADODB.Connection")
@@ -20,8 +10,14 @@ Set rs = Server.CreateObject("ADODB.Recordset")
 
 cn.Open strDB
 
+rs.open "SELECT COUNT(*) FROM dbo.usr",cn
+intUsers = rs(0)
+rs.close
+rs.open "SELECT COUNT(*) FROM dbo.cocktail",cn
+intRecipes = rs(0)
+rs.close
+
 intNewdrinks = 0
-intProducts = 0
 intCategories = 0
 
 Session("admin") = True
@@ -41,6 +37,7 @@ a{ text-decoration: none; }
 
 <BODY topmargin="5" leftmargin="5" link="#000000" vlink="#000000" alink="#AA0000">
 <SPAN class="linksin">
+	<div style="margin: auto"><%=intUsers%> Users | <%=intRecipes%> Recipes</div>
 
  <%If intNewdrinks>0 Then%>
     <P><font face="Verdana"><font size="1">&nbsp;</font><B><font size="1" color="#612B83">To 

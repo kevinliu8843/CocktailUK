@@ -45,13 +45,13 @@ if rs.eof then
 	Set cn = Nothing
 	Set rs = Nothing
 	If Request.ServerVariables("HTTP_REFERER") <> "" Then
-		Response.Redirect(Request.ServerVariables("HTTP_REFERER") & "?error=" & Server.HtmlEncode("Sorry, no drinks contain " & strDrink ))
+		Response.Redirect(Request.ServerVariables("HTTP_REFERER") & "?error=" & Server.HtmlEncode("Sorry, no cocktails contain " & strDrink ))
 	Else
 		Response.Redirect("/")
 	End If
 Else
 	strDrink = rs("IngName")
-	strTitle = "Drinks containing " & strDrink
+	strTitle = "cocktails containing " & strDrink
 	%>
 	<!--#include virtual="/includes/header.asp" -->
 	<%

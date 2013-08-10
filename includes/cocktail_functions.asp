@@ -187,7 +187,7 @@ Function canIMakeIt(cn, rs, cocktailID, memID, strReturn)
 	bCanBeMade = rs.EOF
 	If bCanBeMade Then
 		canIMakeIt = True 
-		strReturn = "<div>You have all the ingredients you need in <A HREF=""/db/member/selectIngredients.asp"">your bar</A> to make this</div>"
+		strReturn = "<div>You have all the ingredients you need in <A HREF=""/account/selectIngredients.asp"">your bar</A> to make this</div>"
 	Else
 		Do While Not rs.EOF
 			If strExtra <> "" Then strExtra = strExtra & ", "

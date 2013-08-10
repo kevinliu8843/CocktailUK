@@ -4,7 +4,7 @@ Option Explicit
 Dim cn, upperbound, lowerbound, ID
 
 If Session("logged") Then
-	Response.Redirect("/db/member/random.asp")
+	Response.Redirect("/account/random.asp")
 End If
 
 %>

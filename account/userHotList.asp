@@ -7,7 +7,7 @@ If NOT Session("logged") Then
 	If Request.QueryString("add") <> "" Then
 		extraQueryString = "?add=" & Request.QueryString("add")
 	End If
-	response.Redirect("/db/member/loginOut.asp" & extraQueryString)
+	response.Redirect("/account/loginOut.asp" & extraQueryString)
 End If
 
 ' OK, we are logged in, let's proceed...

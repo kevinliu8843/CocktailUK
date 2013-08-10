@@ -142,7 +142,7 @@ To cancel your auto-login, please <A href="loginOut.asp?clearcookie=true">click 
     </TR>
   </TABLE>
   </CENTER>
-<p>If you do not have an account, please click <A target="_top" href="/db/member/createAccount.asp">HERE</A><br>
+<p>If you do not have an account, please click <A target="_top" href="/account/createAccount.asp">HERE</A><br>
 If you are trying to check the status of your shop order, please click
 <a target="_top" href="http://www.drinkstuff.com/member/secure/login.asp">HERE</a></DIV>
 </FORM>
@@ -190,7 +190,7 @@ Else
 	End If
 
 	If (Int( Session("numLoggedIn") ) = 1) AND (Session("first") = "") Then
-		Response.Redirect("/db/member/firstVisit.asp")
+		Response.Redirect("/account/firstVisit.asp")
 	End If
 %>
 <h2> <%=Session("firstname")%>'s members area</h2>

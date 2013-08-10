@@ -24,25 +24,25 @@
 
 
 <div class="menu-header">
-<a href="/db/member/loginOut.asp">
+<a href="/account/loginOut.asp">
 <img border="0" src="/images/side_menus/Members.gif" alt="Members ara"></a></div>
 
 <%If Session("firstName") = "" Then%>
 	<div class="item">
-	<a href="/db/member/loginOut.asp" class="linksin">Log in...</a> / <a href="/db/member/createAccount.asp" class="linksin">Register</a></div>
+	<a href="/account/loginOut.asp" class="linksin">Log in...</a> / <a href="/account/createAccount.asp" class="linksin">Register</a></div>
 <%Else%>
 	<div class="item">
-	<a href="/db/member/loginOut.asp" class="linksin"><%=Session("firstName")%>&#39;s account</a></div>
+	<a href="/account/loginOut.asp" class="linksin"><%=Session("firstName")%>&#39;s account</a></div>
 <%End If%>
 
 <div class="item">
-<a href="/db/member/userHotList.asp" class="linksin <%If Session("firstName") = "" Then%>disabled<%End If%>">Your favourite recipes</a></div>
+<a href="/account/userHotList.asp" class="linksin <%If Session("firstName") = "" Then%>disabled<%End If%>">Your favourite recipes</a></div>
 
 <div class="item">
-<a href="/db/member/selectIngredients.asp" class="linksin <%If Session("firstName") = "" Then%>disabled<%End If%>">Your bar ingredients</a></div>
+<a href="/account/selectIngredients.asp" class="linksin <%If Session("firstName") = "" Then%>disabled<%End If%>">Your bar ingredients</a></div>
 
 <div class="item">
-<a href="/db/member/whatCanIMake.asp" class="linksin <%If Session("firstName") = "" Then%>disabled<%End If%>">What you can make</a></div>
+<a href="/account/whatCanIMake.asp" class="linksin <%If Session("firstName") = "" Then%>disabled<%End If%>">What you can make</a></div>
 
 
 

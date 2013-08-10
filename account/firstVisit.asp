@@ -15,7 +15,7 @@ Session("first") = "first"
     <td width="100%">As it is your first time logging in at Cocktail : UK the first thing we would like to say is welcome and we hope you enjoy your stay and that you come back and 
 visit us often.<P> In your members section, you can have a favourites menu of the drinks you <B>love</B>, contribute to our forums and figure out which recipes you can make with the ingredients you already have at home. What could be easier?</P>
 
-<P align="center"><A href="/db/member/loginOut.asp">Continue to the members section...</A></P>
+<P align="center"><A href="/account/loginOut.asp">Continue to the members section...</A></P>
 
     </td>
   </tr>

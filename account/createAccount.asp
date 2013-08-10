@@ -67,7 +67,7 @@ If Request("submit_form") = "true" Then
 			Response.Redirect(Request("sendto"))
 		End If
 	
-		response.Redirect("/db/member/loginOut.asp")
+		response.Redirect("/account/loginOut.asp")
 		Session("first") = ""
 	End If
 

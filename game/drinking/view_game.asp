@@ -36,7 +36,7 @@ If NOT rs.EOF Then
     </blockquote>
     <div align="center">
       <center> 
-      <form action="/db/member/addrating.asp" method="post">
+      <form action="/account/addrating.asp" method="post">
        <%If Request("rate") = "true" Then%><font color="#FF0000"><i>Rating Added</i></font><%elseif Request("rate") = "false" then%><font color="#FF0000"><i>Please 
        specify a rating</i></font><%End If%>
        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">

@@ -51,7 +51,7 @@ If Request("submit_form") = "true" Then
 		Session("uname") = strUname
 		Session("email") = strEmail
 		cn.close
-		response.Redirect("/db/member/loginOut.asp?message=Details+sucessfully+changed")
+		response.Redirect("/account/loginOut.asp?message=Details+sucessfully+changed")
 	End If
 End If
 

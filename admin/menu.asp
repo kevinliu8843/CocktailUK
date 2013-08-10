@@ -70,7 +70,7 @@ a{ text-decoration: none; }
  <span style="text-decoration: none">Edit Ingredients</span></A></B><BR>
  &nbsp;<font color="#AA0000"></font> <B><A class="linksin" href="ingredients/modify_measures.asp">
  <span style="text-decoration: none">Edit Measures</span></A></B><BR>
- &nbsp;<font color="#AA0000"></font> <B><A class="linksin" href="/db/member/submitCocktail.asp">
+ &nbsp;<font color="#AA0000"></font> <B><A class="linksin" href="/account/submitCocktail.asp">
  <span style="text-decoration: none">Add Drink Recipes</span></A></B><BR>
  &nbsp;<font color="#AA0000"></font> <B><A class="linksin" href="createHeaderAndFooter.asp">
  <span style="text-decoration: none">Create Header and Footer</span></A></B><BR>

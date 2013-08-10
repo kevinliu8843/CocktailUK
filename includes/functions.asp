@@ -93,12 +93,12 @@ Sub displayPageLocation(strTitle, strTitleOut, strTopTitle, strUrl, strLinkStyle
 		cArrLinks(1) = "/search"
 		cArrText(1) = "Search"
 	End If
-	If checkUrl(strUrl, "/db/member/submitCocktail.asp") Then
-		cArrLinks(2) = "/db/member/submitcocktail.asp"
+	If checkUrl(strUrl, "/account/submitCocktail.asp") Then
+		cArrLinks(2) = "/account/submitcocktail.asp"
 		cArrText(2) = "Submit drink"
 	End If
-	If checkUrl(strUrl, "/db/member") Then
-		cArrLinks(1) = "/db/member/loginOut.asp"
+	If checkUrl(strUrl, "/account") Then
+		cArrLinks(1) = "/account/loginOut.asp"
 		cArrText(1) = "Members Area"
 	End If
 	If checkUrl(strUrl, "/db/stats") Then

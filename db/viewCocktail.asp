@@ -141,16 +141,16 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
               <%IF blnDuplicated Then%>
                 <tr>
                   <td>
-                      <a href="/db/member/userHotList.asp?remove=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a>
+                      <a href="/account/userHotList.asp?remove=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a>
                   </td>
                   <td width="100%">
-                      <a href="/db/member/userHotList.asp?remove=<%=intID%>">Remove from your favourites</a>
+                      <a href="/account/userHotList.asp?remove=<%=intID%>">Remove from your favourites</a>
                   </td>
                 </tr>
               <%Else%>
                 <tr>
-                  <td><a href="/db/member/userHotList.asp?add=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></td>
-                  <td width="100%"><a href="/db/member/userHotList.asp?add=<%=intID%>">Add to my favourites</a></td>
+                  <td><a href="/account/userHotList.asp?add=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></td>
+                  <td width="100%"><a href="/account/userHotList.asp?add=<%=intID%>">Add to my favourites</a></td>
                 </tr>
               <%End If%>
             </table>
@@ -210,7 +210,7 @@ End Function
 
 Function displayRatingPanel
 %>
-<form action="/db/member/addrating.asp" method="post" style="text-align: left">
+<form action="/account/addrating.asp" method="post" style="text-align: left">
  <input type="hidden" name="ID" value="<%=intID%>">
  <H3>Details:</h3>
  Type: <%=Capitalise(aryDrink(7))%><br>

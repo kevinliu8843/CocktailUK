@@ -57,6 +57,11 @@ A{
 	text-decoration: underline;
 	color: #201460;
 }
+A.disabled{
+	color: #666666;
+	text-decoration: none;
+	cursor: not-allowed;
+}
 TABLE, TR, TD {
 	FONT-FAMILY: Arial, Helvetica, sans-serif; 
 	FONT-SIZE: 11pt; 

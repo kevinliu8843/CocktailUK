@@ -37,7 +37,6 @@ H2 {
 	TEXT-ALIGN: left;
 	padding-top: 5px; 
 	padding-bottom: 5px;
-	padding-left: 10px; 
 	COLOR: #545473; 
 	FONT-SIZE: 30pt;  
 	margin-top: 0px;
@@ -110,7 +109,9 @@ TABLE, TR, TD {
 	width: 79%;
 	vertical-align: top;
 	text-align: left;
-	padding-bottom: 80px;
+}
+.content .padded {
+	padding: 0px 10px 10px 80px;
 }
 .footer {
 	color: white;
@@ -130,7 +131,6 @@ TABLE, TR, TD {
 	TEXT-OVERFLOW: ellipsis;
 	TEXT-DECORATION: none;
 	HEIGHT: 40px;
-	padding-left: 10px;
 }
 .linksin { 
 	FONT-FAMILY: Arial, Helvetica, sans-serif;

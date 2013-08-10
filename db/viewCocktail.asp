@@ -136,29 +136,29 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
         <td colspan="3">
           <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse: collapse" bordercolor="#111111">
             <tr>
-              <td>
-                <%IF NOT blnDuplicated Then%>
-                  <a href="/db/member/userHotList.asp?add=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a><%Else%><a href="/db/member/userHotList.asp?remove=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a>
-                <%End If%>
-              </td>
-              <td width="100%">
-                <%IF blnDuplicated Then%>
-                  <a href="/db/member/userHotList.asp?remove=<%=intID%>">Remove from your favourites</a>
-                <%End If%>
-              </td>
-            </tr>
-            <tr>
               <td colspan="2">
-                <%If Session("logged") Then 
+                <%
+                If Session("logged") Then 
                   Response.write strMakeCocktail
-                Else%>
-                  <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse: collapse" bordercolor="#111111" id="table3">
+                End If
+                %>
+                <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse: collapse" bordercolor="#111111" id="table3">
+                  <%IF blnDuplicated Then%>
                     <tr>
                       <td><a href="/db/member/userHotList.asp?add=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></td>
                       <td width="100%"><a href="/db/member/userHotList.asp?add=<%=intID%>">Add to my favourites</a></td>
                     </tr>
-                  </table>
-              <p><%End If%></p>
+                  <%Else%>
+                    <tr>
+                      <td>
+                          <a href="/db/member/userHotList.asp?add=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a><%Else%><a href="/db/member/userHotList.asp?remove=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a>
+                      </td>
+                      <td width="100%">
+                          <a href="/db/member/userHotList.asp?remove=<%=intID%>">Remove from your favourites</a>
+                      </td>
+                    </tr>
+                  <%End If%>
+                </table>
               </td>
             </tr>
           </table>

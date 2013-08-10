@@ -92,100 +92,70 @@ Select Case basedID
 	Case "2"
 	%>
 		<h1>Brandy Based Cocktails - Eau-de-Vie-de-Vin</h1>
-		<TABLE border="0" cellpadding="0" cellspacing="5">
-		  <TR>
-		    <TD valign="top">
-		      <P style="line-height: 150%" align="justify">Brandy is a warm spirit
-		      distilled from wine and is produced in many forms from around the world.
-		      The best known are the Cognacs and Armagnacs of France. However, good
-		      brandy is also produced by many other countries around the world.
-		      <P style="line-height: 150%" align="justify">Top-quality brandies are
-		      produced in copper pot stills. The tradition of maturing brandy goes back
-		      to the 15<SUP>th </SUP>century, when an alchemist allegedly took his
-		      precious barrel of aqua vitae and buried it in his yard to protect it
-		      against the guards and soldiers. The barrel was found years later but half
-		      of the liquor had evaporated leaving a rich smooth nectar.
-		      <P style="line-height: 150%" align="justify">Brandy is an extremely
-		      versatile drink that mixes well with a wide range of other flavours, as the
-		      following recipes demonstrates.</TD>
-		  </TR>
-		</TABLE>
+		<P>Brandy is a warm spirit
+		distilled from wine and is produced in many forms from around the world.
+		The best known are the Cognacs and Armagnacs of France. However, good
+		brandy is also produced by many other countries around the world. Top-quality brandies are
+		produced in copper pot stills. The tradition of maturing brandy goes back
+		to the 15<SUP>th </SUP>century, when an alchemist allegedly took his
+		precious barrel of aqua vitae and buried it in his yard to protect it
+		against the guards and soldiers. The barrel was found years later but half
+		of the liquor had evaporated leaving a rich smooth nectar. Brandy is an extremely
+		versatile drink that mixes well with a wide range of other flavours, as the
+		following recipes demonstrates.
 	<%
 	Case "3"
 	%>
 		<h1>Gin Based Cocktails - Mother's Ruin</h1>
-		<TABLE border="0" cellpadding="0" cellspacing="5">
-		  <TR>
-		    <TD valign="top">
-		      <P style="line-height: 150%" align="justify">Gin is a very common used
-		      base for cocktails, including the famous martini. The original gin was
-		      concocted illegally in bathtubs and bore little resemblance to the gin
-		      we know today. It was probably this poor flavour that gave cocktails their
-		      popularity.
-		      <P style="line-height: 150%" align="justify">Gin is a &quot;neutral,
-		      rectified spirit distilled from any grain, potato or beet and flavoured
-		      with juniper&quot;. Clearly with this definition there are alot of
-		      variations of &quot;gin&quot; around. And each manufacturer keeps their
-		      recipe closely guarded.</TD>
-		  </TR>
-		</TABLE>
+		<P>Gin is a very common used
+		base for cocktails, including the famous martini. The original gin was
+		concocted illegally in bathtubs and bore little resemblance to the gin
+		we know today. It was probably this poor flavour that gave cocktails their
+		popularity. Gin is a &quot;neutral,
+		rectified spirit distilled from any grain, potato or beet and flavoured
+		with juniper&quot;. Clearly with this definition there are alot of
+		variations of &quot;gin&quot; around. And each manufacturer keeps their
+		recipe closely guarded.
 	<%
 	Case "5"
 	%>
 		<h1>Rum Based Cocktails - Kill-Devil</h1>
-		<TABLE border="0" cellpadding="0" cellspacing="5">
-		  <TR>
-		    <TD valign="top">
-		      <P style="line-height: 150%" align="justify">Rum is a rich and fragrant
-		      spirit, distilled from molasses in a pot still or a patent still. The drink
-		      is associated with the tropics because most sugar cane is grown there
-		      (this is where molasses come from). Rum is clear when is comes from the
-		      still (white rum), but is also matured in oak casks to give it a caramel colour
-		      (dark rum).<P style="line-height: 150%" align="justify">Drinkers
-		      have discovered that the rich taste combines perfectly with fruit
-		      juice to give a tropical flavour to cocktails.<P style="line-height: 150%" align="justify">There
-		      are hundreds of rum-based cocktails available to mixologists, however
-		      here are a select few.</TD>
-		  </TR>
-		</TABLE>
+		<P>Rum is a rich and fragrant
+		spirit, distilled from molasses in a pot still or a patent still. The drink
+		is associated with the tropics because most sugar cane is grown there
+		(this is where molasses come from). Rum is clear when is comes from the
+		still (white rum), but is also matured in oak casks to give it a caramel colour
+		(dark rum). Drinkers
+		have discovered that the rich taste combines perfectly with fruit
+		juice to give a tropical flavour to cocktails. There
+		are hundreds of rum-based cocktails available to mixologists, however
+		here are a select few.
 	<%
 	Case "1"
 	%>
 		<h1>Vodka Based Cocktails - Zhiznennia Voda</h1>
-		<TABLE border="0" cellpadding="0" cellspacing="5">
-		  <TR>
-		    <TD valign="top">
-		      <P style="line-height: 150%" align="justify">The word &quot;vodka&quot;
-		      comes from the Russian &quot;Zhiznennia voda&quot;, which means &quot;water
-		      of life&quot;. &quot;Vodka&quot; means &quot;little water&quot;.<P style="line-height: 150%" align="justify">Vodka
-		      can be distilled from any number of sources including potatoes and sugar
-		      cane. The spirit is then filtered through charcoal to filter out
-		      impurities, and the resultant liquor is then the perfect base for a
-		      cocktail. It adds the kick of alcohol but without the taste. This is one
-		      of the great things about vodka: it is almost odourless. So it cannot be
-		      detected on your breath.<P style="line-height: 150%" align="justify">Vodka
-		      is the ideal drink for beginners to use in experiments.</TD>
-		  </TR>
-		</TABLE>
-
+		<P>The word &quot;vodka&quot;
+		comes from the Russian &quot;Zhiznennia voda&quot;, which means &quot;water
+		of life&quot;. &quot;Vodka&quot; means &quot;little water&quot;.Vodka
+		can be distilled from any number of sources including potatoes and sugar
+		cane. The spirit is then filtered through charcoal to filter out
+		impurities, and the resultant liquor is then the perfect base for a
+		cocktail. It adds the kick of alcohol but without the taste. This is one
+		of the great things about vodka: it is almost odourless. So it cannot be
+		detected on your breath. Vodka is the ideal drink for beginners to use in experiments.
 	<%
 	Case "4"
 	%>
 		<h2>Whisky Based Cocktails - The Hard Stuff</h2>
-		<TABLE border="0" cellpadding="0" cellspacing="5">
-		  <TR>
-		    <TD valign="top">
-		      <P style="line-height: 150%" align="justify">Whisky (or whiskey -
-		      depending on its origin) is made in many parts of the world. Whisky
-		      (without the &quot;e&quot;) is produced in Scotland. This is usually
-		      referred to as Scotch. All other whiskies are spelled with an
-		      &quot;e&quot; to distinguish them from the real thing.<P style="line-height: 150%" align="justify">Essentially
-		      whisky is distilled from fermented mash made of malted grain. In Scotland
-		      it derives much of its rich flavour from peat.<P style="line-height: 150%" align="justify">Some
-		      of the best known are single malts, which are produced from a particular
-		      distillery. While most commercial ones are blended, made from products of several regions.</TD>
-		  </TR>
-		</TABLE>
+		<P>Whisky (or whiskey -
+		depending on its origin) is made in many parts of the world. Whisky
+		(without the &quot;e&quot;) is produced in Scotland. This is usually
+		referred to as Scotch. All other whiskies are spelled with an
+		&quot;e&quot; to distinguish them from the real thing. Essentially
+		whisky is distilled from fermented mash made of malted grain. In Scotland
+		it derives much of its rich flavour from peat. Some
+		of the best known are single malts, which are produced from a particular
+		distillery. While most commercial ones are blended, made from products of several regions.</p>
 	<%
 	Case Else
 		strTitle = "List of " & based & " based cocktails"

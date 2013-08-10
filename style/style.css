@@ -80,6 +80,8 @@ TABLE, TR, TD {
 	.header .topads
 	{
 		margin: 0px 0px 10px 15px;
+		max-height: 70px;
+		overflow: hidden;
 	}
 	.header .topads .ad1, 
 	.header .topads .ad2
@@ -92,9 +94,14 @@ TABLE, TR, TD {
 	display: inline-block;
 	vertical-align: top;
 	width: 20%; 
-	TEXT-ALIGN: left;
-	PADDING-BOTTOM: 10px; 
+	text-align: left;
+	padding-bottom: 10px; 
 }
+	.leftnav .item {
+		background: white url(/images/side_menus/smallarrow.gif) center 5px no-repeat;
+		display: block;
+		padding: 3px 2px; 
+	}
 .content {
 	display: inline-block;
 	width: 80%;

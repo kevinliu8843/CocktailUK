@@ -143,7 +143,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
         <%If i<>Min(intNumReviews,intMaxReviews-1) Then%><br>
         <%End If%> <%Next%> <%If intNumReviews>intMaxReviews Then%> <br>
         There are more comments,
-        <a href="?ID=<%=intID%>&reviews=999">read them all...</a>
+        <a href="?reviews=999">read them all...</a>
         <%End if%>
         <p align="center"><b>Love or hate this drink?
         <a href="#" onclick="window.open('review.asp?ID=<%=intID%>','review','width=450, height=450, menubar=0, status=0, resizable=1'); return false">

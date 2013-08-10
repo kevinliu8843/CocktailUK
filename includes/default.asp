@@ -107,18 +107,12 @@ End If
         <img alt="Classic cocktails and bar equipment uk" src="../images/cuk_07.gif" border="0" width="210" height="32"></a></td>
         <td align="center">
 		<div id="search_box">
-			<%If 1=0 Then%>
-			    <form id="search_form" method="GET" action="/sitesearch/default.asp" style="margin: 0px; padding: 0px; display: inline;">
-			        <input type="text" name="SearchField" id="SearchField" value="Search" class="swap_value" onfocus="this.value=''; document.getElementById('search_box').style.backgroundImage='url(http://www.cocktail.uk.com/images/template/bg_search_box_over.gif)'" onblur="document.getElementById('search_box').style.backgroundImage='url(http://www.cocktail.uk.com/images/template/bg_search_box.gif)'"><input type="image" src="../images/template/button_search_go.gif" id="go" alt="Search" title="Search">
-			    </form>
-			<%Else%>
 				<form action="http://www.cocktail.uk.com/sitesearch/google.asp" id="search_form" style="margin: 0px; padding: 0px; display: inline; ">
 				    <input type="hidden" name="cx" value="partner-pub-4852715527905431:j32r2u95lwx">
 				    <input type="hidden" name="cof" value="FORID:10">
 				    <input type="hidden" name="ie" value="UTF-8"> 
 				    <input type="text" name="q" id="SearchField" value="Search" class="swap_value" onfocus="this.value=''; document.getElementById('search_box').style.backgroundImage='url(http://www.cocktail.uk.com/images/template/bg_search_box_over.gif)'" onblur="document.getElementById('search_box').style.backgroundImage='url(http://www.cocktail.uk.com/images/template/bg_search_box.gif)'"><input type="image" src="../images/template/button_search_go.gif" id="go" name="sa" alt="Search" title="Search">
 				</form>
-			<%End If%>
 			</div>
            </td>
         <td align="right" style="padding-right: 20px; width: 150px;" nowrap>
@@ -130,11 +124,25 @@ End If
       </table>
      </div>
      <div class="maincontainer">
+           
+       <%If NOT bHideAds AND NOT blnXXX Then%>
+          <!-- JS AdJug Publisher Code -->    
+          <script language="JavaScript">    
+          document.write('<scr'+'ipt language="JavaScript" src="http://hosting.adjug.com/AdJugSearch/PageBuilder.aspx?ivi=V3.0+JS&aid=492&slid=49281&height=60&width=468&HTMLOP=False&ShowIFrame=True&CacheBuster=' + Math.floor(Math.random()*99999999) + '"></scr'+'ipt>');
+          </script>    
+          <noscript>    
+          <iframe width="468" height="60" name="AdSpace49281" src="http://hosting.adjug.com/AdJugSearch/PageBuilder.aspx?ivi=V3.0+JS+NS&aid=492&slid=49281&height=60&width=468&HTMLOP=True" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no">
+          </iframe>    
+          </noscript>    
+          <!-- JS AdJug Publisher Code -->
+       <%End If%>
+
+       
+
       <div class="content">
        <div class="header">
         <div style="margin: auto;">
          <table border="0" cellpadding="0" style="border-collapse: collapse; text-align: left;" bordercolor="#111111" width="100%" id="AutoNumber14" height="10">
-          <form method="GET" name="search" action="/sitesearch/default.asp" style="padding:0; border:0; margin:0;">
            <tr>
             <td width="100%" bgcolor="#747495" height="27" nowrap background="../images/breadcrumbbg.gif">
             <span class="truncatestring">
@@ -145,24 +153,6 @@ End If
             <%End If%>
             </span></td>
            </tr>
-           
-			<%If NOT bHideAds AND NOT blnXXX Then%>
-			
-	           <tr><td bgcolor="black" align="center" style="border-bottom: 1px #636388 solid;">
-	           
-<!-- JS AdJug Publisher Code -->    
-<script language="JavaScript">    
-document.write('<scr'+'ipt language="JavaScript" src="http://hosting.adjug.com/AdJugSearch/PageBuilder.aspx?ivi=V3.0+JS&aid=492&slid=49281&height=60&width=468&HTMLOP=False&ShowIFrame=True&CacheBuster=' + Math.floor(Math.random()*99999999) + '"></scr'+'ipt>');
-</script>    
-<noscript>    
-<iframe width="468" height="60" name="AdSpace49281" src="http://hosting.adjug.com/AdJugSearch/PageBuilder.aspx?ivi=V3.0+JS+NS&aid=492&slid=49281&height=60&width=468&HTMLOP=True" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no">
-</iframe>    
-</noscript>    
-<!-- JS AdJug Publisher Code -->
-
-				</td></tr>
-			<%End If%>
-          </form>
          </table>
 
         </div>
@@ -216,7 +206,7 @@ document.write('<scr'+'ipt language="JavaScript" src="http://hosting.adjug.com/A
 
    <div align="center">
     
-<iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fcocktailuk&amp;width=700&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=true&amp;height=290" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:625px; height:290px; background-color: white; margin-top: 10px;" allowTransparency="true"></iframe>
+    <iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fcocktailuk&amp;width=700&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=true&amp;height=290" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:625px; height:290px; background-color: white; margin-top: 10px;" allowTransparency="true"></iframe>
 
      <p class="linksin" align="center" style="color: white; line-height: 150%; padding-top: 10; padding-bottom: 10;">
 
@@ -247,16 +237,17 @@ document.write('<scr'+'ipt language="JavaScript" src="http://hosting.adjug.com/A
 	
    </div>
   </div>
+
   <%If blnSkyscraper AND NOT bHideAds AND NOT blnXXX Then%>
 	  <div class="skyscraper">
-
-<!-- Simple IF AdJug Publisher Code -->    
-<iframe width="160" height="600" name="AdSpace49282" src="http://hosting.adjug.com/AdJugSearch/PageBuilder.aspx?ivi=V3.0+IF&aid=492&slid=49282&height=600&width=160&CacheBuster=[time_stamp]&HTMLOP=True" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no">
-</iframe>    
-<!-- Simple IF AdJug Publisher Code -->
-	
+      <!-- Simple IF AdJug Publisher Code -->    
+      <iframe width="160" height="600" name="AdSpace49282" src="http://hosting.adjug.com/AdJugSearch/PageBuilder.aspx?ivi=V3.0+IF&aid=492&slid=49282&height=600&width=160&CacheBuster=[time_stamp]&HTMLOP=True" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no">
+      </iframe>    
+      <!-- Simple IF AdJug Publisher Code -->
 	 </div>
- <%End If%> </center>
+ <%End If%>
+
+</center>
 </div>
 
 </body>

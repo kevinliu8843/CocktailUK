@@ -230,13 +230,7 @@ Function displayRatingPanel
 %>
 <form action="/db/member/addrating.asp" method="post" style="text-align: left">
  <input type="hidden" name="ID" value="<%=intID%>">
- <table cellspacing="0" cellpadding="0" width="100%" border="0">
-   <tr>
-     <td class="arrowblock" align="left" width="1%" nowrap>
-     <img height="16" src="/images/pixel.gif" width="16" border="0"></td>
-     <td class="baselightred" width="99%"><b class="contentHeader">&nbsp;DETAILS</b></td>
-   </tr>
- </table>
+ <H3>Details:</h3>
  Type : <b><%=Capitalise(aryDrink(7))%></b><br>
  Category : <b><%=Capitalise(aryDrink(8))%></b><br>
  Viewed : <b><%=aryDrink(4)%> times</b><br>

@@ -15,7 +15,6 @@ strPass2 		= Replace(strIntoDB(Request("pass2")), "%", "")
 blnNews  		= (Request("news")  = "ON")
 blnForum 		= (Request("forum") = "ON")
 	
-blnOkay = False
 blnUserOk = False
 
 If Request("submit_form") = "true" Then
@@ -23,7 +22,7 @@ If Request("submit_form") = "true" Then
 	cn.Open strDBMod
 
 	'Validate Form.
-	IF NOT (strFirstName="" OR strLastName="" OR strEmail="" OR strPass="" OR strPass2="") Then 'check that all fields are complete
+	IF NOT (strFirstName="" OR strLastName="" OR strEmail="" OR strPass="") Then 'check that all fields are complete
 		'Check for duplicates
 		Set rs = cn.Execute("EXECUTE CUK_GETUSER @un='"&strEmail&"'")
 		IF rs.EOF Then
@@ -32,18 +31,12 @@ If Request("submit_form") = "true" Then
 			strError = "email"
 		End If
 		Set rs = Nothing
-		IF strPass = strPass2 Then	'check that password fields match
-			blnOkay = True
-		Else
-			'password fields dont match
-			strError = "pass"
-		End If
 	Else
 		'all fields not entered
 		strError = "fields"
 	End If
 	
-	If blnOkay AND blnUserOk Then
+	If blnUserOk Then
 		'add user to db
 		strSQL = "EXECUTE CUK_REGISTER @fn='"&strFirstName&"', @ln='"&strLastName&"', @un='"&strEmail&"', @p='"&strPass&"', @e='"&strEmail&"', @n="&Int(blnNews)&", @f="&Int(blnForum)
 		Set rs = cn.Execute( strSQL )
@@ -61,7 +54,7 @@ If Request("submit_form") = "true" Then
 		Session("ID") = intID
 		Session("numLoggedIn") = 1
 		Response.cookies("cocktailHeavenMembersUserName") = strEmail
-		Response.cookies("cocktailHeavenMembersUserName").Expires = "December 1, 2020"
+		Response.cookies("cocktailHeavenMembersUserName").Expires = "December 1, 2049"
 		If Request("sendto") <> "" Then
 			Response.Redirect(Request("sendto"))
 		End If

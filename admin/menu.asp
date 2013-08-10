@@ -13,35 +13,20 @@ Dim dteLastUpdated, intNewReviews, intNewGames, intShopReindex, intLinks, int404
 Dim strWhen, dblDBsize, intProducts, intCategories, blnShowPC, dblDBSizeNew
 Dim blnSilent
 
+On Error Resume Next
+
 blnShowPC = (Request("percentages") = "true")
 
 Set cn = Server.CreateObject("ADODB.Connection")
 Set rs = Server.CreateObject("ADODB.Recordset")
 
-cn.Open strDBMod
-strSQL = "SELECT visitors FROM counter WHERE year= " & Year(Now) & " AND month=" & Month(Now)
-rs.Open strSQL, cn
-If NOT rs.EOF Then
- intVisits  = rs("visitors")
-Else
- intVisits  = 0
-End If
-rs.Close
-
-strSQL = "SELECT COUNT(*) FROM ForumMessages WHERE ReIndex=1"
-rs.Open strSQL, cn
-intForumsReindex = rs(0)
-rs.Close
-
-strSQL = "SELECT count(*) from Cocktail WHERE Status=0"
-rs.Open strSQL, cn
-intNewdrinks = rs(0)
-rs.Close
-
-strSQL = "SELECT count(*) from Cocktail WHERE ReIndex=1"
-rs.Open strSQL, cn
-intCocktailsReindex = rs(0)
-rs.Close
+intForumsReindex = 0
+intNewdrinks = 0
+intCocktailsReindex = 0
+intShopReindex= 0
+blDBsize = 0
+intProducts = 0
+intCategories = 0
 
 strSQL = "SELECT count(*) from cocktailreview WHERE status=0"
 rs.Open strSQL, cn
@@ -58,66 +43,8 @@ rs.Open strSQL, cn
 intNewGames= rs(0)
 rs.Close
 
-strSQL = "SELECT count(*) from dsproduct WHERE status=1 AND (ID NOT IN (SELECT URL from URLs WHERE typeID=4) OR DATEDIFF(dd, datemodified, GETDATE()) = 1)"
-rs.Open strSQL, cn
-intShopReindex= rs(0)
-rs.Close
+dteLastUpdated = Now() - 10
 
-strSQL = "SELECT count(*) from dsproduct WHERE status<>1 AND ID IN (SELECT URL from URLs WHERE typeID=4)"
-rs.Open strSQL, cn
-intShopReindex= rs(0) + intShopReindex
-rs.Close
-
-strSQL = "SELECT count(*) from Links WHERE live=0"
-rs.Open strSQL, cn
-intLinks= rs(0) + intLinks
-rs.Close
-
-strSQL = "SELECT count(*) from LinkReviews WHERE reviewlive=0"
-rs.Open strSQL, cn
-intLinks= rs(0) + intLinks
-rs.Close
-
-strSQL = "SELECT count(*) from LinkErrors"
-rs.Open strSQL, cn
-intLinks= rs(0) + intLinks
-rs.Close
-
-strSQL = "SELECT count(*) from httperrors WHERE redirectto=''"
-rs.Open strSQL, cn
-int404 = rs(0)
-rs.Close
-
-call getDateShopLastUpdated(cn, rs, strWhen, dteLastUpdated)
-
-strSQL = "EXECUTE sp_spaceused"
-rs.Open strSQL, cn
-If NOT rs.EOF Then
- dblDBsize = rs("database_size")
-Else
- dblDBsize = 0
-End If
-rs.Close
-
-strSQL = "SELECT count(*) from dsproduct WHERE status=1 AND ID NOT IN (SELECT prodID from dsproductactual)"
-rs.open strSQL, cn
-If NOT rs.EOF Then
- intProducts = rs(0)
-Else
- intProducts = 0
-End If
-rs.Close
-
-strSQL = "SELECT count(*) from dscategory WHERE ID NOT IN (SELECT catID from dscategoryactual)"
-rs.open strSQL, cn
-If NOT rs.EOF Then
- intCategories = rs(0)
-Else
- intCategories = 0
-End If
-rs.Close
-
-Session("LoggedIn") = "YES"   'For links manager
 Session("admin") = True
 
 blnSilent = False
@@ -147,33 +74,6 @@ a{ text-decoration: none; }
 
 <font face="Verdana" size="1">
 
-<%If intForumsReindex > 0 OR intCocktailsReindex > 0 OR intShopReindex > 0 Then%>
-</font>
-<P><font face="Verdana"><font size="1">&nbsp;</font><B><font size="1" color="#612B83">Just 
-Done</font></B><font size="1"><BR>
-<A href="/admin/sitesearch/default.asp?action=reindex forums">
-<%
-If intForumsReindex > 0 Then
-Call ReindexSite("reindex forums", "forum post(s)", intForumsReindex, blnSilent)
-End If
-%>
-</a>
-<A href="/admin/sitesearch/default.asp?action=reindex cocktails">
-<%
-If intCocktailsReindex > 0 Then
-Call ReindexSite("reindex cocktails", "drink(s)", intCocktailsReindex, blnSilent)
-End If
-%>
-</a>
-<A href="/admin/sitesearch/default.asp?action=reindex shop">
-<%
-If intShopReindex > 0 Then
-Call ReindexSite("reindex shop", "product(s)", intShopReindex, blnSilent)
-End If
-%>
-</a>
-<%
-End If%>
  <%If intNewdrinks>0 OR intNewReviews>0 OR intNewGames>0 OR int404>1 OR intLinks>0 OR DateDiff("d", dteLastUpdated, Now()) <> 0 Then%>
     </font></font>
     <P><font face="Verdana"><font size="1">&nbsp;</font><B><font size="1" color="#612B83">To 
@@ -233,30 +133,7 @@ End If%>
  <span style="text-decoration: none">View Shop Searches</span></A></B><BR>
  &nbsp;<font color="#AA0000"></font> <B><A class="linksin" href="shop/randomtest.asp">
  <span style="text-decoration: none">Test Shop Random Products</span></A></B><BR>
- &nbsp;<font color="#AA0000"></font> <B><A class="linksin" href="ASPTools/1ClickDBPro/Connect.asp">
- <span style="text-decoration: none">DB Browser</span></A></B><BR>
- &nbsp;<font color="#AA0000"></font> </font> <B><A class="linksin" href="http://www.bathandunwind.com/admin/advanced/dir_browser.asp?dir=C%3A%5CInetpub%5Cwwwroot%5Ccocktailuk">
- <font size="1"><span style="text-decoration: none">File Manager</span></font></A></B></font></P>
-
- <P><font face="Verdana"><font size="1">&nbsp;</font><B><font size="1" color="#612B83">Statistics</font></B><font size="1"><BR>
- &nbsp;<font color="#AA0000">-</font>&nbsp;&nbsp; <A href="stats/default.asp" class="linksin"><B>
- <span style="text-decoration: none"><%=Capitalise(MonthName(Month(Now), TRUE))%>:</span></B><span style="text-decoration: none"> <%=FormatNumber(intVisits,0)%></span></A><BR>
- &nbsp;<font color="#AA0000">-</font>&nbsp;&nbsp; <A href="stats/default.asp" class="linksin"><B>
- <span style="text-decoration: none"><%=Capitalise(MonthName(Month(Now), TRUE))%> 
-	Pred:</span></B><span style="text-decoration: none"> <%=FormatNumber(CalculateProjectedTarget(intVisits),0)%></span></A><BR>
- &nbsp;<font color="#AA0000"></font> <B><A class="linksin" href="/admin/sitesearch/searches.asp">
- <span style="text-decoration: none">Referrer Searches</span></A></B><BR>
- &nbsp;<font color="#AA0000"></font> <B><A class="linksin" href="menu.asp?compactdb=true" target="_self">
- <span style="text-decoration: none">Current DB Size: <%=dblDBsize%></span></A></B><BR>
- <%If Request("compactdb") = "true" AND Request("newdbsize") = "" Then%> &nbsp;<font color="#AA0000">-</font>-&nbsp;&nbsp; 
- </font></font> <B>
- <font face="Verdana"><font size="1">New DB Size: </font>
- <font size="1" face="Arial"> 
- <INPUT name="newdbsize" value="<%=dblDBSizeNew%>" size="2" style="border: 0px" class="linksin"></font><font size="1">Mb</font></font></B><font face="Verdana"><font size="1">
- </font><font size="1" face="Arial"> <INPUT type="submit" value="Go" style="height: 70%" class="linksin"></font><font size="1"><BR>
- <%ElseIf Request("compactdb") = "true" AND Request("newdbsize") <> "" Then%> &nbsp;<font color="#AA0000">-</font>&nbsp;&nbsp; <I>
-	Database compacted</I></B><BR>
- <%End If%></font></font></P>
+ &nbsp;<font color="#AA0000"></font></P>
 
 <font face="Verdana" size="1">
 
@@ -268,7 +145,6 @@ If blnShowPC Then
   call GetDrinkstuffSales(dArrDSSales, iArrDSVolume, dArrDSProfits)
   call GetBarmansSales(dArrBARSales, iArrBARVolume, dArrBARProfits)
 End If
-on error goto 0
 %> 
  
     </font> 
@@ -379,17 +255,12 @@ on error goto 0
  <span style="text-decoration: none">UTarget</span></A></B><BR>
  	&nbsp;<font color="#AA0000"></font> <B><A class="linksin " href="http://www.google.com/adsense">
  <span style="text-decoration: none">Google Adsense</span></A></B><BR>
- 	&nbsp;<font color="#AA0000"></font> <b>
- <a style="text-decoration: none" href="http://partners.43plc.com">43 Plc</a></b><BR>
- 	&nbsp;<font color="#AA0000"></font> </font> <B><A class="linksin " href="accounts/finance.xls">
- <font size="1"><span style="text-decoration: none">Site Finances</span></font></A></B></font></P>
+ 	&nbsp;<font color="#AA0000"></font> </font></font></P>
 </FORM>
 </NOBR>
 </HTML>
 <%
 Response.flush
-
-'Call CreatePrettyURLFiles(cn, rs)
 
 cn.Close
 Set cn = Nothing

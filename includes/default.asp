@@ -51,11 +51,9 @@ End If
 <html>
 
 <head>
-<meta name="verify-v1" content="j1KzW+k9z2ZccTw61qVc0227g3bZhen6ZCqPR541JsQ=">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="../style/style.css" type="text/css" rel="stylesheet">
 <link rel="SHORTCUT ICON" href="/favicon.ico">
-<link rel="P3Pv1" href="/w3c/p3p.xml">
 <meta name="robots" content="ALL">
 <meta name="description" content="<%=strMetaDescription%>">
 <%If strKeywords = "" Then%>
@@ -63,14 +61,13 @@ End If
 <%Else%>
 	<meta name="keywords" content="<%=strKeywords%>">
 <%End If%>
-<meta http-equiv="PICS-Label" content="(PICS-1.1 &quot;http://www.icra.org/ratingsv02.html&quot; l gen true for &quot;http://www.cocktail.uk.com&quot; r (cz 1 lz 1 nz 1 ob 1 vz 1) &quot;http://www.rsac.org/ratingsv01.html&quot; l gen true for &quot;http://www.cocktail.uk.com&quot; r (n 0 s 0 v 0 l 0))">
 <meta name="revisit-after" content="3 day">
 <meta name="distribution" content="GLOBAL">
 <meta name="Googlebot" content="all">
 <meta name="abstract" content="<%=strTitle%>">
 <meta http-equiv="content-language" content="EN">
 <meta name="google-site-verification" content="pncNZRLgGxSNLD_-xHUvcx6z6di9D_pU_Kzo-Ldf1kc" />
-<script language="JavaScript" src="/script/jscript.js"></script>
+<meta name="verify-v1" content="j1KzW+k9z2ZccTw61qVc0227g3bZhen6ZCqPR541JsQ=">
 <title><%=strTopTitle%></title>
 <script type="text/javascript">
 
@@ -103,18 +100,18 @@ End If
         <a href="http://www.cocktail.uk.com/">
         <img border="0" src="../images/cuk_03.jpg" width="85" height="85" alt="Classic cocktails and bar equipment uk"></a></td>
         <td align="left" style="width: 230px">
-        <a href="http://www.cocktail.uk.com/">
-        <img alt="Classic cocktails and bar equipment uk" src="../images/cuk_07.gif" border="0" width="210" height="32"></a></td>
+          <a href="http://www.cocktail.uk.com/">
+          <img alt="Classic cocktails and bar equipment uk" src="../images/cuk_07.gif" border="0" width="210" height="32"></a></td>
         <td align="center">
-		<div id="search_box">
-				<form action="http://www.cocktail.uk.com/sitesearch/google.asp" id="search_form" style="margin: 0px; padding: 0px; display: inline; ">
-				    <input type="hidden" name="cx" value="partner-pub-4852715527905431:j32r2u95lwx">
-				    <input type="hidden" name="cof" value="FORID:10">
-				    <input type="hidden" name="ie" value="UTF-8"> 
-				    <input type="text" name="q" id="SearchField" value="Search" class="swap_value" onfocus="this.value=''; document.getElementById('search_box').style.backgroundImage='url(http://www.cocktail.uk.com/images/template/bg_search_box_over.gif)'" onblur="document.getElementById('search_box').style.backgroundImage='url(http://www.cocktail.uk.com/images/template/bg_search_box.gif)'"><input type="image" src="../images/template/button_search_go.gif" id="go" name="sa" alt="Search" title="Search">
-				</form>
-			</div>
-           </td>
+    		  <div id="search_box">
+    				<form action="http://www.cocktail.uk.com/sitesearch/google.asp" id="search_form" style="margin: 0px; padding: 0px; display: inline; ">
+    				    <input type="hidden" name="cx" value="partner-pub-4852715527905431:j32r2u95lwx">
+    				    <input type="hidden" name="cof" value="FORID:10">
+    				    <input type="hidden" name="ie" value="UTF-8"> 
+    				    <input type="text" name="q" id="SearchField" value="Search" class="swap_value" onfocus="this.value=''; document.getElementById('search_box').style.backgroundImage='url(http://www.cocktail.uk.com/images/template/bg_search_box_over.gif)'" onblur="document.getElementById('search_box').style.backgroundImage='url(http://www.cocktail.uk.com/images/template/bg_search_box.gif)'"><input type="image" src="../images/template/button_search_go.gif" id="go" name="sa" alt="Search" title="Search">
+    				</form>
+    			</div>
+        </td>
         <td align="right" style="padding-right: 20px; width: 150px;" nowrap>
             <a href="/shop/basket.asp"><img alt="My Basket" src="../images/template/basket_icon.gif" width="36" height="36" align="right" border="0"><strong><u>My Basket</u></strong><br>
             <span style="text-decoration: none; white-space: nowrap;"><%=intItems%> Item<%If intItems <> 1 then%>s<%end if%> 
@@ -193,39 +190,7 @@ End If
     </table>
   </div>
   <div class="footer" id="footer" align="center">
-
-   <div align="center">
-    
     <iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fcocktailuk&amp;width=700&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=true&amp;height=290" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:625px; height:290px; background-color: white; margin-top: 10px;" allowTransparency="true"></iframe>
-
-     <p class="linksin" align="center" style="color: white; line-height: 150%; padding-top: 10; padding-bottom: 10;">
-
-      <font color="#FFFFFF">&copy;<%=Year(Now())%> </font>
-      <a class="linksin" href="/services/aboutus">
-      <font color="#FFFFFF">&nbsp;About us</font></a><font color="#FFFFFF"> 
-      | </font>
-      <a class="linksin" href="/services/contact.asp">
-      <font color="#FFFFFF">Contact us</font></a><font color="#FFFFFF"> 
-      | </font>
-      <a class="linksin" href="/services/privacy.asp">
-      <font color="#FFFFFF">Privacy policy</font></a><font color="#FFFFFF"> 
-      </font>
-     <span style="margin-right: 10px;" class="linksin">
-      <strong><font color="#FFFFFF">&nbsp;&nbsp;&nbsp;Partners: </font></strong>
-      <a class="linksin" target="_blank" href="http://www.cocktailequipment.com/">
-      <font color="#FFFFFF">Cocktail Equipment</font></a><font color="#FFFFFF"> 
-      | </font>
-      <a class="linksin" target="_blank" href="http://www.drinkstuff.com/products/affiliate.asp?affID=10724">
-      <font color="#FFFFFF">Drinkstuff</font></a><font color="#FFFFFF"> 
-      | </font>
-      <a class="linksin" target="_blank" href="http://www.cateringequipmentshop.com/">
-      <font color="#FFFFFF">CES</font></a><font color="#FFFFFF"> 
-      | </font>
-      <a class="linksin" target="_blank" href="http://www.barmans.co.uk/products/affiliate.asp?affID=10724">
-      <font color="#FFFFFF">Barmans</font></a>
-      </span>
-	
-   </div>
   </div>
 
   <%If blnSkyscraper AND NOT bHideAds AND NOT blnXXX Then%>

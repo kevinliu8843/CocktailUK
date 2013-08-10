@@ -108,6 +108,9 @@ End If
     <%If NOT bHideAds AND NOT blnXXX AND NOT (InStr(Request.ServerVariables("SCRIPT_NAME"), "adult") > 0 OR (InStr(Request.ServerVariables("SCRIPT_NAME"), "/db/viewAllCocktails.asp") > 0 AND InStr(Request.querystring, "type=8") > 0) ) Then%>
       <div class="topads">
         <div class="ad1">
+          <script type='text/javascript'><!--/* Place your click tracking link here. DO NOT URLENCODE */var ps_ct0 = '';/* var ps_puburl = ''; *//* Do not modify below */var ps_url = '//eu.projectsunblock.com/system/serve.php?a=10212&c=5784&js=1&cb=' + Math.floor(Math.random() * 99999);document.write('<scr' + 'ipt type="text/javascript" src="' + ps_url + '"></scr' + 'ipt>');//--></script><noscript><img src='//noscript.projectsunblock.com/10212-5784-ns.gif' border='0' width='0' /></noscript><img src='//images.projectsunblock.com/10212-5784-pix.gif' border='0' width='0' />
+        </div>
+        <div class="ad2">
           <!-- JS AdJug Publisher Code -->    
           <script language="JavaScript">    
           document.write('<scr'+'ipt language="JavaScript" src="http://hosting.adjug.com/AdJugSearch/PageBuilder.aspx?ivi=V3.0+JS&aid=492&slid=49281&height=60&width=468&HTMLOP=False&ShowIFrame=True&CacheBuster=' + Math.floor(Math.random()*99999999) + '"></scr'+'ipt>');
@@ -117,9 +120,6 @@ End If
           </iframe>    
           </noscript>    
           <!-- JS AdJug Publisher Code -->
-        </div>
-        <div class="ad2">
-          <script type='text/javascript'><!--/* Place your click tracking link here. DO NOT URLENCODE */var ps_ct0 = '';/* var ps_puburl = ''; *//* Do not modify below */var ps_url = '//eu.projectsunblock.com/system/serve.php?a=10212&c=5784&js=1&cb=' + Math.floor(Math.random() * 99999);document.write('<scr' + 'ipt type="text/javascript" src="' + ps_url + '"></scr' + 'ipt>');//--></script><noscript><img src='//noscript.projectsunblock.com/10212-5784-ns.gif' border='0' width='0' /></noscript><img src='//images.projectsunblock.com/10212-5784-pix.gif' border='0' width='0' />
         </div>
       </div>
     <%End If%>

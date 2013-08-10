@@ -145,17 +145,17 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
                 <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse: collapse" bordercolor="#111111" id="table3">
                   <%IF blnDuplicated Then%>
                     <tr>
-                      <td><a href="/db/member/userHotList.asp?add=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></td>
-                      <td width="100%"><a href="/db/member/userHotList.asp?add=<%=intID%>">Add to my favourites</a></td>
-                    </tr>
-                  <%Else%>
-                    <tr>
                       <td>
                           <a href="/db/member/userHotList.asp?remove=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a>
                       </td>
                       <td width="100%">
                           <a href="/db/member/userHotList.asp?remove=<%=intID%>">Remove from your favourites</a>
                       </td>
+                    </tr>
+                  <%Else%>
+                    <tr>
+                      <td><a href="/db/member/userHotList.asp?add=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></td>
+                      <td width="100%"><a href="/db/member/userHotList.asp?add=<%=intID%>">Add to my favourites</a></td>
                     </tr>
                   <%End If%>
                 </table>

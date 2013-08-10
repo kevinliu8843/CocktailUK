@@ -98,17 +98,15 @@ TABLE, TR, TD {
 	padding-bottom: 10px; 
 }
 	.leftnav .item {
-		background: white url(/images/side_menus/smallarrow.gif) center 5px no-repeat;
 		display: block;
 		padding: 3px 2px; 
 	}
 .content {
 	display: inline-block;
-	width: 80%;
+	width: 79%;
 	vertical-align: top;
-	TEXT-ALIGN: left;
-	padding-BOTTOM: 80px;
-	BORDER-LEFT: #636388 1px solid;
+	text-align: left;
+	padding-bottom: 80px;
 }
 .footer {
 	color: white;

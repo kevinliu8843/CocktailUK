@@ -148,10 +148,10 @@ End If
     End If
     %>
   </div>
+</div>
 
-  <div class="footer" id="footer" align="center">
-    <iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fcocktailuk&amp;width=700&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=true&amp;height=290" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:625px; height:290px; background-color: white; margin-top: 10px;" allowTransparency="true"></iframe>
-  </div>
+<div class="footer" id="footer" align="center">
+  <iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fcocktailuk&amp;width=700&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=true&amp;height=290" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:625px; height:290px; background-color: white; margin-top: 10px;" allowTransparency="true"></iframe>
 </div>
 
 <%If blnSkyscraper AND NOT bHideAds AND NOT blnXXX Then%>

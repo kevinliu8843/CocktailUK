@@ -1,5 +1,4 @@
-﻿<!--#include virtual="/includes/cow.asp" -->
-<!--#include virtual="/includes/rating.asp" -->
+﻿<!--#include virtual="/includes/rating.asp" -->
 <!--#include virtual="/includes/shop.asp" -->
 <%
 Sub Do301Redirect(strNewURL)
@@ -104,14 +103,6 @@ Sub displayPageLocation(strTitle, strTitleOut, strTopTitle, strUrl, strLinkStyle
 	If checkUrl(strUrl, "/db/stats") Then
 		cArrLinks(1) = "/db/stats"
 		cArrText(1) = "Top Ten..."
-	End If
-	If checkUrl(strUrl, "/game") Then
-		cArrLinks(1) = "/game"
-		cArrText(1) = "Games"
-	End If
-	If checkUrl(strUrl, "/game/drinking") Then
-		cArrLinks(2) = "/game/drinking/"
-		cArrText(2) = "Drinking Games"
 	End If
 	If checkUrl(strUrl, "/features") Then
 		cArrLinks(1) = "/features"

@@ -91,21 +91,4 @@ Function addRating( strCurrentUsers, strCurrentRate, strRateAdded,  strID, objCo
 	Set cn = Nothing
 	Response.Redirect("/db/viewCocktail.asp?rate=true&ID=" & strID)
 End Function
-
-Function addGameRating( strCurrentUsers, strCurrentRate, strRateAdded,  strID, objConn )
-	'calculate rating
-	Dim numRating, rate
-
-	numRating = ( ( Int(strCurrentUsers) * CDbl(strCurrentRate) ) + ( CDbl(strRateAdded) ) ) / ( Int(strCurrentUsers) +1 )
-	strSQL = "UPDATE drinkinggame SET peoplerated='"&  Int( strCurrentUsers ) + 1 & "', rating='" & Round( numRating, 1 ) & "' WHERE ID=" & strID
-	Set rs = cn.Execute( strSQL )
-	
-	'close objects
-	rs2.Close
-	Set rs2 = Nothing
-	Set rs = Nothing
-	cn.Close
-	Set cn = Nothing
-	Response.Redirect("/game/drinking/view_game.asp?rate=true&ID=" & strID)
-End Function
 %>

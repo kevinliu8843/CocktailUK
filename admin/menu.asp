@@ -24,11 +24,6 @@ intNewdrinks = 0
 intProducts = 0
 intCategories = 0
 
-If Request("rebuild") = "true" then
-	Call setupCategories(NULL)
-	Call CreatePrettyURLFiles(cn, rs)
-End If
-
 Session("admin") = True
 
 blnSilent = False
@@ -47,18 +42,12 @@ a{ text-decoration: none; }
 <BODY topmargin="5" leftmargin="5" link="#000000" vlink="#000000" alink="#AA0000">
 <SPAN class="linksin">
 
- <%If intNewdrinks>0 OR intNewReviews>0 OR intNewGames>0 Then%>
+ <%If intNewdrinks>0 Then%>
     <P><font face="Verdana"><font size="1">&nbsp;</font><B><font size="1" color="#612B83">To 
 	Do List</font></B><font size="1"><BR>
  <%End If%>
  <%if intNewdrinks>0 Then%> &nbsp;<font color="#AA0000"></font> <B><A class="linksin" href="submitCocktails/default.asp">
 	 <span style="text-decoration: none">Add Users' Drinks (<%=intNewdrinks%> new)</span></A></B><BR>
- <%End If%>
- <%if intNewReviews>0 Then%> &nbsp;<font color="#AA0000"></font> <B><A class="linksin" href="review/default.asp">
-	 <span style="text-decoration: none">Add Users' Reviews (<%=intNewReviews%> new)</span></A></B><BR>
- <%End If%>
- <%if intNewGames>0 Then%> &nbsp;<font color="#AA0000"></font> <B><A class="linksin" href="game/default.asp">
-	 <span style="text-decoration: none">Add Users' Games (<%=intNewGames%> new)</span></A></B><BR>
  <%End If%>
  </font>
  <P><font face="Verdana"><font size="1">&nbsp;</font><font color="#612B83" size="1"><B>Managers</B></font><font size="1"><BR>
@@ -75,7 +64,7 @@ a{ text-decoration: none; }
  &nbsp;<font color="#AA0000"></font> <B><A class="linksin" href="createHeaderAndFooter.asp">
  <span style="text-decoration: none">Create Header and Footer</span></A></B><BR>
  &nbsp;<font color="#AA0000"></font></P>
- &nbsp;<font color="#AA0000"></font> <B><A class="linksin" href="?rebuild=true">
+ &nbsp;<font color="#AA0000"></font> <B><A class="linksin" href="/admin/sitemap.asp">
  <span style="text-decoration: none">Rebuild recipes/categories</span></A></B><BR>
  &nbsp;<font color="#AA0000"></font></P>
 

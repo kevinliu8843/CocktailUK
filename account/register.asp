@@ -2,7 +2,7 @@
 Option Explicit
 strTitle="Register"
 Dim blnJustForm
-Dim cn, strFirstName, strLastName, strEmail, strUname, strPass, strPass2, strNews, blnNews, strExtra
+Dim cn, strFirstName, strLastName, strEmail, strPass, strPass2, strNews, blnNews, strExtra
 Dim blnUserOk, blnOkay, intID, blnForum, strError
 %>
 <!--#include virtual="/includes/variables.asp" -->
@@ -10,7 +10,6 @@ Dim blnUserOk, blnOkay, intID, blnForum, strError
 strFirstName 	= strIntoDB(Request("name"))
 strLastName 	= strIntoDB(Request("lname"))
 strEmail 		= strIntoDB(Request("email"))
-strUname 		= Replace(strIntoDB(Request("uname")), "%", "")
 strPass  		= Replace(strIntoDB(Request("pass")), "%", "")
 strPass2 		= Replace(strIntoDB(Request("pass2")), "%", "")
 blnNews  		= (Request("news")  = "ON")
@@ -24,13 +23,13 @@ If Request("submit_form") = "true" Then
 	cn.Open strDBMod
 
 	'Validate Form.
-	IF NOT (strFirstName="" OR strLastName="" OR strEmail="" OR strUname="" OR strPass="" OR strPass2="") Then 'check that all fields are complete
+	IF NOT (strFirstName="" OR strLastName="" OR strEmail="" OR strPass="" OR strPass2="") Then 'check that all fields are complete
 		'Check for duplicates
-		Set rs = cn.Execute("EXECUTE CUK_GETUSER @un='"&strUname&"'")
+		Set rs = cn.Execute("EXECUTE CUK_GETUSER @un='"&strEmail&"'")
 		IF rs.EOF Then
 			blnUserOk = True
 		Else
-			strError = "uname"
+			strError = "email"
 		End If
 		Set rs = Nothing
 		IF strPass = strPass2 Then	'check that password fields match
@@ -46,22 +45,22 @@ If Request("submit_form") = "true" Then
 	
 	If blnOkay AND blnUserOk Then
 		'add user to db
-		strSQL = "EXECUTE CUK_REGISTER @fn='"&strFirstName&"', @ln='"&strLastName&"', @un='"&strUname&"', @p='"&strPass&"', @e='"&strEmail&"', @n="&Int(blnNews)&", @f="&Int(blnForum)
+		strSQL = "EXECUTE CUK_REGISTER @fn='"&strFirstName&"', @ln='"&strLastName&"', @un='"&strEmail&"', @p='"&strPass&"', @e='"&strEmail&"', @n="&Int(blnNews)&", @f="&Int(blnForum)
 		Set rs = cn.Execute( strSQL )
-		Set rs = cn.Execute("EXECUTE CUK_GETUSER @un='"&strUname&"'")
+		Set rs = cn.Execute("EXECUTE CUK_GETUSER @un='"&strEmail&"'")
 		intID = Int(rs("ID"))
 		Set rs = nothing
 		cn.Close
 	
 		Session("firstName") = strFirstName
 		Session("lastName") = strLastName
-		Session("uname") = strUname
+		Session("uname") = strEmail
 		Session("name") = Session("firstName") & " " & Session("lastName")
 		Session("email") = strEmail
 		Session("logged") = True
 		Session("ID") = intID
 		Session("numLoggedIn") = 1
-		Response.cookies("cocktailHeavenMembersUserName") = strUname
+		Response.cookies("cocktailHeavenMembersUserName") = strEmail
 		Response.cookies("cocktailHeavenMembersUserName").Expires = "December 1, 2020"
 		If Request("sendto") <> "" Then
 			Response.Redirect(Request("sendto"))
@@ -156,27 +155,6 @@ function FrontPage_Form1_Validator(theForm)
     return (false);
   }
 
-  if (theForm.uname.value == "")
-  {
-    alert("Please enter a value for the \"Username\" field.");
-    theForm.uname.focus();
-    return (false);
-  }
-
-  if (theForm.uname.value.length < 1)
-  {
-    alert("Please enter at least 1 characters in the \"Username\" field.");
-    theForm.uname.focus();
-    return (false);
-  }
-
-  if (theForm.uname.value.length > 50)
-  {
-    alert("Please enter at most 50 characters in the \"Username\" field.");
-    theForm.uname.focus();
-    return (false);
-  }
-
   if (theForm.pass.value == "")
   {
     alert("Please enter a value for the \"Password\" field.");
@@ -222,7 +200,7 @@ function FrontPage_Form1_Validator(theForm)
 			Case "email"		Response.Write "<p><FONT color=red><i>Your email appears to be invalid. Please re-enter.</i></font></P>"
 			Case "fields"		Response.Write "<p><FONT color=red><i>Please use ALL fields.</i></font></P>"
 			Case "pass"			Response.Write "<p><FONT color=red><i>Your passwords appear not to match. Please re-enter.</i></font></P>"
-			Case "uname"		Response.Write "<p><FONT color=red><i>Sorry. That username is already taken. Please select another.</i></font></P>"
+			Case "email"		Response.Write "<p><FONT color=red><i>Sorry. Your email address already has an account. Please <a href=""login.asp"">login here</a>.</i></font></P>"
 			Case Else			Response.Write "<p><FONT color=red><i>Sorry. An unknown error occured whilst processing your application. Please contact the webmaster.</i></font></P>"
 	   End Select
 	  End If
@@ -262,18 +240,10 @@ function FrontPage_Form1_Validator(theForm)
              </TR>
              <TR>
                <TD align="right">
-               <P>Username</P>
-               </TD>
-               <TD align="left">
-               <P align="center"><INPUT name="uname" size="17" maxlength="50" value="<%=strUname%>" style="float: left"></P>
-               </TD>
-             </TR>
-             <TR>
-               <TD align="right">
                <P>Password</P>
                </TD>
                <TD align="left">
-               <P align="center"><INPUT type="password" name="pass" maxlength="50" size="17" style="float: left"></P>
+               <P align="center"><INPUT type="password" name="pass" maxlength="50" size="17"></P>
                </TD>
              </TR>
              <TR>

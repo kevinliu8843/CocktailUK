@@ -296,7 +296,6 @@ Sub writeCocktailList(strSQL, rs, cn, strTitle, strHrefType)
 			</TR>
 		</TABLE>
 		<%
-		End If
 	Else
 		Response.write("<P><B>Sorry, no drinks found</B><BR><A href=""javascript:history.go(-1)"">Go back</A>")
 	End If

@@ -23,7 +23,7 @@ If Request("type") = "8" Then
   bHideAds = True
 End If
 
-Call DisplayPageLocation(strTitle, strTitleOut, strTopTitle, Request.ServerVariables("SCRIPT_NAME") & "?" & Request.QueryString, "color: white; font-weight: bold; text-decoration: none;")
+Call DisplayPageLocation(strTitle, strTitleOut, strTopTitle, Request.ServerVariables("SCRIPT_NAME") & "?" & Request.QueryString, "font-weight: bold; text-decoration: none;")
 strToptitle = strTitlePrepend & " " & strToptitle & " " & strTitleAppend
 
 intItems = Max(Session("numberItems")+1,0)

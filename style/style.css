@@ -39,9 +39,10 @@ H2 {
 	padding-bottom: 5px;
 	padding-left: 10px; 
 	COLOR: #545473; 
-	FONT-SIZE: 16pt;  
+	FONT-SIZE: 30pt;  
 	margin-top: 0px;
 	margin-bottom: 5px;
+	font-weight: normal;
 } 
 A{
 	text-decoration: underline;

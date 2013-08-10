@@ -136,7 +136,7 @@ End If
       <%If LCase(Request.ServerVariables("SCRIPT_NAME")) = "/default.asp" Then%> 
        Cocktail : UK, cocktails, <span lang="en-gb">cocktail</span> recipes and bar equipment from the UK
       <%Else%>
-       <font color="white"><%=strTitleOut%></font>
+       <%=strTitleOut%>
       <%End If%>
     </div>
     <!--C-->

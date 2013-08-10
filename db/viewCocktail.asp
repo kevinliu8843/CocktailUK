@@ -137,11 +137,6 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
       <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse: collapse" bordercolor="#111111">
         <tr>
           <td colspan="2">
-            <%
-            If Session("logged") Then 
-              Response.write strMakeCocktail
-            End If
-            %>
             <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse: collapse" bordercolor="#111111" id="table3">
               <%IF blnDuplicated Then%>
                 <tr>
@@ -159,6 +154,11 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
                 </tr>
               <%End If%>
             </table>
+            <%
+            If Session("logged") Then 
+              Response.write strMakeCocktail
+            End If
+            %>
           </td>
         </tr>
       </table>

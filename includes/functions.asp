@@ -79,18 +79,10 @@ Sub displayPageLocation(strTitle, strTitleOut, strTopTitle, strUrl, strLinkStyle
 	cArrLinks(0) = "/"
 	cArrText(0) = "Cocktail : UK"
 	
-	If checkUrl(strUrl, "/based_cocktails") OR checkUrl(strUrl, "/db/cocktails.asp") OR checkUrl(strUrl, "/db/viewBasedCocktails.asp") Then
-		cArrLinks(1) = "/db/cocktails.asp"
+	If checkUrl(strUrl, "basedon.asp") Then
+		cArrLinks(1) = "/cocktails/basedon.asp"
 		cArrText(1) = "Cocktails Based On..."
 	End If
-	If checkUrl(strUrl, "/christmas") Then
-		cArrLinks(1) = "/christmas"
-		cArrText(1) = "Christmas"
-	End If
-'	If checkUrl(strUrl, "/db/viewCocktail.asp") OR checkUrl(strUrl, "/db/viewAllCocktails.asp") OR checkUrl(strUrl, "/db/randomGenerator.asp") Then
-'		cArrLinks(1) = "/db/viewAllCocktails.asp"
-'		cArrText(1) = "Drink Recipes"
-'	End If
 	If checkUrl(strUrl, "/sitesearch") OR checkUrl(strUrl, "/db/search") OR checkUrl(strUrl, "/findCocktailContIng.asp") Then
 		cArrLinks(1) = "/sitesearch"
 		cArrText(1) = "Site Search"

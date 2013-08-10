@@ -1,1 +1,0 @@
-<%Response.redirect("/default.asp")%>

@@ -3,13 +3,13 @@
 <div class="menu-header"><a href="/db/Cocktails.asp"><img border="0" src="/images/side_menus/Drinks_right.gif" alt="Cocktails and shooter drinks"></a></div>
 
 <div class="item">
-<a class="linksin" title="Cocktail drink recipes" href="/db/viewAllCocktails.asp?type=1">Cocktail recipes</a></div>
+<a class="linksin" title="Cocktail drink recipes" href="/cocktails/">Cocktail recipes</a></div>
 
 <div class="item">
-<a class="linksin" href="/db/viewAllCocktails.asp?type=2">Shots</a></div>
+<a class="linksin" href="/cocktails/?type=2">Shots</a></div>
 
 <div class="item">
-<a class="linksin" href="/db/viewAllCocktails.asp?type=4">Non-alcoholic cocktails</a></div>
+<a class="linksin" href="/cocktails/?type=4">Non-alcoholic cocktails</a></div>
 
 <div class="item">
 <a class="linksin" href="/db/search/searchByIngredient.asp">Cocktails by ingredient</a></div>

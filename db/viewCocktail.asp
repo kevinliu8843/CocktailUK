@@ -71,7 +71,7 @@ set cn	= Nothing
 set rs			= Nothing
 
 blnHardwireTitle = True
-strTitle = aryDrink(0) & " " & Capitalise(aryDrink(7))
+strTitle = aryDrink(0) & " " & aryDrink(7) & " recipe. Ingredients and full instructions on how to make it."
 strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingredients & instructions on how to make a " & aryDrink(0) & " " & aryDrink(7) & "."
 %>
 <!--#include virtual="/includes/header.asp" -->
@@ -80,15 +80,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
  ul { margin-top: 0; }
  li { margin-left: 1em; }
 </style>
-<script>
-function checksrch(){
-	var strSearch2 = document.search2.searchField.value
-	if (strSearch2 == "Enter the drink name") {
-		document.search2.searchField.value = ""
-	}
-}
-</script>
-<h2><%=(Capitalise(aryDrink(7)) & " Recipe > " & aryDrink(0))%><%If bIsAdmin Then%><a target="_top" class="linksin" href="/admin/default.asp?goto=cocktaileditor/default.asp?ID=<%=intID%>"> 
+<h2><%=Capitalise(aryDrink(0) & " " & aryDrink(7)) & " Recipe"%><%If bIsAdmin Then%><a target="_top" class="linksin" href="/admin/default.asp?goto=cocktaileditor/default.asp?ID=<%=intID%>"> 
 Edit</a><%End If%></h2>
 <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber6">
   <tr>

@@ -381,14 +381,13 @@ A:hover {
 }
 
 .pagination {
-    background: #f2f2f2;
     padding: 20px;
     margin-bottom: 20px;
 }
 
 .page {
     display: inline-block;
-    padding: 0px 9px;
+    padding: 5px 9px;
     margin-right: 4px;
     border-radius: 3px;
     border: solid 1px #c0c0c0;

@@ -33,23 +33,35 @@
 <a href="/db/member/loginOut.asp">
 <img border="0" src="/images/side_menus/Members.gif" alt="Members ara"></a></div>
 
-<div class="item">
-<a href="/db/member/loginOut.asp" class="linksin"><%If Session("firstName") <> "" Then%><%=Session("firstName")%>&#39;s 
-members area<%else%>Log in<%End If%></a></div>
-
 <%If Session("firstName") = "" Then%>
 	<div class="item">
-	<a href="/db/member/createAccount.asp" class="linksin">Register (free)</a></div>
+	<a href="/db/member/loginOut.asp" class="linksin">Log in...</a></div>
+
+	<div class="item">
+	<a href="/db/member/createAccount.asp" class="linksin">Register (<span style="color: #0990000;">free</psan>)</a></div>
+
+	<div class="item">
+	<a href="/db/member/userHotList.asp" class="linksin" disabled>Your favourite recipes</a></div>
+
+	<div class="item">
+	<a href="/db/member/selectIngredients.asp" class="linksin" disabled>Your bar ingredients</a></div>
+
+	<div class="item">
+	<a href="/db/member/whatCanIMake.asp" class="linksin" disabled>What you can make</a></div>
 
 <%Else%>
 	<div class="item">
-	<a href="/db/member/selectIngredients.asp" class="linksin">In my bar</a></div>
+	<a href="/db/member/loginOut.asp" class="linksin"><%If Session("firstName") <> "" Then%><%=Session("firstName")%>&#39;s 
+	members area<%else%>Log in<%End If%></a></div>
 
 	<div class="item">
-	<a href="/db/member/userHotList.asp" class="linksin">My favourites</a></div>
+	<a href="/db/member/userHotList.asp" class="linksin">Your favourite recipes</a></div>
 
 	<div class="item">
-	<a href="/db/member/whatCanIMake.asp" class="linksin">What can I make?</a></div>
+	<a href="/db/member/selectIngredients.asp" class="linksin">Your bar ingredients</a></div>
+
+	<div class="item">
+	<a href="/db/member/whatCanIMake.asp" class="linksin">What you can make</a></div>
 <%End If%>
 
 

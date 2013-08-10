@@ -97,31 +97,37 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber7" height="100%">
       <tr>
         <td width="33%" valign="top">
-          <h3 id="ingredients">Ingredients:</h3>
-          <div>Serves <%=aryDrink(3)%></div>
-          <div><%=aryDrink(2)%></div>
-        </td>
-        <td width="33%" valign="top">
-          <h3 id="equipment">You'll also need:</h3>
-          <div>
-            <%If aryDrink(7)="shooter" Then%>
-              <a href="/shop/products/search.asp?search=iceshot"><img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shot_rock.jpg" alt="Shot Rock - Ice shot glasses" width="40" height="40"></a>
-              <a href="/shop/products/search.asp?search=shot float kit">
-              <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shot_float.jpg" alt="Shot Float Kit - Help you to layer shooters easier" width="25" height="40"></a>
-            <%else%>
-              <a href="/shop/products/search.asp?search=glass">
-              <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/glasses.jpg" alt="Glassware" width="28" height="40"></a>
-              <a href="/shop/products/search.asp?search=cocktail shaker">
-              <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shaker.jpg" alt="Professional Cocktail Shaker - used in the industry" width="40" height="40"></a>
-            <%End if%>
-            <a href="/shop/products/search.asp?search=pourer">
-            <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/steel_pourer.jpg" alt="Stainless Steel Pourer - pours ingredients gently onto a drink" width="44" height="40"></a>
-            <a href="/shop/products/search.asp?search=measure">
-            <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/bar_measures.jpg" alt="Professional Bar Measures - measure out the perfect quantity" width="34" height="40"></a><a onmouseover="show_text('Professional Measures')" onmouseout="hide_text()" href="/shop/products/search.asp?search=measures">
-            </a>
+          <div style="padding-right: 15px;">
+            <h3 id="ingredients">Ingredients:</h3>
+            <div>Serves <%=aryDrink(3)%></div>
+            <div><%=aryDrink(2)%></div>
           </div>
         </td>
         <td width="33%" valign="top">
+          <div style="padding-right: 15px;">
+            <h3 id="equipment">You'll also need:</h3>
+            <div>
+              <%If aryDrink(7)="shooter" Then%>
+                <a href="/shop/products/search.asp?search=iceshot"><img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shot_rock.jpg" alt="Shot Rock - Ice shot glasses" width="40" height="40"></a>
+                <a href="/shop/products/search.asp?search=shot float kit">
+                <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shot_float.jpg" alt="Shot Float Kit - Help you to layer shooters easier" width="25" height="40"></a>
+              <%else%>
+                <a href="/shop/products/search.asp?search=glass">
+                <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/glasses.jpg" alt="Glassware" width="28" height="40"></a>
+                <a href="/shop/products/search.asp?search=cocktail shaker">
+                <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shaker.jpg" alt="Professional Cocktail Shaker - used in the industry" width="40" height="40"></a>
+              <%End if%>
+              <a href="/shop/products/search.asp?search=pourer">
+              <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/steel_pourer.jpg" alt="Stainless Steel Pourer - pours ingredients gently onto a drink" width="44" height="40"></a>
+              <a href="/shop/products/search.asp?search=measure">
+              <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/bar_measures.jpg" alt="Professional Bar Measures - measure out the perfect quantity" width="34" height="40"></a><a onmouseover="show_text('Professional Measures')" onmouseout="hide_text()" href="/shop/products/search.asp?search=measures">
+              </a>
+            </div>
+          </div>
+        </td>
+        <td width="33%" valign="top">
+          <div style="padding-right: 15px;">
+          </div>
         </td>
       </tr>
       <tr>

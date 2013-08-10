@@ -32,14 +32,13 @@ function changeColour(objTable, strColour){
 }
 </script>
 
-<p align="center">
-<img border="0" src="images/welcomeTo.gif" width="120" height="28"><br>
-<img border="0" src="images/cuk_07.gif" width="210" height="32"></p>
-<p align="left">Online for over 10 years, Cocktail : UK has the most comprehensive
+<p align="left">
+<img border="0" src="images/welcomeTo.gif" width="120" height="28" alt="Welcome to"><br>
+<img border="0" src="images/cuk_07.gif" width="210" height="32" alt="Cocktail UK"></p>
+<p align="left">Online for over 15 years, Cocktail : UK has the most comprehensive
 <a href="/db/cocktails.asp">cocktail recipes</a> &amp; <a href="/db/viewAllCocktails.asp?type=2">shooter recipes</a> database 
 (10,000+ and growing daily) plus
-the biggest
-<a href="/shop/">bar equipment</a> shop online. Enjoy.
+the biggest <a href="/shop/">bar equipment</a> shop online. Enjoy.
 
 <div align="center"><a href="/db/search/searchByIngredient.asp">Find a 
 drink</a> | <a href="db/viewAllCocktails.asp?type=1">Cocktails</a> |

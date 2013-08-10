@@ -193,7 +193,7 @@ Else
 		Response.Redirect("/account/firstVisit.asp")
 	End If
 %>
-<h2> <%=Session("firstname")%>'s members area</h2>
+<h2> <%=Session("firstname")%>'s Account</h2>
 <p><%=strConfirm%>
 <%
 	If Request("message") <> "" Then

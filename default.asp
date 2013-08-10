@@ -48,7 +48,6 @@ function changeColour(objTable, strColour){
 			(10,000+ and growing daily) plus
 			the biggest
 			<a href="/shop/">bar equipment</a> shop online. Enjoy.<p align="center">
-			<img border="0" src="images/dotted_line_horizontal.gif" width="162" height="1"><br>
 &nbsp;<div align="center"><a href="/sitesearch/">Find a 
 			drink</a> | <a href="db/viewAllCocktails.asp?type=1">Cocktails</a> |
 			<a href="db/viewAllCocktails.asp?type=2">Shooters</a> |
@@ -61,7 +60,7 @@ function changeColour(objTable, strColour){
     </td>
   </tr>
 </table>
-<H2>Cocktails</H2>
+<H2>Browse Our Cocktail Recipes</H2>
 <table border="0" cellpadding="5" style="border-collapse: collapse" width="100%" id="table1">
   <tr>
     <td><img border="0" src="../images/redmartini.jpg" width="125" height="244"></td>

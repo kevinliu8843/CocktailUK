@@ -94,17 +94,17 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
       <h3>How to make a <%=LCase(aryDrink(0))%>:</h3>
       <div style="margin-bottom: 30px;"><%=aryDrink(1)%></div>
 
-    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; margin-bottom: 30px;" bordercolor="#111111" width="100%" id="AutoNumber7">
+      <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" bordercolor="#111111" width="100%" id="AutoNumber7">
       <tr>
         <td width="33%" valign="top">
-          <div style="padding-right: 15px;">
+          <div style="padding-right: 15px; margin-bottom: 30px;">
             <h3 id="ingredients">Ingredients:</h3>
             <div>Serves <%=aryDrink(3)%></div>
             <div><%=aryDrink(2)%></div>
           </div>
         </td>
         <td width="33%" valign="top">
-          <div style="padding-right: 15px;">
+          <div style="padding-right: 15px; margin-bottom: 30px;">
             <h3 id="equipment">You'll also need:</h3>
             <div>
               <%If aryDrink(7)="shooter" Then%>
@@ -126,7 +126,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
           </div>
         </td>
         <td width="33%" valign="top">
-          <div style="padding-right: 15px;">
+          <div style="padding-right: 15px; margin-bottom: 30px;">
             <%displayRatingPanel%>
           </div>
         </td>
@@ -161,7 +161,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
 
         </td>
       </tr>
-    </table>
+      </table>
     </td>
     <td width="160" valign="top">
       <div><%=aryDrink(11)%></div>

@@ -24,23 +24,10 @@ intNewdrinks = 0
 intProducts = 0
 intCategories = 0
 
-strSQL = "SELECT count(*) from cocktailreview WHERE status=0"
-rs.Open strSQL, cn
-intNewReviews = rs(0)
-rs.Close
-
-strSQL = "SELECT count(*) from drink_desc WHERE status=0"
-rs.Open strSQL, cn
-intNewReviews = intNewReviews +rs(0)
-rs.Close
-
-strSQL = "SELECT count(*) from drinkinggame WHERE status=0"
-rs.Open strSQL, cn
-intNewGames= rs(0)
-rs.Close
-
-Call setupCategories(NULL)
-Call CreatePrettyURLFiles(cn, rs)
+If Request("rebuild") = "true" then
+	Call setupCategories(NULL)
+	Call CreatePrettyURLFiles(cn, rs)
+End If
 
 Session("admin") = True
 
@@ -87,6 +74,9 @@ a{ text-decoration: none; }
  <span style="text-decoration: none">Add Drink Recipes</span></A></B><BR>
  &nbsp;<font color="#AA0000"></font> <B><A class="linksin" href="createHeaderAndFooter.asp">
  <span style="text-decoration: none">Create Header and Footer</span></A></B><BR>
+ &nbsp;<font color="#AA0000"></font></P>
+ &nbsp;<font color="#AA0000"></font> <B><A class="linksin" href="?rebuild=true">
+ <span style="text-decoration: none">Rebuild recipes/categories</span></A></B><BR>
  &nbsp;<font color="#AA0000"></font></P>
 
     &nbsp;<font color="#AA0000"></font> <B><A class="linksin " href="http://www.affiliatewindow.com/">

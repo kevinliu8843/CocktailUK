@@ -241,8 +241,7 @@ function FrontPage_Form1_Validator(theForm)
                <P align="right">First name</P>
                </TD>
                <TD align="left">
-               <P align="left">
-				<!--webbot bot="Validation" s-display-name="First name" b-value-required="TRUE" i-minimum-length="1" i-maximum-length="50" --><INPUT type="text" name="name" size="17" maxlength="50" value="<%=strFirstName%>"></P>
+               <P align="left"><INPUT type="text" name="name" size="17" maxlength="50" value="<%=strFirstName%>"></P>
                </TD>
              </TR>
              <TR>
@@ -251,7 +250,6 @@ function FrontPage_Form1_Validator(theForm)
                </TD>
                <TD align="left">
                <P>
-				<!--webbot bot="Validation" s-display-name="Last name" b-value-required="TRUE" i-minimum-length="1" i-maximum-length="50" --><INPUT type="text" name="lname" size="17" maxlength="50" value="<%=strLastName%>"></P>
                </TD>
              </TR>
              <TR>
@@ -259,8 +257,7 @@ function FrontPage_Form1_Validator(theForm)
                <P>E-Mail address</P>
                </TD>
                <TD align="left">
-               <P>
-				<!--webbot bot="Validation" s-display-name="Email address" b-value-required="TRUE" i-minimum-length="5" i-maximum-length="100" --><INPUT type="text" name="email" size="17" maxlength="100" value="<%=strEmail%>"></P>
+               <P><INPUT type="text" name="email" size="17" maxlength="100" value="<%=strEmail%>"></P>
                </TD>
              </TR>
              <TR>
@@ -268,8 +265,7 @@ function FrontPage_Form1_Validator(theForm)
                <P>Username</P>
                </TD>
                <TD align="left">
-               <P align="center">
-				<!--webbot bot="Validation" s-display-name="Username" b-value-required="TRUE" i-minimum-length="1" i-maximum-length="50" --><INPUT name="uname" size="17" maxlength="50" value="<%=strUname%>" style="float: left"></P>
+               <P align="center"><INPUT name="uname" size="17" maxlength="50" value="<%=strUname%>" style="float: left"></P>
                </TD>
              </TR>
              <TR>
@@ -277,8 +273,7 @@ function FrontPage_Form1_Validator(theForm)
                <P>Password</P>
                </TD>
                <TD align="left">
-               <P align="center">
-				<!--webbot bot="Validation" s-display-name="Password" b-value-required="TRUE" i-minimum-length="1" i-maximum-length="50" --><INPUT type="password" name="pass" maxlength="50" size="17" style="float: left"></P>
+               <P align="center"><INPUT type="password" name="pass" maxlength="50" size="17" style="float: left"></P>
                </TD>
              </TR>
              <TR>
@@ -287,7 +282,6 @@ function FrontPage_Form1_Validator(theForm)
                </TD>
                <TD align="left">
                <P align="center">
-				<!--webbot bot="Validation" s-display-name="Password (confirmation)" b-value-required="TRUE" i-minimum-length="1" --><INPUT type="password" name="pass2" size="17" style="float: left"></P>
                </TD>
              </TR>
              <TR>
@@ -297,11 +291,6 @@ function FrontPage_Form1_Validator(theForm)
                <TD>
                <P align="left"><INPUT type="checkbox" name="news" value="ON" checked> </P>
                </TD>
-             </TR>
-             <TR>
-               <TD align="right">Have my forum message<BR>
-&nbsp;replies sent to me?</TD>
-               <TD><INPUT type="checkbox" name="forum" value="ON" checked></TD>
              </TR>
            </TABLE>
            </CENTER>

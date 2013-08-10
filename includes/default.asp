@@ -125,19 +125,37 @@ End If
      </div>
      <div class="maincontainer">
            
-       <%If NOT bHideAds AND NOT blnXXX Then%>
-          <!-- JS AdJug Publisher Code -->    
-          <script language="JavaScript">    
-          document.write('<scr'+'ipt language="JavaScript" src="http://hosting.adjug.com/AdJugSearch/PageBuilder.aspx?ivi=V3.0+JS&aid=492&slid=49281&height=60&width=468&HTMLOP=False&ShowIFrame=True&CacheBuster=' + Math.floor(Math.random()*99999999) + '"></scr'+'ipt>');
-          </script>    
-          <noscript>    
-          <iframe width="468" height="60" name="AdSpace49281" src="http://hosting.adjug.com/AdJugSearch/PageBuilder.aspx?ivi=V3.0+JS+NS&aid=492&slid=49281&height=60&width=468&HTMLOP=True" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no">
-          </iframe>    
-          </noscript>    
-          <!-- JS AdJug Publisher Code -->
+       <%If NOT bHideAds AND NOT blnXXX AND NOT (InStr(Request.ServerVariables("SCRIPT_NAME"), "adult") > 0 OR (InStr(Request.ServerVariables("SCRIPT_NAME"), "/db/viewAllCocktails.asp") > 0 AND InStr(Request.querystring, "type=8") > 0) ) Then%>
+          <div class="topads">
+            <div class="ad1">
+              <!-- JS AdJug Publisher Code -->    
+              <script language="JavaScript">    
+              document.write('<scr'+'ipt language="JavaScript" src="http://hosting.adjug.com/AdJugSearch/PageBuilder.aspx?ivi=V3.0+JS&aid=492&slid=49281&height=60&width=468&HTMLOP=False&ShowIFrame=True&CacheBuster=' + Math.floor(Math.random()*99999999) + '"></scr'+'ipt>');
+              </script>    
+              <noscript>    
+              <iframe width="468" height="60" name="AdSpace49281" src="http://hosting.adjug.com/AdJugSearch/PageBuilder.aspx?ivi=V3.0+JS+NS&aid=492&slid=49281&height=60&width=468&HTMLOP=True" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no">
+              </iframe>    
+              </noscript>    
+              <!-- JS AdJug Publisher Code -->
+            </div>
+            <div class="ad2">
+              <script type="text/javascript"><!--
+              google_ad_client = "pub-4852715527905431";
+              google_ad_width = 468;
+              google_ad_height = 60;
+              google_ad_format = "468x60_as";
+              google_ad_type = "text_image";
+              google_ad_channel ="";
+              google_color_border = "737387";
+              google_color_bg = "FFFFFF";
+              google_color_link = "0000FF";
+              google_color_text = "000000";
+              google_color_url = "008000";
+              //--></script>
+              <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+            </div>
+          </div>
        <%End If%>
-
-       
 
       <div class="content">
        <div class="header">
@@ -164,34 +182,6 @@ End If
          Call TrapErrors()
         End If
         %>
-       </div>
-       <div class="lycossearch">
-       <CENTER>
-	<%If NOT bHideAds AND NOT blnXXX AND NOT (InStr(Request.ServerVariables("SCRIPT_NAME"), "adult") > 0 OR (InStr(Request.ServerVariables("SCRIPT_NAME"), "/db/viewAllCocktails.asp") > 0 AND InStr(Request.querystring, "type=8") > 0) ) Then%>
-		<div style="margin-top: 10px; margin-bottom: 5px;">
-		<script type="text/javascript"><!--
-		google_ad_client = "pub-4852715527905431";
-		google_ad_width = 468;
-		google_ad_height = 60;
-		google_ad_format = "468x60_as";
-		google_ad_type = "text_image";
-		google_ad_channel ="";
-		google_color_border = "737387";
-		google_color_bg = "FFFFFF";
-		google_color_link = "0000FF";
-		google_color_text = "000000";
-		google_color_url = "008000";
-		//--></script>
-		<script type="text/javascript"
-		  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-		</script>
-		</div>
-	<%ElseIf NOT bHideAds Then%>
-		<div style="margin-top: 10px; margin-bottom: 5px;">
-		<a href="http://cocktailuk.rydg187.hop.clickbank.net" target="_blank"><img src="/images/Bartender-Audio.gif" border=0></a>
-		</div>
-	<%End If%>
-       </CENTER>
        </div>
       </div>
       <div class="leftnav" id="leftnav" style="position: absolute; left: 0px; top: 0px">

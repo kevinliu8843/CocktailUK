@@ -133,15 +133,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
       </tr>
       <tr>
         <td width="100%" colspan="2">
-        <img src="/images/pixel.gif" height="20" width="1"><br>
-        <table cellspacing="0" cellpadding="0" width="100%" border="0">
-          <tr>
-            <td class="arrowblock" align="left" width="1%" nowrap valign="top">
-            <img height="16" src="/images/pixel.gif" width="16" border="0"></td>
-            <td class="baselightred" width="99%" style="padding-left: 2">
-            <b class="contentHeader">YOUR COMMENTS: <%=UCase(aryDrink(0)) & " " & UCase(aryDrink(7))%></b></td>
-          </tr>
-        </table>
+        <H3>Your Comments: <%=UCase(aryDrink(0)) & " " & UCase(aryDrink(7))%></h3>
         <img src="/images/pixel.gif" height="5" width="1"><br>
         <%If intNumReviews < 0 Then%> No one has commented on the <%=aryDrink(0)& " " & aryDrink(7)%> yet... <%End If%> <%For i=0 TO Min(intNumReviews,intMaxReviews-1)%>
         <b><%=Capitalise(aryReviews(3,i))%> said:</b><br>

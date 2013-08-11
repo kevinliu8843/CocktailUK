@@ -1,24 +1,6 @@
 ﻿BODY {
 	background-color: #828282;
 }
-#search_box {
-    width: 350px;
-    height: 31px;
-    border: 1px solid #636388;
-    border-radius: 8px;
-}
-#SearchField {
-    float: left;
-    padding: 0px;
-    margin: 6px 0px 0px 6px;
-    border-width: 0px;
-    width: 300px; 
-    background: none;
-}
-#search_box #go {
-    float: right;
-    margin: 3px 4px 0 0;
-}
 H1, H2, H3, H4, H5, H6 {
 	COLOR: #636388;
 }

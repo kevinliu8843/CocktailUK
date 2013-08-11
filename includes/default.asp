@@ -43,7 +43,9 @@ End If
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="/foundation/css/normalize.css" type="text/css" rel="stylesheet">
 <link href="/style/style.css" type="text/css" rel="stylesheet">
+<link href="/foundation/css/foundation.min.css" type="text/css" rel="stylesheet">
 <meta name="robots" content="ALL">
 <meta name="description" content="<%=strMetaDescription%>">
 <%If strKeywords = "" Then%>
@@ -59,6 +61,7 @@ End If
 <meta name="google-site-verification" content="pncNZRLgGxSNLD_-xHUvcx6z6di9D_pU_Kzo-Ldf1kc" />
 <meta name="verify-v1" content="j1KzW+k9z2ZccTw61qVc0227g3bZhen6ZCqPR541JsQ=">
 <title><%=strTopTitle%></title>
+<script src="/foundation/js/foundation.min.js"></script>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];

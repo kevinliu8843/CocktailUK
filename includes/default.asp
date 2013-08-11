@@ -80,55 +80,53 @@ End If
 <body>
 
 <div class="wrapper">
-  <div class="header">
-    <table id="table3" cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff" border="0" height="100">
-     <tr>
-      <td align="right" width="100" valign="bottom">
+  <div class="row">
+    <div class="large-1" id="logo1">
       <a href="http://www.cocktail.uk.com/">
-      <img border="0" src="../images/cuk_03.jpg" width="85" height="85" alt="Classic cocktails and bar equipment uk"></a></td>
-      <td align="left" style="width: 230px">
-        <a href="http://www.cocktail.uk.com/">
-        <img alt="Classic cocktails and bar equipment uk" src="../images/cuk_07.gif" border="0" width="210" height="32"></a></td>
-      <td align="center">
-    	  <div id="search_box">
-    			<form action="/search/" id="search_form" style="margin: 0px; padding: 0px; display: inline; ">
-    			    <input type="hidden" name="cx" value="partner-pub-4852715527905431:j32r2u95lwx">
-    			    <input type="hidden" name="cof" value="FORID:10">
-    			    <input type="hidden" name="ie" value="UTF-8"> 
-    			    <input type="text" name="q" id="SearchField" placeholder="Search for cocktails now..." class="swap_value"><input type="image" src="../images/template/button_search_go.gif" id="go" name="sa" alt="Search" title="Search">
-    			</form>
-    		</div>
-      </td>
-      <td align="right" style="padding-right: 20px; width: 150px;" nowrap>
-          <a href="/shop/basket.asp"><img alt="My Basket" src="../images/template/basket_icon.gif" width="36" height="36" align="right" border="0"><strong><u>My Basket</u></strong><br>
-          <span style="text-decoration: none; white-space: nowrap;"><%=intItems%> Item<%If intItems <> 1 then%>s<%end if%> 
-          &nbsp;&pound;<%=FormatNumber(dblValue,2)%></SPAN></a>
-      </td>
-     </tr>
-    </table>
-
-    <%If NOT bHideAds Then%>
-      <div class="topads">
-        <div class="ad1">
-          <!-- JS AdJug Publisher Code -->    
-          <script language="JavaScript">    
-          document.write('<scr'+'ipt language="JavaScript" src="http://hosting.adjug.com/AdJugSearch/PageBuilder.aspx?ivi=V3.0+JS&aid=492&slid=49281&height=60&width=468&HTMLOP=False&ShowIFrame=True&CacheBuster=' + Math.floor(Math.random()*99999999) + '"></scr'+'ipt>');
-          </script>    
-          <noscript>    
-          <iframe width="468" height="60" name="AdSpace49281" src="http://hosting.adjug.com/AdJugSearch/PageBuilder.aspx?ivi=V3.0+JS+NS&aid=492&slid=49281&height=60&width=468&HTMLOP=True" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no">
-          </iframe>    
-          </noscript>    
-          <!-- JS AdJug Publisher Code -->
-        </div>
-        <div class="ad2">
-          <!--START MERCHANT:merchant name Drinkstuff.com from affiliatewindow.com.-->
-          <a href="http://www.awin1.com/cread.php?s=23053&v=8&q=273&r=176043"><img src="http://www.awin1.com/cshow.php?s=23053&v=8&q=273&r=176043" 
-          border="0"></a>
-          <!--END MERCHANT:merchant name Drinkstuff.com from affiliatewindow.com-->
-        </div>
-      </div>
-    <%End If%>
+      <img border="0" src="../images/cuk_03.jpg" width="85" height="85" alt="Classic cocktails and bar equipment uk"></a>
+    </div>
+    <div class="large-2" id="logo2">
+      <a href="http://www.cocktail.uk.com/">
+      <img alt="Classic cocktails and bar equipment uk" src="../images/cuk_07.gif" border="0" width="210" height="32"></a>
+    </div>
+    <div class="large-6">
+  	  <div id="search_box">
+  			<form action="/search/" id="search_form" style="margin: 0px; padding: 0px; display: inline; ">
+  			    <input type="hidden" name="cx" value="partner-pub-4852715527905431:j32r2u95lwx">
+  			    <input type="hidden" name="cof" value="FORID:10">
+  			    <input type="hidden" name="ie" value="UTF-8"> 
+  			    <input type="text" name="q" id="SearchField" placeholder="Search for cocktails now..." class="swap_value"><input type="image" src="../images/template/button_search_go.gif" id="go" name="sa" alt="Search" title="Search">
+  			</form>
+  		</div>  
+    </div>
+    <div class="large-3">
+      <a href="/shop/basket.asp"><img alt="My Basket" src="../images/template/basket_icon.gif" width="36" height="36" align="right" border="0"><strong><u>My Basket</u></strong><br>
+      <span style="text-decoration: none; white-space: nowrap;"><%=intItems%> Item<%If intItems <> 1 then%>s<%end if%> 
+      &nbsp;&pound;<%=FormatNumber(dblValue,2)%></SPAN></a>
+    </div>
   </div>
+
+  <%If NOT bHideAds Then%>
+    <div class="row" id="topads">
+      <div class="large-6">
+        <!-- JS AdJug Publisher Code -->    
+        <script language="JavaScript">    
+        document.write('<scr'+'ipt language="JavaScript" src="http://hosting.adjug.com/AdJugSearch/PageBuilder.aspx?ivi=V3.0+JS&aid=492&slid=49281&height=60&width=468&HTMLOP=False&ShowIFrame=True&CacheBuster=' + Math.floor(Math.random()*99999999) + '"></scr'+'ipt>');
+        </script>    
+        <noscript>    
+        <iframe width="468" height="60" name="AdSpace49281" src="http://hosting.adjug.com/AdJugSearch/PageBuilder.aspx?ivi=V3.0+JS+NS&aid=492&slid=49281&height=60&width=468&HTMLOP=True" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no">
+        </iframe>    
+        </noscript>    
+        <!-- JS AdJug Publisher Code -->
+      </div>
+      <div class="large-6">
+        <!--START MERCHANT:merchant name Drinkstuff.com from affiliatewindow.com.-->
+        <a href="http://www.awin1.com/cread.php?s=23053&v=8&q=273&r=176043"><img src="http://www.awin1.com/cshow.php?s=23053&v=8&q=273&r=176043" 
+        border="0"></a>
+        <!--END MERCHANT:merchant name Drinkstuff.com from affiliatewindow.com-->
+      </div>
+    </div>
+  <%End If%>
 
   <div class="leftnav">
     <!--#INCLUDE virtual="/includes/lhs_cocktail.asp"-->

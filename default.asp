@@ -32,7 +32,7 @@ function changeColour(objTable, strColour){
 }
 </script>
 
-<H1><small>Cocktail recipes and bar equipment store</small></h1>
+<h2>Cocktail recipes and bar equipment store</h2>
 <p><img border="0" src="../images/redmartini.jpg" width="125" height="244" align="right">
 <p>Online for over 15 years, Cocktail : UK has the most comprehensive
 <a href="/cocktails/">cocktail recipes</a> &amp; <a href="/cocktails/?type=2">shooter recipes</a> database 

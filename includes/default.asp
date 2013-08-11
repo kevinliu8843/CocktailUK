@@ -127,7 +127,7 @@ End If
   <%End If%>
 
   <div class="row collapse">
-    <div class="large-3 columns">
+    <div class="large-3 columns" id="leftnav">
       <!--#INCLUDE virtual="/includes/lhs_cocktail.asp"-->
     </div>
 

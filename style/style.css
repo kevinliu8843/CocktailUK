@@ -48,26 +48,18 @@ A.disabled{
 {
 	margin-bottom: 20px;
 }
-.leftnav {
-	display: inline-block;
-	vertical-align: top;
-	width: 20%; 
-	text-align: left;
-	padding-bottom: 10px; 
+#leftnav .item {
+	padding: 4px 13px;
 }
-	.leftnav .item {
-		display: block;
-		padding: 4px 13px;
-	}
-	.leftnav .menu-header {
-		padding-top: 2em;
-	}
-	.leftnav .menu-header:first-child {
-		padding-top: 0em;
-	}
-	.leftnav .menu-header img {
-		width: 100%;
-	}
+#leftnav .menu-header {
+	padding-top: 2em;
+}
+#leftnav .menu-header:first-child {
+	padding-top: 0em;
+}
+#leftnav .menu-header img {
+	width: 100%;
+}
 .content {
 	display: inline-block;
 	width: 79%;

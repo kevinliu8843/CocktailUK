@@ -52,13 +52,13 @@ drink</a> | <a href="/cocktails/">Cocktails</a> |
     <img border="0" src="../images/redmartini.jpg" width="125" height="244">
   </div>
   <div class="large-10 columns">
-    <div class="row">
+    <div class="row collapse">
       <div class="large-12 columns">
         <A href="/cocktails/"><B>View all cocktails<BR>
         </B></A>Shows a list of all cocktails.
       </div>
     </div>
-    <div class="row" id="browse">
+    <div class="row collapse" id="browse">
       <div class="large-6 columns">
         <A href="/cocktails/basedon.asp?basedID=1"><B>Vodka based cocktails<BR></B></A>Shows a list of cocktails based on vodka.
       </div>
@@ -67,7 +67,7 @@ drink</a> | <a href="/cocktails/">Cocktails</a> |
           </B></A>Shows a list of cocktails based on gin.
       </div>
     </div>
-    <div class="row">
+    <div class="row collapse">
       <div class="large-6 columns">
         <A href="/cocktails/basedon.asp?basedID=2"><B>Brandy based cocktails<BR>
           </B></A>Shows a list of cocktails based on brandy.
@@ -77,7 +77,7 @@ drink</a> | <a href="/cocktails/">Cocktails</a> |
           </B></A>Shows a list of cocktails based on rum.
       </div>
     </div>
-    <div class="row">
+    <div class="row collapse">
       <div class="large-6 columns">
         <A href="/cocktails/basedon.asp?basedID=4"><B>Whisky based cocktails<BR>
           </B></A>Shows a list of cocktails based on whisky.

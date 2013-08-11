@@ -48,6 +48,9 @@ A.disabled{
 {
 	margin-bottom: 20px;
 }
+#leftnav {
+	padding-bottom: 20px;
+}
 #leftnav .item {
 	padding: 4px 13px;
 }

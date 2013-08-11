@@ -30,7 +30,7 @@ Set rs = Nothing
 cn.Close
 Set cn = Nothing
 
-response.Redirect("/db/viewCocktail.asp?ID=" & ID)
+response.Redirect("/cocktails/recipe.asp?ID=" & ID)
 
 Function randomise( upperbound, lowerbound )
 	'Returns an ID to be checked

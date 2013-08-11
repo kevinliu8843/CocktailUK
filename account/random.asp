@@ -17,15 +17,15 @@ If NOT rs.EOF Then
 	If IsArray(arrMatch) Then
 		upperbound = UBound(arrMatch,2)
 		lowerbound = 0
-		Response.Redirect("/db/viewCocktail.asp?ID=" & arrMatch( 0, randomise( upperbound, lowerbound ) ))
+		Response.Redirect("/cocktails/recipe.asp?ID=" & arrMatch( 0, randomise( upperbound, lowerbound ) ))
 	Else
-		Response.Redirect("/db/viewCocktail.asp?ID=" & randomise(0, 9000))
+		Response.Redirect("/cocktails/recipe.asp?ID=" & randomise(0, 9000))
 	End If
 Else
 	Set rs=  nothing
 	cn.close
 	Set cn = nothing
-	response.Redirect("/db/viewCocktail.asp?ID=" & randomise(0, 9000))
+	response.Redirect("/cocktails/recipe.asp?ID=" & randomise(0, 9000))
 End If
 
 Function randomise( upperbound, lowerbound )

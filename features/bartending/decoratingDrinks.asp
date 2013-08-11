@@ -28,7 +28,7 @@ strTitle = "How To Decorate Drinks"
     cocktail is awaiting, whilst a maraschino cherry or ball of melon indicates
     a sweet cocktail.</P>
     <P>Clearly there are some cocktails that have a traditional
-    garnish added to them (the olive in a <A href="/db/viewCocktail.asp?ID=1">dry
+    garnish added to them (the olive in a <A href="/cocktails/recipe.asp?ID=1">dry
     martini</A>). In some cases (such as a margarita) the glass rim is frosted
     with salt. This is best done by first wetting the rim.</P>
     <H3>Fruit</H3>

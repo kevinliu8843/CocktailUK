@@ -50,7 +50,7 @@ asked the General if he would like a drink &amp; a beautiful girl brought one
 cup, adorned in jewels. It was embarrassing for both, as one would have to drink
 first. Seeing this, the girl drank it. Her name was Coctel. The General promised
 to immortalize her name.</p>
-<p align="justify"><a href="/db/viewCocktail.asp?ID=94">The Sazerac</a> is also reported to be
+<p align="justify"><a href="/cocktails/recipe.asp?ID=94">The Sazerac</a> is also reported to be
 the first cocktail. Antoine Amedee Peychaud, born in France and creator of
 Peychaud Bitters was it's inventor. Peychaud invented his bitters in Santo
 Domingo and brought the recipe to New Orleans with him. He opened a drugstore

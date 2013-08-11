@@ -34,9 +34,9 @@ Select Case Request("type")
 		
 		strBodyText = "<HTML><HEAD><TITLE>An e-cocktail for you from Cocktail : UK</TITLE><LINK rel=""stylesheet"" type=""text/css"" href="""&strDomain&"style/style.css""></HEAD>"
 		strBodyText = strBodyText &"<BODY> <DIV align=""center"">  <CENTER>   <TABLE border=""0"" cellpadding=""0"" cellspacing=""0"" style=""border-collapse: collapse"" bordercolor=""#111111"" id=""AutoNumber1"">"
-		strBodyText = strBodyText &"<TR>       <TD valign=""top"">       <H3 align=""center"">"&strCocktailName&"<BR>       <A href=""http://www.cocktail.uk.com/db/viewcocktail.asp?ID="&id&""">"&strImgsrc&"</A></H3>"
+		strBodyText = strBodyText &"<TR>       <TD valign=""top"">       <H3 align=""center"">"&strCocktailName&"<BR>       <A href=""http://www.cocktail.uk.com/cocktails/recipe.asp?ID="&id&""">"&strImgsrc&"</A></H3>"
 		strBodyText =  strBodyText &"      </TD>       <TD valign=""top"" width=""400"">       <H2 align=""center""><I>You have received an <BR>       e-cocktail from Cocktail : UK</I></H2>"
-		strBodyText = strBodyText  &"      <P>Dear "&strFriendName&",<BR>       <A href=""mailto:"&strFromEmail&""">"&strFromName&"</A> has sent you a cocktail from Cocktail : UK called &quot;"&strCocktailName&"&quot;.</P>       <P>Why don't you pop along to <A href=""http://www.cocktail.uk.com/db/viewCocktail.asp?ID="&id&""">http://www.cocktail.uk.com</A> "
+		strBodyText = strBodyText  &"      <P>Dear "&strFriendName&",<BR>       <A href=""mailto:"&strFromEmail&""">"&strFromName&"</A> has sent you a cocktail from Cocktail : UK called &quot;"&strCocktailName&"&quot;.</P>       <P>Why don't you pop along to <A href=""http://www.cocktail.uk.com/cocktails/recipe.asp?ID="&id&""">http://www.cocktail.uk.com</A> "
 		strBodyText = strBodyText &"to view the recipe for yourself...</TD>     </TR>   </TABLE>   </CENTER> </DIV></BODY></HTML>"
 		
 		Response.cookies("CocktailUKSendDrinkName1") = strFromName
@@ -52,7 +52,7 @@ Select Case Request("type")
 		If blnHTML Then
 			strBody = strBodyText
 		Else
-			strBody = "Dear "&strFriendName&","&VbCrLf&strFromName&" has sent you an E-Cocktail from www.cocktail.uk.com for the pleasure of your palette and eyes!. "&vbCrLf&"You can view it at http://www.cocktail.uk.com/db/viewCocktail.asp?ID="&id&"."&VbCrLf&"There are a whole host of features on the site and most cocktail recipes come complete with an image."&VbCrLf&" You can also register and manage your own bar and add cocktails to the database."&VbCRLf&VbCRLf&"Many thanks"&VbCRLf&"The Team @ Cocktail : UK"
+			strBody = "Dear "&strFriendName&","&VbCrLf&strFromName&" has sent you an E-Cocktail from www.cocktail.uk.com for the pleasure of your palette and eyes!. "&vbCrLf&"You can view it at http://www.cocktail.uk.com/cocktails/recipe.asp?ID="&id&"."&VbCrLf&"There are a whole host of features on the site and most cocktail recipes come complete with an image."&VbCrLf&" You can also register and manage your own bar and add cocktails to the database."&VbCRLf&VbCRLf&"Many thanks"&VbCRLf&"The Team @ Cocktail : UK"
 		End If
 		
 'Disabled due to spammers...
@@ -163,7 +163,7 @@ Select Case Request("type")
 End Select
 
 if Request("type") = "cocktail" then
-	response.redirect("/db/viewCocktail.asp?ID="&id&"&mail=true")
+	response.redirect("/cocktails/recipe.asp?ID="&id&"&mail=true")
 elseif Request("type") <> "" Then
 	Response.Redirect ("/mail/thankYou.asp?type="&Request("type"))
 else

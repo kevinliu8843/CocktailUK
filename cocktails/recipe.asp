@@ -42,7 +42,7 @@ If NOT GetDrink(rs, cn, intID, aryDrink) Then
 	cn.Close
 	Set rs	= Nothing
 	set cn	= Nothing
-	Response.Redirect("/db/viewCocktail.asp?ID=1")
+	Response.Redirect("/cocktails/recipe.asp?ID=1")
 End If
 
 blnXXX = (aryDrink(9) = "XXX rated")

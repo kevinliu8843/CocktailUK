@@ -69,7 +69,7 @@ If intStage > 1 And (strName = "" Or strType = "" Or blnduplicated) Then
 	ElseIf strType = "" Then
 		strError = "Please choose a drink type"
 	ElseIf blnDuplicated Then
-		strError = "<BR>We already have a recipe with this name. Please check if it is the same recipe by viewing it <A HREF=""/db/viewCocktail.asp?ID="&strID&""">here</A>"
+		strError = "<BR>We already have a recipe with this name. Please check if it is the same recipe by viewing it <A HREF=""/cocktails/recipe.asp?ID="&strID&""">here</A>"
 	End If
 End If
 

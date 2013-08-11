@@ -89,6 +89,6 @@ Function addRating( strCurrentUsers, strCurrentRate, strRateAdded,  strID, objCo
 	Set rs = Nothing
 	cn.Close
 	Set cn = Nothing
-	Response.Redirect("/db/viewCocktail.asp?rate=true&ID=" & strID)
+	Response.Redirect("/cocktails/recipe.asp?rate=true&ID=" & strID)
 End Function
 %>

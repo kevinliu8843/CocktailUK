@@ -56,7 +56,7 @@ IF NOT Request("uname") = "" AND NOT Request("pass") = "" Then
 			cn.Close
 			Set cn = Nothing
 			Set rs = Nothing
-			response.Redirect("/db/viewCocktail.asp?ID="&Request("ID"))
+			response.Redirect("/cocktails/recipe.asp?ID="&Request("ID"))
 		End If
 	Else
 		strConfirm = "<FONT color=red>Username or password incorrect. Please re-enter your details</font>"

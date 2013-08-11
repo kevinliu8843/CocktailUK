@@ -103,7 +103,7 @@ h3 {
 	{
 		color: #999999;
 	}
-iframe {
+iframe, iframe img {
 	max-width: 100%;
 }
 

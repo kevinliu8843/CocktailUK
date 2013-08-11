@@ -1,7 +1,0 @@
-﻿RewriteEngine on
-RewriteBase /
-RewriteMap cocktails txt:cocktail-recipes.txt
-RewriteMap products txt:products.txt
-RewriteRule ^cocktail-recipe/([^.?/]+)(\.htm) /db/viewCocktail.asp?ID=${cocktails:$1} [NC,QSA]
-RewriteRule ^shooter-recipe/([^.?/]+)(\.htm) /db/viewCocktail.asp?ID=${cocktails:$1} [NC,QSA]
-RewriteRule ^shop/products/([^.?/]+)(\.htm) /shop/products/product.asp?ID=${products:$1} [NC,QSA]

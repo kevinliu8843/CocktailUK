@@ -89,7 +89,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
 <%End If%>
 </h1>
 
-<h3>How to make a <%=LCase(aryDrink(0))%>:</h3>
+<h2><small>How to make a <%=LCase(aryDrink(0))%>:</small></h2>
 <div style="margin-bottom: 30px;"><%=aryDrink(1)%></div>
 
 <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" bordercolor="#111111" width="100%" id="AutoNumber7">

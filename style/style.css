@@ -55,9 +55,7 @@ A.disabled{
 }
 #topads
 {
-	margin: 0px 0px 10px 15px;
-	max-height: 70px;
-	overflow: hidden;
+	margin-bottom: 10px;
 }
 .leftnav {
 	display: inline-block;

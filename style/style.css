@@ -3,6 +3,7 @@
 }
 H1, H2, H3, H4, H5, H6 {
 	COLOR: #636388;
+	font-weight: normal;
 }
 h1, h2 {
 	TEXT-ALIGN: left;
@@ -11,7 +12,6 @@ h1, h2 {
 	COLOR: #545473; 
 	margin-top: 0px;
 	margin-bottom: 5px;
-	font-weight: normal;
 	text-transform: capitalize;
 } 
 h3 {

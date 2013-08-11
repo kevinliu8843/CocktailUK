@@ -60,6 +60,7 @@ End If
 <meta http-equiv="content-language" content="EN">
 <meta name="google-site-verification" content="pncNZRLgGxSNLD_-xHUvcx6z6di9D_pU_Kzo-Ldf1kc" />
 <meta name="verify-v1" content="j1KzW+k9z2ZccTw61qVc0227g3bZhen6ZCqPR541JsQ=">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title><%=strTopTitle%></title>
 <script src="/foundation/js/foundation.min.js"></script>
 <script type="text/javascript">

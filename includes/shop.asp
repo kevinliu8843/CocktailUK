@@ -137,68 +137,6 @@ Function CheckUpdateShop()
 	End If
 End Function
 
-Function UpdateProductTables()
-	CONST MAX_LEN = 1
-
-	Dim objXmlHttpCat, rs, cn, aryRows, i, j, fso, fcuk, strData
-	Dim strRow, dteStart, intTotal, intSizeDownload, dteTemp, findexes, intInserted
-
-	Server.ScriptTimeout = 10000
-	dteStart = Now()
-
-	Set fso = Server.Createobject("Scripting.FileSystemObject")
-	Set fcuk = fso.CreateTextFile(Server.MapPath("/shop/cuk_update.txt"),True)
-	fcuk.writeLine("Synchronisation started: "&Now())
-
-	Set cn = Server.CreateObject("ADODB.Connection")
-	Set rs = Server.CreateObject("ADODB.Recordset")
-	cn.CommandTimeout = 300 ' 5 minutes for each command...
-	cn.open strDBMod
-
-	dteTemp = Now()
-
-	On Error Resume Next
-
-	For i=0 to UBound(arySQLTables)
-		' Disabled
-	Next
-	fcuk.writeLine("Product retrieval finished: "&Now())
-	intTotal = DateDiff("s", dteStart, Now())
-	fcuk.writeLine("Product retrieval took: "&Int(intTotal/60) & " minutes "& intTotal-Int(intTotal/60)*60 & " seconds.")
-
-		For i=0 To UBound(aryIndexes)
-			cn.execute(aryIndexes(i))
-		Next
-		If Err.number = 0 Then
-			fcuk.writeLine("Generated indexes on data.")
-		Else
-			fcuk.writeLine("Error generating indexes on data - " & Err.description)
-			Err.Clear
-		End If
-	
-	call updateShopInfo()
-	
-	call setupCategories(fcuk)
-	
-	Call CreatePrettyURLFiles(cn, rs)
-	
-	On Error Goto 0
-	
-	fcuk.writeLine("Categories updated across all sites.")
-	cn.execute("UPDATE dsshopupdate set dteshopupdated='"&Day(Now) & "-" & MonthName(Month(Now)) & "-" & Year(Now) &" 03:00:00'")
-	cn.close
-	Set cn = nothing
-	Set rs = Nothing
-	Set objXmlHttpCat= Nothing
-	
-	fcuk.writeLine("Synchronisation finished: "&Now())
-	intTotal = DateDiff("s", dteStart, Now())
-	fcuk.writeLine("Synchronisation took: "&Int(intTotal/60) & " minutes "& intTotal-Int(intTotal/60)*60 & " seconds.")
-	fcuk.close
-	Set fcuk = nothing
-	Set fso = nothing
-End Function
-
 Private Sub setupCategories(fcuk)
 	'On Error Resume Next
 	Dim strFontColour, strURL, f, fso, strCat, rsc, cnc, strCatOpt, strCatWap, strCatLeft

@@ -87,13 +87,13 @@ End If
       <img alt="Classic cocktails and bar equipment uk" src="../images/cuk_07.gif" border="0" width="210" height="32" valign="absmiddle"></a>
     </div>
     <div class="large-6 columns">
-  	  <div class="row">
+  	  <div class="row collapse">
   			<form action="/search/" id="search_form">
   			    <input type="hidden" name="cx" value="partner-pub-4852715527905431:j32r2u95lwx">
   			    <input type="hidden" name="cof" value="FORID:10">
   			    <input type="hidden" name="ie" value="UTF-8"> 
   			    <div class="large-9 columns"><input type="text" name="q" id="SearchField" placeholder="Search for cocktails now..." class="swap_value"></div>
-            <div class="large-3 columns"><a href="#" onclick="this.form.submit(); return (false)">Search</a></div>
+            <div class="large-3 columns"><a href="#" class="button prefix" onclick="this.form.submit(); return (false)">Search</a></div>
   			</form>
   		</div>  
     </div>
@@ -126,7 +126,7 @@ End If
     </div>
   <%End If%>
 
-  <div class="row">
+  <div class="row collapse">
     <div class="large-3 columns">
       <!--#INCLUDE virtual="/includes/lhs_cocktail.asp"-->
     </div>

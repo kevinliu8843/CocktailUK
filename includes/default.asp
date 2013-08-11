@@ -151,12 +151,12 @@ End If
   </div>
 </div>
 
-<div class="footer" id="footer" align="center">
+<div class="footer hide-for-smal" id="footer" align="center">
   <iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fcocktailuk&amp;width=700&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=true&amp;height=290" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:625px; height:290px; background-color: white; margin-top: 10px;" allowTransparency="true"></iframe>
 </div>
 
 <%If blnSkyscraper AND NOT bHideAds AND NOT blnXXX Then%>
-  <div class="skyscraper">
+  <div class="skyscraper hide-for-small">
     <!-- Simple IF AdJug Publisher Code -->    
     <iframe width="160" height="600" name="AdSpace49282" src="http://hosting.adjug.com/AdJugSearch/PageBuilder.aspx?ivi=V3.0+IF&aid=492&slid=49282&height=600&width=160&CacheBuster=[time_stamp]&HTMLOP=True" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no">
     </iframe>    

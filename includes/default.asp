@@ -81,15 +81,15 @@ End If
 
 <div class="wrapper">
   <div class="row">
-    <div class="large-1" id="logo1">
+    <div class="large-1 columns" id="logo1">
       <a href="http://www.cocktail.uk.com/">
       <img border="0" src="../images/cuk_03.jpg" width="85" height="85" alt="Classic cocktails and bar equipment uk"></a>
     </div>
-    <div class="large-2" id="logo2">
+    <div class="large-2 columns" id="logo2">
       <a href="http://www.cocktail.uk.com/">
       <img alt="Classic cocktails and bar equipment uk" src="../images/cuk_07.gif" border="0" width="210" height="32"></a>
     </div>
-    <div class="large-6">
+    <div class="large-6 columns">
   	  <div id="search_box">
   			<form action="/search/" id="search_form" style="margin: 0px; padding: 0px; display: inline; ">
   			    <input type="hidden" name="cx" value="partner-pub-4852715527905431:j32r2u95lwx">
@@ -99,7 +99,7 @@ End If
   			</form>
   		</div>  
     </div>
-    <div class="large-3">
+    <div class="large-3 columns">
       <a href="/shop/basket.asp"><img alt="My Basket" src="../images/template/basket_icon.gif" width="36" height="36" align="right" border="0"><strong><u>My Basket</u></strong><br>
       <span style="text-decoration: none; white-space: nowrap;"><%=intItems%> Item<%If intItems <> 1 then%>s<%end if%> 
       &nbsp;&pound;<%=FormatNumber(dblValue,2)%></SPAN></a>
@@ -108,7 +108,7 @@ End If
 
   <%If NOT bHideAds Then%>
     <div class="row" id="topads">
-      <div class="large-6">
+      <div class="large-6 columns">
         <!-- JS AdJug Publisher Code -->    
         <script language="JavaScript">    
         document.write('<scr'+'ipt language="JavaScript" src="http://hosting.adjug.com/AdJugSearch/PageBuilder.aspx?ivi=V3.0+JS&aid=492&slid=49281&height=60&width=468&HTMLOP=False&ShowIFrame=True&CacheBuster=' + Math.floor(Math.random()*99999999) + '"></scr'+'ipt>');
@@ -119,7 +119,7 @@ End If
         </noscript>    
         <!-- JS AdJug Publisher Code -->
       </div>
-      <div class="large-6">
+      <div class="large-6 columns">
         <!--START MERCHANT:merchant name Drinkstuff.com from affiliatewindow.com.-->
         <a href="http://www.awin1.com/cread.php?s=23053&v=8&q=273&r=176043"><img src="http://www.awin1.com/cshow.php?s=23053&v=8&q=273&r=176043" 
         border="0"></a>
@@ -128,27 +128,29 @@ End If
     </div>
   <%End If%>
 
-  <div class="leftnav">
-    <!--#INCLUDE virtual="/includes/lhs_cocktail.asp"-->
-  </div>
+  <div class="row">
+    <div class="large-3 columns">
+      <!--#INCLUDE virtual="/includes/lhs_cocktail.asp"-->
+    </div>
 
-  <div class="content">
-    <div class="padded">
-      <div class="breadcrumb">
-        <%If LCase(Request.ServerVariables("SCRIPT_NAME")) = "/default.asp" Then%> 
-         Cocktail : UK, cocktails, <span lang="en-gb">cocktail</span> recipes and bar equipment from the UK
-        <%Else%>
-         <%=strTitleOut%>
-        <%End If%>
+    <div class="large-9 columns">
+      <div class="padded">
+        <div class="breadcrumb">
+          <%If LCase(Request.ServerVariables("SCRIPT_NAME")) = "/default.asp" Then%> 
+           Cocktail : UK, cocktails, <span lang="en-gb">cocktail</span> recipes and bar equipment from the UK
+          <%Else%>
+           <%=strTitleOut%>
+          <%End If%>
+        </div>
+        <!--C-->
+        <!---->
+        <!--/C-->
+        <%
+        If NOT Session("admin") Then
+         Call TrapErrors()
+        End If
+        %>
       </div>
-      <!--C-->
-      <!---->
-      <!--/C-->
-      <%
-      If NOT Session("admin") Then
-       Call TrapErrors()
-      End If
-      %>
     </div>
   </div>
 </div>

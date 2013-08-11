@@ -80,7 +80,7 @@ End If
 <body>
 
 <div class="wrapper">
-  <div class="row">
+  <div class="row" id="header">
     <div class="large-1 columns" id="logo1">
       <a href="http://www.cocktail.uk.com/">
       <img border="0" src="../images/cuk_03.jpg" width="85" height="85" alt="Classic cocktails and bar equipment uk"></a>

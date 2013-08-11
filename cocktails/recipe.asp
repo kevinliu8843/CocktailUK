@@ -87,7 +87,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
 <div style="margin-bottom: 30px;"><%=aryDrink(1)%></div>
 
 <div class="row collapse">
-  <div class="large-3 column">
+  <div class="large-3 small-12 column">
     <div style="padding-right: 15px; margin-bottom: 30px;">
       <h5 id="ingredients">Ingredients:</h5>
       <div>Serves <%=aryDrink(3)%></div>
@@ -95,7 +95,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
     </div>
   </div>
 
-  <div class="large-3 column">
+  <div class="large-3 small-12 column">
     <div style="padding-right: 15px; margin-bottom: 30px;">
       <h5 id="equipment">You'll also need:</h5>
       <div>
@@ -117,12 +117,12 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
       </div>
     </div>
   </div>
-  <div class="large-3 column">
+  <div class="large-3 small-6 column">
     <div style="padding-right: 15px; margin-bottom: 30px;">
       <%displayRatingPanel%>
     </div>
   </div>
-  <div class="large-3 column">
+  <div class="large-3 small-6 column">
     <%=aryDrink(11)%>
   </div>
 
@@ -151,7 +151,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
     %>
   </div>
 
-  <div class="large-9 column">
+  <div class="large-9 small-12 column">
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

@@ -33,8 +33,9 @@ function changeColour(objTable, strColour){
 </script>
 
 <p align="left">
-<img border="0" src="images/welcomeTo.gif" width="120" height="28" alt="Welcome to"><br>
-<img border="0" src="images/cuk_07.gif" width="210" height="32" alt="Cocktail UK"></p>
+  <img border="0" src="../images/redmartini.jpg" width="125" height="244" align="right">
+  <img border="0" src="images/welcomeTo.gif" width="120" height="28" alt="Welcome to"><br>
+  <img border="0" src="images/cuk_07.gif" width="210" height="32" alt="Cocktail UK"></p>
 <p align="left">Online for over 15 years, Cocktail : UK has the most comprehensive
 <a href="/cocktails/">cocktail recipes</a> &amp; <a href="/cocktails/?type=2">shooter recipes</a> database 
 (10,000+ and growing daily) plus
@@ -47,10 +48,7 @@ drink</a> | <a href="/cocktails/">Cocktails</a> |
 <a href="shop/products/cocktail-equipment.asp">Bar equipment</a></div>
 
 <H2 style="margin-top: 40px">Browse Our Cocktail Recipes</H2>
-<div class="row collapse">
-  <div class="large-2 column"><img border="0" src="../images/redmartini.jpg" width="125" height="244"></div>
-  <div class="large-10-centered column">
-    <TABLE border="0" cellpadding="5" cellspacing="0" id="table2" style="width: 90%">
+<TABLE border="0" cellpadding="5" cellspacing="0" id="table2" style="width: 90%">
   <TR>
     <TD valign="top" align="left" colspan="3">
       <P align="left"><A href="/cocktails/"><B>View all cocktails<BR>
@@ -82,6 +80,4 @@ drink</a> | <a href="/cocktails/">Cocktails</a> |
       <P align="left"><A href="/cocktails/basedon.asp?basedID=8"><B>Tequila based cocktails<BR>
       </B></A>Shows a list of cocktails based on tequila.</TD>
   </TR></TABLE>
-  </div>
-</div>
 <!--#include virtual="/includes/footer.asp" -->

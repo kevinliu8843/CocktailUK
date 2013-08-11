@@ -49,7 +49,7 @@ drink</a> | <a href="/cocktails/">Cocktails</a> |
 <H2 style="margin-top: 40px">Browse Our Cocktail Recipes</H2>
 <div class="row collapse">
   <div class="large-2 columns">
-    <img border="0" src="../images/redmartini.jpg" width="125" height="244">
+    <img border="0" src="../images/redmartini.jpg" style="max-width: 90%">
   </div>
   <div class="large-10 columns">
     <div class="row collapse">

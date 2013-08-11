@@ -48,36 +48,36 @@ drink</a> | <a href="/cocktails/">Cocktails</a> |
 <a href="shop/products/cocktail-equipment.asp">Bar equipment</a></div>
 
 <H2 style="margin-top: 40px">Browse Our Cocktail Recipes</H2>
-<TABLE border="0" cellpadding="5" cellspacing="0" id="table2">
+<TABLE border="0" cellpadding="5" cellspacing="0" id="table2" width="100%">
   <TR>
     <TD valign="top" align="left" colspan="3">
-      <P align="left"><A href="/cocktails/"><B>View all cocktails<BR>
+      <P align="left"><A href="/cocktails/"><h4>View all cocktails</h4>
       </B></A>Shows a list of all cocktails.
       </TD>
   </TR>
   <TR>
-    <TD valign="top" align="left"><A href="/cocktails/basedon.asp?basedID=1"><B>Vodka based cocktails<BR>
+    <TD valign="top" align="left"><A href="/cocktails/basedon.asp?basedID=1"><h4>Vodka based cocktails</h4>
       </B></A>Shows a list of cocktails based on vodka.</TD>
     <TD valign="top" align="left">&nbsp;</TD>
     <TD valign="top" align="left">
-      <P align="left"><A href="/cocktails/basedon.asp?basedID=3"><B>Gin based cocktails<BR>
-      </B></A>Shows a list of cocktails based on gin.</TD>
+      <P align="left"><A href="/cocktails/basedon.asp?basedID=3"><h4>Gin based cocktails</h4>
+      </A>Shows a list of cocktails based on gin.</TD>
   </TR>
   <TR>
     <TD valign="top" align="left">
-      <P align="left"><A href="/cocktails/basedon.asp?basedID=2"><B>Brandy based cocktails<BR>
+      <P align="left"><A href="/cocktails/basedon.asp?basedID=2"><h4>Brandy based cocktails</h4>
       </B></A>Shows a list of cocktails based on brandy.</TD>
     <TD valign="top" align="left">&nbsp;</TD>
-    <TD valign="top" align="left"><A href="/cocktails/basedon.asp?basedID=5"><B>Rum based cocktails<BR>
+    <TD valign="top" align="left"><A href="/cocktails/basedon.asp?basedID=5"><h4>Rum based cocktails</h4>
       </B></A>Shows a list of cocktails based on rum.</TD>
   </TR>
   <TR>
     <TD valign="top" align="left">
-      <P align="left"><A href="/cocktails/basedon.asp?basedID=4"><B>Whisky based cocktails<BR>
+      <P align="left"><A href="/cocktails/basedon.asp?basedID=4"><h4>Whisky based cocktails</h4>
       </B></A>Shows a list of cocktails based on whisky.</TD>
     <TD valign="top" align="left">&nbsp;</TD>
     <TD valign="top" align="left">
-      <P align="left"><A href="/cocktails/basedon.asp?basedID=8"><B>Tequila based cocktails<BR>
+      <P align="left"><A href="/cocktails/basedon.asp?basedID=8"><h4>Tequila based cocktails</h4>
       </B></A>Shows a list of cocktails based on tequila.</TD>
   </TR></TABLE>
 <!--#include virtual="/includes/footer.asp" -->

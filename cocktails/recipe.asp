@@ -89,111 +89,103 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
 <%End If%>
 </h1>
 
-<h2><small>How to make a <%=LCase(aryDrink(0))%>:</small></h2>
+<h4>How to make a <%=LCase(aryDrink(0))%>:</h4>
 <div style="margin-bottom: 30px;"><%=aryDrink(1)%></div>
 
-<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" bordercolor="#111111" width="100%" id="AutoNumber7">
-  <tr>
-    <td width="25%" valign="top">
-      <div style="padding-right: 15px; margin-bottom: 30px;">
-        <h3 id="ingredients">Ingredients:</h3>
-        <div>Serves <%=aryDrink(3)%></div>
-        <div><%=aryDrink(2)%></div>
+<div class="row">
+  <div class="large-3 column">
+    <div style="padding-right: 15px; margin-bottom: 30px;">
+      <h4 id="ingredients">Ingredients:</h4>
+      <div>Serves <%=aryDrink(3)%></div>
+      <div><%=aryDrink(2)%></div>
+    </div>
+  </div>
+  <div class="large-3 column">
+    <div style="padding-right: 15px; margin-bottom: 30px;">
+      <h4 id="equipment">You'll also need:</h4>
+      <div>
+        <%If aryDrink(7)="shooter" Then%>
+          <a href="/shop/products/search.asp?search=iceshot"><img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shot_rock.jpg" alt="Shot Rock - Ice shot glasses" width="40" height="40"></a>
+          <a href="/shop/products/search.asp?search=shot float kit">
+          <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shot_float.jpg" alt="Shot Float Kit - Help you to layer shooters easier" width="25" height="40"></a>
+        <%else%>
+          <a href="/shop/products/search.asp?search=glass">
+          <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/glasses.jpg" alt="Glassware" width="28" height="40"></a>
+          <a href="/shop/products/search.asp?search=cocktail shaker">
+          <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shaker.jpg" alt="Professional Cocktail Shaker - used in the industry" width="40" height="40"></a>
+        <%End if%>
+        <a href="/shop/products/search.asp?search=pourer">
+        <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/steel_pourer.jpg" alt="Stainless Steel Pourer - pours ingredients gently onto a drink" width="44" height="40"></a>
+        <a href="/shop/products/search.asp?search=measure">
+        <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/bar_measures.jpg" alt="Professional Bar Measures - measure out the perfect quantity" width="34" height="40"></a><a onmouseover="show_text('Professional Measures')" onmouseout="hide_text()" href="/shop/products/search.asp?search=measures">
+        </a>
       </div>
-    </td>
-    <td width="25%" valign="top">
-      <div style="padding-right: 15px; margin-bottom: 30px;">
-        <h3 id="equipment">You'll also need:</h3>
-        <div>
-          <%If aryDrink(7)="shooter" Then%>
-            <a href="/shop/products/search.asp?search=iceshot"><img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shot_rock.jpg" alt="Shot Rock - Ice shot glasses" width="40" height="40"></a>
-            <a href="/shop/products/search.asp?search=shot float kit">
-            <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shot_float.jpg" alt="Shot Float Kit - Help you to layer shooters easier" width="25" height="40"></a>
-          <%else%>
-            <a href="/shop/products/search.asp?search=glass">
-            <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/glasses.jpg" alt="Glassware" width="28" height="40"></a>
-            <a href="/shop/products/search.asp?search=cocktail shaker">
-            <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shaker.jpg" alt="Professional Cocktail Shaker - used in the industry" width="40" height="40"></a>
-          <%End if%>
-          <a href="/shop/products/search.asp?search=pourer">
-          <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/steel_pourer.jpg" alt="Stainless Steel Pourer - pours ingredients gently onto a drink" width="44" height="40"></a>
-          <a href="/shop/products/search.asp?search=measure">
-          <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/bar_measures.jpg" alt="Professional Bar Measures - measure out the perfect quantity" width="34" height="40"></a><a onmouseover="show_text('Professional Measures')" onmouseout="hide_text()" href="/shop/products/search.asp?search=measures">
-          </a>
-        </div>
-      </div>
-    </td>
-    <td width="25%" valign="top">
-      <div style="padding-right: 15px; margin-bottom: 30px;">
-        <%displayRatingPanel%>
-      </div>
-    </td>
-    <td width="25%">
-      <%=aryDrink(11)%>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="4">
-      <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse: collapse" bordercolor="#111111">
+    </div>
+  </div>
+  <div class="large-3 column">
+    <div style="padding-right: 15px; margin-bottom: 30px;">
+      <%displayRatingPanel%>
+    </div>
+  </div>
+  <div class="large-3 column">
+    <%=aryDrink(11)%>
+  </div>
+
+  <div class="large-12 column">
+    <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse: collapse" bordercolor="#111111" id="table3">
+      <%IF blnDuplicated Then%>
         <tr>
-          <td colspan="2">
-            <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse: collapse" bordercolor="#111111" id="table3">
-              <%IF blnDuplicated Then%>
-                <tr>
-                  <td>
-                      <a href="/account/userHotList.asp?remove=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a>
-                  </td>
-                  <td width="100%">
-                      <a href="/account/userHotList.asp?remove=<%=intID%>">Remove from your favourites</a>
-                  </td>
-                </tr>
-              <%Else%>
-                <tr>
-                  <td><a href="/account/userHotList.asp?add=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></td>
-                  <td width="100%"><a href="/account/userHotList.asp?add=<%=intID%>">Add to my favourites</a></td>
-                </tr>
-              <%End If%>
-            </table>
-            <%
-            If Session("logged") Then 
-              Response.write strMakeCocktail
-            End If
-            %>
+          <td>
+              <a href="/account/userHotList.asp?remove=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a>
+          </td>
+          <td width="100%">
+              <a href="/account/userHotList.asp?remove=<%=intID%>">Remove from your favourites</a>
           </td>
         </tr>
-      </table>
-    </td>
-  </tr>
-  <tr>
-    <td width="100%" colspan="3" style="padding-top: 30px;">
-      <div id="disqus_thread"></div>
-      <script type="text/javascript">
-          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-          var disqus_shortname = 'cocktailuk'; // required: replace example with your forum shortname
+      <%Else%>
+        <tr>
+          <td><a href="/account/userHotList.asp?add=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></td>
+          <td width="100%"><a href="/account/userHotList.asp?add=<%=intID%>">Add to my favourites</a></td>
+        </tr>
+      <%End If%>
+    </table>
+    <%
+    If Session("logged") Then 
+      Response.write strMakeCocktail
+    End If
+    %>
+  </div>
 
-          /* * * DON'T EDIT BELOW THIS LINE * * */
-          (function() {
-              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-          })();
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-      
-      <script type="text/JavaScript">
-      AdJug_AID = 492;
-      AdJug_SiteAdSpaceID = 49378;
-      AdJug_IFrame = false;
-      AdJug_ShowDebug = false;
-      AdJug_Height = 250;
-      AdJug_Width = 300;
-      </script>
-      <script type="text/JavaScript" src="http://hosting.adjug.com/JavaScript/AdOffer/IncludeResults.js"></script>
+  <div class="large-9 column">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'cocktailuk'; // required: replace example with your forum shortname
 
-    </td>
-  </tr>
-</table>
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+
+  <div class="large-12 column">
+    <script type="text/JavaScript">
+    AdJug_AID = 492;
+    AdJug_SiteAdSpaceID = 49378;
+    AdJug_IFrame = false;
+    AdJug_ShowDebug = false;
+    AdJug_Height = 250;
+    AdJug_Width = 300;
+    </script>
+    <script type="text/JavaScript" src="http://hosting.adjug.com/JavaScript/AdOffer/IncludeResults.js"></script>
+  </div>
+</div>
+
 <!--#include virtual="/includes/footer.asp" -->
 
 <%
@@ -212,7 +204,7 @@ Function displayRatingPanel
 %>
 <form action="/account/addrating.asp" method="post" style="text-align: left">
  <input type="hidden" name="ID" value="<%=intID%>">
- <H3>Details:</h3>
+ <h4>Details:</h4>
  Type: <%=Capitalise(aryDrink(7))%><br>
  Category: <%=Capitalise(aryDrink(8))%><br>
  Viewed: <%=aryDrink(4)%> times<br>

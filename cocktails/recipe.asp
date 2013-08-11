@@ -208,7 +208,7 @@ Function displayRatingPanel
  <%If Request("rate") = "true" Then%><font color="#FF0000"><i>Rating Added</i></font>
  <%elseif Request("rate") = "false" then%><font color="#FF0000"><i>Please specify 
  a rating</i></font><%End If%>
- <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+ <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" style="margin-top: 1em;">
    <tr>
      <td valign="middle" align="center">1</td>
      <td valign="middle" align="center">2</td>

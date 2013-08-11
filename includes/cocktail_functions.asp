@@ -238,26 +238,19 @@ Sub writeCocktailList(strSQL, rs, cn, strTitle, strHrefType)
 			<h2><%=strTitle%></h2>
 		<%End If%>
 
-		<TABLE border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse: collapse" bordercolor="#111111">
-		  <TR>
-		    <TD colspan="<%=iWidth%>" align="center">
-		        <P align="center">
-			Page <B><%= iPageCurrent %></B> of <B><%= iPageCount %></B> (<%=rs.recordCount%> recipes)<BR>&nbsp;</P>
-		    </TD>
-		  </TR>
-		  <%For iKnt1=1 To iHeight%>
-			  <TR>
-			  <%For iKnt2=1 To iWidth%>
-			    <TD valign="top" width="<%=100/iWidth%>%">
-					<%writeField FSO, rs%>
-			    </TD>
-			  <%Next%>
-			  </TR>
+
+		<P align="center">Page <B><%= iPageCurrent %></B> of <B><%= iPageCount %></B> (<%=rs.recordCount%> recipes)</P>
+
+		<div class="row collapse">
+		  <%For iKnt2=1 To iWidth%>
+		    <div class="large-4 small-6 column">
+				<%writeField FSO, rs%>
+		    </div>
 		  <%Next%>
-		  <TR>
-		    <TD colspan="<%=iWidth%>" align="center">
-			<%Set FSO = Nothing%>
-			<div class="pagination">
+		</div>
+		<%Set FSO = Nothing%>
+
+		<div class="pagination">
 			<%
 			If iPageCurrent <> 1 Then
 				%>
@@ -291,10 +284,8 @@ Sub writeCocktailList(strSQL, rs, cn, strTitle, strHrefType)
 				<a class="page gradient" href="<%=Request.ServerVariables("URL")%>?page=<%= iPageCurrent + 1 %><%=strHrefType%>">Next</a>
 				<%
 			End If
-			%></div>
-			</TD>
-			</TR>
-		</TABLE>
+			%>
+		</div>
 		<%
 	Else
 		Response.write("<P><B>Sorry, no drinks found</B><BR><A href=""javascript:history.go(-1)"">Go back</A>")
@@ -302,28 +293,21 @@ Sub writeCocktailList(strSQL, rs, cn, strTitle, strHrefType)
 End Sub
 
 Sub writeField(FSO, rs)
-	Dim name, fileExists, strType, blnWAP
-	blnWAP = (InStr(Request.ServerVariables("SCRIPT_NAME"), "/wap") > 0)
+	Dim name, fileExists, strType
 	If NOT rs.EOF Then
 		IF Int(rs("type")) AND 1 THEN
 			strType = "Cocktail"
 		ELSEIF Int(rs("type")) AND 2 THEN
 			strType = "Shooter"
 		END IF
-		If NOT blnWAP Then
 		%>
-			<TABLE border="0" cellpadding="1" cellspacing="0" style="border-collapse: collapse" width=100%>
-   				<TR>
-     				<TD align="center" width="21" valign="top"><A href="/<%=strType%>-Recipe/<%=GeneratePrettyURL(replaceStuffBack(rs("name")))%>.htm"><IMG border="0" src="/images/<%=strType%>_small.gif"></A></TD>
-     				<TD align="left"><A href="/<%=strType%>-Recipe/<%=GeneratePrettyURL(replaceStuffBack(rs("name")))%>.htm"><%=Capitalise(replaceStuffBack(rs("name"))) %></A>&nbsp;</TD>
-   				</TR>
- 			</TABLE>
-		<%Else%>
-			<a href="/wap/recipes/viewCocktail.asp?ID=<%=rs("ID")%>"><%=Server.HTMLEncode(capitalise( replaceStuffBack( rs("name") ))) %></a><br/>
-		<%End If%>
+		<div class="row collapse small-3">
+			<A href="/<%=strType%>-Recipe/<%=GeneratePrettyURL(replaceStuffBack(rs("name")))%>.htm"><IMG border="0" src="/images/<%=strType%>_small.gif"></A>
+		</div>
+		<div class="row collapse small-9">
+			<A href="/<%=strType%>-Recipe/<%=GeneratePrettyURL(replaceStuffBack(rs("name")))%>.htm"><%=Capitalise(replaceStuffBack(rs("name"))) %></A>
+		</div>
     	<%rs.MoveNext%>
-	<%Else%>
-    		&nbsp;
 	<%
 	End If
 End Sub

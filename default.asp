@@ -49,8 +49,8 @@ drink</a> | <a href="/cocktails/">Cocktails</a> |
 <H2 style="margin-top: 40px">Browse Our Cocktail Recipes</H2>
 <div class="row collapse">
   <div class="large-2 column"><img border="0" src="../images/redmartini.jpg" width="125" height="244"></div>
-  <div class="large-9 column">
-    <TABLE border="0" cellpadding="5" cellspacing="0" id="table2">
+  <div class="large-10-centered column">
+    <TABLE border="0" cellpadding="5" cellspacing="0" id="table2" style="width: 90%">
   <TR>
     <TD valign="top" align="left" colspan="3">
       <P align="left"><A href="/cocktails/"><B>View all cocktails<BR>
@@ -83,6 +83,5 @@ drink</a> | <a href="/cocktails/">Cocktails</a> |
       </B></A>Shows a list of cocktails based on tequila.</TD>
   </TR></TABLE>
   </div>
-  <div class="large-1 column"></div>
 </div>
 <!--#include virtual="/includes/footer.asp" -->

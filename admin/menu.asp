@@ -15,7 +15,7 @@ rs.open "SELECT COUNT(*) FROM usr",cn
 intUsers = rs(0)
 rs.close
 
-rs.open "SELECT COUNT(*) FROM cocktail",cn
+rs.open "SELECT COUNT(*) FROM cocktail WHERE status=1 ",cn
 intRecipes = rs(0)
 rs.close
 

@@ -55,7 +55,7 @@ A.disabled{
 }
 #header
 {
-	min-height: 100px;
+	max-height: 85px;
 }
 #topads
 {

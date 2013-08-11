@@ -10,7 +10,7 @@ strTitle = "Search"
 <script type="text/javascript">
   var googleSearchIframeName = "cse-search-results";
   var googleSearchFormName = "cse-search-box";
-  var googleSearchFrameWidth = 700;
+  var googleSearchFrameWidth = 730;
   var googleSearchDomain = "www.google.co.uk";
   var googleSearchPath = "/cse";
 </script>

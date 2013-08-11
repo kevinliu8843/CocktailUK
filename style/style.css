@@ -39,6 +39,13 @@ h3 {
 		height: 85px;
 		vertical-align: middle;
 	}
+	#header #search_form {
+		margin-top: 1.6em;
+	}
+	#header #basket {
+		margin-top: 1.6em;
+		width: auto;
+	}
 #topads
 {
 	margin-bottom: 20px;

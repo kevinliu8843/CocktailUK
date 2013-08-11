@@ -70,17 +70,13 @@ End If
 
 blnJustForm = (Request("justform") = "true")
 %>
-<%if blnJustForm  Then%>
-	<LINK href="/style/style.css" type="text/css" rel="stylesheet">
-	<BODY class="nobackground">
-<%Else%>
  <!--#include virtual="/includes/header.asp" -->
  <H2>Register with Cocktail : UK</H2>
  <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
    <tr>
      <td width="100%"> <P style="align: justify" align="justify">When you are a member of Cocktail : UK you are able submit your own recipes and, more usefully,&nbsp; save your own personal ingredients list from which you can make/find cocktails from (you won&#39;t believe 
  the amount of recipes you can make from a small amount of ingredients!). </P>
-<%End If%> </P>
+ </P>
  <P align="center">Please read our <A target="_blank" href="/services/privacy.asp">privacy policy</A> at your leisure. </P>
      <!--webbot BOT="GeneratedScript" PREVIEW=" " startspan --><script Language="JavaScript" Type="text/javascript"><!--
 function FrontPage_Form1_Validator(theForm)

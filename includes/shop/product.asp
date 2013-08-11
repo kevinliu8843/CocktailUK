@@ -409,7 +409,7 @@ Class CProduct
 			End If
 			
 			If Request("added") <> "" Then
-				response.write ("<p align=""center""><b><U><FONT color=""#FF0000"" class=""largetext"">Product added to your basket</FONT></U></b></p>")
+				response.write ("<p align=""center""><b><U><FONT color=""#FF0000"">Product added to your basket</FONT></U></b></p>")
 			End If
 			
 			intCurrentProduct = 0 
@@ -907,7 +907,7 @@ Class CProduct
 				<IMG border="0" src="/images/buttons/zoom.gif"></FONT></B></A>
 			<%End If%> 
 	
-			<%If Request("added") <> "" Then%><p align="center"><b><U><FONT color="#FF0000" class="largetext">Product added to your basket</FONT></U></b></p><%End If%>
+			<%If Request("added") <> "" Then%><p align="center"><b><U><FONT color="#FF0000">Product added to your basket</FONT></U></b></p><%End If%>
 	
 			<% 
 			dblMinPrice	= 999999

@@ -70,12 +70,7 @@ Else
 	blnAccepted = False
 End If
 
-If blnJustForm Then%>
-	<LINK href="/style/style.css" type="text/css" rel="stylesheet">
-	<BODY class="nobackground">
-<%Else%>
-	<!--#include virtual="/includes/header.asp" -->
-<%End If%>
+<!--#include virtual="/includes/header.asp" -->
 <%IF NOT Session("logged") AND NOT blnAccepted Then%>
 	<%If NOT blnJustForm Then%>
 		<H2>Login</H2>

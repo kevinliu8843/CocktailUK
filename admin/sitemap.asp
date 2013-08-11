@@ -18,7 +18,7 @@ Set cn2= Server.CreateObject("ADODB.Connection")
 Set rs2= Server.CreateObject("ADODB.Recordset")
 cn2.open strDB
 
-'Call setupCategories(NULL)
+'Call setupCategories(NULL) 
 
 'Generate pretty URL's whils we are here too...
 Call CreatePrettyURLFiles(cn, rs)

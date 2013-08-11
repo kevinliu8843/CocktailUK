@@ -47,7 +47,7 @@ drink</a> | <a href="/cocktails/">Cocktails</a> |
 <a href="shop/products/cocktail-equipment.asp">Bar equipment</a></div>
 
 <H2 style="margin-top: 40px">Browse Our Cocktail Recipes</H2>
-<div class="row">
+<div class="row collapse">
   <div class="large-2 columns">
     <img border="0" src="../images/redmartini.jpg" width="125" height="244">
   </div>
@@ -58,7 +58,7 @@ drink</a> | <a href="/cocktails/">Cocktails</a> |
         </B></A>Shows a list of all cocktails.
       </div>
     </div>
-    <div class="row">
+    <div class="row" id="browse">
       <div class="large-6 columns">
         <A href="/cocktails/basedon.asp?basedID=1"><B>Vodka based cocktails<BR></B></A>Shows a list of cocktails based on vodka.
       </div>

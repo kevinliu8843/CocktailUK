@@ -47,7 +47,7 @@ A.disabled{
 .wrapper
 {
 	margin: 0px auto;
-	max-width: 1000px;
+	max-width: 1100px;
 	POSITION: relative;
 	BACKGROUND-COLOR: white; 
 	border: #636388 1px solid;
@@ -59,7 +59,7 @@ A.disabled{
 }
 #topads
 {
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 .leftnav {
 	display: inline-block;

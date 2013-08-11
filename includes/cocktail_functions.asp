@@ -303,7 +303,7 @@ Sub writeField(FSO, rs)
 			strType = "Shooter" 
 		END IF
 		%>
-		<div class="row collapse" style="padding-bottom: 3px;">
+		<div class="row collapse" style="padding-bottom: 8px;">
 			<div class="column small-1">
 				<A href="/<%=strType%>-Recipe/<%=GeneratePrettyURL(replaceStuffBack(rs("name")))%>.htm"><IMG border="0" src="/images/<%=strType%>_small.gif"></A>
 			</div>

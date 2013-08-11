@@ -87,12 +87,12 @@ End If
       <img alt="Classic cocktails and bar equipment uk" src="../images/cuk_07.gif" border="0" width="210" height="32" valign="absmiddle"></a>
     </div>
     <div class="large-6 columns">
-  	  <div id="search_box">
-  			<form action="/search/" id="search_form" style="margin: 0px; padding: 0px; display: inline; ">
+  	  <div>
+  			<form action="/search/" id="search_form">
   			    <input type="hidden" name="cx" value="partner-pub-4852715527905431:j32r2u95lwx">
   			    <input type="hidden" name="cof" value="FORID:10">
   			    <input type="hidden" name="ie" value="UTF-8"> 
-  			    <input type="text" name="q" id="SearchField" placeholder="Search for cocktails now..." class="swap_value"><input type="image" src="../images/template/button_search_go.gif" id="go" name="sa" alt="Search" title="Search">
+  			    <input type="text" name="q" id="SearchField" placeholder="Search for cocktails now..." class="swap_value"><input type="button" id="go" name="sa" alt="Search" title="Search">
   			</form>
   		</div>  
     </div>

@@ -109,7 +109,14 @@ iframe, iframe img {
 .pagination {
 	margin: 20px auto;
 }
-
+@media all and (max-width: 768px) {
+	#content {
+		padding: 10px;
+	}
+	#header #search_form {
+		margin-top: 0em;
+	}
+}
 
 
 

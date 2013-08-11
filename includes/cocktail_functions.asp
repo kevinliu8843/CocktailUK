@@ -302,10 +302,10 @@ Sub writeField(FSO, rs)
 		END IF
 		%>
 		<div class="row collapse">
-			<div class="column small-2">
+			<div class="column small-1">
 				<A href="/<%=strType%>-Recipe/<%=GeneratePrettyURL(replaceStuffBack(rs("name")))%>.htm"><IMG border="0" src="/images/<%=strType%>_small.gif"></A>
 			</div>
-			<div class="column small-10">
+			<div class="column small-11">
 				<A href="/<%=strType%>-Recipe/<%=GeneratePrettyURL(replaceStuffBack(rs("name")))%>.htm"><%=Capitalise(replaceStuffBack(rs("name"))) %></A>
 			</div>
 		</div>

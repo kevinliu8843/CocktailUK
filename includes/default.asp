@@ -133,11 +133,9 @@ End If
 
     <div class="large-9 columns">
       <div id="content">
-        <div class="breadcrumb">
-          <%If LCase(Request.ServerVariables("SCRIPT_NAME")) <> "/default.asp" Then%> 
-           <%=strTitleOut%>
-          <%End If%>
-        </div>
+        <%If LCase(Request.ServerVariables("SCRIPT_NAME")) <> "/default.asp" Then%> 
+          <div class="breadcrumb"><%=strTitleOut%></div>
+        <%End If%>
         <!--C-->
         <!---->
         <!--/C-->

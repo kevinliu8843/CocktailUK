@@ -21,11 +21,6 @@ h3 {
 	font-weight: normal;
 	margin-bottom: 0px;
 } 
-A.disabled{
-	color: #999999;
-	text-decoration: none;
-	cursor: not-allowed;
-}
 .wrapper
 {
 	margin: 0px auto;
@@ -72,6 +67,11 @@ A.disabled{
 .footer {
 	color: white;
 	padding-bottom: 20px;
+}
+A.disabled{
+	color: #999999;
+	text-decoration: none;
+	cursor: not-allowed;
 }
 .skyscraper
 { 

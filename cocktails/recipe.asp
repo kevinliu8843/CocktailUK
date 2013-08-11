@@ -89,7 +89,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
 <div class="row collapse">
   <div class="large-3 column">
     <div style="padding-right: 15px; margin-bottom: 30px;">
-      <h4 id="ingredients">Ingredients:</h4>
+      <h5 id="ingredients">Ingredients:</h5>
       <div>Serves <%=aryDrink(3)%></div>
       <div><%=aryDrink(2)%></div>
     </div>
@@ -97,7 +97,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
 
   <div class="large-3 column">
     <div style="padding-right: 15px; margin-bottom: 30px;">
-      <h4 id="equipment">You'll also need:</h4>
+      <h5 id="equipment">You'll also need:</h5>
       <div>
         <%If aryDrink(7)="shooter" Then%>
           <a href="/shop/products/search.asp?search=iceshot"><img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shot_rock.jpg" alt="Shot Rock - Ice shot glasses" width="40" height="40"></a>
@@ -199,7 +199,7 @@ Function displayRatingPanel
 %>
 <form action="/account/addrating.asp" method="post" style="text-align: left">
  <input type="hidden" name="ID" value="<%=intID%>">
- <h4>Details:</h4>
+ <h5>Details:</h5>
  Type: <%=Capitalise(aryDrink(7))%><br>
  Category: <%=Capitalise(aryDrink(8))%><br>
  Viewed: <%=aryDrink(4)%> times<br>

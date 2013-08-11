@@ -54,6 +54,9 @@ A.disabled{
 #leftnav .item {
 	padding: 4px 13px;
 }
+#leftnav .item a {
+	COLOR: #444444;
+}
 #leftnav .menu-header {
 	padding-top: 2em;
 }

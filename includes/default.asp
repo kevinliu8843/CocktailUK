@@ -81,23 +81,23 @@ End If
 
 <div class="wrapper">
   <div class="row" id="header">
-    <div class="large-4 columns" id="logo1">
+    <div class="large-5-centered columns" id="logo1">
       <a href="http://www.cocktail.uk.com/">
       <img border="0" src="../images/cuk_03.jpg" width="85" height="85" alt="Classic cocktails and bar equipment uk" valign="absmiddle">
       <img alt="Classic cocktails and bar equipment uk" src="../images/cuk_07.gif" border="0" width="210" height="32" valign="absmiddle"></a>
     </div>
-    <div class="large-6 columns">
+    <div class="large-4-centered columns">
   	  <div class="row collapse">
   			<form action="/search/" id="search_form">
   			    <input type="hidden" name="cx" value="partner-pub-4852715527905431:j32r2u95lwx">
   			    <input type="hidden" name="cof" value="FORID:10">
   			    <input type="hidden" name="ie" value="UTF-8"> 
-  			    <div class="large-9 columns"><input type="text" name="q" id="SearchField" placeholder="Search for cocktails now..." class="swap_value"></div>
-            <div class="large-3 columns"><a href="#" class="button prefix" onclick="this.form.submit(); return (false)">Search</a></div>
+  			    <div class="large-9-centered columns"><input type="text" name="q" id="SearchField" placeholder="Search for cocktails now..." class="swap_value"></div>
+            <div class="large-3-centered columns"><a href="#" class="button prefix" onclick="this.form.submit(); return (false)">Search</a></div>
   			</form>
   		</div>  
     </div>
-    <div class="large-2 columns">
+    <div class="large-3-centered columns">
       <a href="/shop/basket.asp"><img alt="My Basket" src="../images/template/basket_icon.gif" width="36" height="36" align="right" border="0"><strong><u>My Basket</u></strong><br>
       <span style="text-decoration: none; white-space: nowrap;"><%=intItems%> Item<%If intItems <> 1 then%>s<%end if%> 
       &nbsp;&pound;<%=FormatNumber(dblValue,2)%></SPAN></a>

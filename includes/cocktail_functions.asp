@@ -308,7 +308,7 @@ Sub writeField(FSO, rs)
 				<A href="/<%=strType%>-Recipe/<%=GeneratePrettyURL(replaceStuffBack(rs("name")))%>.htm"><IMG border="0" src="/images/<%=strType%>_small.gif"></A>
 			</div>
 			<div class="column small-11">
-				<A href="/<%=strType%>-Recipe/<%=GeneratePrettyURL(replaceStuffBack(rs("name")))%>.htm"><%=Capitalise(replaceStuffBack(rs("name"))) %></A>
+				<A style="padding-bottom: 3px;" href="/<%=strType%>-Recipe/<%=GeneratePrettyURL(replaceStuffBack(rs("name")))%>.htm"><%=Capitalise(replaceStuffBack(rs("name"))) %></A>
 			</div>
 		</div>
     	<%rs.MoveNext%>

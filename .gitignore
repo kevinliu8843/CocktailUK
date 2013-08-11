@@ -38,3 +38,4 @@ Web.Release.config
 /includes/shop/categories*
 /shop/products/*
 /products.txt
+.htaccess

@@ -391,8 +391,8 @@ Sub CreatePrettyURLFiles(cn, rs)
 	strHTAccess = strHTAccess & "RewriteMap cocktails txt:cocktail-recipes.txt" & VbCrLf
 	strHTAccess = strHTAccess & "RewriteMap products txt:products.txt" & VbCrLf
 
-	strHTAccess = strHTAccess & "RewriteRule ^cocktail-recipe/([^.?/]+)(\.htm) /db/viewCocktail.asp?ID=${cocktails:$1} [NC,QSA]" & VbCrLf
-	strHTAccess = strHTAccess & "RewriteRule ^shooter-recipe/([^.?/]+)(\.htm) /db/viewCocktail.asp?ID=${cocktails:$1} [NC,QSA]" & VbCrLf
+	strHTAccess = strHTAccess & "RewriteRule ^cocktail-recipe/([^.?/]+)(\.htm) /cocktails/recipe.asp?ID=${cocktails:$1} [NC,QSA]" & VbCrLf
+	strHTAccess = strHTAccess & "RewriteRule ^shooter-recipe/([^.?/]+)(\.htm) /cocktails/recipe.asp?ID=${cocktails:$1} [NC,QSA]" & VbCrLf
 	strHTAccess = strHTAccess & "RewriteRule ^shop/products/([^.?/]+)(\.htm) /shop/products/product.asp?ID=${products:$1} [NC,QSA]" & VbCrLf
 
 	rs.open "SELECT ID, name FROM cocktail ORDER BY accessed DESC", cn

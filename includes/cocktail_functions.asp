@@ -242,7 +242,7 @@ Sub writeCocktailList(strSQL, rs, cn, strTitle, strHrefType)
 		<P align="center">Page <B><%= iPageCurrent %></B> of <B><%= iPageCount %></B> (<%=rs.recordCount%> recipes)</P>
 
 		<div class="row collapse">
-		  <%For iKnt2=1 To iWidth%>
+		  <%For iKnt2=1 To iWidth * iHeight%>
 		    <div class="large-4 small-6 column">
 				<%writeField FSO, rs%>
 		    </div>

@@ -48,7 +48,7 @@ drink</a> | <a href="/cocktails/">Cocktails</a> |
 <a href="shop/products/cocktail-equipment.asp">Bar equipment</a></div>
 
 <H2 style="margin-top: 40px">Browse Our Cocktail Recipes</H2>
-<TABLE border="0" cellpadding="5" cellspacing="0" id="table2" style="width: 90%">
+<TABLE border="0" cellpadding="5" cellspacing="0" id="table2">
   <TR>
     <TD valign="top" align="left" colspan="3">
       <P align="left"><A href="/cocktails/"><B>View all cocktails<BR>

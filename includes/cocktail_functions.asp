@@ -298,14 +298,16 @@ Sub writeField(FSO, rs)
 		IF Int(rs("type")) AND 1 THEN
 			strType = "Cocktail"
 		ELSEIF Int(rs("type")) AND 2 THEN
-			strType = "Shooter"
+			strType = "Shooter" 
 		END IF
 		%>
-		<div class="row collapse small-3">
-			<A href="/<%=strType%>-Recipe/<%=GeneratePrettyURL(replaceStuffBack(rs("name")))%>.htm"><IMG border="0" src="/images/<%=strType%>_small.gif"></A>
-		</div>
-		<div class="row collapse small-9">
-			<A href="/<%=strType%>-Recipe/<%=GeneratePrettyURL(replaceStuffBack(rs("name")))%>.htm"><%=Capitalise(replaceStuffBack(rs("name"))) %></A>
+		<div class="row collapse">
+			<div class="column small-3">
+				<A href="/<%=strType%>-Recipe/<%=GeneratePrettyURL(replaceStuffBack(rs("name")))%>.htm"><IMG border="0" src="/images/<%=strType%>_small.gif"></A>
+			</div>
+			<div class="column small-9">
+				<A href="/<%=strType%>-Recipe/<%=GeneratePrettyURL(replaceStuffBack(rs("name")))%>.htm"><%=Capitalise(replaceStuffBack(rs("name"))) %></A>
+			</div>
 		</div>
     	<%rs.MoveNext%>
 	<%

@@ -235,8 +235,6 @@ Private Sub setupCategories(fcuk)
 	
 	rsc.movefirst
 	
-	strCatWap = ""
-	
 	strCatOpt = "<"&"%strScriptName = Request.ServerVariables(""SCRIPT_NAME"")%"&">"
 	strCatOpt = strCatOpt & "&nbsp;<SELECT name=""shop"" ID=""shop"" class=""shopoptioncats"" onChange=""window.location.href='/shop/' + this.options[this.selectedIndex].value"">"
 	strCatOpt = strCatOpt & "<OPTION value=""default.asp"">Select a department...</OPTION>"
@@ -265,29 +263,6 @@ Private Sub setupCategories(fcuk)
 	If IsObject(fcuk) Then
 		fcuk.writeline("Generated homepage.")
 	End If 
-
-	Set fso = Server.Createobject("Scripting.FileSystemObject")
-	strSQL = "SELECT ID, type from dsimage"
-	rsc.Open strSQL, cnc, 0, 3
-	Set objGet= Server.CreateObject("MSXML2.ServerXMLHTTP")
-	intImages = 0
-	While NOT rsc.EOF
-		strImage = rsc("ID") & "." & Trim(rsc("type"))
-		If NOT FSO.FileExists(Server.MapPath("/images/shop/products/"&strImage)) Then
-			objGet.open "GET", "http://www.drinkstuff.com/productimg/"&strImage, False
-			objGet.send ""
-			call SaveBinaryData(Server.MapPath("/images/shop/products/"&strImage), objGet.ResponseBody)
-			'Response.write "Getting image " & strImage & "<BR>"
-			intImages = intImages + 1 
-		End If
-		rsc.MoveNext
-	Wend
-	rsc.close
-	Set objGet= Nothing
-
-	If IsObject(fcuk) Then
-		fcuk.writeLine("Retrieved "&intImages&" images")
-	End If
 
 	cnc.close
 	Set rsc = Nothing

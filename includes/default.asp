@@ -134,9 +134,7 @@ End If
     <div class="large-9 columns">
       <div id="content">
         <div class="breadcrumb">
-          <%If LCase(Request.ServerVariables("SCRIPT_NAME")) = "/default.asp" Then%> 
-           Cocktail : UK, cocktails, <span lang="en-gb">cocktail</span> recipes and bar equipment from the UK
-          <%Else%>
+          <%If LCase(Request.ServerVariables("SCRIPT_NAME")) <> "/default.asp" Then%> 
            <%=strTitleOut%>
           <%End If%>
         </div>

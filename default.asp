@@ -32,11 +32,9 @@ function changeColour(objTable, strColour){
 }
 </script>
 
-<p align="left">
-  <img border="0" src="../images/redmartini.jpg" width="125" height="244" align="right">
-  <img border="0" src="images/welcomeTo.gif" width="120" height="28" alt="Welcome to"><br>
-  <img border="0" src="images/cuk_07.gif" width="210" height="32" alt="Cocktail UK"></p>
-<p align="left">Online for over 15 years, Cocktail : UK has the most comprehensive
+<H2>Cocktail : UK, cocktails, <span lang="en-gb">cocktail</span> recipes and bar equipment from the UK</h2>
+<p><img border="0" src="../images/redmartini.jpg" width="125" height="244" align="right">
+<p>Online for over 15 years, Cocktail : UK has the most comprehensive
 <a href="/cocktails/">cocktail recipes</a> &amp; <a href="/cocktails/?type=2">shooter recipes</a> database 
 (10,000+ and growing daily) plus
 the biggest <a href="/shop/">bar equipment</a> shop online. Enjoy.

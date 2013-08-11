@@ -99,7 +99,7 @@ End If
     </div>
     <div class="large-3 columns hide-for-small">
       <div id="basket">
-        <a href="/shop/basket.asp"><img alt="My Basket" src="../images/template/basket_icon.gif" width="36" height="36" align="right" border="0"><strong><u>My Basket</u></strong><br>
+        <a href="/shop/basket.asp"><img alt="My Basket" src="../images/template/basket_icon.gif" width="36" height="36" align="right" border="0"><strong>My Basket</strong><br>
         <span style="text-decoration: none; white-space: nowrap;"><%=intItems%> Item<%If intItems <> 1 then%>s<%end if%> 
         &nbsp;&pound;<%=FormatNumber(dblValue,2)%></SPAN></a>
       </div>

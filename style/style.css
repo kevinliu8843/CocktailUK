@@ -66,14 +66,8 @@ A.disabled{
 #leftnav .menu-header img {
 	width: 80%;
 }
-.content {
-	display: inline-block;
-	width: 79%;
-	vertical-align: top;
-	text-align: left;
-}
-.content .padded {
-	padding: 0px 10px 80px 10px;
+#content {
+	padding-right: 15px;
 }
 .footer {
 	color: white;

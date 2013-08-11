@@ -7,7 +7,7 @@ strTitle = "Forgotten Details"
 <!--#include virtual="/includes/functions.asp" -->
 <!--#include virtual="/includes/header.asp" -->
 
-	  <H2>Forgotten your login details?</H2>
+<H2>Forgotten your login details?</H2>
 
 <form action="mail.asp?type=details" method="POST" onSubmit="return checkFields()" name=form1> 
 <TABLE BORDER=0 CELLPADDING=7>  

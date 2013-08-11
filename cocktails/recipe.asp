@@ -27,7 +27,7 @@ If strURL <> "" Then
 	cn.close
 	Set cn = Nothing
 	Set rs = Nothing
-	Call PermanentRedirect(strURL)
+	Call Do301Redirect(strURL)
 End If
 
 intMaxReviews = Request("reviews")

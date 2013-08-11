@@ -123,7 +123,7 @@ To cancel your auto-login, please <A href="login.asp?clearcookie=true">click her
     <INPUT type="submit" value="Login &gt; &gt;" name="B1" class="button" ></TD>
   </TR>
   <TR>
-    <TD colspan="2" height="19"><A target="_top" href="/mail/forgottenPassword.asp">Forgotten your username or password?</A></TD>
+    <TD colspan="2" height="19"><A target="_top" href="/mail/password.asp">Forgotten your username or password?</A></TD>
   </TR>
 </TABLE>
       </TD>

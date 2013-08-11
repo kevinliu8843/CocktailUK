@@ -62,4 +62,4 @@ End if
 cn.Close 
 Set cn = Nothing
 Set rs = Nothing
-Call DrawSearchCocktailArea()%><!--#include virtual="/includes/footer.asp" -->
+%><!--#include virtual="/includes/footer.asp" -->

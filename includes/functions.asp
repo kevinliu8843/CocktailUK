@@ -70,10 +70,6 @@ Function capitalise( strString )
 	End If
 End Function
 
-Function dayNumber()
-	dayNumber = DateDiff("d", CDate("1/1/"&Year(Now())), Now(), VbUseSystem, vbFirstJan1) + 1
-End Function
-
 Sub displayPageLocation(strTitle, strTitleOut, strTopTitle, strUrl, strLinkStyle)
 	Dim strUrl2, cArrLinks(10), cArrText(10), i, strTitleMod, ipos, ilen, blnShop, blnProduct, strTopTitleStore
 
@@ -199,10 +195,6 @@ Function hasImageThumb( name )
 	END IF
 	Set FSO = Nothing
 End Function 
-
-Sub DrawSearchCocktailArea()
-	Exit Sub
-End Sub
 
 Private Function SendEmail(strFrom, strTo, strCC, strBcc, strSubjectIn, strBody, blnHTML, strAttachment)
 	Dim blnCanClearError
@@ -441,7 +433,7 @@ End Function
 Sub PrettyURLRedirectCocktail(cn, rs, intID, strURL)
 	Dim X, strQS, strType
 	
-	If InStr(Request.ServerVariables("HTTP_X_REWRITE_URL"), "viewCocktail.asp") > 0 Then
+	If InStr(Request.ServerVariables("HTTP_X_REWRITE_URL"), "recipe.asp") > 0 Then
 		rs.open "SELECT name, type FROM cocktail WHERE ID=" & strIntoDB(intID), cn
 		If NOT rs.EOF Then
 			IF Int(rs("type")) AND 1 THEN
@@ -466,12 +458,6 @@ Sub PrettyURLRedirectCocktail(cn, rs, intID, strURL)
 			End If
 		End If
 	End If
-End Sub
-
-Sub PermanentRedirect(strURL)
-	Response.Status = "301 Moved Permanently"
-	Response.AddHeader "Location", strURL
-	Response.End
 End Sub
 
 Function GetURL(strUrl)

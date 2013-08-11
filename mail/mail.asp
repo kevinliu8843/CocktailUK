@@ -109,7 +109,7 @@ Select Case Request("type")
 			strPassword = rs("password")
 			strFirstName = rs("firstName")
 		Else
-			response.Redirect ("/mail/forgottenPassword.asp?error=email")
+			response.Redirect ("/mail/password.asp?error=email")
 		End If
 		rs.Close
 		cn.Close

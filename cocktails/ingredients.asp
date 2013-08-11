@@ -82,4 +82,4 @@ Sub DisplayIngredients(intType, objDict)
 		Response.Write("</tr>")
 	Next
 End Sub
-Call DrawSearchCocktailArea()%><!--#include virtual="/includes/footer.asp" -->
+%><!--#include virtual="/includes/footer.asp" -->

@@ -132,23 +132,21 @@ End If
     </div>
 
     <div class="large-9 columns">
-      <div class="padded">
-        <div class="breadcrumb">
-          <%If LCase(Request.ServerVariables("SCRIPT_NAME")) = "/default.asp" Then%> 
-           Cocktail : UK, cocktails, <span lang="en-gb">cocktail</span> recipes and bar equipment from the UK
-          <%Else%>
-           <%=strTitleOut%>
-          <%End If%>
-        </div>
-        <!--C-->
-        <!---->
-        <!--/C-->
-        <%
-        If NOT Session("admin") Then
-         Call TrapErrors()
-        End If
-        %>
+      <div class="breadcrumb">
+        <%If LCase(Request.ServerVariables("SCRIPT_NAME")) = "/default.asp" Then%> 
+         Cocktail : UK, cocktails, <span lang="en-gb">cocktail</span> recipes and bar equipment from the UK
+        <%Else%>
+         <%=strTitleOut%>
+        <%End If%>
       </div>
+      <!--C-->
+      <!---->
+      <!--/C-->
+      <%
+      If NOT Session("admin") Then
+       Call TrapErrors()
+      End If
+      %>
     </div>
   </div>
 </div>

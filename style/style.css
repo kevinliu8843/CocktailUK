@@ -39,6 +39,11 @@ A.disabled{
 {
 	max-height: 85px;
 }
+	#header .columns
+	{
+		height: 100%;
+		vertical-align: center;
+	}
 #topads
 {
 	margin-bottom: 20px;

@@ -250,11 +250,11 @@ Sub writeCocktailList(strSQL, rs, cn, strTitle, strHrefType)
 		</div>
 		<%Set FSO = Nothing%>
 
-		<div class="pagination">
+		<ul class="pagination">
 			<%
 			If iPageCurrent <> 1 Then
 				%>
-				<a class="page gradient" href="<%=Request.ServerVariables("URL")%>?page=<%= iPageCurrent - 1 %><%=strHrefType%>">Prev</a>
+				<li class="arrow"><a href="<%=Request.ServerVariables("URL")%>?page=<%= iPageCurrent - 1 %><%=strHrefType%>">Prev</a></li>
 				<%
 			End If
 
@@ -272,20 +272,20 @@ Sub writeCocktailList(strSQL, rs, cn, strTitle, strHrefType)
 
 			For k = iStart to iFinish step 1
 				if iPageCurrent = k THEN%>
-					<a class="page active" href="<%=Request.ServerVariables("URL")%>?page=<%=k%><%=Server.HTMLEncode(strHrefType)%>"><%=k%></a>
+					<li class="current"><a class="page active" href="<%=Request.ServerVariables("URL")%>?page=<%=k%><%=Server.HTMLEncode(strHrefType)%>"><%=k%></a></li>
 				<%Else%>
-					<a class="page gradient" href="<%=Request.ServerVariables("URL")%>?page=<%=k%><%=Server.HTMLEncode(strHrefType)%>"><%=k%></a>
+					<li><a class="page gradient" href="<%=Request.ServerVariables("URL")%>?page=<%=k%><%=Server.HTMLEncode(strHrefType)%>"><%=k%></a></li>
 				<%End If%>
 			<%
 			Next
 
 			If iPageCurrent < iPageCount Then
 				%>
-				<a class="page gradient" href="<%=Request.ServerVariables("URL")%>?page=<%= iPageCurrent + 1 %><%=strHrefType%>">Next</a>
+				<li class="arrrow"><a class="page gradient" href="<%=Request.ServerVariables("URL")%>?page=<%= iPageCurrent + 1 %><%=strHrefType%>">Next</a></li>
 				<%
 			End If
 			%>
-		</div>
+		</ul>
 		<%
 	Else
 		Response.write("<P><B>Sorry, no drinks found</B><BR><A href=""javascript:history.go(-1)"">Go back</A>")

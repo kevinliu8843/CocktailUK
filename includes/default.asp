@@ -93,7 +93,7 @@ End If
   			    <input type="hidden" name="cof" value="FORID:10">
   			    <input type="hidden" name="ie" value="UTF-8"> 
   			    <div class="large-9 columns"><input type="text" name="q" id="SearchField" placeholder="Search for cocktails now..." class="swap_value"></div>
-            <div class="large-3 columns"><a href="#" class="button prefix" onclick="this.form.submit(); return (false)">Search</a></div>
+            <div class="large-3 columns"><a href="#" class="button prefix" onclick="document.getElementById('search_form').submit(); return (false)">Search</a></div>
   			</form>
   		</div>  
     </div>

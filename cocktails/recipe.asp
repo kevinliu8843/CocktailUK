@@ -77,12 +77,6 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
 %>
 <!--#include virtual="/includes/header.asp" -->
 
-<style type="text/css">
- ul { margin-left: 5px; padding-left: 0px; }
- ul { margin-top: 0; }
- li { margin-left: 1em; }
-</style>
-
 <h1><%=Capitalise(aryDrink(0)) & " " & Capitalise(aryDrink(7)) & " Recipe"%>
 <%If Session("admin") Then%>
   <a target="_top" class="linksin" href="/admin/default.asp?goto=cocktaileditor/default.asp?ID=<%=intID%>">Edit</a>
@@ -92,7 +86,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
 <h4>How to make a <%=LCase(aryDrink(0))%>:</h4>
 <div style="margin-bottom: 30px;"><%=aryDrink(1)%></div>
 
-<div class="row">
+<div class="row collapse">
   <div class="large-3 column">
     <div style="padding-right: 15px; margin-bottom: 30px;">
       <h4 id="ingredients">Ingredients:</h4>
@@ -100,6 +94,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
       <div><%=aryDrink(2)%></div>
     </div>
   </div>
+
   <div class="large-3 column">
     <div style="padding-right: 15px; margin-bottom: 30px;">
       <h4 id="equipment">You'll also need:</h4>

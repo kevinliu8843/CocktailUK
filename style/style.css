@@ -52,6 +52,11 @@ h3 {
 #leftnav .item a {
 	COLOR: #444444;
 }
+	#leftnav .item A.disabled{
+		color: #999999;
+		text-decoration: none;
+		cursor: not-allowed;
+	}
 #leftnav .menu-header {
 	padding-top: 2em;
 }
@@ -67,11 +72,6 @@ h3 {
 .footer {
 	color: white;
 	padding-bottom: 20px;
-}
-A.disabled{
-	color: #999999;
-	text-decoration: none;
-	cursor: not-allowed;
 }
 .skyscraper
 { 

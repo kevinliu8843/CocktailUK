@@ -106,7 +106,9 @@ h3 {
 iframe, iframe img {
 	max-width: 100%;
 }
-
+.pagination {
+	margin: auto;
+}
 
 
 

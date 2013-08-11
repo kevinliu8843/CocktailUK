@@ -51,7 +51,7 @@ drink</a> | <a href="/cocktails/">Cocktails</a> |
 <TABLE border="0" cellpadding="5" cellspacing="0" id="table2" width="100%">
   <TR>
     <TD valign="top" align="left" colspan="2">
-      <h4><A href="/cocktails/">View all cocktails</A></h4>
+      <h4><A href="/cocktails/">View all 7000+ cocktails</A></h4>
       <div>Shows a list of all cocktails.</div>
       </TD>
   </TR>

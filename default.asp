@@ -37,7 +37,9 @@ function changeColour(objTable, strColour){
 <p>Online for over 15 years, Cocktail : UK has the most comprehensive
 <a href="/cocktails/">cocktail recipes</a> &amp; <a href="/cocktails/?type=2">shooter recipes</a> database 
 (10,000+ and growing daily) plus
-the biggest <a href="/shop/">bar equipment</a> shop online. Enjoy.
+the biggest <a href="/shop/">bar equipment</a> shop online. Enjoy.</p>
+
+<p>&nbsp;</p>
 
 <div align="center"><a href="/cocktails/ingredients.asp">Find a 
 drink</a> | <a href="/cocktails/">Cocktails</a> |

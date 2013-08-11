@@ -41,8 +41,8 @@ A.disabled{
 }
 	#header .columns
 	{
-		height: 100%;
-		vertical-align: center;
+		height: 85px;
+		vertical-align: middle;
 	}
 #topads
 {

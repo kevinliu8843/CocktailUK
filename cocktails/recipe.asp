@@ -202,23 +202,23 @@ Function displayRatingPanel
     <h5>How do you rate it?</h5>
     <div class="row collapse">
         <div class="column small-2"><input type="radio" name="R1" value="5" id="5stars"></div>
-        <div class="column small-10"><label for="5stars"></label><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"></label></div>
+        <div class="column small-10"><label for="5stars"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"></label></div>
     </div>
     <div class="row collapse">
         <div class="column small-2"><input type="radio" name="R1" value="4" id="4stars"></div>
-        <div class="column small-10"><label for="4stars"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"></label></div>
+        <div class="column small-10"><label for="4stars"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/0.gif" height="12" width="13" border="0"></label></div>
     </div>
     <div class="row collapse">
         <div class="column small-2"><input type="radio" name="R1" value="3" id="3stars"></div>
-        <div class="column small-10"><label for="3stars"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"></label></div>
+        <div class="column small-10"><label for="3stars"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/0.gif" height="12" width="13" border="0"><img src="/images/sitesearch/0.gif" height="12" width="13" border="0"></label></div>
     </div>
     <div class="row collapse">
         <div class="column small-2"><input type="radio" name="R1" value="2" id="2stars"></div>
-        <div class="column small-10"><label for="2stars"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"></label></div>
+        <div class="column small-10"><label for="2stars"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/0.gif" height="12" width="13" border="0"><img src="/images/sitesearch/0.gif" height="12" width="13" border="0"><img src="/images/sitesearch/0.gif" height="12" width="13" border="0"></label></div>
     </div>
     <div class="row collapse">
         <div class="column small-2"><input type="radio" name="R1" value="1" id="1stars"></div>
-        <div class="column small-10"><label for="1stars"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"></label></div>
+        <div class="column small-10"><label for="1stars"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/0.gif" height="12" width="13" border="0"><img src="/images/sitesearch/0.gif" height="12" width="13" border="0"><img src="/images/sitesearch/0.gif" height="12" width="13" border="0"><img src="/images/sitesearch/0.gif" height="12" width="13" border="0"></label></div>
     </div>
     <div><a href="#" class="button small" onclick="document.getElementById('ratingform').submit()">Submit Rating</a></div>
 </form>

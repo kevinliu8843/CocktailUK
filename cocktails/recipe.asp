@@ -132,30 +132,18 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
     <%=aryDrink(11)%>
   </div>
 
-  <div class="large-12 column">
-    <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse: collapse" bordercolor="#111111" id="table3">
-      <%IF blnDuplicated Then%>
-        <tr>
-          <td>
-              <a href="/account/userHotList.asp?remove=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a>
-          </td>
-          <td width="100%">
-              <a href="/account/userHotList.asp?remove=<%=intID%>">Remove from your favourites</a>
-          </td>
-        </tr>
-      <%Else%>
-        <tr>
-          <td><a href="/account/userHotList.asp?add=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></td>
-          <td width="100%"><a href="/account/userHotList.asp?add=<%=intID%>">Add to my favourites</a></td>
-        </tr>
-      <%End If%>
-    </table>
+    <%If blnDuplicated Then%>
+        <div class="column small-3"><a href="/account/userHotList.asp?remove=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></div>
+        <div class="column small-9"><a href="/account/userHotList.asp?remove=<%=intID%>">Remove from your favourites</a></div>
+    <%Else%>
+        <div class="column small-3"><a href="/account/userHotList.asp?add=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></td>
+        <div class="column small-9"><a href="/account/userHotList.asp?add=<%=intID%>">Add to my favourites</a></td>
+    <%End If%>
     <%
     If Session("logged") Then 
-      Response.write strMakeCocktail
+        Response.write strMakeCocktail
     End If
     %>
-  </div>
 
   <div class="large-9 small-12 column">
     <div id="disqus_thread"></div>

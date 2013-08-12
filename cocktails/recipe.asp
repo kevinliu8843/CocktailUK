@@ -131,20 +131,24 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
   <div class="large-3 small-4 column">
     <%=aryDrink(11)%>
   </div>
+</div>
 
+<div class="row collapse">
     <%If blnDuplicated Then%>
-        <div class="column small-3"><a href="/account/userHotList.asp?remove=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></div>
-        <div class="column small-9"><a href="/account/userHotList.asp?remove=<%=intID%>">Remove from your favourites</a></div>
+        <div class="column large-2"><a href="/account/userHotList.asp?remove=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></div>
+        <div class="column large-10"><a href="/account/userHotList.asp?remove=<%=intID%>">Remove from your favourites</a></div>
     <%Else%>
-        <div class="column small-3"><a href="/account/userHotList.asp?add=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></div>
-        <div class="column small-9"><a href="/account/userHotList.asp?add=<%=intID%>">Add to my favourites</a></div>
+        <div class="column large-2"><a href="/account/userHotList.asp?add=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></div>
+        <div class="column large-10"><a href="/account/userHotList.asp?add=<%=intID%>">Add to my favourites</a></div>
     <%End If%>
     <%
     If Session("logged") Then 
         Response.write strMakeCocktail
     End If
     %>
+</div>
 
+<div class="row collapse">
   <div class="large-9 small-12 column">
     <div id="disqus_thread"></div>
     <script type="text/javascript">
@@ -161,7 +165,9 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   </div>
+</div>
 
+<div class="row collapse">
   <div class="large-12 column">
     <script type="text/JavaScript">
     AdJug_AID = 492;

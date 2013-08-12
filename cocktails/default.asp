@@ -82,11 +82,11 @@ cn.Close
 Set cn = Nothing
 %>
 <FORM name="order" action="?type="<%=strType%> method="GET">
-    <div align="center" class="row">
+    <div class="row">
         <div class="column small-3"><B>Order By :</B></div>
         <div class="column small-9">
-            <B>&nbsp;<INPUT type="radio" name="orderby" value="accessed" onclick="order.submit()" <%If Session("orderby")="accessed" then%>checked<%End If%> id="fp1" checked></B><LABEL for="fp1">Times Viewed</LABEL><B> 
-            <INPUT type="radio" value="name" name="orderby" onclick="order.submit()"  <%If Session("orderby")="name" then%>checked<%End If%> id="fp2"></B><LABEL for="fp2">Name</LABEL><B> 
+            <INPUT type="radio" name="orderby" value="accessed" onclick="order.submit()" <%If Session("orderby")="accessed" then%>checked<%End If%> id="fp1" checked></B><LABEL for="fp1">Times Viewed</LABEL>
+            <INPUT type="radio" value="name" name="orderby" onclick="order.submit()"  <%If Session("orderby")="name" then%>checked<%End If%> id="fp2"></B><LABEL for="fp2">Name</LABEL>
             <INPUT type="radio" name="orderby" value="rate" onclick="order.submit()" <%If Session("orderby")="rate" then%>checked<%End If%> id="fp3"></B><label for="fp3">Rating</label>
         </div>
         <div class="column small-3"><b>Include:</b></div>

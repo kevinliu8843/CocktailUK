@@ -38,7 +38,7 @@ If strMetaTitle <> "" Then
   strTopTitle = strMetaTitle
 End If
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html>
 <html>
 
 <head>

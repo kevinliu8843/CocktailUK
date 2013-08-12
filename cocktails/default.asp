@@ -82,15 +82,15 @@ cn.Close
 Set cn = Nothing
 %>
 <FORM name="order" action="?type="<%=strType%> method="GET">
-    <div class="row">
+    <div class="row" style="display: inline-block">
         <div class="column small-3"><B>Order By :</B></div>
         <div class="column small-9">
-            <INPUT type="radio" name="orderby" value="accessed" onclick="order.submit()" <%If Session("orderby")="accessed" then%>checked<%End If%> id="fp1" checked>Times Viewed
-            <INPUT type="radio" value="name" name="orderby" onclick="order.submit()"  <%If Session("orderby")="name" then%>checked<%End If%> id="fp2">Name
-            <INPUT type="radio" name="orderby" value="rate" onclick="order.submit()" <%If Session("orderby")="rate" then%>checked<%End If%> id="fp3">Rating
+            <INPUT type="radio" name="orderby" value="accessed" onclick="order.submit()" <%If Session("orderby")="accessed" then%>checked<%End If%> id="fp1" checked> Times Viewed&nbsp;&nbsp;
+            <INPUT type="radio" value="name" name="orderby" onclick="order.submit()"  <%If Session("orderby")="name" then%>checked<%End If%> id="fp2"> Name&nbsp;&nbsp;
+            <INPUT type="radio" name="orderby" value="rate" onclick="order.submit()" <%If Session("orderby")="rate" then%>checked<%End If%> id="fp3"> Rating
         </div>
         <div class="column small-3"><b>Include:</b></div>
-        <div class="column small-9"><input type="checkbox" name="userrecipes" value="ON" id="fp5" onclick="order.submit()" <%If Request("userrecipes")="ON" Then%> CHECKED<%End If%>><label for="fp5">User submitted recipes</label></div>
+        <div class="column small-9"><input type="checkbox" name="userrecipes" value="ON" id="fp5" onclick="order.submit()" <%If Request("userrecipes")="ON" Then%> CHECKED<%End If%>>User submitted recipes</div>
     </div>
   <INPUT type="hidden" name="type" value="<%=strType%>">
 </FORM>

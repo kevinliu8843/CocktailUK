@@ -97,7 +97,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
 
   <div class="large-3 small-5 column">
     <div style="padding-right: 15px; margin-bottom: 30px;">
-      <h5 id="equipment">You'll <span class="hide-for-small" style="display: inline;">also </span>need:</h5>
+      <h5 id="equipment">You'll also need:</h5>
       <div>
         <%If aryDrink(7)="shooter" Then%>
           <a href="/shop/products/search.asp?search=iceshot"><img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shot_rock.jpg" alt="Shot Rock - Ice shot glasses" width="40" height="40"></a>
@@ -200,19 +200,19 @@ Function displayRatingPanel
 <form action="/account/addrating.asp" method="post" style="text-align: left">
  <input type="hidden" name="ID" value="<%=intID%>">
  <h5>Details:</h5>
- <p>Type: <%=Capitalise(aryDrink(7))%></p>
- <p>Category: <%=Capitalise(aryDrink(8))%></p>
- <p>Viewed: <%=aryDrink(4)%> times</p>
+ <div>Type: <%=Capitalise(aryDrink(7))%></div>
+ <div>Category: <%=Capitalise(aryDrink(8))%></div>
+ <div>Viewed: <%=aryDrink(4)%> times</div>
  <%If aryDrink(10) <> "" Then%>
-    <p>Submitter : <b><%=aryDrink(10)%></b></p>
+    <div>Submitter : <b><%=aryDrink(10)%></b></div>
  <%End If%>
- <p>Rated: <%Call displayRatingGraphOnly( CStr(aryDrink(5)) )%>
+ <div>Rated: <%Call displayRatingGraphOnly( CStr(aryDrink(5)) )%>
  <%If Request("rate") = "true" Then%>
     <font color="#FF0000"><i>Rating Added</i></font>
  <%elseif Request("rate") = "false" then%>
     <font color="#FF0000"><i>Please specify a rating</i></font>
  <%End If%>
- </p>
+ </div>
  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; margin-top: 1em;" bordercolor="#111111">
    <tr>
      <td valign="middle" align="center">1</td>

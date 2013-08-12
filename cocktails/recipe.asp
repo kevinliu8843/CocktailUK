@@ -133,7 +133,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
   </div>
 </div>
 
-<div class="row collapse">
+<div class="row collapse" style="margin-bottom: 40px;">
     <%If blnDuplicated Then%>
         <div class="column large-1"><a href="/account/userHotList.asp?remove=<%=intID%>"><i class="foundicon-minus">&nbsp;</i></a></div>
         <div class="column large-11"><a href="/account/userHotList.asp?remove=<%=intID%>">Remove from your favourites</a></div>

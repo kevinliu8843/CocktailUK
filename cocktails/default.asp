@@ -82,23 +82,16 @@ cn.Close
 Set cn = Nothing
 %>
 <FORM name="order" action="?type="<%=strType%> method="GET">
-  <div align="center">
-  <table border="0" cellpadding="2" cellspacing="0" id="table1">
-	<tr>
-		<td valign="top"><B>Order By :</B></td>
-		<td valign="top"><B>&nbsp;<INPUT type="radio" name="orderby" value="accessed" onclick="order.submit()" <%If Session("orderby")="accessed" then%>checked<%End If%> id="fp1" checked></B><LABEL for="fp1">Times Viewed</LABEL><B> 
-  <INPUT type="radio" value="name" name="orderby" onclick="order.submit()"  <%If Session("orderby")="name" then%>checked<%End If%> id="fp2"></B><LABEL for="fp2">Name</LABEL><B> 
-  <INPUT type="radio" name="orderby" value="rate" onclick="order.submit()" <%If Session("orderby")="rate" then%>checked<%End If%> id="fp3"></B><label for="fp3">Rating</label></td>
-	</tr>
-	<tr>
-		<td valign="top"><b>Include:</b></td>
-		<td valign="top">
-  <P align="left">
-	<input type="checkbox" name="userrecipes" value="ON" id="fp5" onclick="order.submit()" <%If Request("userrecipes")="ON" Then%> CHECKED<%End If%>><label for="fp5">User submitted recipes</label></P>
-		</td>
-	</tr>
-	</table>
-  </div>
+    <div align="center" class="row">
+        <div class="column small-3"><B>Order By :</B></div>
+        <div class="column small-9">
+            <B>&nbsp;<INPUT type="radio" name="orderby" value="accessed" onclick="order.submit()" <%If Session("orderby")="accessed" then%>checked<%End If%> id="fp1" checked></B><LABEL for="fp1">Times Viewed</LABEL><B> 
+            <INPUT type="radio" value="name" name="orderby" onclick="order.submit()"  <%If Session("orderby")="name" then%>checked<%End If%> id="fp2"></B><LABEL for="fp2">Name</LABEL><B> 
+            <INPUT type="radio" name="orderby" value="rate" onclick="order.submit()" <%If Session("orderby")="rate" then%>checked<%End If%> id="fp3"></B><label for="fp3">Rating</label>
+        </div>
+        <div class="column small-3"><b>Include:</b></div>
+        <div class="column small-9"><input type="checkbox" name="userrecipes" value="ON" id="fp5" onclick="order.submit()" <%If Request("userrecipes")="ON" Then%> CHECKED<%End If%>><label for="fp5">User submitted recipes</label></div>
+    </div>
   <INPUT type="hidden" name="type" value="<%=strType%>">
 </FORM>
 <!--#include virtual="/includes/footer.asp" -->

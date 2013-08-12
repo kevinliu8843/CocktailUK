@@ -200,13 +200,13 @@ Function displayRatingPanel
 <form action="/account/addrating.asp" method="post" style="text-align: left">
  <input type="hidden" name="ID" value="<%=intID%>">
  <h5>Details:</h5>
- <div>Type: <%=Capitalise(aryDrink(7))%></div>
- <div>Category: <%=Capitalise(aryDrink(8))%></div>
- <div>Viewed: <%=aryDrink(4)%> times</div>
+ <div style="margin-bottom: 3px;">Type: <%=Capitalise(aryDrink(7))%></div>
+ <div style="margin-bottom: 3px;">Category: <%=Capitalise(aryDrink(8))%></div>
+ <div style="margin-bottom: 3px;">Viewed: <%=aryDrink(4)%> times</div>
  <%If aryDrink(10) <> "" Then%>
-    <div>Submitter : <b><%=aryDrink(10)%></b></div>
+    <div style="margin-bottom: 3px;">Submitter : <b><%=aryDrink(10)%></b></div>
  <%End If%>
- <div>Rated: <%Call displayRatingGraphOnly( CStr(aryDrink(5)) )%>
+ <div style="margin-bottom: 3px;">Rated: <%Call displayRatingGraphOnly( CStr(aryDrink(5)) )%>
  <%If Request("rate") = "true" Then%>
     <font color="#FF0000"><i>Rating Added</i></font>
  <%elseif Request("rate") = "false" then%>

@@ -30,6 +30,9 @@ h3 {
 	border: #636388 1px solid;
 	border-top-width: 0px;
 }
+#content a{
+    text-decoration: underline;
+}
 #header
 {
 	max-height: 85px;
@@ -60,6 +63,10 @@ h3 {
 #leftnav .item a {
 	COLOR: #444444;
 }
+    #leftnav .item a:hover {
+	    COLOR: #990000;
+        text-decoration: none;
+    }
 	#leftnav .item A.disabled{
 		color: #999999;
 		text-decoration: none;

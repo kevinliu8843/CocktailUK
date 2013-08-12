@@ -200,28 +200,26 @@ Function displayRatingPanel
 <form action="/account/addrating.asp" method="post" id="ratingform">
     <input type="hidden" name="ID" value="<%=intID%>">
     <h5>How do you rate it?</h5>
-    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; margin-top: 1em;" bordercolor="#111111">
-        <tr>
-            <td><input type="radio" name="R1" value="5"></td>
-            <td><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"></td>
-        </tr>
-        <tr>
-            <td><input type="radio" name="R1" value="4" checked="true"></td>
-            <td><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"></td>
-        </tr>
-        <tr>
-            <td><input type="radio" name="R1" value="3"></td>
-            <td><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"></td>
-        </tr>
-        <tr>
-            <td><input type="radio" name="R1" value="2"></td>
-            <td><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"></td>
-        </tr>
-        <tr>
-            <td><input type="radio" name="R1" value="1"></td>
-            <td><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"></td>
-        </tr>
-    </table>
+    <div class="row collapse">
+        <div class="column small-2"><input type="radio" name="R1" value="5"></div>
+        <div class="column small-10"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"></div>
+    </div>
+    <div class="row collapse">
+        <div class="column small-2"><input type="radio" name="R1" value="4" checked="true"></div>
+        <div class="column small-10"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"></div>
+    </div>
+    <div class="row collapse">
+        <div class="column small-2"><input type="radio" name="R1" value="3"></div>
+        <div class="column small-10"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"></div>
+    </div>
+    <div class="row collapse">
+        <div class="column small-2"><input type="radio" name="R1" value="2"></div>
+        <div class="column small-10"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"></div>
+    </div>
+    <div class="row collapse">
+        <div class="column small-2"><input type="radio" name="R1" value="1"></div>
+        <div class="column small-10"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"></div>
+    </div>
     <div><a href="#" class="button small" onclick="document.getElementById('ratingform').submit()">Submit Rating</a></div>
 </form>
 

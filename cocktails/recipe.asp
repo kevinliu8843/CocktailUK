@@ -136,10 +136,10 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
 <div class="row collapse" style="margin-bottom: 40px;">
     <%If blnDuplicated Then%>
         <div class="column large-1"><a href="/account/userHotList.asp?remove=<%=intID%>"><i class="foundicon-minus">&nbsp;</i></a></div>
-        <div class="column large-11"><a href="/account/userHotList.asp?remove=<%=intID%>">Remove from your favourites</a></div>
+        <div class="column large-11"><a href="/account/userHotList.asp?remove=<%=intID%>">Remove from your favourite recipes</a></div>
     <%Else%>
-        <div class="column large-1"><a href="/account/userHotList.asp?add=<%=intID%>"><i class="foundicon-plus">&nbsp;</i></div>
-        <div class="column large-11"><a href="/account/userHotList.asp?add=<%=intID%>">Add to my favourites</a></div>
+        <div class="column large-1"><a href="/account/userHotList.asp?add=<%=intID%>"><i class="foundicon-plus">&nbsp;</i></a></div>
+        <div class="column large-11"><a href="/account/userHotList.asp?add=<%=intID%>">Add to your favourite recipes</a></div>
     <%End If%>
     <%
     If Session("logged") Then 

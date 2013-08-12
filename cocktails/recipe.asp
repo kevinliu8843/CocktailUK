@@ -84,7 +84,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
 </h1>
 
 <h4>How to make a <%=LCase(aryDrink(0))%>:</h4>
-<div style="margin-bottom: 30px;"><%=aryDrink(1)%></div>
+<p style="margin-bottom: 30px;"><%=aryDrink(1)%></p>
 
 <div class="row collapse">
   <div class="large-3 small-7 column">

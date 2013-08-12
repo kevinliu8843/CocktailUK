@@ -197,7 +197,7 @@ End Function
 
 Function displayRatingPanel
 %>
-<form action="/account/addrating.asp" method="post" style="text-align: left">
+<form action="/account/addrating.asp" method="post" id="ratingform">
  <input type="hidden" name="ID" value="<%=intID%>">
  <h5>Details:</h5>
  <div style="margin-bottom: 3px;">Type: <%=Capitalise(aryDrink(7))%></div>
@@ -229,7 +229,7 @@ Function displayRatingPanel
      <td valign="middle" align="center"><input type="radio" name="R1" value="5"></td>
    </tr>
  </table>
- <div><input type="image" src="../images/main_menus/ratedrink.gif" name="I1" alt="Rate this drink" width="145" height="23" border="0"></div>
+ <div><a href="#" class="button" onclick="document.getElementById('ratingform').submit()"></div>
 </form>
 <%
 End Function

@@ -200,14 +200,19 @@ Function displayRatingPanel
 <form action="/account/addrating.asp" method="post" style="text-align: left">
  <input type="hidden" name="ID" value="<%=intID%>">
  <h5>Details:</h5>
- Type: <%=Capitalise(aryDrink(7))%><br>
- Category: <%=Capitalise(aryDrink(8))%><br>
- Viewed: <%=aryDrink(4)%> times<br>
- <%If aryDrink(10) <> "" Then%>Submitter : <b><%=aryDrink(10)%></b><br>
- <%End If%> Rated: <%call displayRatingGraphOnly( CStr(aryDrink(5)) )%><br>
- <%If Request("rate") = "true" Then%><font color="#FF0000"><i>Rating Added</i></font>
- <%elseif Request("rate") = "false" then%><font color="#FF0000"><i>Please specify 
- a rating</i></font><%End If%>
+ <p>Type: <%=Capitalise(aryDrink(7))%></p>
+ <p>Category: <%=Capitalise(aryDrink(8))%></p>
+ <p>Viewed: <%=aryDrink(4)%> times</p>
+ <%If aryDrink(10) <> "" Then%>
+    <p>Submitter : <b><%=aryDrink(10)%></b></p>
+ <%End If%>
+ <p>Rated: <%Call displayRatingGraphOnly( CStr(aryDrink(5)) )%>
+ <%If Request("rate") = "true" Then%>
+    <font color="#FF0000"><i>Rating Added</i></font>
+ <%elseif Request("rate") = "false" then%>
+    <font color="#FF0000"><i>Please specify a rating</i></font>
+ <%End If%>
+ </p>
  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; margin-top: 1em;" bordercolor="#111111">
    <tr>
      <td valign="middle" align="center">1</td>
@@ -223,11 +228,8 @@ Function displayRatingPanel
      <td valign="middle" align="center"><input type="radio" name="R1" value="4"></td>
      <td valign="middle" align="center"><input type="radio" name="R1" value="5"></td>
    </tr>
-   <tr>
-     <td valign="middle" align="center" colspan="5">
-     <input type="image" src="../images/main_menus/ratedrink.gif" name="I1" alt="Rate this drink" width="145" height="23" border="0"></td>
-   </tr>
  </table>
+ <div><input type="image" src="../images/main_menus/ratedrink.gif" name="I1" alt="Rate this drink" width="145" height="23" border="0"></div>
 </form>
 <%
 End Function

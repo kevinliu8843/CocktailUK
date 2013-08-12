@@ -1,3 +1,4 @@
+/My Project/
 Thumbs.db
 *.obj
 *.exe
@@ -17,17 +18,17 @@ Thumbs.db
 *.cache
 *.ilk
 *.log
-[Bb]in/*
 [Dd]ebug*/
 *.lib
 *.sbr
-obj/
+[Bb]in*/
+[Oo]bj*/
 [Rr]elease*/
 _ReSharper*/
 [Tt]est[Rr]esult*
-/Logs/
 /aspnet_client/
 *.[Pp]ublish.xml
+[Pp]ackages*/
 /cocktail-recipes.txt
 Web.Debug.config
 Web.Release.config

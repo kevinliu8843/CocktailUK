@@ -115,15 +115,12 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
         <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/bar_measures.jpg" alt="Professional Bar Measures - measure out the perfect quantity" width="34" height="40"></a><a onmouseover="show_text('Professional Measures')" onmouseout="hide_text()" href="/shop/products/search.asp?search=measures">
         </a>
       </div>
-
-      <div style="margin-bottom: 5px;">Rated: <%Call displayRatingGraphOnly( CStr(aryDrink(5)) )%></div>
-
-      <p>&nbsp;</p>
-
-    <div style="margin-bottom: 5px;">Viewed: <%=aryDrink(4)%> times</div>
-    <%If aryDrink(10) <> "" Then%>
-        <div style="margin-bottom: 5px;">Submitter: <%=aryDrink(10)%></div>
-    <%End If%>
+        <p>&nbsp;</p>
+        <div style="margin-bottom: 5px;">Rated: <%Call displayRatingGraphOnly( CStr(aryDrink(5)) )%></div>
+        <div style="margin-bottom: 5px;">Viewed: <%=aryDrink(4)%> times</div>
+        <%If aryDrink(10) <> "" Then%>
+            <div style="margin-bottom: 5px;">Submitter: <%=aryDrink(10)%></div>
+        <%End If%>
     </div>
   </div>
   <div class="large-3 small-8 column">

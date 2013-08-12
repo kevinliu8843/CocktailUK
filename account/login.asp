@@ -62,7 +62,7 @@ IF NOT Request("uname") = "" AND NOT Request("pass") = "" Then
 Else
 	blnAccepted = False
 End If
-
+%>
 <!--#include virtual="/includes/header.asp" -->
 <%IF NOT Session("logged") AND NOT blnAccepted Then%>
     <H2>Login</H2>

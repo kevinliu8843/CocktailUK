@@ -97,7 +97,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
 
   <div class="large-3 small-5 column">
     <div style="padding-right: 15px; margin-bottom: 30px;">
-      <h5 id="equipment">You'll <span class="hide-for-small">also </span>need:</h5>
+      <h5 id="equipment">You'll <span class="hide-for-small" style="display: inline;">also </span>need:</h5>
       <div>
         <%If aryDrink(7)="shooter" Then%>
           <a href="/shop/products/search.asp?search=iceshot"><img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shot_rock.jpg" alt="Shot Rock - Ice shot glasses" width="40" height="40"></a>

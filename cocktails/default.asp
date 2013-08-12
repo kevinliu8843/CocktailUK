@@ -90,7 +90,7 @@ Set cn = Nothing
             <INPUT type="radio" name="orderby" value="rate" onclick="order.submit()" <%If Session("orderby")="rate" then%>checked<%End If%> id="fp3"> Rating
         </div>
         <label>Include</label>
-        <div class="column small-10"><input type="checkbox" name="userrecipes" value="ON" id="fp5" onclick="order.submit()" <%If Request("userrecipes")="ON" Then%> CHECKED<%End If%>> User submitted recipes</div>
+        <div><input type="checkbox" name="userrecipes" value="ON" id="fp5" onclick="order.submit()" <%If Request("userrecipes")="ON" Then%> CHECKED<%End If%>> User submitted recipes</div>
     </div>
   <INPUT type="hidden" name="type" value="<%=strType%>">
 </FORM>

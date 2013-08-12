@@ -45,7 +45,8 @@ End If
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="/foundation/css/normalize.css" type="text/css" rel="stylesheet">
 <link href="/foundation/css/foundation.min.css" type="text/css" rel="stylesheet">
-<link href="/style/style.css" type="text/css" type="text/css" rel="stylesheet">
+<link href="/style/general_foundicons.css" type="text/css" rel="stylesheet">
+<link href="/style/style.css" type="text/css" rel="stylesheet">
 <meta name="robots" content="ALL">
 <meta name="description" content="<%=strMetaDescription%>">
 <%If strKeywords = "" Then%>

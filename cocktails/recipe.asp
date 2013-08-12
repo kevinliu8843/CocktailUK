@@ -135,11 +135,11 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
 
 <div class="row collapse">
     <%If blnDuplicated Then%>
-        <div class="column large-2"><a href="/account/userHotList.asp?remove=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></div>
-        <div class="column large-10"><a href="/account/userHotList.asp?remove=<%=intID%>">Remove from your favourites</a></div>
+        <div class="column large-1"><a href="/account/userHotList.asp?remove=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></div>
+        <div class="column large-11"><a href="/account/userHotList.asp?remove=<%=intID%>">Remove from your favourites</a></div>
     <%Else%>
-        <div class="column large-2"><a href="/account/userHotList.asp?add=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></div>
-        <div class="column large-10"><a href="/account/userHotList.asp?add=<%=intID%>">Add to my favourites</a></div>
+        <div class="column large-1"><a href="/account/userHotList.asp?add=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></div>
+        <div class="column large-11"><a href="/account/userHotList.asp?add=<%=intID%>">Add to my favourites</a></div>
     <%End If%>
     <%
     If Session("logged") Then 

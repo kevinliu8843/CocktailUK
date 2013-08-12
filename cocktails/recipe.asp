@@ -90,8 +90,8 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
   <div class="large-3 small-7 column">
     <div style="padding-right: 15px; margin-bottom: 30px;">
       <h5 id="ingredients">Ingredients:</h5>
-      <p>Serves <%=aryDrink(3)%></p>
-      <div><%=aryDrink(2)%></div>
+      <div style="margin-bottom: 5px;">Serves <%=aryDrink(3)%></div>
+      <div style="margin-left: 1em;"><%=aryDrink(2)%></div>
     </div>
   </div>
 

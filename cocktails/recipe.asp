@@ -198,12 +198,27 @@ End Function
 Function displayRatingPanel
 %>
 <form action="/account/addrating.asp" method="post" id="ratingform">
- <input type="hidden" name="ID" value="<%=intID%>">
- <h5>Rating:</h5>
- <div style="margin-bottom: 5px;">Viewed: <%=aryDrink(4)%> times</div>
- <%If aryDrink(10) <> "" Then%>
-    <div style="margin-bottom: 5px;">Submitter: <b><%=aryDrink(10)%></b></div>
- <%End If%>
+    <input type="hidden" name="ID" value="<%=intID%>">
+    <h5>How do you rate it?</h5>
+    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; margin-top: 1em;" bordercolor="#111111">
+        <tr>
+            <td valign="middle" align="center">1</td>
+            <td valign="middle" align="center">2</td>
+            <td valign="middle" align="center">3</td>
+            <td valign="middle" align="center">4</td>
+            <td valign="middle" align="center">5</td>
+        </tr>
+        <tr>
+            <td valign="middle" align="center"><input type="radio" name="R1" value="1"></td>
+            <td valign="middle" align="center"><input type="radio" name="R1" value="2"></td>
+            <td valign="middle" align="center"><input type="radio" name="R1" value="3"></td>
+            <td valign="middle" align="center"><input type="radio" name="R1" value="4"></td>
+            <td valign="middle" align="center"><input type="radio" name="R1" value="5"></td>
+        </tr>
+    </table>
+    <div><a href="#" class="button small" onclick="document.getElementById('ratingform').submit()">Submit Rating</a></div>
+</form>
+
  <div style="margin-bottom: 5px;">Rated: <%Call displayRatingGraphOnly( CStr(aryDrink(5)) )%>
  <%If Request("rate") = "true" Then%>
     <font color="#FF0000"><i>Rating Added</i></font>
@@ -211,26 +226,8 @@ Function displayRatingPanel
     <font color="#FF0000"><i>Please specify a rating</i></font>
  <%End If%>
  </div>
-
- <div style="margin-bottom: 5px;">How do you rate it?</div>
- <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; margin-top: 1em;" bordercolor="#111111">
-   <tr>
-     <td valign="middle" align="center">1</td>
-     <td valign="middle" align="center">2</td>
-     <td valign="middle" align="center">3</td>
-     <td valign="middle" align="center">4</td>
-     <td valign="middle" align="center">5</td>
-   </tr>
-   <tr>
-     <td valign="middle" align="center"><input type="radio" name="R1" value="1"></td>
-     <td valign="middle" align="center"><input type="radio" name="R1" value="2"></td>
-     <td valign="middle" align="center"><input type="radio" name="R1" value="3"></td>
-     <td valign="middle" align="center"><input type="radio" name="R1" value="4"></td>
-     <td valign="middle" align="center"><input type="radio" name="R1" value="5"></td>
-   </tr>
- </table>
- <div><a href="#" class="button small" onclick="document.getElementById('ratingform').submit()">Submit Rating</a></div>
-</form>
-<%
-End Function
-%>
+ <div style="margin-bottom: 5px;">Viewed: <%=aryDrink(4)%> times</div>
+ <%If aryDrink(10) <> "" Then%>
+    <div style="margin-bottom: 5px;">Submitter: <b><%=aryDrink(10)%></b></div>
+ <%End If%>
+<%End Function%>

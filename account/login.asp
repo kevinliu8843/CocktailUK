@@ -10,14 +10,7 @@ Dim cn, strConfirm, blnAccepted, blnCookie, blnCookieDeleted, setupCookie, blnJu
 response.buffer = True
 
 IF request.queryString("logout") = "True" Then
-	Session("logged") = False
-	Session("firstName") = ""
-	Session("lastName") = ""
-	Session("name") = ""
-	Session("uname") = ""
-	Session("ID") = ""
-	Session("numLoggedIn") = ""
-	Session("email") = ""
+	Session.Contents.RemoveAll
 	Response.Redirect("/")
 End If
 
@@ -72,66 +65,64 @@ End If
 
 <!--#include virtual="/includes/header.asp" -->
 <%IF NOT Session("logged") AND NOT blnAccepted Then%>
-	<%If NOT blnJustForm Then%>
-		<H2>Login</H2>
-	<%End If%>
-<FORM method="POST" action="login.asp" name="form1" target="_top">
-<%IF NOT Request.Querystring("ID") = "" Then%>
-<INPUT TYPE=HIDDEN VALUE=<%=Request.QueryString("ID")%> NAME=ID>
-<%End If%>
-<%If Request("sendto") <> "" Then%>
-<INPUT TYPE=HIDDEN VALUE="<%=Replace(Request("sendto"), "'", "")%>&type=<%=Replace(Request("type"), "'", "")%>&mid=<%=Request("mid")%>" name=sendto>
-<%End If%>
-<%If NOT blnJustForm Then%>
-<%If Request("doublecheck") = "true" Then%>
-<P align="center"><FONT color=red><I>As a part of our updated security, pelase re-enter your password. You won't need to do this again.<BR>
-To cancel your auto-login, please <A href="login.asp?clearcookie=true">click here</A>.</I></FONT></P>
-<INPUT TYPE=HIDDEN VALUE="true" name="dontlogin">
-<%End If%>
-<p align="center">In order to access Cocktail : UK members features, you need to login.<P>
-<%End If%>
-<DIV align="center">
-  <%=strConfirm%>
-  <CENTER>
-  <TABLE border="0" cellpadding="0" cellspacing="0" style="border:1px solid #612B83; border-collapse: collapse" bordercolor="#612B83" id="AutoNumber1">
-    <TR>
-      <TD align="center">
-<IMG border="0" src="../../images/main_menus/logintoyouraccount.gif"></TD>
-    </TR>
-    <TR>
-      <TD align="center" background="../../images/grad_write_purple.gif">
-<TABLE border="0" cellpadding="5" cellspacing="0" style="text-align: center" height="121">
-  <TR>
-    <TD height="23"><B>Username:</B></TD>
-    <TD height="23">
-        <INPUT type="text" name="uname" size="20" value="<%=Request("uname")%>">
-    </TD>
-  </TR>
-  <TR>
-    <TD height="23"><B>Password:</B></TD>
-    <TD height="23">
-        <INPUT type="password" name="pass" size="20">
+    <H2>Login</H2>
+    <FORM method="POST" action="login.asp" name="form1" target="_top">
+    <%IF NOT Request.Querystring("ID") = "" Then%>
+        <INPUT TYPE=HIDDEN VALUE=<%=Request.QueryString("ID")%> NAME=ID>
+    <%End If%>
+    <%If Request("sendto") <> "" Then%>
+        <INPUT TYPE=HIDDEN VALUE="<%=Replace(Request("sendto"), "'", "")%>&type=<%=Replace(Request("type"), "'", "")%>&mid=<%=Request("mid")%>" name=sendto>
+    <%End If%>
+    <%If NOT blnJustForm Then%>
+    <%If Request("doublecheck") = "true" Then%>
+        <P align="center"><FONT color=red><I>As a part of our updated security, pelase re-enter your password. You won't need to do this again.<BR>
+        To cancel your auto-login, please <A href="login.asp?clearcookie=true">click here</A>.</I></FONT></P>
+        <INPUT TYPE=HIDDEN VALUE="true" name="dontlogin">
+    <%End If%>
+    <p align="center">In order to access Cocktail : UK members features, you need to login.<P>
+    <%End If%>
+    <DIV align="center">
+      <%=strConfirm%>
+      <CENTER>
+      <TABLE border="0" cellpadding="0" cellspacing="0" style="border:1px solid #612B83; border-collapse: collapse" bordercolor="#612B83" id="AutoNumber1">
+        <TR>
+          <TD align="center">
+    <IMG border="0" src="../../images/main_menus/logintoyouraccount.gif"></TD>
+        </TR>
+        <TR>
+          <TD align="center" background="../../images/grad_write_purple.gif">
+    <TABLE border="0" cellpadding="5" cellspacing="0" style="text-align: center" height="121">
+      <TR>
+        <TD height="23"><B>Username:</B></TD>
+        <TD height="23">
+            <INPUT type="text" name="uname" size="20" value="<%=Request("uname")%>">
         </TD>
-  </TR>
-  <TR>
-    <TD colspan="2" height="16"> 
-    <INPUT type="submit" value="Login &gt; &gt;" name="B1" class="button" ></TD>
-  </TR>
-  <TR>
-    <TD colspan="2" height="19"><A target="_top" href="/mail/password.asp">Forgotten your username or password?</A></TD>
-  </TR>
-</TABLE>
-      </TD>
-    </TR>
-  </TABLE>
-  </CENTER>
-<p>If you do not have an account, please click <A target="_top" href="/account/register.asp">HERE</A><br>
-If you are trying to check the status of your shop order, please click
-<a target="_top" href="http://www.drinkstuff.com/member/secure/login.asp">HERE</a></DIV>
-</FORM>
-<SCRIPT language="javascript">
-	document.form1.uname.focus()
-</script>
+      </TR>
+      <TR>
+        <TD height="23"><B>Password:</B></TD>
+        <TD height="23">
+            <INPUT type="password" name="pass" size="20">
+            </TD>
+      </TR>
+      <TR>
+        <TD colspan="2" height="16"> 
+        <INPUT type="submit" value="Login &gt; &gt;" name="B1" class="button" ></TD>
+      </TR>
+      <TR>
+        <TD colspan="2" height="19"><A target="_top" href="/mail/password.asp">Forgotten your username or password?</A></TD>
+      </TR>
+    </TABLE>
+          </TD>
+        </TR>
+      </TABLE>
+      </CENTER>
+    <p>If you do not have an account, please click <A target="_top" href="/account/register.asp">HERE</A><br>
+    If you are trying to check the status of your shop order, please click
+    <a target="_top" href="http://www.drinkstuff.com/member/secure/login.asp">HERE</a></DIV>
+    </FORM>
+    <SCRIPT language="javascript">
+	    document.form1.uname.focus()
+    </script>
 
 <%
 Else
@@ -152,17 +143,12 @@ Else
 <%
 	End If
 %>
-<TABLE border="0" cellpadding="5" cellspacing="0" width="100%" style="border-collapse: collapse" bordercolor="#111111">
-  <TR>
-    <TD>
 <P>Hi <%=Session("firstname")%>,<BR>
 Welcome to your section of the site. Here you can store you own personal
 ingredients that match your home bar in your very own web-bar. From this you can
 find out what you can make from our list of drinks. But as you can see, there is
 more to your members section that this, so go explore!!!</p>
-    </TD>
-  </TR>
-</TABLE>
+
 <P align="center">
 <map name="FPMap10">
 <area href="selectIngredients.asp" shape="rect" coords="16, 48, 164, 77">

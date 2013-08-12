@@ -202,18 +202,24 @@ Function displayRatingPanel
     <h5>How do you rate it?</h5>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; margin-top: 1em;" bordercolor="#111111">
         <tr>
-            <td valign="middle" align="center">1</td>
-            <td valign="middle" align="center">2</td>
-            <td valign="middle" align="center">3</td>
-            <td valign="middle" align="center">4</td>
-            <td valign="middle" align="center">5</td>
+            <td><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"></td>
+            <td><input type="radio" name="R1" value="5"></td>
         </tr>
         <tr>
-            <td valign="middle" align="center"><input type="radio" name="R1" value="1"></td>
-            <td valign="middle" align="center"><input type="radio" name="R1" value="2"></td>
-            <td valign="middle" align="center"><input type="radio" name="R1" value="3"></td>
-            <td valign="middle" align="center"><input type="radio" name="R1" value="4"></td>
-            <td valign="middle" align="center"><input type="radio" name="R1" value="5"></td>
+            <td><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"></td>
+            <td><input type="radio" name="R1" value="4"></td>
+        </tr>
+        <tr>
+            <td><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"></td>
+            <td><input type="radio" name="R1" value="3"></td>
+        </tr>
+        <tr>
+            <td><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"></td>
+            <td><input type="radio" name="R1" value="2"></td>
+        </tr>
+        <tr>
+            <td><img src="/images/sitesearch/1.gif" height="12" width="13" border="0"></td>
+            <td><input type="radio" name="R1" value="1"></td>
         </tr>
     </table>
     <div><a href="#" class="button small" onclick="document.getElementById('ratingform').submit()">Submit Rating</a></div>

@@ -136,8 +136,8 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
         <div class="column small-3"><a href="/account/userHotList.asp?remove=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></div>
         <div class="column small-9"><a href="/account/userHotList.asp?remove=<%=intID%>">Remove from your favourites</a></div>
     <%Else%>
-        <div class="column small-3"><a href="/account/userHotList.asp?add=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></td>
-        <div class="column small-9"><a href="/account/userHotList.asp?add=<%=intID%>">Add to my favourites</a></td>
+        <div class="column small-3"><a href="/account/userHotList.asp?add=<%=intID%>"><img border="0" src="../images/favourites.gif" width="40" height="36"></a></div>
+        <div class="column small-9"><a href="/account/userHotList.asp?add=<%=intID%>">Add to my favourites</a></div>
     <%End If%>
     <%
     If Session("logged") Then 

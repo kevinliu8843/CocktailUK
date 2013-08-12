@@ -224,9 +224,9 @@ Function displayRatingPanel
 </form>
 
  <%If Request("rate") = "true" Then%>
-    <div style="margin-bottom: 5px;"><font color="#990000"><i>Rating Added</i></font></div>
+    <div class="alert-box success">Rating Added</div>
  <%elseif Request("rate") = "false" then%>
-    <div style="margin-bottom: 5px;"><font color="#990000"><i>Please specify a rating</i></font></div>
+    <div class="alert-box alert">Please specify a rating</div>
  <%End If%>
  
  <div style="margin-bottom: 5px;">Rated: <%Call displayRatingGraphOnly( CStr(aryDrink(5)) )%></div>

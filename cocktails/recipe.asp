@@ -229,7 +229,7 @@ Function displayRatingPanel
      <td valign="middle" align="center"><input type="radio" name="R1" value="5"></td>
    </tr>
  </table>
- <div><a href="#" class="button" onclick="document.getElementById('ratingform').submit()"></div>
+ <div><a href="#" class="button" onclick="document.getElementById('ratingform').submit()"></a></div>
 </form>
 <%
 End Function

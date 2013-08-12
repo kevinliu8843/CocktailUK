@@ -199,20 +199,20 @@ Function displayRatingPanel
 %>
 <form action="/account/addrating.asp" method="post" id="ratingform">
  <input type="hidden" name="ID" value="<%=intID%>">
- <h5>Details:</h5>
- <div style="margin-bottom: 3px;">Type: <%=Capitalise(aryDrink(7))%></div>
- <div style="margin-bottom: 3px;">Category: <%=Capitalise(aryDrink(8))%></div>
- <div style="margin-bottom: 3px;">Viewed: <%=aryDrink(4)%> times</div>
+ <h5>Rating:</h5>
+ <div style="margin-bottom: 5px;">Viewed: <%=aryDrink(4)%> times</div>
  <%If aryDrink(10) <> "" Then%>
-    <div style="margin-bottom: 3px;">Submitter : <b><%=aryDrink(10)%></b></div>
+    <div style="margin-bottom: 5px;">Submitter: <b><%=aryDrink(10)%></b></div>
  <%End If%>
- <div style="margin-bottom: 3px;">Rated: <%Call displayRatingGraphOnly( CStr(aryDrink(5)) )%>
+ <div style="margin-bottom: 5px;">Rated: <%Call displayRatingGraphOnly( CStr(aryDrink(5)) )%>
  <%If Request("rate") = "true" Then%>
     <font color="#FF0000"><i>Rating Added</i></font>
  <%elseif Request("rate") = "false" then%>
     <font color="#FF0000"><i>Please specify a rating</i></font>
  <%End If%>
  </div>
+
+ <div style="margin-bottom: 5px;">How do you rate it?</div>
  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; margin-top: 1em;" bordercolor="#111111">
    <tr>
      <td valign="middle" align="center">1</td>

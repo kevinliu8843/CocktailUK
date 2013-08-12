@@ -223,13 +223,14 @@ Function displayRatingPanel
     <div><a href="#" class="button small" onclick="document.getElementById('ratingform').submit()">Submit Rating</a></div>
 </form>
 
- <div style="margin-bottom: 5px;">Rated: <%Call displayRatingGraphOnly( CStr(aryDrink(5)) )%></div>
  <%If Request("rate") = "true" Then%>
-    <div style="margin-bottom: 5px;"><font color="#FF0000"><i>Rating Added</i></font></div>
+    <div style="margin-bottom: 5px;"><font color="#990000"><i>Rating Added</i></font></div>
  <%elseif Request("rate") = "false" then%>
-    <div style="margin-bottom: 5px;"><font color="#FF0000"><i>Please specify a rating</i></font></div>
+    <div style="margin-bottom: 5px;"><font color="#990000"><i>Please specify a rating</i></font></div>
  <%End If%>
  
+ <div style="margin-bottom: 5px;">Rated: <%Call displayRatingGraphOnly( CStr(aryDrink(5)) )%></div>
+
  <div style="margin-bottom: 5px;">Viewed: <%=aryDrink(4)%> times</div>
  <%If aryDrink(10) <> "" Then%>
     <div style="margin-bottom: 5px;">Submitter: <%=aryDrink(10)%></div>

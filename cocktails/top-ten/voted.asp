@@ -32,7 +32,7 @@ Else
 	fileExists = False
 End If
 %>
-<h2>Top 10 Best Bocktail Recipes</h2>
+<h2>Top 10 Best Cocktail Recipes</h2>
   <TABLE border="0" cellpadding="0" cellspacing="20" width="100%">
     
 <%
@@ -82,14 +82,6 @@ Do While NOT rs.EOF
 		strType = "shooter"
 	End If
 	%>    
-    
-		<TR>
-		  <TD width="10%"></TD>
-		  <TD align="right" width="80%" valign="bottom" colspan="2">
-			<HR size="1" color="#000000">
-		  </TD>
-		  <TD align="right" width="10%"></TD>
-		</TR>
     
 		<TR>
 		  <TD width="10%">

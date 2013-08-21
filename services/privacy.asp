@@ -6,8 +6,6 @@ strTitle = "privacy policy"
 <!--#include virtual="/includes/functions.asp" -->
 <!--#include virtual="/includes/header.asp" -->
 <H2>Our Privacy Policy</H2>
-
-<!--#include virtual="/includes/footer.asp" -->
 <p>Cocktail UK is committed to preserving the privacy of all visitors to our website at Cocktail.UK.com. Please read the following privacy policy to understand how we use and protect the information that you provide to us. By registering or placing an order on this website, you consent to the collection, use and transfer of your information under the terms of this policy.
 </p>
 <p>1. Information that we collect from you
@@ -49,3 +47,4 @@ Clifton,<br />
 Bristol,<br />
 BS81QU
 </p>
+<!--#include virtual="/includes/footer.asp" -->

@@ -60,9 +60,9 @@ Sub displayTopTen(strType)
 %>
 <TABLE border="1" cellpadding="2" cellspacing="0" bordercolor="#FFFFFF" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF" bgcolor="#612b83" style="border-collapse: collapse">
   <TR>
-    <TD bgcolor="#612b83"><FONT color="white"><B>Position</B></FONT></TD>
-    <TD width="100%" bgcolor="#612b83"><FONT color="white"><B>Name</B></FONT></TD>
-    <TD width="50%" bgcolor="#612b83"><FONT color="white"><B>Used</B></FONT></TD>
+    <Th><FONT color="white"><B>Position</B></FONT></Th>
+    <Th width="100%" bgcolor="#612b83"><FONT color="white"><B>Name</B></FONT></Th>
+    <Th width="50%" bgcolor="#612b83"><FONT color="white"><B>Used</B></FONT></Th>
   </TR>
 	<%For i=0 to intNumToDisplay%>
   <TR>

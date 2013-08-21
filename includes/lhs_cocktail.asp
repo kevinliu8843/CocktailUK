@@ -61,4 +61,8 @@
 
 <div class="item">
 <a href="/shop/customerservices.asp" class="linksin">Customer services</a></div>
+
 <img alt="Payment methods" src="/images/template/cards.gif" width="149" height="73">
+
+<div class="item">
+<a href="/services/privacy.asp" class="linksin">Privacy policy</a></div>

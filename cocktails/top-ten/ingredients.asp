@@ -60,15 +60,15 @@ Sub displayTopTen(strType)
 %>
 <TABLE border="1" cellpadding="2" cellspacing="0" bordercolor="#FFFFFF" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF" bgcolor="#612b83" style="border-collapse: collapse">
   <TR>
-    <Th><FONT color="white"><B>Position</B></FONT></Th>
-    <Th width="100%" bgcolor="#612b83"><FONT color="white"><B>Name</B></FONT></Th>
-    <Th width="50%" bgcolor="#612b83"><FONT color="white"><B>Used</B></FONT></Th>
+    <Th width="10%">Position</Th>
+    <Th width="80%">Name</Th>
+    <Th width="10%">Used</Th>
   </TR>
 	<%For i=0 to intNumToDisplay%>
   <TR>
-    <TD bgcolor="#CCCCCC"><FONT color="#FF0000" size="3"><%=i+1%></FONT>&nbsp;</TD>
-    <TD width="100%" bgcolor="#CCCCCC"><%=Capitalise(aryNames(0, i))%>&nbsp;</TD>
-    <TD width="50%" bgcolor="#CCCCCC"><%=aryNames(1, i)%>&nbsp;</TD>
+    <TD><FONT color="#FF0000" size="3"><%=i+1%></FONT></TD>
+    <TD><%=Capitalise(aryNames(0, i))%></TD>
+    <TD><%=aryNames(1, i)%></TD>
   </TR>
 	<%Next%>
 </TABLE>

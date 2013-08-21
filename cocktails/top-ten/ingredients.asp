@@ -15,17 +15,11 @@ cn.Open strDB
 <!--#include virtual="/includes/header.asp" -->
 
 <H2>Top cocktail Ingredients</H2>
-<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
-  <tr>
-    <td width="100%">
 <P>These tables should give you some idea of what to purchase first.</P>
-<TABLE border="0" cellpadding="0" cellspacing="10" width="100%">
 <% 
 i=0
 Do While i<=g_intNumIngredientTypes
-	Response.Write("<TR>")
 	For j=0 to 0
-	    Response.Write("<TD width=""100%"" valign=""top"" align=""left"">")
 
 		If i<=g_intNumIngredientTypes Then 
 			Response.Write("<H4 align=""center"">" & Capitalise(g_aryIngredientType(i)) & "</H4>")
@@ -35,10 +29,8 @@ Do While i<=g_intNumIngredientTypes
 			Response.Write("&nbsp;")
 		End If
 
-		Response.Write("</TD>")
 		i=i+1
 	Next 
-	Response.Write("</TR>")
 Loop
 %>
 </TABLE>

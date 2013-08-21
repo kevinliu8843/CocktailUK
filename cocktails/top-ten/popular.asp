@@ -76,28 +76,12 @@ Do While NOT rs.EOF
 	End If
 	%>    
 		<TR>
-		  <TD width="10%"></TD>
-		  <TD align="right" width="80%" valign="bottom" colspan="2">
-			<HR size="1" color="#000000">
-		  </TD>
-		  <TD align="right" width="10%"></TD>
-		</TR>
-    
-		<TR>
 		  <TD width="10%">
 			<FONT size="5" color="#FF0000"><%=iRecordsShown%></FONT>&nbsp;</TD>
 		  <TD align="right" width="40%" valign="top"><FONT size="3"><A href="/cocktails/recipe.asp?ID=<%=rs("ID")%>"><IMG src="/images/cocktailThumbs/<%IF fileExists Then%><%=Replace( replaceStuffBack( rs("name") ), " ", "%20" )%><%Else%><%=strType%><%End If%>.jpg" border=0 height="100"></a></FONT></TD>
 		  <TD width="40%" valign="bottom"><FONT size="3"><BR>
 			</FONT><FONT size="1"><EM><A href="/cocktails/recipe.asp?ID=<%=rs("ID")%>"><STRONG><%=replaceStuffBack(rs("name"))%></STRONG></A></EM><BR><%="Category: "&strtype%><BR>This <%=strType%> has been viewed <%=rs("accessed")%> times</FONT></TD>
 		  <TD width="10%">&nbsp;</TD>
-		</TR>
-		<TR>
-		  <TD width="10%">
-		  </TD>
-		  <TD align="right" width="80%" nowrap valign="top" colspan="2">
-			<HR size="1" color="#000000">
-		  </TD>
-		  <TD width="10%"></TD>
 		</TR>
 	<%
 		' Increment the number of records we've shown

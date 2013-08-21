@@ -16,12 +16,12 @@ set cn = Server.CreateObject("ADODB.Connection")
 Set rs = Server.CreateObject("ADODB.RecordSet")
 cn.Open strDB
 
-minNumOfVotes = 500 
+minNumOfVotes = 1000 
 rating = False
 weighting = True
 strSQL = "SELECT Top 10 name, ID, rate, users, type FROM cocktail WHERE Status=1 AND users >= "&minNumOfVotes &" ORDER BY rate DESC, users DESC, name"
 
-rs.Open strSQL, cn, 3, 3
+rs.Open strSQL, cn, 1, 3
 iPageSize = 11
 Set fso = CreateObject("Scripting.FileSystemObject")
 name = Replace( replaceStuffBack( rs("name") ), ",", "" )

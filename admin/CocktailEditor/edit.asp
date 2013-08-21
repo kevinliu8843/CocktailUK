@@ -23,7 +23,7 @@ intID			= Request("ID")
 strName			= Replace(Request("Name"), VbCrLf, "")
 strDescription	= Replace(Request("Description"), VbCrLf, "<br>")
 strUser			= Replace(Request("User"), VbCrLf, "")
-intType			= Int(Request("Type"))+ Int(Request("extra"))
+intType			= Int(Request("Type"))
 
 
 Call GenerateJavascript()
@@ -67,10 +67,6 @@ Sub ShowForm()
 	Response.Write("</SELECT><BR>")
 	
 	Response.Write(FONT_SMALL & "Type<br></font>")
-	Response.Write("<SELECT name=""extra"">")
-	Call AddSelectOption("0", "Not XXX Rated", CStr(intType AND 8))
-	Call AddSelectOption("8", "XXX rated", CStr(intType AND 8))
-	Response.Write("</SELECT><BR>")
 
 	Response.Write(FONT_SMALL & "Description<br></font>")
 	Response.Write("<textarea cols=""30"" rows=""5"" name=""description"">" & Replace(strDescription, "<br>", VbCrLf) & "</textarea>")

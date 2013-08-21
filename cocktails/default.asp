@@ -29,10 +29,6 @@ If strType <> "" Then
 	ElseIf strType= "4"  Then
 		strTitle = "All Non-Alcoholic Cocktails"
 		strAddType = " WHERE Status=1 AND type=(type | 4)"
-	ElseIf strType= "8" Then
-		strTitle = "All XXX Rated Drinks"
-		strAddType = " WHERE Status=1 AND type=(type | 8)"
-		blnNaughty = True
 	End If 
 Else
 	strTitle = "All cocktails"

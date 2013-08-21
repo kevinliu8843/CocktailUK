@@ -44,7 +44,7 @@ Class CCocktailView
 		' CHANGE: Add any special case code calls here...
 		Select Case intEntryID
 			Case STATUS			Call m_objDBViewer.DisplayStandardDropdownFilter(Array(0,1,2), Array("Pending","Live","Deleted"), intEntryID)
-			Case TYPEID			Call m_objDBViewer.DisplayStandardDropdownFilter(Array(1,2,5,6,9,10), Array("Cocktail","Shooter","Cocktail (NA)","Shooter (NA)","Cocktail XXX","Shooter XXX"), intEntryID)
+			Case TYPEID			Call m_objDBViewer.DisplayStandardDropdownFilter(Array(1,2,5,6), Array("Cocktail","Shooter","Cocktail (NA)","Shooter (NA)"), intEntryID)
 			Case REINDEX		Call m_objDBViewer.DisplayStandardDropdownFilter(Array(0,1), Array("No","Yes"), intEntryID)
 			Case Else			Call m_objDBViewer.DisplayStandardFilter(intEntryID)
 		End Select
@@ -61,7 +61,7 @@ Class CCocktailView
 	Public Function MapData(intEntryID)
 		Select Case intEntryID
 			Case STATUS		MapData = m_objDBViewer.MapValue(Array(0,1,2), Array("Pending","Live","Deleted"), intEntryID)
-			Case TYPEID		MapData = m_objDBViewer.MapValue(Array(1,2,5,6,9,10), Array("Cocktail","Shooter","Cocktail (NA)", "Shooter (NA)","Cocktail XXX","Shooter XXX"), intEntryID)
+			Case TYPEID		MapData = m_objDBViewer.MapValue(Array(1,2,5,6), Array("Cocktail","Shooter","Cocktail (NA)", "Shooter (NA)"), intEntryID)
 			Case REINDEX	MapData = m_objDBViewer.MapValue(Array(0,1), Array("No","Yes"), intEntryID)
 			Case Else		MapData = m_objDBViewer.m_aryData(intEntryID)
 		End Select

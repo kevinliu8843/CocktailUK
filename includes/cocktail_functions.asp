@@ -74,7 +74,7 @@ Function GetActualDrink(rs, cn, intID, intStatus, aryDrink)
 	'6 Number of users that rated this drink
 	'7 Drink type ("cocktail" or "shooter")
 	'8 Alcoholic type ("non-alcoholoc" OR "alcoholic")
-	'9 XXX rating ("XXX rated" OR "Not XXX rated")
+	'9 unused
 	'10 User's name who submitted the drink
 	'11 Image location (relative to root)
 	
@@ -101,11 +101,7 @@ Function GetActualDrink(rs, cn, intID, intStatus, aryDrink)
 			aryDrink(8) = "alcoholic"
 		End If
 			
-		If Int(rs("type")) AND 8 Then
-			aryDrink(9) = "XXX rated"
-		Else
-			aryDrink(9) = "Not XXX rated"
-		End If
+		aryDrink(9) = ""
 	
 		If rs("usr") & "" <> "" Then
 			aryDrink(10) = replaceStuffBack(rs("usr"))

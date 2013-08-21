@@ -2,7 +2,7 @@
 'Option Explicit
 
 Dim cn, intBased, strBased, strIngredients
-Dim aryRecipe, strRecipe, strName, strDescription, strType, strUser, intType, intServes, i, strXXX
+Dim aryRecipe, strRecipe, strName, strDescription, strType, strUser, intType, intServes, i
 Dim aryDrink
 
 strTitle = "Submit Drinks"

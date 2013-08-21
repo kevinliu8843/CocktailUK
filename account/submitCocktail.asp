@@ -5,7 +5,7 @@ Option Explicit
 <!--#include virtual="/includes/cocktail_functions.asp" -->
 <!--#include virtual="/includes/variables.asp" --><%
 Dim cn, strName, strType, strDirections, intServes, intBased, strBased, strError, intStage
-Dim aryIngredients, aryMeasures, i, bFound, strXXX, blnDuplicated, strID
+Dim aryIngredients, aryMeasures, i, bFound, blnDuplicated, strID
 
 ReDim aryIngredients(g_intNumIngredientTypes)
 ReDim aryMeasures(g_intNumIngredientTypes)
@@ -27,7 +27,6 @@ Next
 ' Pull in form data ----------------------------------------------------------
 strName			= Capitalise(Request("name"))
 strType			= Request("type")
-strXXX			= Request("xxx")
 strDirections	= Capitalise(Request("directions"))
 intServes		= Request("serves")
 
@@ -187,12 +186,6 @@ Sub DisplayStage1()
 			<input type="radio" name="type" <%if strtype = "shooter" then%>checked<%end if%> value="shooter" id="fp2"><label for="fp2">Shooter</label>
 			</td>
 		</tr>
-		<tr>
-			<td valign="top" bgcolor="#F0F0F0">&nbsp;Is the drink XXX rated?
-			<input type="radio" name="xxx" value="XXX Rated" id="fp4"><label for="fp4">Yes</label>
-			<input type="radio" name="xxx" value="Not XXX Rated" checked id="fp3"><label for="fp3">No</label> <br>
-&nbsp;i.e. because of a &quot;rude&quot; title etc...</td>
-		</tr>
 	</table>
 	<table border="0" cellpadding="0" cellspacing="0" width="100%">
 		<tr>
@@ -237,7 +230,6 @@ function changeBG(intTbl){
 <form method="POST" action="submitCocktail.asp" name="form1">
 	<input type="hidden" name="name" value="<%=Server.HTMLEncode(strName)%>">
 	<input type="hidden" name="type" value="<%=Server.HTMLEncode(strType)%>">
-	<input type="hidden" name="xxx" value="<%=Server.HTMLEncode(strXXX)%>">
 	<table border="0" cellpadding="0" cellspacing="5" width="100%">
 		<tr>
 			<td valign="top">
@@ -245,7 +237,7 @@ function changeBG(intTbl){
 			</td>
 		</tr>
 		<tr>
-			<td valign="top">&nbsp;Type: <%=strType%> (<%=strXXX%>) <% If strError <> "" Then %><br>
+			<td valign="top">&nbsp;Type: <%=strType%> <% If strError <> "" Then %><br>
 			<font color="red"><i><%=strError%></i><%End If %> </font></td>
 		</tr>
 		<tr>
@@ -342,7 +334,6 @@ Sub DisplayStage3()
 <form method="POST" action="submitCocktail.asp" name="form1">
 	<input type="hidden" name="name" value="<%=Server.HTMLEncode(strName)%>">
 	<input type="hidden" name="type" value="<%=Server.HTMLEncode(strType)%>">
-	<input type="hidden" name="xxx" value="<%=Server.HTMLEncode(strXXX)%>">
 	<input type="hidden" name="based" value="<%=intBased%>">
 	<input type="hidden" name="serves" value="<%=intServes%>">
 	<input type="hidden" name="directions" value="<%=Replace( Server.HTMLEncode(strDirections), VbCrLf, "<BR>")%>">
@@ -358,7 +349,7 @@ Sub DisplayStage3()
 			</td>
 		</tr>
 		<tr>
-			<td valign="top">&nbsp;Type: <%=strType%> (<%=strXXX%>)</td>
+			<td valign="top">&nbsp;Type: <%=strType%></td>
 		</tr>
 		<tr>
 			<td valign="top"><% Call ShowSubTitle("INGREDIENTS") %> </td>
@@ -454,7 +445,6 @@ function FrontPage_Form5_Validator(theForm)
 //--></script><!--webbot BOT="GeneratedScript" endspan --><form method="POST" action="submitCocktail.asp" name="FrontPage_Form5" onsubmit="return FrontPage_Form5_Validator(this)" language="JavaScript">
 	<input type="hidden" name="name" value="<%=Server.HTMLEncode(strName)%>">
 	<input type="hidden" name="type" value="<%=Server.HTMLEncode(strType)%>">
-	<input type="hidden" name="xxx" value="<%=Server.HTMLEncode(strXXX)%>"><%
 	For i=0 to g_intNumIngredientTypes
 		Response.Write("<INPUT type=""hidden"" name=""IngredientType" & g_aryIngredientTypeID(i) & """ value=""" & aryIngredients(i) & """>")
 		Response.Write("<INPUT type=""hidden"" name=""IngredientMeasure" & g_aryIngredientTypeID(i) & """ value=""" & aryMeasures(i) & """>")
@@ -467,7 +457,7 @@ function FrontPage_Form5_Validator(theForm)
 			</td>
 		</tr>
 		<tr>
-			<td valign="top" colspan="2">&nbsp;Type: <%=strType%> (<%=strXXX%>)
+			<td valign="top" colspan="2">&nbsp;Type: <%=strType%>
 			<% If strError <> "" Then %><br>
 			<font color="red"><i><%=strError%></i><%End If %> </font></td>
 		</tr>
@@ -530,7 +520,6 @@ Sub DisplayStage5()
 <form method="POST" action="submitCocktail.asp" name="form1">
 	<input type="hidden" name="name" value="<%=Server.HTMLEncode(strName)%>">
 	<input type="hidden" name="type" value="<%=Server.HTMLEncode(strType)%>">
-	<input type="hidden" name="xxx" value="<%=Server.HTMLEncode(strXXX)%>">
 	<input type="hidden" name="directions" value="<%=Replace( Server.HTMLEncode(strDirections), VbCrLf, "<BR>")%>">
 	<input type="hidden" name="serves" value="<%=intServes%>">
 	<input type="hidden" name="based" value="<%=intBased%>"><%
@@ -546,7 +535,7 @@ Sub DisplayStage5()
 			</td>
 		</tr>
 		<tr>
-			<td valign="top" colspan="3">&nbsp;Type: <%=strType%> (<%=strXXX%>)</td>
+			<td valign="top" colspan="3">&nbsp;Type: <%=strType%></td>
 		</tr>
 		<tr>
 			<td valign="top"><% 
@@ -587,10 +576,6 @@ Sub DisplayStage6()
 		intType = 1
 	Else
 		intType = 2
-	End If
-	
-	If strXXX = "XXX Rated" then
-		intType = intType + 8
 	End If
 	
 	'Add cocktail to db table ----------------------------------------------------
@@ -698,7 +683,7 @@ Sub DisplayStage6()
 			</td>
 		</tr>
 		<tr>
-			<td valign="top" colspan="3">&nbsp;Type: <%=strType%> (<%=strXXX%>)</td>
+			<td valign="top" colspan="3">&nbsp;Type: <%=strType%></td>
 		</tr>
 		<tr>
 			<td valign="top"><% 

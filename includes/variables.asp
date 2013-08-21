@@ -2,7 +2,7 @@
 Dim strDB, strMBWDB, strMBWAccounts, bIsAdmin, strIndexShopDB
 Dim cnGlobal, strCocktailSearch, strDBMod
 Dim intAmazon, blnDisplayHitCounter, blnHardwireTitle
-Dim strTitle, strTopTitle , strTitleOut, blnXXX
+Dim strTitle, strTopTitle , strTitleOut
 Dim rs, rs2, strSQL, bPrinterFriendly, aryGames(12), aryRandomProducts(10)
 Dim g_aryIngredientType, g_aryIngredientTypeID, g_intNumIngredientTypes
 Dim blnApplyDeliveryZoneRestrictions, blnApplyDeliveryCountryRestrictions 
@@ -83,6 +83,4 @@ aryRandomProducts(7) = 149
 aryRandomProducts(8) = 72
 aryRandomProducts(9) = 187
 aryRandomProducts(10) = 382
-
-blnXXX = False
 %>

@@ -4,7 +4,7 @@ Option Explicit
 Dim cn, intID, strIngredients, FSO, strName, bFileExists, strType, strDescription
 Dim blnUserCocktail, strUserName, i, blnDuplicated, aryReviews, intNumReviews
 Dim blnEdit, strDescriptionEDIT, strImgSrc, strImgName, intCase, aryDrink
-Dim strCocktailName, intServes, intAccessed, intRate, intUsers, strCat, strXXX
+Dim strCocktailName, intServes, intAccessed, intRate, intUsers, strCat
 Dim strMakeCocktail, blnMakeIt, intMaxReviews, objProduct, strURL
 %>
 <!--#include virtual="/includes/variables.asp" -->
@@ -44,8 +44,6 @@ If NOT GetDrink(rs, cn, intID, aryDrink) Then
 	set cn	= Nothing
 	Response.Redirect("/cocktails/recipe.asp?ID=1")
 End If
-
-blnXXX = (aryDrink(9) = "XXX rated")
 
 blnDuplicated = False
 If Session("logged") Then

@@ -1,6 +1,6 @@
 <%
 Option Explicit
-strTitle = "Top Ten Most Popular"
+strTitle = "Top 10 Most Popular Cocktails"
 
 Dim cn, iPageSize, fileExists, FSO, iRecordsShown, name, strType
 %>

@@ -1,6 +1,6 @@
 <%
 Option Explicit
-strTitle = "Top Ten Ingredients"
+strTitle = "Most Popluar Cocktail Ingredients"
 
 Dim cn, dictOKeys, dictOItems, i, j, intNumToDisplay, aryNames
 %>

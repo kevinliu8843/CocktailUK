@@ -1,6 +1,6 @@
 <%
 Option Explicit
-strTitle = "Voted Top 10"
+strTitle = "Top 10 Highest Voted Cocktails"
 
 Dim cn, minNumOfVotes, rating, weighting, iPageSize, FSO, name, FileExists
 Dim iRecordsShown, strType

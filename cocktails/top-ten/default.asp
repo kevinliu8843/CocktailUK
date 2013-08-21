@@ -1,15 +1,12 @@
 <%
 Option Explicit
-strTitle = "Top Ten..."
+strTitle = "Top 10 Cocktails"
 %>
 <!--#include virtual="/includes/variables.asp" -->
 <!--#include virtual="/includes/functions.asp" -->
 <!--#include virtual="/includes/header.asp" -->
 
-<head>
-</head>
-
-<H2>Top Ten Cocktail Recipes</h2>
+<H2>Top 10 Cocktail Recipes</h2>
 
 <dl>
   <dt><a href="voted.asp"><b>Top ten highest voted cocktails</b></a></dt>

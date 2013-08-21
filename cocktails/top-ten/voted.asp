@@ -91,14 +91,6 @@ Do While NOT rs.EOF
 			</FONT><FONT size="1"><EM><A href="/cocktails/recipe.asp?ID=<%=rs("ID")%>"><STRONG><%=replaceStuffBack(rs("name"))%></STRONG></A></EM><BR><%="Category: "&strtype%></FONT>&nbsp;&nbsp;<BR><%IF weighting Then%><BR><NOBR><%=rs("users")%> people rated this a <%=rs("rate")%>:</NOBR><%End If%><BR><%Call displayRatingGraphOnly(rs("rate"))%></TD>
 		  <TD width="10%">&nbsp;</TD>
 		</TR>
-		<TR>
-		  <TD width="10%">
-		  </TD>
-		  <TD align="right" width="80%" nowrap valign="top" colspan="2">
-			<HR size="1" color="#000000">
-		  </TD>
-		  <TD width="10%"></TD>
-		</TR>
 
 	<%
 		' Increment the number of records we've shown

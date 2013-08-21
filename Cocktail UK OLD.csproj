@@ -1284,7 +1284,6 @@
     <Content Include="script\carousel.js" />
     <Content Include="search\default.asp" />
     <Content Include="services\contact.asp" />
-    <Content Include="services\default.asp" />
     <Content Include="services\privacy.asp" />
     <Content Include="shop\aboutus.asp" />
     <Content Include="shop\bar_equipment.asp" />

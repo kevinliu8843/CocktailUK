@@ -234,7 +234,6 @@ Sub writeCocktailList(strSQL, rs, cn, strTitle, strHrefType)
 			<h2><%=strTitle%></h2>
 		<%End If%>
 
-
 		<P align="center">Page <B><%= iPageCurrent %></B> of <B><%= iPageCount %></B> (<%=rs.recordCount%> recipes)</P>
 
 		<div class="row collapse">

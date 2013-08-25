@@ -40,7 +40,6 @@ End If
  COLS=31 ROWS=5></TEXTAREA>  
 
 <P <%If Request("fail") <> "" Then%>style="color: red;"<%End If%> align="left"><b>Please enter the code below:</b><br> 
-<!--#include virtual="/includes/CAPTCHA/CAPTCHA_form_inc.asp" --></p>
 
 <P align="center"> 
 <INPUT type="submit" value="Send comments &raquo;" name="B1" class="button" ><BR>

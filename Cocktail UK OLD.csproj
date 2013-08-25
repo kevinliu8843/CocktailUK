@@ -1252,9 +1252,6 @@
     <Content Include="images\welcomeToThe.gif" />
     <Content Include="images\white.gif" />
     <Content Include="includes\admin_functions.asp" />
-    <Content Include="includes\captcha\CAPTCHA_form_inc.asp" />
-    <Content Include="includes\captcha\CAPTCHA_image.asp" />
-    <Content Include="includes\captcha\CAPTCHA_process_form.asp" />
     <Content Include="includes\classes\clsSiteMap.asp" />
     <Content Include="includes\cocktail_functions.asp" />
     <Content Include="includes\default.asp" />

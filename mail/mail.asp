@@ -1,6 +1,5 @@
 ﻿<!--#include virtual="/includes/variables.asp" -->
 <!--#include virtual="/includes/functions.asp" -->
-<!--#include virtual="/includes/CAPTCHA/CAPTCHA_process_form.asp" -->
 <%
 strDomain = "http://www.cocktail.uk.com/"
 
@@ -144,12 +143,10 @@ Select Case Request("type")
 		strBody = strBody & "There are a whole host of features on the site. Most cocktail recipes come complete with an image. You can also register and manage your own bar and add cocktails to the database."&VbCRLf&VbCRLf&"Many thanks"&VbCRLf&"Cocktail : UK (www.cocktail.uk.com)"
 	
 	Case Else
-		If NOT blnCAPTCHAcodeCorrect Then
-			If Request("from") <> "" Then
-				Response.redirect(Request("from") & "?fail=Please enter the correct code in the box provided. Your email has NOT been sent to us.")
-			Else
-				Response.redirect("/services/contact.asp?fail=Please enter the correct code in the box provided. Your email has NOT been sent to us.")
-			End If
+		If Request("from") <> "" Then
+			Response.redirect(Request("from") & "?fail=Please enter the correct code in the box provided. Your email has NOT been sent to us.")
+		Else
+			Response.redirect("/services/contact.asp?fail=Please enter the correct code in the box provided. Your email has NOT been sent to us.")
 		End If
 
 		strBody = "<HTML><HEAD><TITLE>cocktail.uk.com suggestion</TITLE><LINK href="""&strDomain&"style/mail.css"" type=""text/css"" rel=""stylesheet"" /></HEAD><BODY><P><B>"&Request("name")&"</B> (<a href=""mailto:"&Request("replyemail")&""">"&Request("replyemail")&"</A>) has made a suggestion : <P>"&Replace(Request("comments"), VbCrLf, "<BR>" & VbCrLf)&"</BODY></HTML>"

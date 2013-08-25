@@ -114,8 +114,8 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
         </a>
       </div>
         <p>&nbsp;</p>
-        <div style="margin-bottom: 5px;">Rated: <%Call displayRatingGraphOnly( CStr(aryDrink(5)) )%></div>
-        <div style="margin-bottom: 5px;">Viewed: <%=aryDrink(4)%> times</div>
+        <div style="margin-bottom: 5px;"><span class="hide-for-small">Rated: </span><%Call displayRatingGraphOnly( CStr(aryDrink(5)) )%></div>
+        <div style="margin-bottom: 5px;"><%=aryDrink(4)%> views</div>
         <%If aryDrink(10) <> "" Then%>
             <div style="margin-bottom: 5px;">Submitter: <%=aryDrink(10)%></div>
         <%End If%>

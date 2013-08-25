@@ -390,8 +390,9 @@ Class CProduct
 						</div>
 						<div class="small-10 column">
 							<div style="padding-right: 10%">
-						        <h4><A href="/shop/products/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm"><%=strOutDB(aryRows(1,i))%></a></h4>
-						        <p><%=ChangeMacros(strOutDB(aryRows(5,i)))%> <a href="/shop/products/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm">[more...]</a></p>
+						        <h4><A href="/shop/products/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm"><%=strOutDB(aryRows(1,i))%> - 
+						        	<%If aryRows(4,i) <> aryRows(5,i) then%>From <%End If%>&pound;<%=FormatNumber(aryRows(4,i), 2)%></a></h4>
+						        <p><%=ChangeMacros(strOutDB(aryRows(6,i)))%> <a href="/shop/products/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm">[more...]</a></p>
 						    </div>
 					    </div>
 					</div>

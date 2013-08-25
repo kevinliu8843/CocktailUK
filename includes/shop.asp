@@ -93,36 +93,6 @@ Function IsEven(lngNum)
 	IsEven = Not CBool(lngNum Mod 2)
 End Function
 
-Sub updateShopInfo()
-
-	'On Error Resume Next
-	Dim objXmlHttpCat, objXmlDoc, dblEuroToGo, dblDollarToGo, fso, f, intImages, cnc, rsc, objGet
-	
-	Set objXmlHttpCat= Server.CreateObject("MSXML2.ServerXMLHTTP")
-	objXmlHttpCat.open "GET", "http://"&strDrinkstuffServer&"/affiliate/shopinfo.asp" , False
-	objXmlHttpCat.send ""
-	Set objXmlDoc = Server.CreateObject("Microsoft.XMLDOM")
-	strXML = objXmlHttpCat.responseXml.xml
-	objXmlDoc.loadXML(strXML)
-	Set objXmlHttpCat = nothing
-	
-	Set dblEuroToGo = objXmlDoc.getElementsByTagName("SHOPINFO/CURRENCIES/EURO")
-	Set dblDollarToGo = objXmlDoc.getElementsByTagName("SHOPINFO/CURRENCIES/DOLLAR")
-	
-	Set fso = Server.Createobject("Scripting.FileSystemObject")
-	Set f = fso.CreateTextFile(Server.MapPath("/includes/shop/currency.asp"),True)
-	f.writeLine("<" & "%")
-	f.writeLine("Dim dblEuro, dblDollar")
-	f.writeLine("dblEuro = " & dblEuroToGo.item(0).text)
-	f.writeLine("dblDollar = " & dblDollarToGo.item(0).text)
-	f.writeLine("%" & ">")
-	f.close
-	Set f = nothing
-	
-	Set objXmlDoc = nothing
-	Set objXmlHttpCat= Nothing
-End Sub
-
 Function GetProductTablesAndUpdate()
 	On Error Resume Next
 	Dim objXmlHttpCat

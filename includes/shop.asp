@@ -65,14 +65,9 @@ aryIndexes(23) = "CREATE INDEX [IX_barproduct] ON [dbo].[barproduct]([status], [
 aryIndexes(24) = "CREATE INDEX [IX_barproductver] ON [dbo].[barproductver]([prodID], [status], [price], [prodverorder]) WITH  FILLFACTOR = 90 ON [PRIMARY]"
 aryIndexes(25) = "CREATE INDEX [IX_barrawproductver] ON [dbo].[barrawproductver]([prodverID], [rawprodID], [quantity], [rawprodorder]) WITH  FILLFACTOR = 90 ON [PRIMARY]"
 
-Private Sub setupCategories(fcuk)
-	'On Error Resume Next
-	Dim strFontColour, strURL, f, fso, strCat, rsc, cnc, strCatOpt, strCatWap, strCatLeft
+Private Sub SetupCategories(cnc, rsc)
+	Dim strFontColour, strURL, f, fso, strCat, strCatOpt, strCatWap, strCatLeft
 	Dim ReadAllCatFile, newCatFile, objXmlHttpCat
-	Set cnc = Server.CreateObject("ADODB.Connection")
-	Set rsc = Server.CreateObject("ADODB.Recordset")
-	
-	cnc.Open strDBMod
 	
 	' Turn on drink category
 	cnc.execute("UPDATE DScategory SET hidden=0 WHERE ID=562")
@@ -80,54 +75,16 @@ Private Sub setupCategories(fcuk)
 	strSQL = "SELECT name, URL, ID, name as alt, parentID from dscategory WHERE hidden=0 AND url NOT LIKE 'admin%' ORDER by catorder"
 	rsc.Open strSQL, cnc
 	
-	Set fso = Server.CreateObject("Scripting.FileSystemObject")
+	strCatLeft = ""
 	While NOT rsc.EOF 
 		If rsc("parentID") = 0 then
-			strCatLeft	= strCatLeft 	& "<div class=""item""><A href=""/shop/products/"&Trim(rsc("URL"))&".asp"" title="""&rsc("alt")&""" class=""linksin"">"&Left(Trim(Capitalise(LCase(rsc("name")))), 20)&"</A></div>" & VbCrLf
+			strCatLeft	= strCatLeft& "<div class=""item""><A href=""/shop/"&Trim(rsc("URL"))&"/"" title="""&rsc("alt")&""" class=""linksin"">"&Left(Trim(Capitalise(LCase(rsc("name")))), 20)&"</A></div>" & VbCrLf
 		End If
-		
-		Set f = fso.OpenTextFile(Server.MapPath("/includes/shop/template.asp"), 1, True)
-		ReadAllCatFile =  f.ReadAll
-		f.close
-	
-		ReadAllCatFile = Replace(ReadAllCatFile, "##CAT##", rsc("ID") & "")
-		
-		newCatFile.writeline(ReadAllCatFile)
-		newCatFile.close
-		Set newCatFile = nothing
-		rsc.movenext
 	wend
-	
-	rsc.movefirst
-	
-	strCatOpt = "<"&"%strScriptName = Request.ServerVariables(""SCRIPT_NAME"")%"&">"
-	strCatOpt = strCatOpt & "&nbsp;<SELECT name=""shop"" ID=""shop"" class=""shopoptioncats"" onChange=""window.location.href='/shop/' + this.options[this.selectedIndex].value"">"
-	strCatOpt = strCatOpt & "<OPTION value=""default.asp"">Select a department...</OPTION>"
-	While NOT rsc.EOF 
-		If rsc("parentID") = 0 Then
-			strCatOpt = strCatOpt & "<OPTION value=""shop/"&Trim(rsc("URL"))&"/"""
-			strCatOpt = strCatOpt & "<"&"%If InStr(strScriptName,""" & Trim(rsc("URL")) & """) > 0 Then %"&"> SELECTED <"&"%End if%"&">"
-			strCatOpt = strCatOpt & ">"&Trim(rsc("name"))&"</OPTION>" & VbCrLf
-		End If
-		rsc.movenext
-	Wend
-	strCatOpt = strCatOpt & "</SELECT>"
+
+	Call SaveTextFile(Server.MapPath("/includes/shop/categoriesleft.asp"), strCatLeft)
+
 	rsc.close
-	
-	Set f = fso.CreateTextFile(Server.MapPath("/includes/shop/categoriesleft.asp"),True)
-	f.writeLine(strCatLeft)
-	f.close
-	Set f = nothing
-
-	Set f = fso.CreateTextFile(Server.MapPath("/includes/shop/categoriesoption.asp"),True)
-	f.writeLine(strCatOpt)
-	f.close
-	Set f = nothing
-
-	cnc.close
-	Set rsc = Nothing
-	Set cnc = Nothing
-	Set fso = nothing
 End Sub
 
 Function IsEven(lngNum)

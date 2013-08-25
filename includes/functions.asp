@@ -389,6 +389,7 @@ Sub CreatePrettyURLFiles(cn, rs)
 	strHTAccess = strHTAccess & "RewriteRule ^shooter-recipe/([^.?/]+)(\.htm) /cocktails/recipe.asp?ID=${cocktails:$1} [NC,QSA]" & VbCrLf
 	strHTAccess = strHTAccess & "RewriteRule ^shop/([^.?/]+)(\.htm) /shop/viewproduct.asp?ID=${products:$1} [NC,QSA]" & VbCrLf
 	strHTAccess = strHTAccess & "RewriteRule ^shop/([^.?/]+)/ /shop/viewcategory.asp?ID=${categories:$1} [NC,QSA]" & VbCrLf
+	Call SaveTextFile(Server.MapPath("/.htaccess"), strHTAccess)
 
 	rs.open "SELECT ID, name FROM cocktail ORDER BY accessed DESC", cn
 	While NOT rs.EOF
@@ -414,10 +415,7 @@ Sub CreatePrettyURLFiles(cn, rs)
 		rs.MoveNext
 	Wend
 	rs.close
-	response.write strFile
 	Call SaveTextFile(Server.MapPath("/categories.txt"), strFile)
-	
-	Call SaveTextFile(Server.MapPath("/.htaccess"), strHTAccess)
 End Sub
 
 Function GeneratePrettyURL(strName)

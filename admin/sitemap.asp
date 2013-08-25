@@ -20,6 +20,7 @@ cn2.open strDB
 
 'Generate pretty URL's while we are here too...
 Call CreatePrettyURLFiles(cn, rs)
+Call SetupCategories(cn, rs)
 
 Response.end
 

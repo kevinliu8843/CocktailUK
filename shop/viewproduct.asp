@@ -8,8 +8,8 @@ intID = Request("ID")
 If intID <> "" AND IsNumeric(intID) Then
 	Set objProd = New CProduct
 	objProd.SetProductID(intID)
-	strTopTitle = objProd.m_strProductName & " - Cocktail : UK Bar Equipment Shop"
 	strTitle = objProd.DisplayTitle
+	strTopTitle = objProd.m_strProductName & " - Cocktail : UK Bar Equipment Shop"
 	call objProd.GetKeywords(strDefaultKeywords, strActKeywords)
 	strMetaKeywords = objProd.m_strProductName  & ", " & strActKeywords
 	strMetaDescription = objProd.m_strMetaDescription

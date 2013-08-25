@@ -349,7 +349,7 @@ Class CProduct
 			End If
 			rs.close
 
-			If UBound(aryRows,1) > 0 then
+			If UBound(aryRows,2) >= 0 then
 				%>
 				<P align="center"><img src="http://www.drinkstuff.com/img/products/<%=%>.<%=%>"></p>
 				<a href="/shop/delivery.asp" style="float: right;">

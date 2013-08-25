@@ -393,6 +393,7 @@ Class CProduct
 					        <p><%=ChangeMacros(strOutDB(aryRows(9,i)))%> <a href="/shop/products/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm">[more...]</a></p>
 					    </div>
 					</div>
+					<hr>
 					<%
 				End If
 				

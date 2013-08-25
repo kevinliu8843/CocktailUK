@@ -20,7 +20,7 @@ Call objProd.GetBanner(strBannerTargetCat, strBannerURLCat, strBannerImageSrcCat
 %>
 <!--#include virtual="/includes/header.asp" -->
 <!--#include virtual="/includes/shop/header.asp" -->
-<H2><%=strMainTitle%></h2>
+<H2 style="margin-bottom: 1em;"><%=strMainTitle%></h2>
 <!--Display the products-->
 <%objProd.DisplayProducts%>  
 <!--End products-->

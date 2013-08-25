@@ -325,7 +325,6 @@ Class CProduct
 		
 		If m_intCategory > 0 OR m_searchQuery <> "" OR m_blnDisplayAffProducts OR m_blnOnlyProduct then	
 			strSQL = "DS_DISPLAYPRODUCTS @catID=" & m_intCategory
-			blnSubCats = True
 			
 			If Request.QueryString("page") = "" OR NOT IsNumeric(Request.QueryString("page")) Then
 				iPageCurrent = 1
@@ -345,29 +344,19 @@ Class CProduct
 			End If
 			rs.close
 
-			If blnSubCats Then
-				rs.open "DS_GETPARENTCAT @catID="&m_intCategory, cn
-				If NOT rs.EOF Then
-					%>
-					<P style="margin-bottom: 1em"><b><a href="<%=strOutDB(rs("url"))%>.asp" style="text-decoration: none;">
-					&laquo; Back To <span style="text-decoration: underline;"><%=strOutDB(rs("name"))%></span></a></b></p>
-					<%
-				End If
-				rs.close
-				
-				Call DisplaySubCategories()
-				
-				If m_blnGotSubCats AND UBound(aryRows,1) > 0 Then
-					%>
-					<BR><TABLE border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
-					  <TR>
-					    <TD valign="top" class="shopheadertitle">
-						<H3>Featured products</H3>
-					    </TD>
-					  </TR>
-					</TABLE>
-					<%
-				End If
+			rs.open "DS_GETPARENTCAT @catID="&m_intCategory, cn
+			If NOT rs.EOF Then
+				%>
+				<P style="margin-bottom: 1em"><b><a href="<%=strOutDB(rs("url"))%>.asp" style="text-decoration: none;">
+				&laquo; Back To <span style="text-decoration: underline;"><%=strOutDB(rs("name"))%></span></a></b></p>
+				<%
+			End If
+			rs.close
+			
+			Call DisplaySubCategories()
+			
+			If m_blnGotSubCats AND UBound(aryRows,1) > 0 Then
+				%><H3>Featured products</H3><%
 			End If
 
 			If UBound(aryRows,1) <= 0 Then
@@ -874,8 +863,7 @@ Class CProduct
 	End Sub
 									
 	Private Sub DisplaySubCategories()
-		Dim i, fso
-		Set fso = Server.CreateObject("Scripting.FileSystemObject")
+		Dim i
 		strSQL = "DS_GETSUBCATS @catID="&m_intCategory
 		rs.open strSQL, cn
 		If NOT rs.EOF Then
@@ -884,17 +872,15 @@ Class CProduct
 			%><div class="row"><%
 			WHILE NOT rs.EOF
 				i=i+1
-				response.write "<div class=""large-4 column small-6"" style=""padding-bottom:25px;""><A href="""&Server.URLEncode(strOutDB(rs("url")))&".asp"" style=""font-weight: 400; font-size: 130%"">"
-				Call GetSubCategoryImage(rs("ID"))
-				response.write strOutDB(rs("name")) & "&nbsp;&raquo;</A></div>"
-				rs.movenext
+				%><div class=large-4 column small-6 style="padding-bottom:25px;"><A href="<%=Server.URLEncode(strOutDB(rs("url")))%>.asp" style="font-weight: 400; font-size: 130%">
+				<%Call GetSubCategoryImage(rs("ID"))%><%=strOutDB(rs("name"))%>&nbsp;&raquo;</A></div>
+				<%rs.movenext
 			Wend
 			%>
 			</div>
 			<%
 		End If
 		rs.close
-		Set fso = nothing
 	End Sub
 	
 	Private Sub GetSubCategoryImage(img)

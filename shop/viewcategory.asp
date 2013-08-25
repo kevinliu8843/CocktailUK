@@ -1,8 +1,7 @@
 ﻿<% Option Explicit %>
 <!--#include virtual="/includes/variables.asp" -->
 <!--#include virtual="/includes/functions.asp" -->
-<!--#include virtual="/includes/shop/functions.asp" -->
-<!--#include virtual="/includes/shop/product.asp" -->
+<!--#include virtual="/includes/product.asp" -->
 <%
 Dim objProd, intCategory, strMainTitle
 intCategory = Request("ID")

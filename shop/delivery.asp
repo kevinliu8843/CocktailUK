@@ -4,7 +4,6 @@ strTitle = "Cocktail : UK Shop - Delivery Charges, Options & Timescales"
 %>
 <!--#include virtual="/includes/variables.asp" -->
 <!--#include virtual="/includes/functions.asp" -->
-<!--#include virtual="/includes/shop/functions.asp" -->
 <!--#include virtual="/includes/header.asp" -->
 <style type="text/css">
 .nicebgandborder TH

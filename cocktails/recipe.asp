@@ -9,8 +9,7 @@ Dim strMakeCocktail, blnMakeIt, intMaxReviews, objProduct, strURL
 %>
 <!--#include virtual="/includes/variables.asp" -->
 <!--#include virtual="/includes/functions.asp" -->
-<!--#include virtual="/includes/shop/functions.asp" -->
-<!--#include virtual="/includes/shop/product.asp" -->
+<!--#include virtual="/includes/product.asp" -->
 <!--#include virtual="/includes/cocktail_functions.asp" --><%
 If Request("ID") <> "" AND IsNumeric(Request("ID")) Then
 	intID = Int(Request("ID"))

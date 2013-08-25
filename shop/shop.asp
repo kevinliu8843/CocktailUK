@@ -1,3 +1,0 @@
-<%
-Response.redirect("default.asp")
-%>

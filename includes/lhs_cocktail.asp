@@ -51,7 +51,6 @@
 <a href="/shop/products/cocktail-equipment.asp">
 <img border="0" src="/images/side_menus/Offer.gif" alt="Bar cocktail equipment and accessories"></a></div>
 
-<div class="item">
 <!--#include virtual="/includes/shop/categoriesleft.asp" -->
 <hr style="margin-top: 3px;">
 

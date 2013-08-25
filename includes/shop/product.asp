@@ -346,7 +346,7 @@ Class CProduct
 			rs.open "DS_GETPARENTCAT @catID="&m_intCategory, cn
 			If NOT rs.EOF Then
 				%>
-				<P style="margin-bottom: 1em"><b><a href="<%=strOutDB(rs("url"))%>.asp" style="text-decoration: none;">
+				<P style="margin-bottom: 1em"><b><a href="/shop/<%=GeneratePrettyURL(rs("url"))%>/" style="text-decoration: none;">
 				&laquo; Back To <span style="text-decoration: underline;"><%=strOutDB(rs("name"))%></span></a></b></p>
 				<%
 			End If

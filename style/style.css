@@ -117,7 +117,7 @@ iframe, iframe img {
 .pagination {
 	margin: 20px auto;
 }
-@media all and (max-width: 769px) {
+@media all and (max-width: 767px) {
 	#content {
 		padding: 10px;
 	}

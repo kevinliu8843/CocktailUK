@@ -407,35 +407,4 @@ Function RandomNumber(lowerbound, upperbound)
 	Randomize
 	RandomNumber = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
 End Function
-
-' Examples for clarity
-' =============================
-' Net + VAT = Gross
-' =============================
-' VAT Rate:       17.5%
-' Price Incl VAT: £9.99 (Gross)
-' VAT:            £1.49 (VAT)
-' Net:            £8.50 (Net)
-' =============================
-' VAT Rate:       15%
-' Price Incl VAT: £9.99 (Gross)
-' VAT:            £1.30 (VAT)
-' Net:            £8.69 (Net)
-' =============================
-
-Function CalculateVATFromGross(dblGross, dblVatRate)
-	CalculateVATFromGross = Round(dblGross - (dblGross/ (1 + (dblVatRate/100))), 2)
-End Function
-
-Function CalculateNetFromGross(dblGross, dblVatRate)
-	CalculateNetFromGross = Round(dblGross/ (1 + (dblVatRate/100)), 2)
-End Function
-
-Function CalculateVATFromNet(dblNet, dblVatRate)
-	CalculateVATFromNet = Round(dblNet * dblVatRate/100, 2)
-End Function
-
-Function CalculateGrossFromNet(dblNet, dblVatRate)
-	CalculateGrossFromNet = Round(dblNet * (1 + (dblVatRate/100)), 2)
-End Function
 %>

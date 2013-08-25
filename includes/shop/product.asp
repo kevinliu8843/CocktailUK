@@ -408,34 +408,35 @@ Class CProduct
 			' easily use a form but you'll need to change the lines that read
 			' the info back in at the top of the script.
 
-			iPageCount = Int(((intTotalProducts-1) / m_pageSize)+1)
+			iPageCount = Int(((UBound(aryRows, 2)-1) / m_pageSize)+1)
 			If iPageCount > 1 then
-			%><p<%If NOT m_blnWAP AND NOT m_blnMobile Then%> align="center"<%End If%>><font color="#636388" size="4"><b>More products:</b></font><br/><%
-				If iPageCurrent > 1 AND NOT m_blnWAP Then
-					%><A style="text-decoration: none; font-weight:700" class="linksin" href="<%=Request.ServerVariables("SCRIPT_NAME")%>?page=<%= iPageCurrent - 1 %><%If m_searchQuery <> "" Then%>&search=<%=RequesT("search")%><%end If%>">
-					<font size="3">&lt; &lt; Prev</font></A>
+				%>
+				<div class="pagination-centered">
+					<ul class="pagination">
 					<%
-				End If
-			
-				' You can also show page numbers:
-
-				For I = 1 To iPageCount
-					If I = iPageCurrent Then
+					If iPageCurrent <> 1 Then
 						%>
-						<%If NOT m_blnWAP AND NOT m_blnMobile Then%><span class="linksin"><%End If%><font size="3"><%=I%></font><%If NOT m_blnWAP AND NOT m_blnMobile Then%></span><%End If%>
-						<% 
-					Else
-						%> <b> <a <%If NOT m_blnWAP AND NOT m_blnMobile Then%>style="text-decoration: none" class="linksin" <%End If%>href="<%=Request.ServerVariables("SCRIPT_NAME")%>?<%If m_intCategory<>"" Then%>ID=<%=m_intCategory%>&amp;<%End If%><%If m_searchQuery<>"" Then%>searchfield=<%=m_searchQuery%>&amp;<%End If%>page=<%= I %><%If m_searchQuery <> "" Then%>&amp;search=<%=RequesT("search")%><%end If%>"><font size="3"><%= I %></font></a></b>
+						<li class="arrow"><a href="?page=<%= iPageCurrent - 1 %>">Prev</a></li>
 						<%
 					End If
-				Next
-			
-				If iPageCurrent < iPageCount AND NOT m_blnWAP AND NOT m_blnMobile Then
+
+					For I = 1 To iPageCount
+						If I = iPageCurrent Then%>
+							<li class="current"><%=I%></li>
+						<%Else%>
+							<li><a href="?page=<%= I %>"><%=I%></a></li>
+							<%
+						End If
+					Next
+				
+					If iPageCurrent < iPageCount Then
+						%>
+						<li class="arrrow"><a class="page gradient" href="?page=<%= iPageCurrent + 1 %>">Next</a></li>
+						<%
+					End If
 					%>
-				    <A style="text-decoration: none; font-weight:700" class="linksin" href="<%=Request.ServerVariables("SCRIPT_NAME")%>?ID=<%=m_intCategory%>&searchfield=<%=m_searchQuery%>&page=<%= iPageCurrent + 1 %><%If m_searchQuery <> "" Then%>&search=<%=Request("search")%><%end If%>">
-				    <font size="3">Next &gt; &gt;</FONT></A></p><% 
-				End If%>
-				</p>
+					</ul>
+				</div>
 				<%
 			End if
 		End If

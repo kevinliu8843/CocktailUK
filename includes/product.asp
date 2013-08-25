@@ -364,7 +364,7 @@ Class CProduct
 						Response.Write ChangeMacros(strOutDB(aryRows(7,0)))
 						%>
 						</p>
-						<p><a href="http://www.awin1.com/awclick.php?mid=3&id=176043&prodid=<%=aryRows(0,0)%>" class="large button expand">View &amp; buy at Drinkstuff.com</a></p>
+						<p><a href="http://www.awin1.com/cread.php?awinmid=8&awinaffid=176043&p=/products/product.asp?id=<%=aryRows(0,0)%>" class="large button expand">View &amp; buy at Drinkstuff.com</a></p>
 					</div>
 				</div>
 				<%

@@ -377,8 +377,8 @@ Class CProduct
 			
 			intCurrentProduct = 0
 
-			If m_strCatHeader <> "" And m_strCatHeader <> "<p>&nbsp;</p>" And iPageCurrent = 1 And i=0 Then
-			   %><div align="justify" style="padding:5px;"><%=m_strCatHeader%></div><%
+			If m_strCatHeader <> "" And iPageCurrent = 1 And i=0 Then
+			   %><p><%=m_strCatHeader%></p><%
 			End if
 
 			For i=0 to UBound(aryRows,2)

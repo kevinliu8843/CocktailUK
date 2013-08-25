@@ -318,12 +318,11 @@ Class CProduct
 	End Function
 	
 	Public Sub DisplayProducts()
-		Dim intPrevID, aryRows, i, intNextID, blnDrawTopTable , blnDrawBottomTable, blnDoOption, intStock
+		Dim aryRows, i, intNextID, blnDrawTopTable , blnDrawBottomTable, blnDoOption, intStock
 		Dim iPageCurrent, iPageCount, iRecordsShown, iPageSize, intCurrentProduct, intTotalProducts
 		Dim dblPrice, strAffCaption, strQuery, blnCollectionOnly, blnOutOfStock, strSdesc, blnSubCats
 		Dim dteDueIn, blnPreorder
 		
-		intPrevID = 0
 		blnOutOfStock = False
 		If m_intCategory > 0 OR m_searchQuery <> "" OR m_blnDisplayAffProducts OR m_blnOnlyProduct then	
 			strSQL = "DS_DISPLAYPRODUCTS @catID=" & m_intCategory
@@ -406,13 +405,6 @@ Class CProduct
 			End if
 
 			For i=0 to UBound(aryRows,2)
-							
-				If i < UBound(aryRows,2) then
-					intNextID = aryRows(0,i+1)
-				Else
-					intNextID = 0 
-				End If
-				
 				If intCurrentProduct >= (iPageCurrent-1)*m_pageSize AND intCurrentProduct < iPageCurrent*m_pageSize Then
 					%>
 					<div class="row">
@@ -427,10 +419,7 @@ Class CProduct
 					<%
 				End If
 				
-				intPrevID = aryRows(0,i)
-				If blnDrawBottomTable OR i >= UBound(aryRows,2) Then
-					intCurrentProduct = intCurrentProduct + 1
-				End If
+				intCurrentProduct = intCurrentProduct + 1
 			Next
 
 			' Show "previous" and "next" page links which pass the page to view

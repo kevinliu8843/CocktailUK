@@ -78,12 +78,12 @@ End If
 
 <div class="wrapper">
   <div class="row" id="header">
-    <div class="large-6 small-12 columns" id="logo1">
+    <div class="large-4 small-12 columns" id="logo1">
       <a href="http://www.cocktail.uk.com/">
       <img border="0" src="../images/logo.jpg" alt="Classic cocktails and bar equipment uk" valign="absmiddle" class="hide-for-small">
       <img border="0" src="../images/cuk_07.gif" valign="absmiddle" class="show-for-small">
     </div>
-    <div class="large-6 small-12 columns">
+    <div class="large-8 small-12 columns">
   	  <div class="row collapse">
   			<form action="/search/" id="search_form">
   			    <input type="hidden" name="cx" value="partner-pub-4852715527905431:j32r2u95lwx">

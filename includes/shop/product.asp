@@ -384,7 +384,7 @@ Class CProduct
 			For i=0 to UBound(aryRows,2)
 				If intCurrentProduct >= (iPageCurrent-1)*m_pageSize AND intCurrentProduct < iPageCurrent*m_pageSize Then
 					%>
-					<div class="row">
+					<div class="row collapse">
 					    <div class="small-2 column">
 						    <A href="/shop/products/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm" title="<%=strOutDB(aryRows(1,i))%>"><IMG border="0" src="http://www.drinkstuff.com/productimg/<%=strOutDB(aryRows(3,i))%>.<%=strOutDB(aryRows(2,i))%>"></A>
 						</div>

@@ -340,7 +340,7 @@ Class CProduct
 				%>
 				<div class="row collapse">
 					<div class="large-6 small-12 column">
-						<img src="http://www.drinkstuff.com/productimg/<%=aryRows(4,0)%>.<%=Trim(aryRows(5,0))%>" style="max-width: 100%; width: 100%; padding-bottom: 2em;">
+						<img src="http://www.drinkstuff.com/productimg/<%=aryRows(4,0)%>.<%=Trim(aryRows(5,0))%>" style="max-width: 95%; width: 95%; padding-bottom: 2em;">
 					</div>
 					<div class="large-6 small-12 column">
 						<p>

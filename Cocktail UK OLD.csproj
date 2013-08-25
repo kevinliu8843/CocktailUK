@@ -1260,7 +1260,6 @@
     <Content Include="includes\lhs_cocktail.asp" />
     <Content Include="includes\rating.asp" />
     <Content Include="includes\shop.asp" />
-    <Content Include="includes\shop\basketfunctions.asp" />
     <Content Include="includes\shop\currency.asp" />
     <Content Include="includes\shop\footer.asp" />
     <Content Include="includes\shop\functions.asp" />
@@ -1289,7 +1288,6 @@
     <Content Include="shop\default.asp" />
     <Content Include="shop\delivery.asp" />
     <Content Include="shop\froogle.txt" />
-    <Content Include="shop\getimage.asp" />
     <Content Include="shop\how_the_shop_works.asp" />
     <Content Include="shop\pdm-search-go-btn.gif" />
     <Content Include="shop\products\10-degrees-glassware.asp" />

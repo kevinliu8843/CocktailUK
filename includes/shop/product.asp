@@ -385,10 +385,10 @@ Class CProduct
 				If intCurrentProduct >= (iPageCurrent-1)*m_pageSize AND intCurrentProduct < iPageCurrent*m_pageSize Then
 					%>
 					<div class="row">
-					    <div class="small-3 column">
+					    <div class="small-2 column">
 						    <A href="/shop/products/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm" title="<%=strOutDB(aryRows(1,i))%>"><IMG border="0" src="http://www.drinkstuff.com/productimg/<%=strOutDB(aryRows(3,i))%>.<%=strOutDB(aryRows(2,i))%>"></A>
 						</div>
-						<div class="small-9 column">
+						<div class="small-10 column">
 					        <h4><A href="/shop/products/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm"><%=strOutDB(aryRows(1,i))%></a></h4>
 					        <p><%=ChangeMacros(strOutDB(aryRows(9,i)))%> <a href="/shop/products/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm">[more...]</a></p>
 					    </div>

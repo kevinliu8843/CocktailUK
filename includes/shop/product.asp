@@ -385,12 +385,12 @@ Class CProduct
 				If intCurrentProduct >= (iPageCurrent-1)*m_pageSize AND intCurrentProduct < iPageCurrent*m_pageSize Then
 					%>
 					<div class="row">
-					    <div class="large-3">
+					    <div class="small-3 column">
 						    <A href="/shop/products/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm" title="<%=strOutDB(aryRows(1,i))%>"><IMG border="0" src="http://www.drinkstuff.com/productimg/<%=strOutDB(aryRows(3,i))%>.<%=strOutDB(aryRows(2,i))%>"></A>
 						</div>
-						<div class="large-9">
+						<div class="small-9 column">
 					        <h4><A href="/shop/products/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm"><%=strOutDB(aryRows(1,i))%></a></h4>
-					        <p><%=ChangeMacros(strOutDB(aryRows(9,i)))%></p>
+					        <p><%=ChangeMacros(strOutDB(aryRows(9,i)))%> [<a href="/shop/products/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm">[more...]</a></p>
 					    </div>
 					</div>
 					<%
@@ -879,7 +879,7 @@ Class CProduct
 			%><div class="row"><%
 			WHILE NOT rs.EOF
 				i=i+1
-				response.write "<div class=""large-4 column"" style=""padding-bottom:25px;""><A href="""&Server.URLEncode(strOutDB(rs("url")))&".asp"" style=""font-weight: 400; font-size: 130%"">"
+				response.write "<div class=""large-4 column small-6"" style=""padding-bottom:25px;""><A href="""&Server.URLEncode(strOutDB(rs("url")))&".asp"" style=""font-weight: 400; font-size: 130%"">"
 				Call GetSubCategoryImage(rs("ID"))
 				response.write strOutDB(rs("name")) & "&nbsp;&raquo;</A></div>"
 				rs.movenext

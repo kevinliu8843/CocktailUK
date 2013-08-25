@@ -323,7 +323,7 @@ Class CProduct
 		Dim dblPrice, strAffCaption, strQuery, blnCollectionOnly, blnOutOfStock, strSdesc, blnSubCats
 		Dim dteDueIn, blnPreorder
 		
-		If m_intCategory > 0 OR m_searchQuery <> "" OR m_blnDisplayAffProducts OR m_blnOnlyProduct then	
+		If m_intCategory > 0 Then	
 			strSQL = "DS_DISPLAYPRODUCTS @catID=" & m_intCategory
 			
 			If Request.QueryString("page") = "" OR NOT IsNumeric(Request.QueryString("page")) Then
@@ -353,7 +353,23 @@ Class CProduct
 			End If
 			rs.close
 			
-			Call DisplaySubCategories()
+			strSQL = "DS_GETSUBCATS @catID="&m_intCategory
+			rs.open strSQL, cn
+			If NOT rs.EOF Then
+				m_blnGotSubCats = True
+				i=0
+				%><div class="row"><%
+				WHILE NOT rs.EOF
+					i=i+1
+					%><div class=large-4 column small-6 style="padding-bottom:25px;"><A href="<%=Server.URLEncode(strOutDB(rs("url")))%>.asp" style="font-weight: 400; font-size: 130%">
+					<%Call GetSubCategoryImage(rs("ID"))%><%=strOutDB(rs("name"))%>&nbsp;&raquo;</A></div>
+					<%rs.movenext
+				Wend
+				%>
+				</div>
+				<%
+			End If
+			rs.close
 			
 			If m_blnGotSubCats AND UBound(aryRows,1) > 0 Then
 				%><H3>Featured products</H3><%
@@ -862,28 +878,6 @@ Class CProduct
 		End If
 	End Sub
 									
-	Private Sub DisplaySubCategories()
-		Dim i
-		strSQL = "DS_GETSUBCATS @catID="&m_intCategory
-		response.write strSQL
-		rs.open strSQL, cn
-		If NOT rs.EOF Then
-			m_blnGotSubCats = True
-			i=0
-			%><div class="row"><%
-			WHILE NOT rs.EOF
-				i=i+1
-				%><div class=large-4 column small-6 style="padding-bottom:25px;"><A href="<%=Server.URLEncode(strOutDB(rs("url")))%>.asp" style="font-weight: 400; font-size: 130%">
-				<%Call GetSubCategoryImage(rs("ID"))%><%=strOutDB(rs("name"))%>&nbsp;&raquo;</A></div>
-				<%rs.movenext
-			Wend
-			%>
-			</div>
-			<%
-		End If
-		rs.close
-	End Sub
-	
 	Private Sub GetSubCategoryImage(img)
 		Dim objGet
 

@@ -386,7 +386,7 @@ Class CProduct
 					%>
 					<div class="row collapse">
 					    <div class="small-2 column">
-						    <A href="/shop/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm" title="<%=strOutDB(aryRows(1,i))%>"><IMG border="0" src="http://www.drinkstuff.com/productimg/<%=strOutDB(aryRows(3,i))%>.<%=strOutDB(aryRows(2,i))%>"></A>
+						    <A href="/shop/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm" title="<%=strOutDB(aryRows(1,i))%>"><IMG style="max-width: 90%;" border="0" src="http://www.drinkstuff.com/productimg/<%=strOutDB(aryRows(3,i))%>.<%=strOutDB(aryRows(2,i))%>"></A>
 						</div>
 						<div class="small-10 column">
 							<div style="padding-right: 10%">

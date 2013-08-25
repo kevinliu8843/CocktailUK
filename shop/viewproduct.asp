@@ -7,27 +7,13 @@ Dim objProd, intID, strActKeywords, strDefaultKeywords, strAlsoBought, strCommen
 intID = Request("ID")
 If intID <> "" AND IsNumeric(intID) Then
 	Set objProd = New CProduct
-
-	If IsNumeric(Request("catID")) AND Request("catID") <> "" Then
-		objProd.SetCategory(Request("catID"))
-		Call objProd.GetCategoryName()
-		strCategory = objProd.m_strCategoryName
-		Call objProd.Reset()
-	End If
-	
 	objProd.SetProductID(intID)
-	strTopTitle = objProd.DisplayTopTitle
-	strTopTitle = objProd.m_strProductName
-	If strCategory <> "" Then
-		strTopTitle = strTopTitle & " (From " & strCategory & " in the Cocktail : UK Bar Equipment Shop)"
-	Else
-		strTopTitle = strTopTitle & " - Cocktail : UK Bar Equipment Shop"
-	End If
+	strTopTitle = objProd.m_strProductName & " - Cocktail : UK Bar Equipment Shop"
 	strTitle = objProd.DisplayTitle
 	call objProd.GetKeywords(strDefaultKeywords, strActKeywords)
 	strMetaKeywords = objProd.m_strProductName  & ", " & strActKeywords
 	strMetaDescription = objProd.m_strMetaDescription
-	strAlsoBought = "" 'GetAlsoBought(intID, objProd.m_strProductName)
+	strAlsoBought = ""
 	%>
 	<!--#include virtual="/includes/header.asp" -->
     <h2><%=objProd.m_strProductName%></h2>

@@ -339,8 +339,7 @@ Class CProduct
 		Dim intStock, dteDueIn, blnPreOrder, aryExtraNormalImages, intMinStock, intPreOrder, intMaxStock
 
 		If m_intProduct > 0 then
-			strSQL = "DS_DISPLAYPRODUCT @intProduct=" & Min(CDbl(m_intProduct),99999) 
-			strSQL = strSQL & ", @imgSize=1"
+			strSQL = "DS_DISPLAYPRODUCT @intProduct=" & Min(CDbl(m_intProduct),99999) & ", @imgSize=1"
 			
 			rs.open strSQL, cn
 			If NOT rs.EOF Then
@@ -350,89 +349,22 @@ Class CProduct
 			End If
 			rs.close
 
-			'Get normal images
-			rs.open "SELECT ID, type FROM DSimage WHERE prodID="&Min(CDbl(m_intProduct),99999)&" and imagesize=1 order by imageorder, ID", cn
-			If NOT rs.EOF Then
-				aryExtraNormalImages = rs.GetRows()
-			Else
-				ReDim aryExtraNormalImages(-1, -1)
-			End If
-			rs.close
-			
 			If UBound(aryRows,1) > 0 then
-				m_blnProductExists = True
-				i=0
 				%>
-				
-				<P align="center"><A HREF="#" onClick="window.open('http://www.drinkstuff.com/products/images.asp?ID=<%=m_intProduct%>&logo=http://www.cocktail.uk.com/images/template/cuk_logo_banner.gif','image','width=600, height=500, toolbar=0, menubar=0, status=0, scrollbars=1, resizable=1')"><B><FONT size="1">
-				<IMG border="0" src="/images/buttons/zoom.gif"></FONT></B></A>
-	
-		         <a href="/shop/delivery.asp" style="float: right;">
-		         <img alt="Free UK Delivery" src="../../images/shop/Free-Delivery.gif" width="135" height="122" class="style1"></a>
-
-		         <p>
-		         <%
-		         Response.Write ChangeMacros(strOutDB(aryRows(16,0)))
-		         Response.Write ChangeMacros(strOutDB(aryRows(15,0)))
-		         %>
-		         </p>
+				<P align="center"><img src="http://www.drinkstuff.com/img/products/<%=%>.<%=%>"></p>
+				<a href="/shop/delivery.asp" style="float: right;">
+				<img alt="Free UK Delivery" src="../../images/shop/Free-Delivery.gif" width="135" height="122" class="style1"></a>
+				<p>
+				<%
+				Response.Write ChangeMacros(strOutDB(aryRows(4,0)))
+				Response.Write ChangeMacros(strOutDB(aryRows(5,0)))
+				%>
+				</p>
 				<%
 			End If
 		End If
 	End Sub
 	
-	Public Sub GetProductVerPrice(aryRows, j, blnAddVAT, dblPrice, strAffCaption)
-		Dim dblDiscount
-		
-		dblPrice = aryRows(2,j)
-  		If blnPricesInclVAT AND m_intVATChargeable = 0 then
-  			dblPrice = aryRows(6,j)
-  		End If
-  		
-        strAffCaption = ""
-		If aryRows(7,j) <> "" And IsNumeric(aryRows(7,j)) Then
-			If (aryRows(8,j) <> "" And IsDate(aryRows(8,j))) OR IsNull(aryRows(8,j)) Then
-				If Now() < aryRows(8,j) OR IsNull(aryRows(8,j)) Then
-					dblPrice = FormatNumber(aryRows(7,j),2)
-					strAffCaption = "<font color=""red""><STRIKE>Was "&strCurrencySymbol&FormatNumber((aryRows(2,j)/dblCurrencyFactor),2)&"</STRIKE></font> now"
-					If blnPricesInclVAT AND m_intVATChargeable = 0 then
-						dblPrice = aryRows(9,j)
-					End If
-				End If
-			End If 
-		End If
-		
-		If blnAddVAT AND NOT blnPricesInclVAT Then
-			dblPrice = dblPrice * (1+(aryRows(10,j)/100))
-		End If
-	End Sub
-									
-	Public Sub GetProductVerPriceCat(aryRows, j, blnAddVAT, dblPrice, strAffCaption)
-		Dim dblDiscount
-
-		dblPrice = aryRows(4,j) 
-  		If blnPricesInclVAT AND m_intVATChargeable = 0 then
-  			dblPrice = aryRows(8,j)
-  		End If
-  		
-        strAffCaption = "Price"
-		If aryRows(10,j) <> "" And IsNumeric(aryRows(10,j)) Then
-			If (aryRows(11,j) <> "" And IsDate(aryRows(11,j))) OR IsNull(aryRows(11,j)) Then
-				If Now() < aryRows(11,j) OR IsNull(aryRows(11,j)) Then
-					dblPrice = FormatNumber(aryRows(10,j),2)
-					strAffCaption = "<font color=""red""><STRIKE>Was "&strCurrencySymbol&FormatNumber((aryRows(3,j)/dblCurrencyFactor),2)&"</STRIKE></font> now"
-					If blnPricesInclVAT AND m_intVATChargeable = 0 then
-						dblPrice = aryRows(12,j)
-					End If
-				End If
-			End If 
-		End If
-		
-		If blnAddVAT AND NOT blnPricesInclVAT Then
-			dblPrice = dblPrice * (1+(aryRows(13,j)/100))
-		End If
-	End Sub
-									
 	Private Sub GetSubCategoryImage(img)
 		Dim objGet
 
@@ -458,27 +390,5 @@ Class CProduct
 		End If
 		Set objGet= Nothing
 	End Sub
-	
-	Private Sub DisplayPreOrderInfo(blnMany)
-	%>
-		<table border="0" cellpadding="2" style="border-collapse: collapse" width="100%">
-			<tr>
-				<td bgcolor="#636388" background="/images/breadcrumbbg.gif">
-				<p align="left"><font color="#FFFFFF"><b>Information on pre-ordering</b></font></td>
-			</tr>
-			<tr>
-				<td><%If blnMany Then%>Some or all of the items above are out of stock and can be 
-				pre-ordered.<%Else%>This item is out of stock, but good news, it can be pre-ordered.<%End If%> This means we will take payment for the item now and you 
-				will be allocated the item as soon as it comes into stock. Of course, we 
-				won't charge you a delivery fee, and any other items you order that 
-				are in stock will be shipped out separately so you'll get all your items 
-				as soon as possible. If you decide you don't want pre-ordered items any 
-				more, please <a href="http://www.awin1.com/awclick.php?gid=73406&mid=8&awinaffid=176043&linkid=101500&clickref=&p=/contactus.asp">contact us</a> ASAP so we can cancel the order.</td>
-			</tr>
-		</table>
-		<br>
-	<%
-	End Sub
-
 End Class
 %>

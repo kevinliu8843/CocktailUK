@@ -19,12 +19,6 @@ Select Case Request("type")
 		strCategory = Request("category")
 		strImgsrc = Request("imgsrc")
 		
-		set cn = Server.CreateObject("ADODB.Connection")
-		cn.open strDB
-		cn.execute("EXECUTE CUK_ADDCOUNTEREVENT @col='sentcocktails'")
-		cn.close
-		set cn = nothing
-		
 		id = Request("id")
 		
 		blnConfirm  = (Request("confirm") = "ON")		

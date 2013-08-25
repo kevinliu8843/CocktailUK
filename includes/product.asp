@@ -352,10 +352,10 @@ Class CProduct
 			If UBound(aryRows,2) >= 0 then
 				%>
 				<div class="row collapse">
-					<div class="small-6 column">
-						<img src="http://www.drinkstuff.com/productimg/<%=aryRows(4,0)%>.<%=Trim(aryRows(5,0))%>" style="max-width: 100%">
+					<div class="large-6 small-12 column">
+						<img src="http://www.drinkstuff.com/productimg/<%=aryRows(4,0)%>.<%=Trim(aryRows(5,0))%>" style="max-width: 95%; width: 95%;">
 					</div>
-					<div class="small-6 column">
+					<div class="large-6 small-12 column">
 						<p>
 						<a href="/shop/delivery.asp" style="float: right;">
 						<img alt="Free UK Delivery" src="../../images/shop/Free-Delivery.gif" width="135" height="122" class="style1"></a>

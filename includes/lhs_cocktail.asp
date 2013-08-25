@@ -52,15 +52,11 @@
 <img border="0" src="/images/side_menus/Offer.gif" alt="Bar cocktail equipment and accessories"></a></div>
 
 <div class="item">
-<a href="/shop/basket.asp" class="linksin" style="text-decoration: underline;"><strong>View my basket</strong></a></div>
 <!--#include virtual="/includes/shop/categoriesleft.asp" -->
 <hr style="margin-top: 3px;">
 
 <div class="item">
 <a class="linksin" href="/shop/delivery.asp">Delivery prices</a></div>
-
-<div class="item">
-<a href="/shop/customerservices.asp" class="linksin">Customer services</a></div>
 
 <div style="margin-top: 10px;"><img alt="Payment methods" src="/images/template/cards.gif" width="149" height="73"></div>
 

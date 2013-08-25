@@ -382,10 +382,13 @@ Sub CreatePrettyURLFiles(cn, rs)
 	strHTAccess = strHTAccess & "RewriteBase /" & VbCrLf
 	strHTAccess = strHTAccess & "RewriteMap cocktails txt:cocktail-recipes.txt" & VbCrLf
 	strHTAccess = strHTAccess & "RewriteMap products txt:products.txt" & VbCrLf
+	strHTAccess = strHTAccess & "RewriteMap categories txt:categories.txt" & VbCrLf
 
+	strHTAccess = strHTAccess & "RewriteRule ^shop/products/([^.?/]+)(\.asp) /shop/$1/ [NC,QSA,R=301]" & VbCrLf
 	strHTAccess = strHTAccess & "RewriteRule ^cocktail-recipe/([^.?/]+)(\.htm) /cocktails/recipe.asp?ID=${cocktails:$1} [NC,QSA]" & VbCrLf
 	strHTAccess = strHTAccess & "RewriteRule ^shooter-recipe/([^.?/]+)(\.htm) /cocktails/recipe.asp?ID=${cocktails:$1} [NC,QSA]" & VbCrLf
-	strHTAccess = strHTAccess & "RewriteRule ^shop/products/([^.?/]+)(\.htm) /shop/products/product.asp?ID=${products:$1} [NC,QSA]" & VbCrLf
+	strHTAccess = strHTAccess & "RewriteRule ^shop/([^.?/]+)(\.htm) /shop/viewproduct.asp?ID=${products:$1} [NC,QSA]" & VbCrLf
+	strHTAccess = strHTAccess & "RewriteRule ^shop/([^.?/]+)/ /shop/viewcategory.asp?ID=${categories:$1} [NC,QSA]" & VbCrLf
 
 	rs.open "SELECT ID, name FROM cocktail ORDER BY accessed DESC", cn
 	While NOT rs.EOF
@@ -403,6 +406,15 @@ Sub CreatePrettyURLFiles(cn, rs)
 	Wend
 	rs.close
 	Call SaveTextFile(Server.MapPath("/products.txt"), strFile)
+	
+	strFile = ""
+	rs.open "SELECT ID, name FROM DScategory WHERE hidden=0 ORDER BY ID", cn
+	While NOT rs.EOF
+		strFile  = strFile & GeneratePrettyURL(strOutDB(rs("name"))) & VbTab & rs("ID") & VbCrLf
+		rs.MoveNext
+	Wend
+	rs.close
+	Call SaveTextFile(Server.MapPath("/categories.txt"), strFile)
 	
 	Call SaveTextFile(Server.MapPath("/.htaccess"), strHTAccess)
 End Sub

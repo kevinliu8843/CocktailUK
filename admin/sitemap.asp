@@ -18,10 +18,10 @@ Set cn2= Server.CreateObject("ADODB.Connection")
 Set rs2= Server.CreateObject("ADODB.Recordset")
 cn2.open strDB
 
-'Call setupCategories(NULL) 
-
-'Generate pretty URL's whils we are here too...
+'Generate pretty URL's while we are here too...
 Call CreatePrettyURLFiles(cn, rs)
+
+Response.end
 
 'Add surplus pages to site map
 Call AddURL("default.asp", 	"1",   "daily")

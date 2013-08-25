@@ -357,7 +357,7 @@ Class CProduct
 			If NOT rs.EOF Then
 				m_blnGotSubCats = True
 				i=0
-				%><div class="row"><%
+				%><div class="row collapse"><%
 				WHILE NOT rs.EOF
 					i=i+1
 					%><div class="large-4 column small-6" style="padding-bottom:25px;"><A href="<%=Server.URLEncode(strOutDB(rs("url")))%>.asp" style="font-weight: 400; font-size: 130%">

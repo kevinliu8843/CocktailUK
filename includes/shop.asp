@@ -69,7 +69,7 @@ Private Sub SetupCategories(cnc, rsc)
 	' Turn on drink category
 	cnc.execute("UPDATE DScategory SET hidden=0 WHERE ID=562")
 
-	strSQL = "SELECT name, URL, ID, name as alt, parentID from dscategory WHERE hidden=0 AND url NOT LIKE 'admin%' ORDER by catorder"
+	strSQL = "SELECT name, name, ID, name as alt, parentID from dscategory WHERE hidden=0 AND url NOT LIKE 'admin%' ORDER by catorder"
 	rsc.Open strSQL, cnc
 	
 	strCatLeft = ""

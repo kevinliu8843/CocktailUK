@@ -322,7 +322,7 @@ Class CProduct
 		Dim iPageCurrent, iPageCount, iRecordsShown, iPageSize, intCurrentProduct, intTotalProducts
 		Dim dblPrice, strAffCaption, strQuery, blnCollectionOnly, blnOutOfStock, strSdesc, blnSubCats
 		Dim dteDueIn, blnPreorder
-		
+		respomse.write m_intCategory
 		If m_intCategory > 0 Then	
 			strSQL = "DS_DISPLAYPRODUCTS @catID=" & m_intCategory
 			

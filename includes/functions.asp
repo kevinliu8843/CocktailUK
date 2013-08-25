@@ -414,6 +414,7 @@ Sub CreatePrettyURLFiles(cn, rs)
 		rs.MoveNext
 	Wend
 	rs.close
+	respomse.write strFile
 	Call SaveTextFile(Server.MapPath("/categories.txt"), strFile)
 	
 	Call SaveTextFile(Server.MapPath("/.htaccess"), strHTAccess)

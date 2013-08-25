@@ -65,78 +65,6 @@ aryIndexes(23) = "CREATE INDEX [IX_barproduct] ON [dbo].[barproduct]([status], [
 aryIndexes(24) = "CREATE INDEX [IX_barproductver] ON [dbo].[barproductver]([prodID], [status], [price], [prodverorder]) WITH  FILLFACTOR = 90 ON [PRIMARY]"
 aryIndexes(25) = "CREATE INDEX [IX_barrawproductver] ON [dbo].[barrawproductver]([prodverID], [rawprodID], [quantity], [rawprodorder]) WITH  FILLFACTOR = 90 ON [PRIMARY]"
 
-Sub SetAffiliateAct(strAffiliate, rs, cn, m_blnAffMode)
-	Dim strProdVerList ,strPriceList
-	If session("affid") <> strAffiliate Then
-		'Check validity of affiliate ID
-		strSQL = "SELECT Top 1 * FROM dsaffiliatelist WHERE status=1 AND affID=" & strAffiliate
-		rs.open strSQL, cn
-		If NOT rs.EOF Then
-			'Session("showaffcategory")	= CBool(rs("showcategory"))
-			Session("trueaffid")		= rs("id")
-			Session("affid") 			= strAffiliate
-			'Session("affSiteName") 		= rs("sitename")
-			'Session("affSiteURL")  		= Trim(rs("siteurl"))
-			'Session("affSiteLogoURL")  	= Trim(rs("sitelogourl"))
-			'Session("affCatText")  		= Trim(rs("categorytext"))
-			'Session("affPageText") 		= Trim(rs("pagetext"))
-			Response.Cookies("DSaff")("ID") = strAffiliate
-			Response.cookies("DSaff").Expires = #Dec 31, 2015#
-			m_blnAffMode = True
-			rs.close
-			
-			'Set up prodvers in a session var as a comma seperated string
-			rs.open "SELECT prodverID, specialprice from jointaffiliate WHERE affID="&Session("trueaffid"), cn, 0, 3
-			WHILE NOT rs.EOF
-				If rs("specialprice") <> "" Then
-					strProdVerList = strProdVerList & rs("prodverID") & ","
-					strPriceList = strPriceList & rs("specialprice") & ","
-				End If
-				rs.MoveNext
-			WEND
-			rs.close
-			'response.write strProdVerList
-			If strProdVerList <> "" Then
-				Session("affprodver") = strProdVerList
-				Session("affprice")   = strPriceList
-			End If
-		Else
-			rs.close
-			Session("affprodver") = ""
-			Session("affprice")   = ""
-			m_blnAffMode = False
-			Session("affID") = ""
-		End If
-	End If
-End Sub
-
-Function CheckUpdateShop()
-	Dim dteUpdated, cn, rs
-
-	Exit Function
-
-	If Session("checkShop") Then
-		Set cn = Server.CreateObject("ADODB.Connection")
-		Set rs = Server.CreateObject("ADODB.Recordset")
-		cn.open strDBMod
-		rs.open "SELECT dteshopupdated from dsshopupdate", cn, 0, 3
-		dteUpdated = rs(0)
-		rs.close
-		Set rs = nothing
-		Session("checkShop") = False
-		If DateDiff("s", dteUpdated, Now) > 60*60*24 Then
-			CheckUpdateShop = True
-			cn.execute("UPDATE dsshopupdate set dteshopupdated='"&Day(Now) & "-" & MonthName(Month(Now)) & "-" & Year(Now)+10 &" 05:30:00'")
-		Else
-			CheckUpdateShop = False
-		End If
-		cn.close
-		Set cn = nothing
-	Else
-		CheckUpdateShop = False
-	End If
-End Function
-
 Private Sub setupCategories(fcuk)
 	'On Error Resume Next
 	Dim strFontColour, strURL, f, fso, strCat, rsc, cnc, strCatOpt, strCatWap, strCatLeft
@@ -164,7 +92,6 @@ Private Sub setupCategories(fcuk)
 	
 		ReadAllCatFile = Replace(ReadAllCatFile, "##CAT##", rsc("ID") & "")
 		
-		Set newCatFile = fso.CreateTextFile(Server.MapPath("/shop/products/") & "/" & Replace(Trim(rsc("url")), " ", "_") & ".asp", True)
 		newCatFile.writeline(ReadAllCatFile)
 		newCatFile.close
 		Set newCatFile = nothing
@@ -178,7 +105,7 @@ Private Sub setupCategories(fcuk)
 	strCatOpt = strCatOpt & "<OPTION value=""default.asp"">Select a department...</OPTION>"
 	While NOT rsc.EOF 
 		If rsc("parentID") = 0 Then
-			strCatOpt = strCatOpt & "<OPTION value=""products/"&Trim(rsc("URL"))&".asp"""
+			strCatOpt = strCatOpt & "<OPTION value=""shop/"&Trim(rsc("URL"))&"/"""
 			strCatOpt = strCatOpt & "<"&"%If InStr(strScriptName,""" & Trim(rsc("URL")) & """) > 0 Then %"&"> SELECTED <"&"%End if%"&">"
 			strCatOpt = strCatOpt & ">"&Trim(rsc("name"))&"</OPTION>" & VbCrLf
 		End If

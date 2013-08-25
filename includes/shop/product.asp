@@ -97,7 +97,6 @@ Class CProduct
 	End Sub
 	
 	Public Sub SetAffiliate(strAffiliate)
-		Call SetAffiliateAct(strAffiliate, rs, cn, m_blnAffMode)
 		m_blnValidAffiliate = m_blnAffMode
 		m_blnDisplayAffProducts = Session("showaffcategory")
 	End Sub
@@ -322,7 +321,7 @@ Class CProduct
 		Dim iPageCurrent, iPageCount, iRecordsShown, iPageSize, intCurrentProduct, intTotalProducts
 		Dim dblPrice, strAffCaption, strQuery, blnCollectionOnly, blnOutOfStock, strSdesc, blnSubCats
 		Dim dteDueIn, blnPreorder
-		response.write m_intCategory
+		
 		If m_intCategory > 0 Then	
 			strSQL = "DS_DISPLAYPRODUCTS @catID=" & m_intCategory
 			

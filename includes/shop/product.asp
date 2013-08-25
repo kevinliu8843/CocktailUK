@@ -329,11 +329,6 @@ Class CProduct
 			strSQL = "DS_DISPLAYPRODUCTS @catID=" & m_intCategory
 			blnSubCats = True
 			
-			If m_blnDisplayAffProducts Then
-				strSQL = "DS_GETAFFILIATEPRODUCTS @affID=" & Session("trueaffid") & ", @imgSize=0"
-				blnSubCats = False
-			End If
-			
 			If Request.QueryString("page") = "" OR NOT IsNumeric(Request.QueryString("page")) Then
 				iPageCurrent = 1
 			ElseIf IsNumeric(Request.QueryString("page")) Then
@@ -351,10 +346,6 @@ Class CProduct
 			If m_blnOnlyProduct Then
 				strSQL = "DS_ONLYPRODUCT @ID=" & m_intProduct & ", @imgSize=0"
 				blnSubCats = False
-			End If
-
-			If Request("printsql") = "true" Then
-				response.write strSQL
 			End If
 
 			rs.open strSQL, cn
@@ -408,11 +399,12 @@ Class CProduct
 				Exit Sub
 			End If
 			
-			If Request("added") <> "" Then
-				response.write ("<p align=""center""><b><U><FONT color=""#FF0000"">Product added to your basket</FONT></U></b></p>")
-			End If
-			
-			intCurrentProduct = 0 
+			intCurrentProduct = 0
+
+			If m_strCatHeader <> "" And m_strCatHeader <> "<p>&nbsp;</p>" And iPageCurrent = 1 And i=0 Then
+			   %><div align="justify" style="padding:5px;"><%=m_strCatHeader%></div><%
+			End if
+
 			For i=0 to UBound(aryRows,2)
 							
 				If i < UBound(aryRows,2) then
@@ -421,192 +413,21 @@ Class CProduct
 					intNextID = 0 
 				End If
 				
-				blnDrawBottomTable = (intNextID <> aryRows(0,i))
-				
-				If NOT blnDoOption Then
-					blnDoOption = (intNextID = aryRows(0,i))
-				End If
-				
-				If blnDrawBottomTable Then
-					intTotalProducts = intTotalProducts + 1				
-				End If
-
-				If intCurrentProduct >= (iPageCurrent-1)*m_pageSize AND intCurrentProduct < iPageCurrent*m_pageSize then
-					If i=0 OR blnDrawTopTable Then
-						If NOT m_blnWAP AND NOT m_blnMobile Then
-							%>
-							<%If m_strCatHeader <> "" And m_strCatHeader <> "<p>&nbsp;</p>" And iPageCurrent = 1 And i=0 And NOT m_blnWap AND NOT m_blnMobile Then%>
-							   <div align="justify" style="padding:5px;"><%=m_strCatHeader%></div>
-							<%End if%>
-							<FORM method="GET" action="/shop/basket.asp" name="add<%=aryRows(0,i)%>" onSubmit="return <%if blnCollectionOnly AND NOT Session("admin") Then%>collectionOnly<%Else%>checkAdd<%End If%><%If blnDoOption Then%>option<%End If%>(this.quantity.value,'<%=Replace(Replace(strOutDB(aryRows(1,i)),"'","\'"),"""", "\'")%>'<%If blnDoOption Then%>,this.prodverID<%End If%>)">
-							<TABLE border="0" cellpadding="0" style="border-collapse: collapse; border-left-width:0; border-right-width:0; border-top-width:0; border-bottom-style:solid; border-bottom-width:1px" bordercolor="#636388" width="100%">
-							  <TR>
-							    <TD width="110" align="center" valign="top" rowspan="2">
-							    <img border="0" src="../../images/pixel.gif" width="10" height="10"><br>
-							    <A href="/shop/products/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm" title="<%=strOutDB(aryRows(1,i))%>"><IMG border="0" src="http://www.drinkstuff.com/productimg/<%=strOutDB(aryRows(3,i))%>.<%=strOutDB(aryRows(2,i))%>"></A>
-							      <%If IsDate(aryRows(7,i)) Then
-							      If DateDiff("d", CDate(aryRows(7,i)), Now()) <= m_dteNewProductFor Then%>
-							      <br>New in <%=StripThisYear(MediumDate(aryRows(7,i)))%>
-							      <%End If%>
-							      <%End If%>
-							    </TD>
-							     <TD align="left" valign="top">
-							    <TABLE width="100%" border="0" align="right" cellpadding="5" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
-							      <TR>
-							        <TD valign="top">
-							        <p style="font-size: normal;"><FONT color="#636388" size="3"><b><A href="/shop/products/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm"><%=strOutDB(aryRows(1,i))%></a></b></FONT></p>
-							        </TD>
-							      </TR>
-							      <TR>
-							        <TD>
-							        <p></p>
-							        <p align="justify"><%=ChangeMacros(strOutDB(aryRows(9,i)))%></p>
-							        </TD>
-							      </TR>
-							      <TR>
-							        <TD class="codeno">
-							        <TABLE border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber3">
-							          <TR>
-							            <TD>
-										<a style="font-weight:700" href="http://www.awin1.com/awclick.php?gid=73406&mid=8&awinaffid=176043&linkid=101500&clickref=&p=<%=Server.URLEncode("http://www.drinkstuff.com/products/affiliate.asp?affID=987654321&prodID="&aryRows(0,i))%>">
-										<font size="2" color="#636388">More details</font></a><img border="0" src="/images/shop/more.gif" align="middle" hspace="3"></TD>
-							          </TR>
-							        </TABLE>
-							        </TD>
-							      </TR>
-							    </TABLE>
-							    </TD>
-							  </TR>
-							  <TR>
-							    <TD valign="bottom" align="right">
-							    <%blnCollectionOnly = IsCollectionOnly(cn, rs, aryRows(0,i))%>
-							      <TABLE border="0" cellpadding="4" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1" class="shopgrad">
-							        <TR>
-							          <TD valign="top">
-							          <p align="right">
-										<%Else%>
-											<p><a href="/wap/shop/product.asp?ID=<%=aryRows(0,i)%>"><%=Server.HTMLEncode(strOutDB(aryRows(1,i)))%></a></p>
-							          	<%End If%>
-							          <%End If%>
-							          <%
-							          Call GetProductVerPriceCat(aryRows, i, False, dblPrice, strAffCaption)
-							          dblPrice = FormatNumber(dblPrice,2)
-							          If NOT blnDoOption Then
-							          	strAffCaption = ""
-							          Else
-							          	strAffCaption = ""
-							          End If
-							          If m_blnAffMode Then
-							          	If IsAffOffer(aryRows(6,i), dblPrice) Then
-							          		If NOT blnDoOption Then
-								          		strAffCaption = "" '"<FONT color=red>" & Session("affSiteName") & " price <STRIKE>"&FormatNumber(aryRows(5,i),2)&"</STRIKE></FONT>"
-								          	Else
-								          		strAffCaption = "" ' Session("affSiteName") & " price"
-								          	End If
-							          	End If
-							          End If
-							          'rs.open "DS_GETRAWPRODDETAILS @prodverID="&aryRows(6,i), cn, 0, 3
-							          'If NOT rs.EOF Then
-							          '          intStock = rs("stock")
-							          '          dteDueIn = rs("dateduein")
-							          '          If rs("stock") <= 0 AND rs("preorder") Then
-							          '                    blnPreOrder = True
-							          '          Else
-							          '                    blnPreOrder = False
-							          '          End If
-							          '          If rs("stockstatus") <> PRODUCT_STOCK Then
-							          '              intStock = 9999
-							          '          End If
-							          'Else
-							                    intStock = 9999
-							          'End If
-							          'rs.close
-							          If NOT IsNumeric(intStock) Then
-											intStock = 0
-							          End If
-							
-							          If NOT m_blnWAP AND NOT m_blnMobile Then
-							          %>         
-							 			<%If blnDoOption Then%>
-											<%If i=0 OR blnDrawTopTable Then%>
-												<SELECT size="1" name="prodverID" style="border:1px solid #90A6CB; color: #336699; font-size:8pt; width:100%; height: 22px; margin-bottom: 4px;">
-												<OPTION value="-1">Click here for prices...</OPTION>
-											<%End If%>
-											
-											<OPTION value="<%=aryRows(6,i)%>"><%If Trim(aryRows(5,i)) <> "" Then%><%=strOutDB(aryRows(5,i))%><%Else%>Default<%End If%> 
-											- <%=strAffCaption%> &pound;<%=FormatNumber(dblPrice, 2)%><%If intStock <= 0 then%> 
-											Out Of Stock<%blnOutOfStock = True%><%If blnPreOrder Then%> - Pre Order Now<%If dteDueIn <> "" Then%> Due <%=StripthisYear(mediumdate(dteDueIn))%><%End if%><%End If%><%End If%></OPTION>
-							          		
-							          		<%If i=UBound(aryRows,2) OR blnDrawBottomTable Then%>
-							          			</SELECT>
-							          		<%End if%>
-							          	<%Else%>
-							          		<span class=price><%=strAffCaption%>
-											&pound;<%=FormatNumber(dblPrice,2)%></span><%If Trim(aryRows(5,i)) <> "" Then%>
-											(<%=Replace(strOutDB(aryRows(5,i)), "?", "")%>)
-								          	<%End If%>
-								          	<div style="clear: both; text-align: right">
-								          	<FONT size="1">
-								          	<%If blnCollectionOnly Then%>
-								          		(Collection only) 
-								          	<%End If%>
-								          	<%If intStock > 0 then%>
-								          		<IMG border="0" src="/images/shop/gotstock.gif"> In Stock &amp; Available For <a href="/shop/delivery.asp">Immediate Dispatch</a>
-								          	<%Else%>
-								          		<%blnOutOfStock = True%><IMG border="0" src="/images/shop/gotnostock.gif"> 
-											Out of Stock
-											<%If blnPreOrder Then%> - Pre Order Now<%End If%>
-											<%If dteDueIn <> "" Then%> - Est. due in <%=mediumdate(dteDueIn)%><%End if%>
-								          	<%End If%>
-								          	</FONT></div>
-							          <%End If%> 
-							          <%If i=UBound(aryRows,2) OR blnDrawBottomTable Then%> 
-							          <%If blnDoOption then%>
-							               <div style="clear: both; text-align: right"><FONT size="1">
-							               <%If blnOutOfStock then%>
-							                  <IMG border="0" src="/images/shop/gotstock.gif"> Some Items 
-										Out Of Stock - Check List Above..
-							               <%Else%>
-							                  <IMG border="0" src="/images/shop/gotstock.gif"> All Items In 
-										Stock &amp; Available For <a href="/shop/delivery.asp">Immediate Dispatch</a>
-							               <%End If%>
-							               </font>
-							               </div>
-							          <%End If%>
-							          <%if blnOutOfStock Then%>
-							               <div style="clear: both; text-align: right"><FONT size="1">
-							          		<A href="http://www.awin1.com/awclick.php?gid=73406&mid=8&awinaffid=176043&linkid=101500&clickref=&p=<%=Server.URLEncode("http://www.drinkstuff.com/products/affiliate.asp?affID=987654321&prodID="&aryRows(0,i))%>">Email me when back in stock</A>
-							          	   </div>
-							          <%End If%>
-							          </TD> 
-							          <TD width="75" valign="top" nowrap>
-									 <p align="right">
-							         <INPUT maxLength="3" size="4" value="1" name="quantity" style="width: 40px;" class="shopoption"><a href="http://www.awin1.com/awclick.php?gid=73406&mid=8&awinaffid=176043&linkid=101500&clickref=&p=<%=Server.URLEncode("http://www.drinkstuff.com/products/affiliate.asp?affID=987654321&prodID="&aryRows(0,i))%>"><img border="0" src="../../images/template/buy_pink.gif" align="absmiddle" name="I2" width="28" height="22"></a>&nbsp;
-							         <%If NOT blnDoOption Then%>
-									 	<INPUT type="hidden" name="prodverID" value="<%=aryRows(6,i)%>">
-									 <%End If%>
-							          </TD>
-							        </TR>
-							      </TABLE>
-							    </TD>
-							  </TR>
-							  <%If NOT m_blnOnlyProduct Then%>
-								  <%End If%>
-							</TABLE>
-							</FORM>
-							<%
-						End If
-					End if
+				If intCurrentProduct >= (iPageCurrent-1)*m_pageSize AND intCurrentProduct < iPageCurrent*m_pageSize Then
+					%>
+					<div class="row">
+					    <div class="large-3">
+						    <A href="/shop/products/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm" title="<%=strOutDB(aryRows(1,i))%>"><IMG border="0" src="http://www.drinkstuff.com/productimg/<%=strOutDB(aryRows(3,i))%>.<%=strOutDB(aryRows(2,i))%>"></A>
+						</div>
+						<div class="large-9">
+					        <h4><A href="/shop/products/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm"><%=strOutDB(aryRows(1,i))%></a></h4>
+					        <p><%=ChangeMacros(strOutDB(aryRows(9,i)))%></p>
+					    </div>
+					</div>
+					<%
 				End If
 				
 				intPrevID = aryRows(0,i)
-				blnDrawTopTable    = (intNextID <> aryRows(0,i))
-				If blnDoOption Then
-					blnDoOption = NOT blnDrawTopTable
-				End If
-				If blnDrawTopTable Then
-					blnOutOfStock = False
-				End If
 				If blnDrawBottomTable OR i >= UBound(aryRows,2) Then
 					intCurrentProduct = intCurrentProduct + 1
 				End If

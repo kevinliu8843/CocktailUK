@@ -75,7 +75,7 @@ Private Sub SetupCategories(cnc, rsc)
 	strCatLeft = ""
 	While NOT rsc.EOF 
 		If rsc("parentID") = 0 then
-			strCatLeft	= strCatLeft& "<div class=""item""><A href=""/shop/"&GeneratePrettyURL(rsc("name"))&"/"" title="""&rsc("alt")&""">"&Trim(Capitalise(LCase(rsc("name"))))&"</A></div>" & VbCrLf
+			strCatLeft	= strCatLeft& "<div class=""item""><A href=""/shop/"&GeneratePrettyURL(rsc("URL"))&"/"" title="""&rsc("alt")&""">"&Trim(Capitalise(LCase(rsc("name"))))&"</A></div>" & VbCrLf
 		End If
 		rsc.MoveNext
 	wend

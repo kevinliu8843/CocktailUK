@@ -409,9 +409,9 @@ Sub CreatePrettyURLFiles(cn, rs)
 	Call SaveTextFile(Server.MapPath("/products.txt"), strFile)
 	
 	strFile = ""
-	rs.open "SELECT ID, name FROM DScategory WHERE hidden=0 ORDER BY ID", cn
+	rs.open "SELECT ID, url FROM DScategory WHERE hidden=0 ORDER BY ID", cn
 	While NOT rs.EOF
-		strFile  = strFile & GeneratePrettyURL(strOutDB(rs("name"))) & VbTab & rs("ID") & VbCrLf
+		strFile  = strFile & GeneratePrettyURL(strOutDB(rs("url"))) & VbTab & rs("ID") & VbCrLf
 		rs.MoveNext
 	Wend
 	rs.close

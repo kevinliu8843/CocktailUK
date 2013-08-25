@@ -1,5 +1,4 @@
-﻿<!--#include virtual="/includes/shop/currency.asp" -->
-<%
+﻿<%
 Function stripHTML(strHTML)
 'Strips the HTML tags from strHTML
 

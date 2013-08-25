@@ -17,11 +17,9 @@ strMainTitle = objProd.DisplayTitle
 strMetaKeywords = objProd.GetCategoryKeywords
 %>
 <!--#include virtual="/includes/header.asp" -->
-<!--#include virtual="/includes/shop/header.asp" -->
 <H2 style="margin-bottom: 1em;"><%=strMainTitle%></h2>
 <!--Display the products-->
 <%objProd.DisplayProducts%>  
 <!--End products-->
 <%Set objProd = Nothing%>
-<!--#include virtual="/includes/shop/footer.asp" -->
 <!--#include virtual="/includes/footer.asp" -->

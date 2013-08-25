@@ -31,7 +31,6 @@ If intID <> "" AND IsNumeric(intID) Then
 	strAlsoBought = "" 'GetAlsoBought(intID, objProd.m_strProductName)
 	%>
 	<!--#include virtual="/includes/header.asp" -->
-	<!--#include virtual="/includes/shop/header.asp" -->
     <h2><%=objProd.m_strProductName%></h2>
     <%objProd.DisplayProduct()%>
     <%=strAlsoBought%>    
@@ -40,5 +39,4 @@ If intID <> "" AND IsNumeric(intID) Then
 Else
 	Response.Redirect("/")
 End If%>
-<!--#include virtual="/includes/shop/footer.asp" -->
 <!--#include virtual="/includes/footer.asp" -->

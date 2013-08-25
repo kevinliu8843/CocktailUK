@@ -5,7 +5,6 @@ strTitle = "Cocktail bar accessories shop > Bar Accessories Home Bar Equipment H
 <!--#include virtual="/includes/variables.asp" -->
 <!--#include virtual="/includes/functions.asp" -->
 <!--#include virtual="/includes/header.asp" -->
-<!--#include virtual="/includes/shop/header.asp" -->
 <h2>Welcome to our bar accessories shop</h2>
 <p align="justify" style="padding: 5px;">Hello, and welcome to the Cocktail : UK shop, a premium cocktail and bar equipment 
 supplier to the UK and Europe. We provide high quality, value for money 

@@ -1257,11 +1257,9 @@
     <Content Include="includes\lhs_cocktail.asp" />
     <Content Include="includes\rating.asp" />
     <Content Include="includes\shop.asp" />
-    <Content Include="includes\shop\currency.asp" />
     <Content Include="includes\shop\footer.asp" />
     <Content Include="includes\shop\functions.asp" />
     <Content Include="includes\shop\header.asp" />
-    <Content Include="includes\shop\homepage.asp" />
     <Content Include="includes\shop\product.asp" />
     <Content Include="includes\shop\template.asp" />
     <Content Include="includes\variables.asp" />

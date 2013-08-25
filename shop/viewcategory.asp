@@ -13,10 +13,8 @@ Set objProd = New CProduct
 objProd.SetCategory(intCategory)
 strTitleAppend = objProd.DisplayTopTitle
 strTitle = objProd.DisplayTitle
-strMainTitle = "<H3>" & objProd.DisplayTitle & "</H3>"
+strMainTitle = objProd.DisplayTitle
 strMetaKeywords = objProd.GetCategoryKeywords
-strNoScript = objProd.GetNoScript
-Call objProd.GetBanner(strBannerTargetCat, strBannerURLCat, strBannerImageSrcCat)
 %>
 <!--#include virtual="/includes/header.asp" -->
 <!--#include virtual="/includes/shop/header.asp" -->

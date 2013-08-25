@@ -30,6 +30,12 @@ If strURL <> "" Then
 	Call Do301Redirect(strURL)
 End If
 
+If Request("delete") <> "" AND session("admin") Then
+  cn.execute("UPDATE Cocktail SET status=0 WHERE ID=" & Request("delete"))
+  cn.close
+  Response.redirect(Request("back"))
+End If
+
 intMaxReviews = Request("reviews")
 If intMaxReviews = "" OR NOT IsNumeric(intMaxReviews) Then
 	intMaxReviews = 10
@@ -78,7 +84,7 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
 <h1><%=Capitalise(aryDrink(0)) & " " & Capitalise(aryDrink(7)) & " Recipe"%>
 <%If Session("admin") Then%>
   <a target="_top" href="/admin/default.asp?goto=cocktaileditor/default.asp?ID=<%=intID%>" style="font-size: 16px;">Edit</a>
-  <a target="_top" href="?delete=<%=intID%>" style="font-size: 16px;" onclick="return(confirm('Are yo sure you wish to delete this cocktail?'))">Delete</a>
+  <a target="_top" href="?delete=<%=intID%>&back=<%=Request.ServerVariables("HTTP_REFERER")%>" style="font-size: 16px;" onclick="return(confirm('Are yo sure you wish to delete this cocktail?'))">Delete</a>
 <%End If%>
 </h1>
 

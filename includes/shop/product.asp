@@ -390,7 +390,7 @@ Class CProduct
 						</div>
 						<div class="small-9 column">
 					        <h4><A href="/shop/products/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm"><%=strOutDB(aryRows(1,i))%></a></h4>
-					        <p><%=ChangeMacros(strOutDB(aryRows(9,i)))%> [<a href="/shop/products/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm">[more...]</a></p>
+					        <p><%=ChangeMacros(strOutDB(aryRows(9,i)))%> <a href="/shop/products/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm">[more...]</a></p>
 					    </div>
 					</div>
 					<%

@@ -351,9 +351,9 @@ Class CProduct
 
 			If UBound(aryRows,2) >= 0 then
 				%>
-				<div class="row collapse">
+				<div class="row collapse" style="padding-bottom: 2em;">
 					<div class="large-6 small-12 column">
-						<img src="http://www.drinkstuff.com/productimg/<%=aryRows(4,0)%>.<%=Trim(aryRows(5,0))%>" style="max-width: 95%; width: 95%;">
+						<img src="http://www.drinkstuff.com/productimg/<%=aryRows(4,0)%>.<%=Trim(aryRows(5,0))%>" style="max-width: 100%;">
 					</div>
 					<div class="large-6 small-12 column">
 						<p>
@@ -364,9 +364,9 @@ Class CProduct
 						Response.Write ChangeMacros(strOutDB(aryRows(7,0)))
 						%>
 						</p>
+						<p><a href="http://www.awin1.com/awclick.php?mid=3&id=176043&prodid=<%=aryRows(0,0)%>" class="large button expand">View &amp; buy at Drinkstuff.com</a></p>
 					</div>
 				</div>
-				<p align="center"><img src="/img/"></p>
 				<%
 			End If
 		End If

@@ -1244,12 +1244,10 @@
     <Content Include="images\wap\sex\7.gif" />
     <Content Include="images\wap\sex\8.gif" />
     <Content Include="images\wap\sex\9.gif" />
-    <Content Include="images\wap\sex\mobiporn_spacer_banner_220.gif" />
     <Content Include="images\warning.gif" />
     <Content Include="images\welcomeTo.gif" />
     <Content Include="images\welcomeToThe.gif" />
     <Content Include="images\white.gif" />
-    <Content Include="includes\classes\clsSiteMap.asp" />
     <Content Include="includes\cocktail_functions.asp" />
     <Content Include="includes\default.asp" />
     <Content Include="includes\errors.asp" />

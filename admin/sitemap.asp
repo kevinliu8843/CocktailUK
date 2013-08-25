@@ -1,6 +1,6 @@
 ﻿<!--#include virtual="/includes/variables.asp" -->
 <!--#include virtual="/includes/functions.asp" -->
-<!--#include virtual="/includes/classes/clsSiteMap.asp" -->
+<!--#include file="clsSiteMap.asp" -->
 <%
 Server.ScriptTimeout = 10 * 60
 

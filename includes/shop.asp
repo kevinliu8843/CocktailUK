@@ -80,6 +80,7 @@ Private Sub SetupCategories(cnc, rsc)
 		If rsc("parentID") = 0 then
 			strCatLeft	= strCatLeft& "<div class=""item""><A href=""/shop/"&Trim(rsc("URL"))&"/"" title="""&rsc("alt")&""" class=""linksin"">"&Left(Trim(Capitalise(LCase(rsc("name")))), 20)&"</A></div>" & VbCrLf
 		End If
+		rsc.MoveNext
 	wend
 
 	Call SaveTextFile(Server.MapPath("/includes/shop/categoriesleft.asp"), strCatLeft)

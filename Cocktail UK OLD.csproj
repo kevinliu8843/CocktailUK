@@ -1267,7 +1267,6 @@
     <Content Include="includes\shop\currency.asp" />
     <Content Include="includes\shop\footer.asp" />
     <Content Include="includes\shop\functions.asp" />
-    <Content Include="includes\shop\genhomepage.asp" />
     <Content Include="includes\shop\header.asp" />
     <Content Include="includes\shop\homepage.asp" />
     <Content Include="includes\shop\product.asp" />

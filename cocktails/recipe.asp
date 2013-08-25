@@ -77,7 +77,8 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
 
 <h1><%=Capitalise(aryDrink(0)) & " " & Capitalise(aryDrink(7)) & " Recipe"%>
 <%If Session("admin") Then%>
-  <a target="_top" class="linksin" href="/admin/default.asp?goto=cocktaileditor/default.asp?ID=<%=intID%>">Edit</a>
+  <a target="_top" href="/admin/default.asp?goto=cocktaileditor/default.asp?ID=<%=intID%>" style="font-size: 16px;">Edit</a>
+  <a target="_top" href="?delete=<%=intID%>" style="font-size: 16px;" onclick="return(confirm('Are yo sure you wish to delete this cocktail?'))">Delete</a>
 <%End If%>
 </h1>
 

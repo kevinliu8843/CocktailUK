@@ -323,7 +323,6 @@ Class CProduct
 		Dim dblPrice, strAffCaption, strQuery, blnCollectionOnly, blnOutOfStock, strSdesc, blnSubCats
 		Dim dteDueIn, blnPreorder
 		
-		blnOutOfStock = False
 		If m_intCategory > 0 OR m_searchQuery <> "" OR m_blnDisplayAffProducts OR m_blnOnlyProduct then	
 			strSQL = "DS_DISPLAYPRODUCTS @catID=" & m_intCategory
 			blnSubCats = True
@@ -336,17 +335,6 @@ Class CProduct
 			
 			If iPageCurrent < 1 Then iPageCurrent = 1
 			
-			If m_searchQuery <> "" Then
-				strQuery = LCase(Trim(m_searchQuery))
-				strSQL = "DS_PRODUCTSEARCH @strSearch='" & strQuery & "', @page=" & iPageCurrent & ", @site=1"
-				blnSubCats = False
-			End If
-
-			If m_blnOnlyProduct Then
-				strSQL = "DS_ONLYPRODUCT @ID=" & m_intProduct & ", @imgSize=0"
-				blnSubCats = False
-			End If
-
 			rs.open strSQL, cn
 			' Retrieve page to show or default to 1
 						
@@ -360,23 +348,16 @@ Class CProduct
 			If blnSubCats Then
 				rs.open "DS_GETPARENTCAT @catID="&m_intCategory, cn
 				If NOT rs.EOF Then
-					If NOT m_blnWap AND NOT m_blnMobile Then
-						%>
-						<P style="margin: 5px;"><b><a href="<%=strOutDB(rs("url"))%>.asp" style="text-decoration: none;">
-						&laquo; Back To <span style="text-decoration: underline;"><%=strOutDB(rs("name"))%></span></a></b></p>
-						<%
-					Else
-						%>
-						<p><a href="category.asp?ID=<%=rs("id")%>" style="text-decoration: none;">Back to <span style="text-decoration: underline;"><%=strOutDB(rs("name"))%></span></a></p>
-						<p>&nbsp;</p>
-						<%
-					End If
+					%>
+					<P style="margin: 5px;"><b><a href="<%=strOutDB(rs("url"))%>.asp" style="text-decoration: none;">
+					&laquo; Back To <span style="text-decoration: underline;"><%=strOutDB(rs("name"))%></span></a></b></p>
+					<%
 				End If
 				rs.close
 				
 				Call DisplaySubCategories()
 				
-				If m_blnGotSubCats AND UBound(aryRows,1) > 0 AND NOT m_blnWap AND NOT m_blnMobile Then
+				If m_blnGotSubCats AND UBound(aryRows,1) > 0 Then
 					%>
 					<BR><TABLE border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
 					  <TR>
@@ -390,11 +371,7 @@ Class CProduct
 			End If
 
 			If UBound(aryRows,1) <= 0 Then
-				If m_searchQuery = "" Then
-					Call DisplayNoResults(0)
-				Else
-					Call DisplayNoResults(2)
-				End If
+				Call DisplayNoResults(0)
 				Exit Sub
 			End If
 			
@@ -895,41 +872,21 @@ Class CProduct
 		Dim i, fso
 		Set fso = Server.CreateObject("Scripting.FileSystemObject")
 		strSQL = "DS_GETSUBCATS @catID="&m_intCategory
-		rs.open strSQL, cn, 0, 3
+		rs.open strSQL, cn
 		If NOT rs.EOF Then
 			m_blnGotSubCats = True
-			If NOT m_blnWAP AND NOT m_blnMobile Then
-				%>
-					<TABLE cellSpacing="2" cellPadding="2" style="border-collapse: collapse" border="0" align="center" width="100%">
-					<TR height="20"><TD colspan=3 valign="top" style="padding-bottom: 20px; font-size: 120%">Please select one of the following sub-categories...</TD></TR>
-				<%
-				i=0
-				WHILE NOT rs.EOF
-					i=i+1
-					If i=1 Then 
-						response.write "<TR>"
-					End If 
-					response.write "<TD valign=top align=center style=""width: 33%; padding-bottom:25px;""><A href="""&Server.URLEncode(strOutDB(rs("url")))&".asp"" style=""font-weight: 400; font-size: 130%"">"
-					Call GetSubCategoryImage(rs("ID"))
-					response.write strOutDB(rs("name")) & "&nbsp;&raquo;</A></TD>"
-					If i=3 Then
-						response.write "</TR>"
-						i=0
-					End If
-					rs.movenext
-				Wend
-				%>
-				</TABLE>
-				<%
-			Else
-				Response.write ("<p>")
-				WHILE NOT rs.EOF
-					response.write "<a href=""/wap/shop/category.asp?ID="&strOutDB(rs("id"))&""">"
-					response.write strOutDB(rs("name")) & "</a><br/>"
-					rs.movenext
-				Wend
-				Response.write ("</p>")
-			End If
+			i=0
+			%><div class="row"><%
+			WHILE NOT rs.EOF
+				i=i+1
+				response.write "<div class=""large-4"" style=""padding-bottom:25px;""><A href="""&Server.URLEncode(strOutDB(rs("url")))&".asp"" style=""font-weight: 400; font-size: 130%"">"
+				Call GetSubCategoryImage(rs("ID"))
+				response.write strOutDB(rs("name")) & "&nbsp;&raquo;</A></div>"
+				rs.movenext
+			Wend
+			%>
+			</div>
+			<%
 		End If
 		rs.close
 		Set fso = nothing

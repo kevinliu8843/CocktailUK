@@ -503,7 +503,7 @@ Class CProduct
 						strBackURL = Replace(strBackURL, "added=true", "added=")
 					End If
 				End If
-				blnCollectionOnly = IsCollectionOnly(cn, rs, Min(CDbl(m_intProduct),99999))
+				blnCollectionOnly = False
 				
 				'Find out max price
 				dblMaxPrice = 0

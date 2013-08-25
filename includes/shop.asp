@@ -1,11 +1,8 @@
 ﻿<%
-Dim arySQLTables(24), aryIndexes(25), strDrinkstuffServer, strSQLPrefix, dblUVATRate
+Dim arySQLTables(24), aryIndexes(25), strSQLPrefix, dblUVATRate
 CONST SITE_ID = 1
 strSQLPrefix = "DS"
 dblUVATRate = 20
-
-strDrinkstuffServer = "89.200.141.23"
-strDrinkstuffServer = "admin.drinkstuff.com"
 
 arySQLTables(0)  = "jointrawproduct"
 arySQLTables(1)  = "jointaffiliate"
@@ -78,7 +75,7 @@ Private Sub SetupCategories(cnc, rsc)
 	strCatLeft = ""
 	While NOT rsc.EOF 
 		If rsc("parentID") = 0 then
-			strCatLeft	= strCatLeft& "<div class=""item""><A href=""/shop/"&Trim(rsc("URL"))&"/"" title="""&rsc("alt")&""" class=""linksin"">"&Left(Trim(Capitalise(LCase(rsc("name")))), 20)&"</A></div>" & VbCrLf
+			strCatLeft	= strCatLeft& "<div class=""item""><A href=""/shop/"&GeneratePrettyURL(rsc("URL"))&"/"" title="""&rsc("alt")&""" class=""linksin"">"&Left(Trim(Capitalise(LCase(rsc("name")))), 20)&"</A></div>" & VbCrLf
 		End If
 		rsc.MoveNext
 	wend
@@ -91,14 +88,6 @@ End Sub
 Function IsEven(lngNum)
 	' Determines whether a number is even or odd.
 	IsEven = Not CBool(lngNum Mod 2)
-End Function
-
-Function GetProductTablesAndUpdate()
-	On Error Resume Next
-	Dim objXmlHttpCat
-	Set objXmlHttpCat= Server.CreateObject("MSXML2.ServerXMLHTTP")
-	objXmlHttpCat.open "GET", "http://"&strDrinkstuffServer&"/productfeeds/cuk/export.asp" , False, "Leetracey492", "i9t7GU|4"
-	objXmlHttpCat.send ""
 End Function
 
 Function strIntoDB( strString )
@@ -133,25 +122,6 @@ Function RemoveLeadingChars(strChar, strRemoveFrom)
 		strRemoveFrom = Right(strRemoveFrom, Len(strRemoveFrom)-Len(strChar))
 	Wend
 	RemoveLeadingChars = strRemoveFrom
-End Function
-
-Function SaveBinaryData(FileName, ByteArray)
-  Const adTypeBinary = 1
-  Const adSaveCreateOverWrite = 2
-  
-  'Create Stream object
-  Dim BinaryStream
-  Set BinaryStream = CreateObject("ADODB.Stream")
-  
-  'Specify stream type - we want To save binary data.
-  BinaryStream.Type = adTypeBinary
-  
-  'Open the stream And write binary data To the object
-  BinaryStream.Open
-  BinaryStream.Write ByteArray
-  
-  'Save binary data To disk
-  BinaryStream.SaveToFile FileName, adSaveCreateOverWrite
 End Function
 
 Function RandomNumber(lowerbound, upperbound)

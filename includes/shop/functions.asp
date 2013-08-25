@@ -1,20 +1,5 @@
 ﻿<!--#include virtual="/includes/shop/currency.asp" -->
 <%
-Function IsCollectionOnly(cn, rs, id)
-	Dim blnCollect
-	blnCollect = False
-	'Is it collection only?
-	strSQL = "SELECT delID from dsprodallowdelivery WHERE prodID=" & id
-	rs.open strSQL, cn, 0, 3
-	If NOT rs.EOF Then
-		If rs("delID")=  -1 Then
-			blnCollect = True
-		End If
-	End If
-	rs.close
-	IsCollectionOnly = blnCollect
-End Function
-
 Function stripHTML(strHTML)
 'Strips the HTML tags from strHTML
 
@@ -119,36 +104,5 @@ Function PrettyDateShortTime(dte)
 		strOut = Left(strOut, Len(strOut)-3)
 	End If
 	PrettyDateShortTime = strOut
-End Function
-
-' Examples for clarity
-' =============================
-' Net + VAT = Gross
-' =============================
-' VAT Rate:       17.5%
-' Price Incl VAT: £9.99 (Gross)
-' VAT:            £1.49 (VAT)
-' Net:            £8.50 (Net)
-' =============================
-' VAT Rate:       15%
-' Price Incl VAT: £9.99 (Gross)
-' VAT:            £1.30 (VAT)
-' Net:            £8.69 (Net)
-' =============================
-
-Function CalculateVATFromGross(dblGross, dblVatRate)
-	CalculateVATFromGross = Round(dblGross - (dblGross/ (1 + (dblVatRate/100))), 2)
-End Function
-
-Function CalculateNetFromGross(dblGross, dblVatRate)
-	CalculateNetFromGross = Round(dblGross/ (1 + (dblVatRate/100)), 2)
-End Function
-
-Function CalculateVATFromNet(dblNet, dblVatRate)
-	alculateVATFromNet = Round(dblNet * dblVatRate/100, 2)
-End Function
-
-Function CalculateGrossFromNet(dblNet, dblVatRate)
-	CalculateGrossFromNet = Round(dblNet * (1 + (dblVatRate/100)), 2)
 End Function
 %>

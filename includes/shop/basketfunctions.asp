@@ -207,21 +207,6 @@ Sub setupProducts(aryBasket, numberItems, cn, rs, aryProducts, blnStockCheck, bl
 					End If
 					blnRemoved = True
 				End If
-				
-				'Is it collection only?
-				If IsCollectionOnly(cn, rsDel, rs("prodid")) Then
-					If NOT Session("admin") Then	
-						If NOT blnRemoved Then
-							addnote("Sorry, the "&strName&" is only available for collection or local delivery. Call 01223 872769 to check if we can deliver to your area. We have removed it from your basket for you.")
-							aryBasket(ITEM_QUANTITY,k) = 0
-							numProducts = numProducts - 1
-							k = k - 1
-						End If
-						blnRemoved = True
-					Else 
-						addnote("Admin note: """&strName&""" is normally only available for collection")
-					End If
-				End If
 			End If
 
 			If NOT blnRemoved Then

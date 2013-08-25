@@ -94,37 +94,19 @@ strMetaDescription = "" & aryDrink(0) & " " & aryDrink(7) & " recipe. Full ingre
   <div class="large-3 small-7 column">
     <div style="padding-right: 15px; margin-bottom: 30px;">
       <h5 id="ingredients">Ingredients:</h5>
-      <div style="margin-bottom: 10px;">Serves <%=aryDrink(3)%></div>
       <div style="margin-left: 1.5em;"><%=aryDrink(2)%></div>
     </div>
   </div>
 
   <div class="large-3 small-5 column">
     <div style="padding-right: 15px; margin-bottom: 30px;">
-      <h5 id="equipment">You'll also need:</h5>
-      <div>
-        <%If aryDrink(7)="shooter" Then%>
-          <a href="/shop/products/search.asp?search=iceshot"><img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shot_rock.jpg" alt="Shot Rock - Ice shot glasses" width="40" height="40"></a>
-          <a href="/shop/products/search.asp?search=shot float kit">
-          <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shot_float.jpg" alt="Shot Float Kit - Help you to layer shooters easier" width="25" height="40"></a>
-        <%else%>
-          <a href="/shop/products/search.asp?search=glass">
-          <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/glasses.jpg" alt="Glassware" width="28" height="40"></a>
-          <a href="/shop/products/search.asp?search=cocktail shaker">
-          <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/shaker.jpg" alt="Professional Cocktail Shaker - used in the industry" width="40" height="40"></a>
-        <%End if%>
-        <a href="/shop/products/search.asp?search=pourer">
-        <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/steel_pourer.jpg" alt="Stainless Steel Pourer - pours ingredients gently onto a drink" width="44" height="40"></a>
-        <a href="/shop/products/search.asp?search=measure">
-        <img border="0" src="/images/drinkstuff/Cocktail%20Equipment/bar_measures.jpg" alt="Professional Bar Measures - measure out the perfect quantity" width="34" height="40"></a><a onmouseover="show_text('Professional Measures')" onmouseout="hide_text()" href="/shop/products/search.asp?search=measures">
-        </a>
-      </div>
-        <p>&nbsp;</p>
-        <div style="margin-bottom: 5px;"><span class="hide-for-small">Rated: </span><%Call displayRatingGraphOnly( CStr(aryDrink(5)) )%></div>
-        <div style="margin-bottom: 5px;"><%=aryDrink(4)%> views</div>
-        <%If aryDrink(10) <> "" Then%>
-            <div style="margin-bottom: 5px;">Submitter: <%=aryDrink(10)%></div>
-        <%End If%>
+      <h5 id="equipment">Details:</h5>
+      <div style="margin-bottom: 5px;">Serves <%=aryDrink(3)%></div>
+      <div style="margin-bottom: 5px;"><span class="hide-for-small">Rated: </span><%Call displayRatingGraphOnly( CStr(aryDrink(5)) )%></div>
+      <div style="margin-bottom: 5px;"><%=aryDrink(4)%> views</div>
+      <%If aryDrink(10) <> "" Then%>
+        <div style="margin-bottom: 5px;">Submitter: <%=aryDrink(10)%></div>
+      <%End If%>
     </div>
   </div>
   <div class="large-3 small-8 column">

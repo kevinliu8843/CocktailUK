@@ -385,11 +385,11 @@ Class CProduct
 				If intCurrentProduct >= (iPageCurrent-1)*m_pageSize AND intCurrentProduct < iPageCurrent*m_pageSize Then
 					%>
 					<div class="row collapse">
-					    <div class="small-2 column">
+					    <div class="small-3 column">
 						    <A href="/shop/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm" title="<%=strOutDB(aryRows(1,i))%>"><IMG style="max-width: 90%;" border="0" src="http://www.drinkstuff.com/productimg/<%=strOutDB(aryRows(3,i))%>.<%=strOutDB(aryRows(2,i))%>"></A>
 						</div>
-						<div class="small-10 column">
-							<div style="padding-right: 10%">
+						<div class="small-9 column">
+							<div style="padding-right: 5%">
 						        <h4><A href="/shop/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm"><%=strOutDB(aryRows(1,i))%></a><span style="color: black"> - 
 						        	<%If aryRows(4,i) <> aryRows(5,i) then%>From <%End If%>&pound;<%=FormatNumber(aryRows(4,i), 2)%></span></h4>
 						        <p><%=ChangeMacros(strOutDB(aryRows(6,i)))%> <a href="/shop/<%=GeneratePrettyURL(strOutDB(aryRows(1,i)))%>.htm">[more...]</a></p>

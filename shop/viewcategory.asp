@@ -4,7 +4,7 @@
 <!--#include virtual="/includes/shop/functions.asp" -->
 <!--#include virtual="/includes/shop/product.asp" -->
 <%
-Dim objProd, intCategory, strMainTitle, strNoScript, strBannerTargetCat, strBannerURLCat, strBannerImageSrcCat
+Dim objProd, intCategory, strMainTitle
 intCategory = Request("ID")
 If Request("pagesize") <> "" Then
 	Session("pagesize") = Request("pagesize")

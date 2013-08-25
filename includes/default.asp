@@ -80,8 +80,7 @@ End If
   <div class="row" id="header">
     <div class="large-5 small-12 columns" id="logo1">
       <a href="http://www.cocktail.uk.com/">
-      <img border="0" src="../images/cuk_03.jpg" width="85" height="85" alt="Classic cocktails and bar equipment uk" valign="absmiddle" class="hide-for-small">
-      <img alt="Classic cocktails and bar equipment uk" src="../images/cuk_07.gif" border="0" width="210" height="32" valign="absmiddle"></a>
+      <img border="0" src="../images/logo.jpg" alt="Classic cocktails and bar equipment uk" valign="absmiddle" class="hide-for-small">
     </div>
     <div class="large-4 small-12 columns">
   	  <div class="row collapse">

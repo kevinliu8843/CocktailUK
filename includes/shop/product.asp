@@ -377,7 +377,7 @@ Class CProduct
 			
 			intCurrentProduct = 0
 
-			If m_strCatHeader <> "" And iPageCurrent = 1 And i=0 Then
+			If m_strCatHeader <> "" Then
 			   %><p><%=m_strCatHeader%></p><%
 			End if
 

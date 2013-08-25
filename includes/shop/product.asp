@@ -360,7 +360,7 @@ Class CProduct
 				%><div class="row"><%
 				WHILE NOT rs.EOF
 					i=i+1
-					%><div class=large-4 column small-6 style="padding-bottom:25px;"><A href="<%=Server.URLEncode(strOutDB(rs("url")))%>.asp" style="font-weight: 400; font-size: 130%">
+					%><div class="large-4 column small-6" style="padding-bottom:25px;"><A href="<%=Server.URLEncode(strOutDB(rs("url")))%>.asp" style="font-weight: 400; font-size: 130%">
 					<%Call GetSubCategoryImage(rs("ID"))%><%=strOutDB(rs("name"))%>&nbsp;&raquo;</A></div>
 					<%rs.movenext
 				Wend

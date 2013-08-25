@@ -865,6 +865,7 @@ Class CProduct
 	Private Sub DisplaySubCategories()
 		Dim i
 		strSQL = "DS_GETSUBCATS @catID="&m_intCategory
+		response.write strSQL
 		rs.open strSQL, cn
 		If NOT rs.EOF Then
 			m_blnGotSubCats = True

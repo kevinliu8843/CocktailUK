@@ -13,17 +13,7 @@ Class CProduct
 	Public  m_blnProductExists
 	Private m_strKeywords
 	Public  m_HardProductTitle
-	Private m_AffPageText 
-	Public  m_blnValidAffiliate
-	Public  m_blnDisplayAffProducts
-	Private m_blnAffMode
-	Public  m_blnOnlyProduct
-	Private m_blnWAP, m_blnMobile
-	Public  m_strNoScript
 	Public  m_strMetaDescription
-	Private m_strBannerTarget
-	Private m_strBannerURL
-	Private m_strBannerImageSrc
 	Public  m_dteNewProductFor
 	Public  m_strCatHeader
 	Private m_blnGotSubCats
@@ -351,9 +341,9 @@ Class CProduct
 
 			If UBound(aryRows,2) >= 0 then
 				%>
-				<div class="row collapse" style="padding-bottom: 2em;">
+				<div class="row collapse">
 					<div class="large-6 small-12 column">
-						<img src="http://www.drinkstuff.com/productimg/<%=aryRows(4,0)%>.<%=Trim(aryRows(5,0))%>" style="max-width: 100%;">
+						<img src="http://www.drinkstuff.com/productimg/<%=aryRows(4,0)%>.<%=Trim(aryRows(5,0))%>" style="max-width: 100%; width: 100%; padding-bottom: 2em;">
 					</div>
 					<div class="large-6 small-12 column">
 						<p>

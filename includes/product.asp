@@ -38,9 +38,6 @@ Class CProduct
 				m_pageSize = Int(Session("pagesize"))
 			End If
 		End If
-		m_numReviews = 5
-		m_blnProductExists = False
-		m_blnValidAffiliate= False
 		m_strMetaDescription = ""
 		m_dteNewProductFor = 45 'Days
 		blnPricesInclVAT = True

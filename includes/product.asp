@@ -351,15 +351,21 @@ Class CProduct
 
 			If UBound(aryRows,2) >= 0 then
 				%>
-				<P align="center"><img src="http://www.drinkstuff.com/productimg/<%=aryRows(4,0)%>.<%=Trim(aryRows(5,0))%>"></p>
-				<a href="/shop/delivery.asp" style="float: right;">
-				<img alt="Free UK Delivery" src="../../images/shop/Free-Delivery.gif" width="135" height="122" class="style1"></a>
-				<p>
-				<%
-				Response.Write ChangeMacros(strOutDB(aryRows(6,0)))
-				Response.Write ChangeMacros(strOutDB(aryRows(7,0)))
-				%>
-				</p>
+				<div class="row collapse">
+					<div class="small-6 column">
+						<img src="http://www.drinkstuff.com/productimg/<%=aryRows(4,0)%>.<%=Trim(aryRows(5,0))%>" style="max-width: 100%">
+					</div>
+					<div class="small-6 column">
+						<p>
+						<a href="/shop/delivery.asp" style="float: right;">
+						<img alt="Free UK Delivery" src="../../images/shop/Free-Delivery.gif" width="135" height="122" class="style1"></a>
+						<%
+						Response.Write ChangeMacros(strOutDB(aryRows(6,0)))
+						Response.Write ChangeMacros(strOutDB(aryRows(7,0)))
+						%>
+						</p>
+					</div>
+				</div>
 				<p align="center"><img src="/img/"></p>
 				<%
 			End If

@@ -239,7 +239,7 @@ Sub writeCocktailList(strSQL, rs, cn, strTitle, strHrefType)
 
 		<div class="row collapse">
 		  <%For iKnt2=1 To iWidth * iHeight%>
-		    <div class="large-4 medium-6 small-12 column">
+		    <div class="large-4 small-6 column">
 				<%writeField FSO, rs%>
 		    </div>
 		  <%Next%>

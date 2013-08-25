@@ -11,7 +11,6 @@ strTitle = "Submit Drinks"
 <!--#include virtual="/includes/functions.asp" -->
 <!--#include virtual="/includes/cocktail_functions.asp" -->
 <!--#include virtual="/includes/header.asp" -->
-<!--#include virtual="/includes/admin_functions.asp" -->
 <H2>Cocktails awaiting verification</h2>
 <FORM action="default.asp?submit=true" method=post>
 <%
@@ -36,7 +35,6 @@ If Request("submit") = "true" Then
 		name = Capitalise(rs2("name"))
 		strSQL = "UPDATE Cocktail Set Status=1, ReIndex=1, usr='" & replaceStuff(Left(user, InStr(1, user, ";")-1)) & "' WHERE ID=" & rs2("ID")
 		cn.Execute(strSQL)
-		call sendCocktailsubmitEmail(replaceStuff( CStr( name ) ), Right(user, Len(user)-InStr(1, user, ";")))
 		rs2.movenext
 	Wend
 End If

@@ -970,8 +970,6 @@
     <Content Include="images\ingredients\no_image.jpg" />
     <Content Include="images\inset_quotebegin.gif" />
     <Content Include="images\inset_quoteend.gif" />
-    <Content Include="images\mail.gif" />
-    <Content Include="images\main_menus\addagame.gif" />
     <Content Include="images\main_menus\addyourgame.gif" />
     <Content Include="images\main_menus\blank.gif" />
     <Content Include="images\main_menus\contactus.gif" />
@@ -1251,7 +1249,6 @@
     <Content Include="images\welcomeTo.gif" />
     <Content Include="images\welcomeToThe.gif" />
     <Content Include="images\white.gif" />
-    <Content Include="includes\admin_functions.asp" />
     <Content Include="includes\classes\clsSiteMap.asp" />
     <Content Include="includes\cocktail_functions.asp" />
     <Content Include="includes\default.asp" />
@@ -1266,7 +1263,6 @@
     <Content Include="includes\shop\header.asp" />
     <Content Include="includes\shop\homepage.asp" />
     <Content Include="includes\shop\product.asp" />
-    <Content Include="includes\shop\setupcategories.asp" />
     <Content Include="includes\shop\template.asp" />
     <Content Include="includes\variables.asp" />
     <Content Include="interactive\backgrounds.asp" />

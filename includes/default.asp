@@ -12,7 +12,7 @@ Dim strMetaDescription, strMetaKeywords, strMetaTitle
 blnSkyscraper = True
 bHideAds = False
 
-If InStr(LCase(Request("SCRIPT_NAME")), "google.asp") > 0 Then
+If InStr(LCase(Request("SCRIPT_NAME")), "/search/default.asp") > 0 Then
 	bHideAds = True
 End If
 

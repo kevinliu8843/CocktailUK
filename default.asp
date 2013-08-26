@@ -11,27 +11,6 @@ strMetaTitle = "Cocktail UK - Cocktail Recipes & Cocktails / Shooters. Full Bar 
 <!--#include virtual="/includes/variables.asp" -->
 <!--#include virtual="/includes/functions.asp" -->
 <!--#include virtual="/includes/header.asp" -->
-<script>
-function checkSearch(){
-	if ( document.search.searchField.value == "" ) {
-		alert("Please enter a search query.")
-		document.search.searchField.focus()
-		return false
-	}
-	else
-		return true
-}
-function clearField(){
-	var strSearch = document.search.searchField.value
-}
-
-function changeColour(objTable, strColour){
-	if (document.all){
-		objTable.style.backgroundColor = strColour
-	}
-}
-</script>
-
 <h2>Cocktail recipes &amp; bar equipment store</h2>
 <p><img border="0" src="../images/redmartini.jpg" width="125" height="244" align="right">
 <p>Online for over 15 years, Cocktail : UK has the most comprehensive
@@ -45,7 +24,7 @@ the biggest <a href="/shop/">bar equipment</a> shop online. Enjoy.</p>
 drink</a> | <a href="/cocktails/">Cocktails</a> |
 <a href="/cocktails/?type=2">Shooters</a> |
 <a href="/cocktails/?type=4">Non-alcoholic cocktails</a> | 
-<a href="shop/products/cocktail-equipment.asp">Bar equipment</a></div>
+<a href="/shop/cocktail-equipment/">Bar equipment</a></div>
 
 <H3 style="margin-top: 80px">Browse Our Cocktail Recipes</H3>
 <TABLE border="0" cellpadding="5" cellspacing="0" id="table2" width="100%">

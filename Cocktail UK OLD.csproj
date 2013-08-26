@@ -2478,7 +2478,6 @@
     <Content Include="shop\topsearches.asp" />
     <Content Include="shop\uk_searchbox.jpg" />
     <Content Include="sitemap.xml" />
-    <Content Include="style\carousel.css" />
     <Content Include="style\fonts\general_foundicons.svg" />
     <Content Include="style\general_foundicons.css" />
     <Content Include="style\style.css" />

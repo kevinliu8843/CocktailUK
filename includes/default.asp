@@ -1,6 +1,4 @@
-﻿<!--#include file="errors.asp" -->
-<%
-
+﻿<%
 If NOT Session("admin") Then
 	On Error Resume Next
 End If

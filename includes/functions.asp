@@ -1,5 +1,4 @@
 ﻿<!--#include virtual="/includes/rating.asp" -->
-<!--#include virtual="/includes/shop.asp" -->
 <%
 Sub Do301Redirect(strNewURL)
     Response.Status = "301 Moved Permanently"
@@ -7,25 +6,20 @@ Sub Do301Redirect(strNewURL)
     Response.End
 End Sub
 
-Function MediumDate (str)
-    Dim aDay
-    Dim aMonth
-    Dim aYear
-
-    aDay = Day(str)
-    aMonth = Monthname(Month(str),True)
-    aYear = Year(str)
-	
-	MediumDate = aDay & "-" & aMonth & "-" & aYear
+Function strIntoDB( strString )
+	strString = Replace ( strString, Chr(39), Chr(39)&Chr(39) )
+	strString = Replace ( strString, VbCrLf, "<br/>" )
+	strString = Replace ( strString, Chr(13), "<br/>" ) 'need this aswell???
+	strString = Replace ( strString, """", Chr(39)&Chr(39) )
+	strIntoDB = strString
 End Function
 
-Function StripThisYear(strDate)
-	If IsDate(strDate) Then
-		If Year(Now()) = Year(strDate) Then
-			strDate = Day(strDate) & "-" & MonthName(Month(strDate), True)
-		End If
+Function strOutDB( ByVal strString )
+	strString = strString & ""
+	If NOT IsNull(strString) Then
+		strString = Trim(strString)
 	End If
-	StripThisYear = strDate
+	strOutDB = strString
 End Function
 
 Function Min(argOne, argTwo)

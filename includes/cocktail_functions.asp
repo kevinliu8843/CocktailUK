@@ -12,55 +12,8 @@ Function GetActualDrink(rs, cn, intID, intStatus, aryDrink)
 		Exit Function
 	End If
 
-	Dim FSO, blnWAP, strDomain, objRe, arySearch(21), aryReplace(21), i
+	Dim FSO, strDomain, objRe, i
 
-	arySearch(0) = "shot glass"
-	arySearch(1) = "cocktail glass"
-	arySearch(2) = "martini glass"
-	arySearch(3) = "brandy balloon"
-	arySearch(4) = "port glass"
-	arySearch(5) = "sherry glass"
-	arySearch(6) = "champagne saucer"
-	arySearch(7) = "champagne flute"
-	arySearch(8) = "flute"
-	arySearch(9) = "lowball glass"
-	arySearch(10) = "tumbler"
-	arySearch(11) = "old fashioned glass"
-	arySearch(12) = "highball glass"
-	arySearch(13) = "tall glass"
-	arySearch(14) = "wine glass"
-	arySearch(15) = "shaker"
-	arySearch(16) = "strainer"
-	arySearch(17) = "strain"
-	arySearch(18) = "boston"
-	arySearch(19) = "pour"
-	arySearch(20) = "blend"
-	arySearch(21) = "blender"
-
-	aryReplace(0) = "<a href=""/shop/products/search.asp?search=$1"">$1</a>"
-	aryReplace(1) = "<a href=""/shop/products/search.asp?search=$1"">$1</a>"
-	aryReplace(2) = "<a href=""/shop/products/search.asp?search=$1"">$1</a>"
-	aryReplace(3) = "<a href=""/shop/products/search.asp?search=$1"">$1</a>"
-	aryReplace(4) = "<a href=""/shop/products/search.asp?search=$1"">$1</a>"
-	aryReplace(5) = "<a href=""/shop/products/search.asp?search=$1"">$1</a>"
-	aryReplace(6) = "<a href=""/shop/products/search.asp?search=$1"">$1</a>"
-	aryReplace(7) = "<a href=""/shop/products/search.asp?search=$1"">$1</a>"
-	aryReplace(8) = "<a href=""/shop/products/search.asp?search=$1"">$1</a>"
-	aryReplace(9) = "<a href=""/shop/products/search.asp?search=$1"">$1</a>"
-	aryReplace(10) = "<a href=""/shop/products/search.asp?search=$1"">$1</a>"
-	aryReplace(11) = "<a href=""/shop/products/search.asp?search=$1"">$1</a>"
-	aryReplace(12) = "<a href=""/shop/products/search.asp?search=$1"">$1</a>"
-	aryReplace(13) = "<a href=""/shop/products/search.asp?search=$1"">$1</a>"
-	aryReplace(14) = "<a href=""/shop/products/search.asp?search=$1"">$1</a>"
-	aryReplace(15) = "<a href=""/shop/products/search.asp?search=$1"">$1</a>"
-	aryReplace(16) = "<a href=""/shop/products/search.asp?search=$1"">$1</a>"
-	aryReplace(17) = "<a href=""/shop/products/search.asp?search=$1"">$1</a>"
-	aryReplace(18) = "<a href=""/shop/products/search.asp?search=$1"">$1</a>"
-	aryReplace(19) = "<a href=""/shop/products/search.asp?search=$1"">$1</a>"
-	aryReplace(20) = "<a href=""/shop/products/search.asp?search=$1"">$1</a>"
-	aryReplace(21) = "<a href=""/shop/products/search.asp?search=$1"">$1</a>"
-	
-	blnWAP = (InStr(Request.ServerVariables("SCRIPT_NAME"), "/wap") > 0)
 	strDomain = Request.ServerVariables("SERVER_NAME")
 	
 	'Returns an array for the drink details
@@ -118,23 +71,13 @@ Function GetActualDrink(rs, cn, intID, intStatus, aryDrink)
 		Set FSO = Nothing
 		
 		aryDrink(1) = ReplaceStuffBack(Replace(aryDrink(1), "<BR>", "<br/>", 1, -1, 1))
-		If NOT blnWAP Then
-			set objRE=server.createobject("VBScript.Regexp")
-			objRe.Global = True
-			objRe.IgnoreCase = True
-			For i=0 To UBound(arySearch)
-				objRe.Pattern = "\b("&arySearch(i)&")\b"
-				aryDrink(1) = objRe.Replace(aryDrink(1), aryReplace(i))
-			Next
-			Set objRe = nothing
-		End If
 	Else
 		GetActualDrink = False
 		rs.close
 		Exit Function
 	End If
 	rs.close
-	aryDrink(2) = ReplaceStuffBack(GetRecipe(rs, cn, intID, (NOT blnWAP)))
+	aryDrink(2) = ReplaceStuffBack(GetRecipe(rs, cn, intID, True))
 	GetActualDrink = True
 End Function
 

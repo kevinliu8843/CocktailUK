@@ -141,4 +141,27 @@ Sub WriteCategories(catID, parentID, pagesize, strFolder, strFile, cn2, rs2)
 		Call WriteCategories(aryCats(0, i), aryCats(1, i), 10, strFolder, aryCats(2, i), cn2, rs2)
 	Next
 End Sub
+
+Private Sub SetupCategories(cnc, rsc)
+	Dim strFontColour, strURL, f, fso, strCat, strCatOpt, strCatWap, strCatLeft
+	Dim ReadAllCatFile, newCatFile, objXmlHttpCat
+	
+	' Turn on drink category
+	cnc.execute("UPDATE DScategory SET hidden=0 WHERE ID=562")
+
+	strSQL = "SELECT name, URL, ID, name as alt, parentID from dscategory WHERE hidden=0 AND url NOT LIKE 'admin%' ORDER by catorder"
+	rsc.Open strSQL, cnc
+	
+	strCatLeft = ""
+	While NOT rsc.EOF 
+		If rsc("parentID") = 0 then
+			strCatLeft	= strCatLeft& "<div class=""item""><A href=""/shop/"&GeneratePrettyURL(rsc("URL"))&"/"" title="""&rsc("alt")&""">"&Trim(Capitalise(LCase(rsc("name"))))&"</A></div>" & VbCrLf
+		End If
+		rsc.MoveNext
+	wend
+
+	Call SaveTextFile(Server.MapPath("/includes/shop/categoriesleft.asp"), strCatLeft)
+
+	rsc.close
+End Sub
 %>

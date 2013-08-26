@@ -29,7 +29,6 @@ _ReSharper*/
 /aspnet_client/
 *.[Pp]ublish.xml
 [Pp]ackages*/
-/cocktail-recipes.txt
 Web.Debug.config
 Web.Release.config
 /My Project/
@@ -37,6 +36,5 @@ Web.Release.config
 /includes/header.asp
 /includes/footer.asp
 /includes/shop/categories*
-/shop/products/*
-/products.txt
+/*.txt
 .htaccess
